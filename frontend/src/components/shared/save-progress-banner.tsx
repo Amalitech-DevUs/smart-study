@@ -13,7 +13,9 @@ export function SaveProgressBanner() {
   return (
     <aside className="mt-6 flex items-start justify-between gap-4 rounded-lg border border-brand-gold/30 bg-brand-gold/10 p-4 text-left">
       <div>
-        <p className="font-medium text-brand-indigo">Sign in to save your progress</p>
+        <p className="font-medium text-brand-indigo">
+          Sign in to save your progress
+        </p>
         <p className="mt-1 text-sm text-text-secondary">
           Keep your practice history available across sessions.
         </p>

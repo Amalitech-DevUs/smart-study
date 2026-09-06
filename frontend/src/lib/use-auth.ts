@@ -9,12 +9,21 @@ type AuthState = {
 };
 
 export function useAuth(): AuthState {
-  const [auth, setAuth] = useState<AuthState>({ loggedIn: false, isLoading: true });
+  const [auth, setAuth] = useState<AuthState>({
+    loggedIn: false,
+    isLoading: true,
+  });
 
   useEffect(() => {
     fetch("/api/auth/me")
       .then((response) => response.json())
-      .then((data) => setAuth({ loggedIn: Boolean(data.loggedIn), username: data.username, isLoading: false }))
+      .then((data) =>
+        setAuth({
+          loggedIn: Boolean(data.loggedIn),
+          username: data.username,
+          isLoading: false,
+        }),
+      )
       .catch(() => setAuth({ loggedIn: false, isLoading: false }));
   }, []);
 

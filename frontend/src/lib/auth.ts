@@ -11,7 +11,9 @@ function decodeUsername(token: string): string | undefined {
   try {
     const payload = token.split(".")[1];
     if (!payload) return undefined;
-    const decoded = JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
+    const decoded = JSON.parse(
+      Buffer.from(payload, "base64url").toString("utf8"),
+    );
     return typeof decoded.username === "string" ? decoded.username : undefined;
   } catch {
     return undefined;
@@ -20,5 +22,7 @@ function decodeUsername(token: string): string | undefined {
 
 export async function getCurrentUser(): Promise<CurrentUser> {
   const token = (await cookies()).get(AUTH_COOKIE_NAME)?.value;
-  return token ? { loggedIn: true, username: decodeUsername(token) } : { loggedIn: false };
+  return token
+    ? { loggedIn: true, username: decodeUsername(token) }
+    : { loggedIn: false };
 }

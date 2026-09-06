@@ -18,28 +18,31 @@ export function TopNav() {
         Smart Study
       </Link>
       <div className="flex items-center gap-6">
-        {navItems.filter((item) => item.label !== "Profile").map((item) => {
-          const isActive = pathname === item.href;
+        {navItems
+          .filter((item) => item.label !== "Profile")
+          .map((item) => {
+            const isActive = pathname === item.href;
 
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={isActive ? "text-brand-gold" : "text-gray-200"}
-            >
-              {item.label}
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={isActive ? "text-brand-gold" : "text-gray-200"}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        {!isLoading &&
+          (loggedIn ? (
+            <Link href="/profile" className="text-brand-gold">
+              {username ?? "Profile"}
             </Link>
-          );
-        })}
-        {!isLoading && (loggedIn ? (
-          <Link href="/profile" className="text-brand-gold">
-            {username ?? "Profile"}
-          </Link>
-        ) : (
-          <Link href="/login" className="text-gray-200">
-            Log in
-          </Link>
-        ))}
+          ) : (
+            <Link href="/login" className="text-gray-200">
+              Log in
+            </Link>
+          ))}
       </div>
     </nav>
   );

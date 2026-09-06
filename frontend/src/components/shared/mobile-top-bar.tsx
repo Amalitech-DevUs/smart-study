@@ -11,15 +11,16 @@ export function MobileTopBar() {
       <Link href="/" className="font-heading text-xl font-bold text-brand-gold">
         Smart Study
       </Link>
-      {!isLoading && (loggedIn ? (
-        <Link href="/profile" className="text-sm font-medium text-brand-gold">
-          {username ?? "Profile"}
-        </Link>
-      ) : (
-        <Link href="/login" className="text-sm font-medium text-gray-200">
-          Log in
-        </Link>
-      ))}
+      {!isLoading &&
+        (loggedIn ? (
+          <Link href="/profile" className="text-sm font-medium text-brand-gold">
+            {username ?? "Profile"}
+          </Link>
+        ) : (
+          <Link href="/login" className="text-sm font-medium text-gray-200">
+            Log in
+          </Link>
+        ))}
     </header>
   );
 }

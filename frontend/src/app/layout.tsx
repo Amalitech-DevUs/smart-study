@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Baloo_2, Inter } from "next/font/google";
 import { BottomNav } from "@/components/shared/bottom-nav";
+import { ChatWidget } from "@/components/chat/chat-widget";
 import { Footer } from "@/components/shared/footer";
 import { MobileTopBar } from "@/components/shared/mobile-top-bar";
 import { TopNav } from "@/components/shared/top-nav";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <MobileTopBar />
         {children}
         <Footer />
+        <ChatWidget />
         <BottomNav />
       </body>
     </html>
