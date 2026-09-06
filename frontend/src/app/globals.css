@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-indigo: #1b2a63;
+  --brand-gold: #e8a33d;
+  --subject-math: #2e7d4f;
+  --subject-math-light: #eaf3de;
+  --subject-english: #d6432e;
+  --subject-english-light: #faece7;
+  --subject-science: #e8a33d;
+  --subject-science-light: #faeeda;
+  --subject-social-studies: #1b2a63;
+  --subject-social-studies-light: #eef0f8;
+  --success: #1e7a46;
+  --success-light: #e3f5e9;
+  --danger: #b23324;
+  --danger-light: #fce4e1;
+  --background: #faf9f5;
+  --text-primary: #1f2430;
+  --text-secondary: #6b6f7a;
 }
 
 @theme inline {
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-gold: var(--brand-gold);
+  --color-subject-math: var(--subject-math);
+  --color-subject-math-light: var(--subject-math-light);
+  --color-subject-english: var(--subject-english);
+  --color-subject-english-light: var(--subject-english-light);
+  --color-subject-science: var(--subject-science);
+  --color-subject-science-light: var(--subject-science-light);
+  --color-subject-social-studies: var(--subject-social-studies);
+  --color-subject-social-studies-light: var(--subject-social-studies-light);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --font-heading: var(--font-heading-family);
+  --font-body: var(--font-body-family);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
 }

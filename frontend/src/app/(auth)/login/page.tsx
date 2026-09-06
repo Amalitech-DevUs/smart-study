@@ -1,3 +1,5 @@
+import { AuthForm } from "@/components/shared/auth-form";
+
 export default function LoginPage() {
-  return <h1>Login — coming soon</h1>;
+  return <AuthForm mode="login" />;
 }
