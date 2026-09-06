@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 import healthRoutes from './routes/health';
 import authRoutes from './routes/auth';
 import questionsRoutes from './routes/questions';
@@ -8,7 +9,8 @@ import articlesRoutes from './routes/articles';
 import chatRoutes from './routes/chat';
 import { errorHandler } from './middleware/errorHandler';
 
-dotenv.config();
+// Load .env from backend/src directory
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
@@ -43,11 +45,11 @@ app.use(errorHandler);
 // Start Express Server
 app.listen(PORT, () => {
   console.log(`====================================================`);
-  console.log(` 🚀 Smart-Study Backend API Server running on port ${PORT}`);
-  console.log(` 🏥 Health checks: http://localhost:${PORT}/health/content`);
-  console.log(` 🎴 Questions API: http://localhost:${PORT}/questions`);
-  console.log(` 📰 Articles API:  http://localhost:${PORT}/articles`);
-  console.log(` 💬 AI Chat API:   http://localhost:${PORT}/chat`);
+  console.log(`Smart-Study Backend API Server running on port ${PORT}`);
+  console.log(`Health checks: http://localhost:${PORT}/health/content`);
+  console.log(`Questions API: http://localhost:${PORT}/questions`);
+  console.log(`Articles API:  http://localhost:${PORT}/articles`);
+  console.log(`AI Chat API:   http://localhost:${PORT}/chat`);
   console.log(`====================================================`);
 });
 

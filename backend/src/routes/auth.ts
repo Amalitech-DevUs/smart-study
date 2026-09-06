@@ -1,45 +1,27 @@
 import { Router, Request, Response } from 'express';
+import { validate } from '../middleware/validate';
+import { signupSchema, loginSchema } from '../schemas';
 
 const router = Router();
 
-// POST /auth/signup
-router.post('/signup', (req: Request, res: Response) => {
+// POST /auth/signup - Validate payload with Zod schema
+router.post('/signup', validate({ body: signupSchema }), async (req: Request, res: Response) => {
   const { username, pin } = req.body;
-
-  if (!username || !pin) {
-    return res.status(400).json({
-      success: false,
-      error: {
-        code: 'VALIDATION_ERROR',
-        message: 'Username and PIN are required'
-      }
-    });
-  }
 
   res.status(201).json({
     success: true,
     data: {
       message: 'Account created successfully',
-      user: { id: 'user_101', username, createdAt: new Date().toISOString() }
+      user: { id: `user_${Date.now()}`, username, createdAt: new Date().toISOString() }
     }
   });
 });
 
-// POST /auth/login
-router.post('/login', (req: Request, res: Response) => {
-  const { username, pin } = req.body;
+// POST /auth/login - Validate payload with Zod schema
+router.post('/login', validate({ body: loginSchema }), async (req: Request, res: Response) => {
+  const { username } = req.body;
 
-  if (!username || !pin) {
-    return res.status(400).json({
-      success: false,
-      error: {
-        code: 'VALIDATION_ERROR',
-        message: 'Username and PIN are required'
-      }
-    });
-  }
-
-  // Stub JWT issuance
+  // Contract: Returns JWT token and user info
   res.json({
     success: true,
     data: {
@@ -49,7 +31,7 @@ router.post('/login', (req: Request, res: Response) => {
   });
 });
 
-// GET /auth/me
+// GET /auth/me - Return current user's info
 router.get('/me', (req: Request, res: Response) => {
   res.json({
     success: true,
