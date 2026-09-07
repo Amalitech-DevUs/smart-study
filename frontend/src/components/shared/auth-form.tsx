@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { GraduationCap, ArrowRight, Eye, EyeOff } from "lucide-react";
 
 type AuthFormProps = {
   mode: "login" | "signup";
@@ -11,6 +12,7 @@ type AuthFormProps = {
 export function AuthForm({ mode }: AuthFormProps) {
   const [username, setUsername] = useState("");
   const [pin, setPin] = useState("");
+  const [showPin, setShowPin] = useState(false);
   const [errors, setErrors] = useState<{
     username?: string;
     pin?: string;
@@ -30,7 +32,7 @@ export function AuthForm({ mode }: AuthFormProps) {
     }
 
     if (!/^\d{4,6}$/.test(pin)) {
-      nextErrors.pin = "PIN must be at least 4 digits";
+      nextErrors.pin = "PIN must be 4 to 6 digits";
     }
 
     setErrors(nextErrors);
@@ -54,9 +56,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
-      const redirect = new URLSearchParams(window.location.search).get(
-        "redirect",
-      );
+      const redirect = new URLSearchParams(window.location.search).get("redirect");
       const destination =
         redirect?.startsWith("/") && !redirect.startsWith("//")
           ? redirect
@@ -70,30 +70,30 @@ export function AuthForm({ mode }: AuthFormProps) {
   };
 
   return (
-    <main className="flex min-h-full flex-1 items-center justify-center bg-background px-6 py-12 pb-24">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md rounded-lg border border-text-secondary/15 bg-white p-6 shadow-sm sm:p-8"
-        noValidate
-      >
-        <p className="text-sm font-medium uppercase tracking-wide text-brand-gold">
-          Smart Study
-        </p>
-        <h1 className="mt-2 font-heading text-4xl font-bold text-brand-indigo">
-          {isSignup ? "Create your account" : "Welcome back"}
-        </h1>
-        <p className="mt-3 text-text-secondary">
-          {isSignup
-            ? "Start building your study habit."
-            : "Continue your study session."}
-        </p>
+    <main className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-slate-50 px-4 py-12">
+      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        
+        {/* Header */}
+        <div className="text-center">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#0b132b] text-brand-gold">
+            <GraduationCap className="h-6 w-6" />
+          </div>
+          <h1 className="mt-4 font-heading text-2xl font-bold text-slate-900">
+            {isSignup ? "Create your Account" : "Welcome Back"}
+          </h1>
+          <p className="mt-1 text-xs text-slate-500">
+            {isSignup
+              ? "Enter a username & PIN to start practicing"
+              : "Sign in with your username & security PIN"}
+          </p>
+        </div>
 
-        <div className="mt-8 space-y-5">
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="mt-6 space-y-4" noValidate>
+          
+          {/* Username */}
           <div>
-            <label
-              htmlFor="username"
-              className="block text-sm font-medium text-text-primary"
-            >
+            <label htmlFor="username" className="block text-xs font-semibold text-slate-700">
               Username
             </label>
             <input
@@ -101,79 +101,78 @@ export function AuthForm({ mode }: AuthFormProps) {
               name="username"
               type="text"
               autoComplete="username"
+              placeholder="e.g. alex_study"
               value={username}
-              onChange={(event) => setUsername(event.target.value)}
-              className="mt-2 min-h-11 w-full rounded-md border border-text-secondary/30 px-3 text-text-primary outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20"
+              onChange={(e) => setUsername(e.target.value)}
+              className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 px-3.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-brand-indigo focus:bg-white focus:ring-2 focus:ring-brand-indigo/10"
               aria-invalid={Boolean(errors.username)}
-              aria-describedby={errors.username ? "username-error" : undefined}
             />
             {errors.username && (
-              <p id="username-error" className="mt-1 text-sm text-danger">
-                {errors.username}
-              </p>
+              <p className="mt-1 text-xs font-medium text-red-500">{errors.username}</p>
             )}
           </div>
 
+          {/* PIN */}
           <div>
-            <label
-              htmlFor="pin"
-              className="block text-sm font-medium text-text-primary"
-            >
-              PIN
+            <label htmlFor="pin" className="block text-xs font-semibold text-slate-700">
+              Security PIN (4–6 Digits)
             </label>
-            <input
-              id="pin"
-              name="pin"
-              type="password"
-              inputMode="numeric"
-              pattern="[0-9]{4,6}"
-              minLength={4}
-              maxLength={6}
-              autoComplete={isSignup ? "new-password" : "current-password"}
-              value={pin}
-              onChange={(event) =>
-                setPin(event.target.value.replace(/\D/g, "").slice(0, 6))
-              }
-              className="mt-2 min-h-11 w-full rounded-md border border-text-secondary/30 px-3 text-text-primary outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20"
-              aria-invalid={Boolean(errors.pin)}
-              aria-describedby={errors.pin ? "pin-error" : undefined}
-            />
+            <div className="relative mt-1">
+              <input
+                id="pin"
+                name="pin"
+                type={showPin ? "text" : "password"}
+                inputMode="numeric"
+                pattern="[0-9]{4,6}"
+                maxLength={6}
+                placeholder="••••"
+                value={pin}
+                onChange={(e) => setPin(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-3.5 pr-10 text-sm tracking-widest text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-brand-indigo focus:bg-white focus:ring-2 focus:ring-brand-indigo/10"
+                aria-invalid={Boolean(errors.pin)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPin(!showPin)}
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600"
+              >
+                {showPin ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            </div>
             {errors.pin && (
-              <p id="pin-error" className="mt-1 text-sm text-danger">
-                {errors.pin}
-              </p>
+              <p className="mt-1 text-xs font-medium text-red-500">{errors.pin}</p>
             )}
           </div>
-        </div>
 
-        {errors.form && (
-          <p className="mt-4 text-sm text-danger" role="alert">
-            {errors.form}
-          </p>
-        )}
+          {errors.form && (
+            <div className="rounded-lg bg-red-50 p-3 text-xs font-medium text-red-600">
+              {errors.form}
+            </div>
+          )}
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="mt-8 min-h-11 w-full rounded-md bg-brand-gold px-5 py-3 font-medium text-brand-indigo transition-colors hover:bg-brand-gold/90 disabled:cursor-wait disabled:opacity-60"
-        >
-          {isSubmitting
-            ? "Please wait..."
-            : isSignup
-              ? "Create account"
-              : "Log in"}
-        </button>
+          {/* Submit */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b132b] py-3 text-sm font-bold text-white transition-all hover:bg-slate-800 disabled:opacity-50"
+          >
+            <span>{isSubmitting ? "Processing..." : isSignup ? "Sign Up" : "Log In"}</span>
+            {!isSubmitting && <ArrowRight className="h-4 w-4" />}
+          </button>
+        </form>
 
-        <p className="mt-6 text-center text-sm text-text-secondary">
-          {isSignup ? "Already have an account?" : "New to Smart Study?"}{" "}
+        {/* Footer Link */}
+        <div className="mt-6 text-center text-xs text-slate-500">
+          {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
           <Link
             href={isSignup ? "/login" : "/signup"}
-            className="font-medium text-brand-indigo underline underline-offset-4"
+            className="font-bold text-brand-indigo underline hover:text-slate-900"
           >
-            {isSignup ? "Log in" : "Sign up"}
+            {isSignup ? "Log In" : "Sign Up"}
           </Link>
-        </p>
-      </form>
+        </div>
+
+      </div>
     </main>
   );
 }

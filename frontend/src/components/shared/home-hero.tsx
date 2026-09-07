@@ -3,101 +3,86 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const headlines = [
-  "Ace your BECE, one card at a time.",
-  "Turn every study session into exam-day confidence.",
-  "Your smarter path to BECE success starts here.",
-];
+const fullText = "one card at a time.";
 
 export function HomeHero() {
-  const [visibleText, setVisibleText] = useState(headlines[0]);
-  const [showCursor, setShowCursor] = useState(false);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    let timeoutId: NodeJS.Timeout;
 
-    if (prefersReducedMotion) {
-      return;
+    const typeSpeed = isDeleting ? 50 : 90;
+
+    if (!isDeleting && displayedText === fullText) {
+      // Pause at the end before erasing
+      timeoutId = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2500);
+    } else if (isDeleting && displayedText === "") {
+      // Pause before typing again
+      timeoutId = setTimeout(() => {
+        setIsDeleting(false);
+      }, 500);
+    } else {
+      timeoutId = setTimeout(() => {
+        const nextChar = isDeleting
+          ? fullText.slice(0, displayedText.length - 1)
+          : fullText.slice(0, displayedText.length + 1);
+        setDisplayedText(nextChar);
+      }, typeSpeed);
     }
 
-    let phraseIndex = 0;
-    let characterIndex = 0;
-    let animationTimeout: ReturnType<typeof setTimeout> | undefined;
-
-    const typeNextCharacter = () => {
-      const phrase = headlines[phraseIndex];
-      characterIndex += 1;
-      setVisibleText(phrase.slice(0, characterIndex));
-      setShowCursor(true);
-
-      if (characterIndex < phrase.length) {
-        animationTimeout = setTimeout(typeNextCharacter, 65);
-      } else {
-        animationTimeout = setTimeout(eraseNextCharacter, 3000);
-      }
-    };
-
-    const eraseNextCharacter = () => {
-      characterIndex -= 1;
-      setVisibleText(headlines[phraseIndex].slice(0, characterIndex));
-
-      if (characterIndex > 0) {
-        animationTimeout = setTimeout(eraseNextCharacter, 35);
-      } else {
-        phraseIndex = (phraseIndex + 1) % headlines.length;
-        animationTimeout = setTimeout(typeNextCharacter, 350);
-      }
-    };
-
-    animationTimeout = setTimeout(() => {
-      setVisibleText("");
-      setShowCursor(true);
-      characterIndex = 0;
-      typeNextCharacter();
-    }, 0);
-
-    return () => {
-      if (animationTimeout) {
-        clearTimeout(animationTimeout);
-      }
-    };
-  }, []);
+    return () => clearTimeout(timeoutId);
+  }, [displayedText, isDeleting]);
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden bg-brand-indigo px-6 py-24 text-center text-white">
-      <div className="max-w-4xl">
-        <h1 className="font-heading text-5xl font-bold leading-tight text-white sm:text-6xl md:text-7xl">
-          {visibleText}
-          {showCursor && (
-            <span
-              aria-hidden="true"
-              className="ml-1 animate-pulse text-brand-gold"
-            >
-              |
-            </span>
-          )}
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/80 sm:text-xl">
-          Build confidence with focused practice designed to help you learn,
-          revise, and shine on exam day.
-        </p>
-        <Link
-          href="/flashcards"
-          className="mt-10 inline-flex items-center justify-center rounded-md bg-brand-gold px-6 py-3 font-medium text-brand-indigo transition-colors hover:bg-brand-gold/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold"
-        >
-          Start practicing
-        </Link>
-      </div>
+    <section className="relative flex flex-col items-center justify-center border-b border-slate-800 bg-[#0b132b] px-6 py-20 text-center text-white sm:py-28">
+      <div className="relative z-10 max-w-3xl">
 
-      <a
-        href="#next-section"
-        aria-label="Scroll to the next section"
-        className="absolute bottom-8 animate-bounce text-3xl text-brand-gold transition-opacity hover:opacity-80"
-      >
-        ↓
-      </a>
+        {/* Clean Pill Badge */}
+        <div className="mx-auto mb-6 inline-flex items-center rounded-full border border-slate-700 bg-slate-800/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold">
+          BECE & WAEC Exam Revision
+        </div>
+
+        {/* Headline with Typewriter Animation */}
+        <h1 className="font-heading text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl min-h-[120px] sm:min-h-[150px]">
+          Ace your BECE & WAEC,{" "}
+          <span className="inline-block text-brand-gold">
+            {displayedText}
+            <span className="inline-block w-1 bg-brand-gold animate-pulse ml-0.5 sm:ml-1 text-transparent">|</span>
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          Master real exam questions through bite-sized flashcard sessions, interactive step-by-step solutions, and instant AI study support.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link
+            href="/flashcards"
+            className="flex min-h-11 w-full items-center justify-center rounded-xl bg-brand-gold px-7 py-3 font-heading text-sm font-bold text-brand-indigo transition-all hover:bg-[#f3b250] active:scale-95 sm:w-auto"
+          >
+            Start Practice Free
+          </Link>
+          <Link
+            href="/chat"
+            className="flex min-h-11 w-full items-center justify-center rounded-xl border border-slate-700 bg-slate-800/60 px-7 py-3 font-heading text-sm font-semibold text-slate-200 transition-all hover:bg-slate-800 hover:text-white active:scale-95 sm:w-auto"
+          >
+            Ask AI Assistant
+          </Link>
+        </div>
+
+        {/* Clean bullet features */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-slate-400">
+          <span>• Past Exam Questions</span>
+          <span>• Real-time Feedback</span>
+          <span>• Detailed Explanations</span>
+        </div>
+
+      </div>
     </section>
   );
 }

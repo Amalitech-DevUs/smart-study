@@ -1,52 +1,78 @@
 import Link from "next/link";
 import { HomeHero } from "@/components/shared/home-hero";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
+  const steps = [
+    {
+      number: "01",
+      title: "Pick a subject",
+      description: "Select from Mathematics, English, Integrated Science, or Social Studies.",
+    },
+    {
+      number: "02",
+      title: "Practice past questions",
+      description: "Work through exam-style multiple choice questions one flashcard at a time.",
+    },
+    {
+      number: "03",
+      title: "Track your progress",
+      description: "Learn from instant step-by-step feedback and build your daily study habit.",
+    },
+  ];
+
+  const subjects = [
+    {
+      name: "Mathematics",
+      slug: "mathematics",
+      description: "Algebra, Geometry, Statistics & Arithmetic",
+    },
+    {
+      name: "English Language",
+      slug: "english",
+      description: "Grammar, Comprehension, Vocabulary & Idioms",
+    },
+    {
+      name: "Integrated Science",
+      slug: "science",
+      description: "Biology, Chemistry, Physics & Agricultural Science",
+    },
+    {
+      name: "Social Studies",
+      slug: "social-studies",
+      description: "Governance, Geography, History & Environment",
+    },
+  ];
+
   return (
-    <div className="bg-background">
+    <div className="bg-slate-50 min-h-screen">
       <HomeHero />
-      <main id="next-section">
-        <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-wide text-brand-gold">
-              A clearer way to revise
-            </p>
-            <h2 className="mt-3 font-heading text-4xl font-bold text-brand-indigo sm:text-5xl">
-              How it works
+      <main id="next-section" className="relative pb-20">
+
+        {/* How It Works Section */}
+        <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+          <div className="text-center sm:text-left">
+            <h2 className="font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
+              How Smart Study Works
             </h2>
-            <p className="mt-4 text-lg leading-8 text-text-secondary">
-              Turn a few focused minutes into steady progress you can feel.
+            <p className="mt-2 text-sm text-slate-600">
+              Turn a few focused minutes each day into steady exam confidence.
             </p>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              [
-                "01",
-                "Pick a subject",
-                "Choose the topic you want to strengthen today.",
-              ],
-              [
-                "02",
-                "Practice past questions",
-                "Work through exam-style questions one card at a time.",
-              ],
-              [
-                "03",
-                "Track your progress",
-                "Learn from every attempt and keep your momentum going.",
-              ],
-            ].map(([number, title, description]) => (
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {steps.map(({ number, title, description }) => (
               <article
                 key={number}
-                className="rounded-lg border border-text-secondary/15 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-slate-300 hover:shadow-md"
               >
-                <span className="font-heading text-3xl font-bold text-brand-gold">
+                <span className="font-heading text-lg font-extrabold text-brand-gold">
                   {number}
                 </span>
-                <h3 className="mt-5 font-heading text-2xl font-bold text-brand-indigo">
+                <h3 className="mt-4 font-heading text-lg font-bold text-slate-900">
                   {title}
                 </h3>
-                <p className="mt-3 leading-7 text-text-secondary">
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">
                   {description}
                 </p>
               </article>
@@ -54,66 +80,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-subject-math-light/40 px-6 py-20 sm:py-28">
-          <div className="mx-auto max-w-6xl">
-            <div className="flex flex-wrap items-end justify-between gap-5">
+        {/* Subjects Section */}
+        <section className="border-t border-slate-200 bg-white px-6 py-16 sm:py-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
               <div>
-                <p className="text-sm font-medium uppercase tracking-wide text-brand-gold">
-                  Start where you are
-                </p>
-                <h2 className="mt-3 font-heading text-4xl font-bold text-brand-indigo sm:text-5xl">
-                  Explore subjects
+                <h2 className="font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
+                  Explore Subjects
                 </h2>
+                <p className="mt-1 text-sm text-slate-600">
+                  Choose a subject to start practicing BECE & WAEC past questions.
+                </p>
               </div>
               <Link
                 href="/flashcards"
-                className="font-medium text-brand-indigo underline decoration-brand-gold underline-offset-4"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-brand-indigo hover:underline"
               >
-                See all subjects
+                Browse all <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-              {[
-                {
-                  icon: "∑",
-                  subject: "Mathematics",
-                  color: "text-subject-math",
-                },
-                {
-                  icon: "Aa",
-                  subject: "English",
-                  color: "text-subject-english",
-                },
-                {
-                  icon: "⚗",
-                  subject: "Science",
-                  color: "text-subject-science",
-                },
-                {
-                  icon: "✦",
-                  subject: "Mixed practice",
-                  color: "text-brand-indigo",
-                },
-              ].map(({ icon, subject, color }) => (
+
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {subjects.map((subj) => (
                 <Link
-                  key={subject}
-                  href="/flashcards"
-                  className="rounded-lg border border-text-secondary/15 bg-white p-5 shadow-sm transition-colors hover:border-brand-gold"
+                  key={subj.slug}
+                  href={`/flashcards?subject=${subj.slug}`}
+                  className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/50 p-5 transition-all hover:border-brand-indigo hover:bg-white hover:shadow-md"
                 >
-                  <span className={`font-heading text-3xl font-bold ${color}`}>
-                    {icon}
-                  </span>
-                  <h3 className="mt-5 font-heading text-xl font-bold text-text-primary">
-                    {subject}
-                  </h3>
-                  <p className="mt-2 text-sm text-text-secondary">
-                    Practice now
-                  </p>
+                  <div>
+                    <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-indigo">
+                      {subj.name}
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                      {subj.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-1 text-xs font-semibold text-brand-indigo">
+                    <span>Practice Now</span>
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
         </section>
+
       </main>
     </div>
   );
