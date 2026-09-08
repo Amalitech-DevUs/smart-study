@@ -18,7 +18,6 @@ export interface ApiResponse<T = unknown> {
 /**
  * Universal fetch wrapper for Backend API calls (port 5000)
  */
-export async function apiFetch<T = unknown>(
 export async function apiFetch<T = Record<string, unknown>>(
   endpoint: string,
   options: RequestInit = {}
@@ -72,7 +71,6 @@ export async function fetchArticlesApi(category?: string) {
   return apiFetch(`/articles${query}`);
 }
 
-export async function sendChatMessageApi(message: string, conversationHistory?: unknown[]) {
 export async function sendChatMessageApi(
   message: string,
   conversationHistory?: Array<{ role: string; content: string }>
