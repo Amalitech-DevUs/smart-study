@@ -98,7 +98,15 @@ async function getQuestions(
       const json = await res.json();
       const rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
       if (rawList.length > 0) {
-        const mapped: McqQuestion[] = rawList.map((q: any, idx: number) => {
+        const mapped: McqQuestion[] = rawList.map((q: {
+          id?: string | number;
+          prompt?: string;
+          question?: string;
+          options?: string[];
+          correctAnswer?: string;
+          correct_answer?: string;
+          explanation?: string;
+        }, idx: number) => {
           const rawOpts: string[] = Array.isArray(q.options) ? q.options : ["Option A", "Option B", "Option C", "Option D"];
           const optionKeys: Array<'a' | 'b' | 'c' | 'd'> = ['a', 'b', 'c', 'd'];
           const correctKey = String(q.correctAnswer || q.correct_answer || 'A').toLowerCase();
