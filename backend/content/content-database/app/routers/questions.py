@@ -11,6 +11,8 @@ router = APIRouter(
 )
 
 
+from sqlalchemy import func
+
 @router.get("/", response_model=list[QuestionResponse])
 def get_questions(
     subject: str | None = None,
@@ -22,7 +24,17 @@ def get_questions(
     query = db.query(Question)
 
     if subject:
-        query = query.filter(Question.subject == subject)
+        subj_clean = subject.strip().lower().replace("-", " ")
+        if "science" in subj_clean:
+            query = query.filter(func.lower(Question.subject).contains("science"))
+        elif "english" in subj_clean:
+            query = query.filter(func.lower(Question.subject).contains("english"))
+        elif "social" in subj_clean:
+            query = query.filter(func.lower(Question.subject).contains("social"))
+        elif "math" in subj_clean:
+            query = query.filter(func.lower(Question.subject).contains("math"))
+        else:
+            query = query.filter(func.lower(Question.subject).contains(subj_clean))
 
     if year:
         query = query.filter(Question.year == year)
