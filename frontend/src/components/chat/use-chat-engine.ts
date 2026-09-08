@@ -36,7 +36,7 @@ async function readResponse(response: Response): Promise<string> {
   if (!response.body || !contentType.includes("text/event-stream")) {
     const data = await response.json().catch(() => null);
     if (typeof data === "string") return data;
-    return data?.content ?? data?.message ?? data?.response ?? "";
+    return data?.reply ?? data?.data?.reply ?? data?.content ?? data?.message ?? data?.response ?? "";
   }
 
   const reader = response.body.getReader();
@@ -56,7 +56,7 @@ async function readResponse(response: Response): Promise<string> {
 
       try {
         const parsed = JSON.parse(data);
-        content += parsed.content ?? parsed.delta ?? parsed.message ?? "";
+        content += parsed.reply ?? parsed.content ?? parsed.delta ?? parsed.message ?? "";
       } catch {
         content += data;
       }
