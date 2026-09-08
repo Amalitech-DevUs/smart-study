@@ -19,6 +19,7 @@ export interface ApiResponse<T = unknown> {
  * Universal fetch wrapper for Backend API calls (port 5000)
  */
 export async function apiFetch<T = unknown>(
+export async function apiFetch<T = Record<string, unknown>>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<ApiResponse<T>> {
@@ -72,6 +73,10 @@ export async function fetchArticlesApi(category?: string) {
 }
 
 export async function sendChatMessageApi(message: string, conversationHistory?: unknown[]) {
+export async function sendChatMessageApi(
+  message: string,
+  conversationHistory?: Array<{ role: string; content: string }>
+) {
   return apiFetch('/chat', {
     method: 'POST',
     body: JSON.stringify({ message, conversationHistory })
