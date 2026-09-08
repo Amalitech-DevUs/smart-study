@@ -1,0 +1,2450 @@
+[
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 1,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "Seth has bought and ........ a loaf of bread.",
+        "options": [
+            "ate",
+            "eats",
+            "eaten",
+            "eating"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 2,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "My mum and ........ visited Joseph.",
+        "options": [
+            "I",
+            "myself",
+            "me",
+            "ourselves"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 3,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "The tiger ........ in wait for its prey.",
+        "options": [
+            "lie",
+            "lain",
+            "laid",
+            "lay"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 4,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "It's about time we ........ studying hard.",
+        "options": [
+            "start",
+            "should start",
+            "started",
+            "are starting"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 5,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "Ben now wishes he ........ his studies early.",
+        "options": [
+            "began",
+            "begun",
+            "begins",
+            "has begun"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 6,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "This is exactly ........ our mum tried to make you understand.",
+        "options": [
+            "all what",
+            "all that",
+            "something that",
+            "something which"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 7,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "Would you rather we ........ tomorrow?",
+        "options": [
+            "should leave",
+            "are leaving",
+            "leave",
+            "left"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 8,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "She is my ........ sister.",
+        "options": [
+            "senior",
+            "elder",
+            "older",
+            "matured"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 9,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "We cannot make tea because we have ........ sugar left.",
+        "options": [
+            "a little",
+            "very little",
+            "a few",
+            "very few"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 10,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "You should not tell ........ about our plans.",
+        "options": [
+            "no other",
+            "nobody",
+            "any other",
+            "anyone else"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 11,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "The leader ........ suffer alone.",
+        "options": [
+            "needs not",
+            "need not",
+            "needs not to",
+            "need not to"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 12,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "This flower pot is made ........ clay.",
+        "options": [
+            "with",
+            "by",
+            "of",
+            "in"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 13,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "Let's go out and play, ........?",
+        "options": [
+            "will you",
+            "shall we",
+            "can you",
+            "would we"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 14,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "Sarah would have passed her examination ........ she studied hard.",
+        "options": [
+            "should",
+            "had",
+            "has",
+            "could"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Lexis and Structure",
+        "question_number": 15,
+        "question_type": "mcq",
+        "topic": "Lexis and Structure",
+        "prompt": "The four brothers haven't seen ........ since June last year.",
+        "options": [
+            "theirself",
+            "each another",
+            "themselves",
+            "each other"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Nearest in Meaning",
+        "question_number": 16,
+        "question_type": "mcq",
+        "topic": "Nearest in Meaning",
+        "prompt": "Celia shook with fright.",
+        "options": [
+            "excitement",
+            "cheerfulness",
+            "hope",
+            "fear"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Nearest in Meaning",
+        "question_number": 17,
+        "question_type": "mcq",
+        "topic": "Nearest in Meaning",
+        "prompt": "The radio is a potent medium of communication.",
+        "options": [
+            "fast",
+            "necessary",
+            "powerful",
+            "sound"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Nearest in Meaning",
+        "question_number": 18,
+        "question_type": "mcq",
+        "topic": "Nearest in Meaning",
+        "prompt": "Trading is a lucrative economic activity.",
+        "options": [
+            "profitable",
+            "legitimate",
+            "desirable",
+            "cherished"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Nearest in Meaning",
+        "question_number": 19,
+        "question_type": "mcq",
+        "topic": "Nearest in Meaning",
+        "prompt": "The scarcity of doctors is a matter of public concern.",
+        "options": [
+            "weakness",
+            "shortage",
+            "suffering",
+            "indiscipline"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Nearest in Meaning",
+        "question_number": 20,
+        "question_type": "mcq",
+        "topic": "Nearest in Meaning",
+        "prompt": "My twin brother is very inquisitive.",
+        "options": [
+            "curious",
+            "brilliant",
+            "friendly",
+            "talkative"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Idiomatic Expressions",
+        "question_number": 21,
+        "question_type": "mcq",
+        "topic": "Idiomatic Expressions",
+        "prompt": "I'm going to make you eat your words. This means that you will ........",
+        "options": [
+            "become shocked",
+            "be punished",
+            "admit you are wrong",
+            "face the consequences of your actions"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Idiomatic Expressions",
+        "question_number": 22,
+        "question_type": "mcq",
+        "topic": "Idiomatic Expressions",
+        "prompt": "Those children were born with a silver spoon in their mouth. This means that the children were born ........",
+        "options": [
+            "with their mouths full of silver",
+            "in good health",
+            "in happy homes",
+            "in wealth and luxury"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Idiomatic Expressions",
+        "question_number": 23,
+        "question_type": "mcq",
+        "topic": "Idiomatic Expressions",
+        "prompt": "The driver passed out soon after the accident occurred. This means that the driver ........",
+        "options": [
+            "ran away",
+            "died",
+            "fainted",
+            "vomited"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Idiomatic Expressions",
+        "question_number": 24,
+        "question_type": "mcq",
+        "topic": "Idiomatic Expressions",
+        "prompt": "Susan was on edge after that incident. This means that she was ........",
+        "options": [
+            "confused",
+            "surprised",
+            "nervous",
+            "unhappy"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Idiomatic Expressions",
+        "question_number": 25,
+        "question_type": "mcq",
+        "topic": "Idiomatic Expressions",
+        "prompt": "We were taken to the police station like a lamb to the slaughter. This means that we were taken there ........",
+        "options": [
+            "with our clothes removed",
+            "without resistance",
+            "with difficulty",
+            "in a violent manner"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Opposite in Meaning",
+        "question_number": 26,
+        "question_type": "mcq",
+        "topic": "Opposite in Meaning",
+        "prompt": "These simple rules were infringed.",
+        "options": [
+            "observed",
+            "violated",
+            "changed",
+            "formulated"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Opposite in Meaning",
+        "question_number": 27,
+        "question_type": "mcq",
+        "topic": "Opposite in Meaning",
+        "prompt": "His expressions are rather colloquial.",
+        "options": [
+            "informal",
+            "archaic",
+            "formal",
+            "modern"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Opposite in Meaning",
+        "question_number": 28,
+        "question_type": "mcq",
+        "topic": "Opposite in Meaning",
+        "prompt": "The visitor's timidity surprised us.",
+        "options": [
+            "hostility",
+            "sincerity",
+            "boldness",
+            "carelessness"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Opposite in Meaning",
+        "question_number": 29,
+        "question_type": "mcq",
+        "topic": "Opposite in Meaning",
+        "prompt": "Opaque ballot boxes are no longer used in elections.",
+        "options": [
+            "covered",
+            "transparent",
+            "painted",
+            "dark"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "English Language",
+        "year": 2020,
+        "paper": 1,
+        "section": "Opposite in Meaning",
+        "question_number": 30,
+        "question_type": "mcq",
+        "topic": "Opposite in Meaning",
+        "prompt": "Dave walked briskly to the meeting.",
+        "options": [
+            "slowly",
+            "carefully",
+            "reluctantly",
+            "clumsily"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 2,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Given that N = {x : x is a factor of 18} and M = {x : x is a multiple of 12}, find N intersect M.",
+        "options": [
+            "{1, 2, 3, 6}",
+            "{1, 2, 3, 6, 12}",
+            "{2, 3, 6, 12, 18}",
+            "{}"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 3,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Express 4382.93 in standard form.",
+        "options": [
+            "438293 x 10^4",
+            "43.8293 x 10^2",
+            "4.38293 x 10^4",
+            "4.38293 x 10^3"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 4,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which property of arithmetic is used in a(x + y) = ax + ay?",
+        "options": [
+            "Associative",
+            "Commutative",
+            "Distributive",
+            "Initiative"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 5,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Subtract (7x - 3) from (5 - 3x).",
+        "options": [
+            "10x - 8",
+            "4x - 8",
+            "8 - 10x",
+            "2 - 10x"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 6,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The cost of 12 note books is GHS 54.84. Find the cost of one note book.",
+        "options": [
+            "GHS 5.57",
+            "GHS 4.67",
+            "GHS 4.57",
+            "GHS 3.57"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 7,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following inequalities is represented on the number line? (Number line shows an open circle at -2 and a closed circle at 2, shaded between.)",
+        "options": [
+            "-2 > y > 2",
+            "-2 <= y < 2",
+            "-2 >= y > 2",
+            "-2 < y <= 2"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 8,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Simplify: (2ab^2)^2 x 3a^3b.",
+        "options": [
+            "6a^4b^5",
+            "12a^3b^4",
+            "12a^6b^4",
+            "12a^5b^5"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 9,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following polygons does not have a line of symmetry?",
+        "options": [
+            "Kite",
+            "Isosceles triangle",
+            "Trapezium",
+            "Rhombus"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 10,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A trader sold a radio set for GHS 72.00 making a profit of 8%. Find, correct to the nearest Ghana cedi, the cost of the radio set.",
+        "options": [
+            "GHS 66.00",
+            "GHS 67.00",
+            "GHS 77.00",
+            "GHS 78.00"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 11,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Vera is 11 years old and her brother is 9 years old. They shared 60 oranges in the ratio of their ages. How many more oranges does Vera get?",
+        "options": [
+            "6",
+            "27",
+            "34",
+            "39"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 12,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "If (x - 3)^2 = 16, find the positive value of x.",
+        "options": [
+            "1",
+            "3",
+            "4",
+            "7"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 13,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Find the image of the point (-2, 3) under a reflection in the y-axis.",
+        "options": [
+            "(2, -3)",
+            "(-3, 2)",
+            "(2, 3)",
+            "(3, 2)"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 14,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "What fraction of 3 weeks is 18 days?",
+        "options": [
+            "1/6",
+            "6/7",
+            "1/7",
+            "9/11"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 15,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "What is the median of the following numbers: 4, 16, 13, 18, 3, 20, 6, 7, 15, 2, 10, 12?",
+        "options": [
+            "7",
+            "10",
+            "11",
+            "12"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 17,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Use the diagram to answer Questions 17 and 18 (isosceles triangle with base angles x and 56 degrees, apex angle y). Find the value of x.",
+        "options": [
+            "68 degrees",
+            "75 degrees",
+            "112 degrees",
+            "124 degrees"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 18,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Use the diagram to answer Questions 17 and 18 (isosceles triangle with base angles x and 56 degrees, apex angle y). Find the value of y.",
+        "options": [
+            "68 degrees",
+            "75 degrees",
+            "112 degrees",
+            "124 degrees"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 19,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A car used 8 hours to travel from town A to town B at a speed of 18 km/h. Find the distance between the two towns.",
+        "options": [
+            "22.5 km",
+            "135 km",
+            "140 km",
+            "144 km"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 20,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The pie chart shows the household budget of a family: Food 22%, Rent 28%, Others 16%, Entertainment 5%, Savings 3%, Clothing 11%, Insurance and Taxes (remainder). Find the angle for Insurance and Taxes.",
+        "options": [
+            "45 degrees",
+            "54 degrees",
+            "60 degrees",
+            "72 degrees"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 21,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The pie chart shows the household budget of a family (Clothing 11%). If the family's income was GHS 40,000.00, how much was spent on clothing?",
+        "options": [
+            "GHS 1,600.00",
+            "GHS 2,000.00",
+            "GHS 3,200.00",
+            "GHS 4,400.00"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 22,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Two sides of a parallelogram are 5.8 m and 8.2 m long. Find its perimeter.",
+        "options": [
+            "11.0 m",
+            "36.6 m",
+            "28.0 m",
+            "47.6 m"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 23,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A man earned an interest of GHS 240.00 in 4 years at 20% per annum simple interest. Calculate the principal.",
+        "options": [
+            "GHS 300.00",
+            "GHS 450.00",
+            "GHS 480.00",
+            "GHS 1,200.00"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 24,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A labourer worked for 20.5 hours. If he was paid GHS 2.50 per hour, what was his total wage?",
+        "options": [
+            "GHS 51.00",
+            "GHS 51.25",
+            "GHS 512.00",
+            "GHS 512.25"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 25,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "If 480 pupils in a school are boys representing 80% of the school's enrolment, find the total number of pupils in the school.",
+        "options": [
+            "384",
+            "540",
+            "600",
+            "864"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 26,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "What is the rule for the mapping? x: 1, 2, 3, 4 -> y: 2, 5, 10, 17.",
+        "options": [
+            "x -> 3x^2 - 1",
+            "x -> 5x^2 - 3",
+            "x -> x^2 + 1",
+            "x -> 4x - 2"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 27,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Find the value of t in the diagram (right triangle MNO, MN = 5 cm, MO = 13 cm hypotenuse, NO = t cm).",
+        "options": [
+            "12",
+            "8",
+            "4",
+            "3"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 28,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Add the following numbers: 2.4, 0.042, 1.12 and 0.342.",
+        "options": [
+            "2.184",
+            "3.904",
+            "4.282",
+            "6.200"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 31,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "There are 15 females in a debating club. If the ratio of females to males is 3:2, how many members are in the club?",
+        "options": [
+            "6",
+            "10",
+            "22",
+            "25"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 32,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "If P(x, y) is the image of P1(4, -5) translated by (2, -3), find the values of x and y.",
+        "options": [
+            "(-6, 8)",
+            "(-6, -8)",
+            "(6, -8)",
+            "(6, 8)"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 33,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "If 2y = 1 - 3x^2 + 4x, find the value of y when x = -1.",
+        "options": [
+            "-3",
+            "-1/2",
+            "1/2",
+            "3"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 34,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Given that P = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, what is the probability of selecting a prime number from the set?",
+        "options": [
+            "2/3",
+            "7/12",
+            "1/2",
+            "5/12"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 36,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Two sides of a rectangle are 10 cm and 6 cm. Calculate the area of a square with the same perimeter as that of the rectangle.",
+        "options": [
+            "16 cm^2",
+            "30 cm^2",
+            "60 cm^2",
+            "64 cm^2"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 38,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Expand and simplify: (a - 2)(2a + 3).",
+        "options": [
+            "a^2 - a + 6",
+            "2a^2 + 7a - 6",
+            "2a^2 - a - 6",
+            "2a^2 - 12a + 6"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 39,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Simplify: 2^2 x 2^7 / 2^4.",
+        "options": [
+            "2^-1",
+            "2^5",
+            "2^11",
+            "2^13"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Mathematics",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 40,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "If P = {7, 11, 13} and Q = {9, 11, 13}, find P union Q.",
+        "options": [
+            "{7, 9, 11, 13}",
+            "{7, 9}",
+            "{11, 13}",
+            "{9, 13}"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 1,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Hand trowel is used in farming to",
+        "options": [
+            "level soil surface.",
+            "remove weeds.",
+            "turn manure during compost making",
+            "transplant seedlings."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 2,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "An example of a simple lever which has its effort at the centre is",
+        "options": [
+            "a bottle opener.",
+            "a pair of scissors.",
+            "the beam balance.",
+            "a pair of forceps."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 3,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following practices is not a cultural practice in crop production?",
+        "options": [
+            "Nursing",
+            "Pest control",
+            "Weeding",
+            "Mulching"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 4,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The most suitable tool for transplanting vegetable seedlings is the",
+        "options": [
+            "hoe.",
+            "cutlass.",
+            "hand trowel.",
+            "hand fork."
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 5,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "An example of an inclined plane is a",
+        "options": [
+            "flat road surface.",
+            "see-saw.",
+            "pulley.",
+            "path of a hill."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 6,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following statements about noble gases is correct? They are",
+        "options": [
+            "charged gases.",
+            "monoatomic molecules.",
+            "very reactive.",
+            "diatomic molecules."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 7,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Oxygen gas is represented by the chemical symbol O2. This symbol represents two",
+        "options": [
+            "molecules of oxygen.",
+            "atoms of oxygen.",
+            "ions of oxygen.",
+            "elements of oxygen."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 8,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Mosquitoes cannot breed in a",
+        "options": [
+            "pool.",
+            "swamp.",
+            "pond.",
+            "river."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 9,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The transistor in an electronic device is used\nI. as a switch\nII. for amplifying alternating signals\nIII. in preventing overheating in electric irons",
+        "options": [
+            "I only",
+            "I and II only",
+            "I, II and III",
+            "I and III only"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 10,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The bottom of a pool of water appears closer to the surface than it is. Which of the following properties accounts for this observation?",
+        "options": [
+            "Reflection",
+            "Transparency of water",
+            "Rectilinear propagation",
+            "Refraction"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 11,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The force that results when a comb is rubbed through dry hair is",
+        "options": [
+            "magnetic force.",
+            "frictional force.",
+            "gravitational force.",
+            "electrostatic force."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 12,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following types of human teeth is used for biting food?",
+        "options": [
+            "Incisors",
+            "Canines",
+            "Molars",
+            "Premolars"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 13,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The gas evolved when a small piece of sodium is dropped into a beaker containing water is",
+        "options": [
+            "carbon dioxide.",
+            "hydrogen.",
+            "chlorine.",
+            "oxygen."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 14,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A student who was accidentally trapped in a cupboard died because",
+        "options": [
+            "only nitrogen was left in the cupboard.",
+            "the greater part of oxygen in the cupboard was used up.",
+            "carbon dioxide run short in the cupboard.",
+            "all the air in the cupboard was used up."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 15,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The energy transformation that takes place in electric pressing iron is",
+        "options": [
+            "electrical energy -> potential energy.",
+            "electrical energy -> sound energy.",
+            "electrical energy -> chemical energy.",
+            "electrical energy -> heat energy."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 16,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The combining powers of sodium and oxygen atoms are 1 and 2 respectively. The chemical formula of a stable compound formed between them is",
+        "options": [
+            "NaO",
+            "Na2O",
+            "NaO2",
+            "Na2O2"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 17,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following methods are used in making magnets?\nI. Induction\nII. Stroking\nIII. Hitting",
+        "options": [
+            "I and II only",
+            "I and III only",
+            "I, II and III",
+            "II and III only"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 18,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The hardest part of the tooth is the",
+        "options": [
+            "enamel.",
+            "dentine.",
+            "cement.",
+            "pulp."
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 19,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following substances contains natural acid?",
+        "options": [
+            "Vinegar",
+            "Wood ash",
+            "Saliva",
+            "Bile"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 20,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The chemical component of milk of magnesia is",
+        "options": [
+            "calcium hydroxide.",
+            "potassium hydroxide.",
+            "sodium hydroxide.",
+            "magnesium hydroxide."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 21,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following foods contains the greatest amount of protein?",
+        "options": [
+            "Cheese",
+            "Plantain",
+            "Mushroom",
+            "Yam"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 22,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Two atoms of the same element are represented as X (mass number 12, atomic number 6) and X (mass number 14, atomic number 6). They differ by their",
+        "options": [
+            "electron numbers.",
+            "proton numbers.",
+            "atomic numbers.",
+            "neutron numbers."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 23,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The force that opposes motion is",
+        "options": [
+            "magnetic force.",
+            "frictional force.",
+            "gravitational force.",
+            "electrostatic force."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 24,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "In order to maintain soil fertility, a farmer should not practice",
+        "options": [
+            "crop rotation.",
+            "continuous cropping.",
+            "consistent manuring.",
+            "fertilizer application."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 25,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The ways of conserving electrical energy include\nI. putting off electrical appliances when not in use\nII. ironing clothes one at a time\nIII. ironing clothes in bulk",
+        "options": [
+            "I only",
+            "II only",
+            "I and III only",
+            "I and II only"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 26,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "In which of the following systems does the farmer rely on animals in case of crop failure?",
+        "options": [
+            "Crop rotation",
+            "Mixed farming",
+            "Organic farming",
+            "Mixed cropping"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 27,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The recommended floor space per bird in a poultry house is 0.6 m^2. Determine the number of layers that would occupy a poultry house of an area of 72 m^2.",
+        "options": [
+            "40",
+            "72",
+            "300",
+            "120"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 28,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "What is formed when the path of light rays is blocked by an opaque object?",
+        "options": [
+            "Echo",
+            "Shadow",
+            "Penumbra",
+            "Umbra"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 29,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Green plants have the ability to make their own food hence they are known as",
+        "options": [
+            "producers.",
+            "parasites.",
+            "decomposers.",
+            "consumers."
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 30,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following human activities maintains the balance of nature?",
+        "options": [
+            "Pollution",
+            "Deforestation",
+            "Afforestation",
+            "Mining"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 31,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following methods could conserve soil water on a farm?\nI. Adequate spacing\nII. Disease control\nIII. Cover cropping",
+        "options": [
+            "I and II only",
+            "I and III only",
+            "I, II and III",
+            "II and III only"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 32,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following planets are closer to the sun than the earth?",
+        "options": [
+            "Venus and Mars",
+            "Venus and Mercury",
+            "Venus and Saturn",
+            "Mercury and Mars"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 33,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The primary consumer is the",
+        "options": [
+            "cassava.",
+            "rat.",
+            "hawk.",
+            "snake."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 34,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The appropriate apparatus for the separation of a mixture of water and kerosene is",
+        "options": [
+            "separating funnel.",
+            "filter funnel.",
+            "condenser.",
+            "evaporating dish."
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 35,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A hazardous substance that may be emitted from car exhaust fumes is",
+        "options": [
+            "CO2",
+            "CO",
+            "H2",
+            "H2O"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 36,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The best method of preventing teenage pregnancy is to",
+        "options": [
+            "use a pill.",
+            "avoid having sex.",
+            "practise safe sex.",
+            "have only one sexual partner."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 37,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The linear sequence of feeding relationship among living things is called",
+        "options": [
+            "food web.",
+            "food chain.",
+            "producer.",
+            "ecology."
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 38,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following statements about photosynthesis is correct?",
+        "options": [
+            "It occurs in the presence of light energy.",
+            "Oxygen is the main product.",
+            "Plants obtain water from the atmosphere to make food.",
+            "Leaves without chlorophyll are able to photosynthesize."
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 39,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The stage of development between childhood and adulthood in humans is known as",
+        "options": [
+            "adolescence.",
+            "infancy.",
+            "teenage.",
+            "puberty."
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Integrated Science",
+        "year": 2026,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 40,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following statements is true of anions? They contain",
+        "options": [
+            "more protons than neutrons.",
+            "more protons than electrons.",
+            "the same number of protons and neutrons.",
+            "less protons than electrons."
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 1,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following physical changes is a characteristic of adolescent males?",
+        "options": [
+            "Breaking of voices",
+            "Contraction of pelvis",
+            "Widening of pelvis",
+            "Stalled height"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 2,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Ghana's high indebtedness to foreign countries can be reduced by",
+        "options": [
+            "Ensuring good neighborliness",
+            "Using locally produced goods",
+            "Investing more in education",
+            "Increasing tax revenue"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 3,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following officials is not elected?",
+        "options": [
+            "Assembly man",
+            "President",
+            "Chief justice",
+            "Member of parliament"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 4,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "One way of improving the economy which Ghana inherited from colonization is",
+        "options": [
+            "Forming consumer cooperative societies",
+            "Increasing demand of foreign aid",
+            "Promoting intensive industrialization",
+            "Refusing to send students overseas"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 5,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "One factor not likely to bring about cultural change in society is",
+        "options": [
+            "Formal education",
+            "Bono Manso",
+            "Informal education",
+            "Superstitious beliefs"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 6,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Akans are said to have migrated from",
+        "options": [
+            "South-Western Nigeria",
+            "East of lake Chad",
+            "Old Ghana Empire",
+            "Burkina Faso"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 7,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "If the time in town (A) on longitude 20 degreesE is 9:00 am; what will be the time in town B longitude 80 degreesE?",
+        "options": [
+            "1:00 pm",
+            "1:00 am",
+            "8:00 pm",
+            "5:00 am"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 8,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "On which date is the Sun vertically overhead on the Tropic of Cancer?",
+        "options": [
+            "21st January",
+            "21st June",
+            "23rd September",
+            "21st March"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 9,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following factors is a cause of unemployment in Ghana?",
+        "options": [
+            "Polygamy",
+            "Immigration",
+            "Rapid population growth",
+            "Rapid urbanization"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 10,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A layout in which the houses are not orderly arranged is likely to",
+        "options": [
+            "Produce rainfall disasters",
+            "Provide water facility easily",
+            "Prevent the development of slums",
+            "Prevent the spread of diseases"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 11,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Conflicts in the community can best be prevented when there is",
+        "options": [
+            "Love for one another",
+            "Tolerance of opposing views",
+            "Fairness in wealth distribution",
+            "Respect for one another"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 12,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "One major reason for Ghana's cooperation with international bodies is that, she",
+        "options": [
+            "She has the resources to help in times of need",
+            "Respect her colonial masters",
+            "Does not want to be isolated in time of future needs",
+            "Needs to expand her foreign exchange"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 13,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following mostly influences the type of facility provided by District Assemblies?",
+        "options": [
+            "The Central Government",
+            "The needs of the people",
+            "The general needs of the nation",
+            "Desire to generate revenue"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 14,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Life and property are protected in the community by the",
+        "options": [
+            "Chiefs and his elders",
+            "Law and order",
+            "School authorities",
+            "Family heads"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 15,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Entrepreneurs in need of large capital can come together to form a",
+        "options": [
+            "Joint stock company",
+            "Partnership",
+            "State corporation",
+            "Sole proprietorship"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 16,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Cultural practices that create health problems must be",
+        "options": [
+            "Reduced",
+            "Modified",
+            "Abolished",
+            "Legalized"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 17,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following development is not associated with Sir. Gordon Guggisberg?",
+        "options": [
+            "Construction of harbors",
+            "Promotion of health",
+            "Europeanization of Ghanaians",
+            "Establishment of schools"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 18,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Ghana can improve on her political stability by",
+        "options": [
+            "Organizing public education on drug",
+            "Educating the youth against sex trade",
+            "Organizing free and credible elections",
+            "Promoting the use of locally manufactured goods"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 19,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Adolescents who involves themselves in drug and alcohol abuse; risk becoming",
+        "options": [
+            "Mentally ill",
+            "Barren",
+            "Financially poor",
+            "Blind"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 20,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following factors is usually available in the rural areas in Ghana?",
+        "options": [
+            "Skilled labor",
+            "Capital",
+            "Entrepreneur",
+            "Unskilled labour"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 21,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following resources must be increasingly used for the rapid development of the nation?",
+        "options": [
+            "Natural resources",
+            "Human resources",
+            "Local markets",
+            "External markets"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 22,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Governance becomes more efficient when the Executive and the Legislature",
+        "options": [
+            "Perform each other's function",
+            "Work independently",
+            "Perform the same function",
+            "Rely on guidance from Britain"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 23,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following can promote nation building in Ghana?",
+        "options": [
+            "Democratic living at all places",
+            "Defending one's religious beliefs",
+            "Allowing minors to vote at general elections",
+            "Reducing family size to prevent unemployment"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 24,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "One of the reasons for the signing of the Bond of 1844 was to",
+        "options": [
+            "Introduce a better court system",
+            "Appoint Ghanaians into the legislature",
+            "End British interference in the Gold Coast",
+            "Generate revenue to pay local workers"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 25,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following is a sketch? A town drawn",
+        "options": [
+            "with arrangement of houses",
+            "without the arrangement of houses",
+            "with reference to actual size on the ground",
+            "without reference to actual size on the ground"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 26,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following measures cannot provide integration among Ghanaians?",
+        "options": [
+            "Inter-ethnic marriages",
+            "Fair representation of ethnic groups in governance",
+            "The study of Ghanaian music and dance at schools",
+            "Minimizing rapid population growth"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 27,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "When one behaves in an honest and just manner one performs his/her",
+        "options": [
+            "civic rights",
+            "civic responsibilities",
+            "natural responsibilities",
+            "social responsibilities"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 28,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "One factor Ghana needs to consider before accepting any co-operation agreement is",
+        "options": [
+            "fairness",
+            "population",
+            "religion",
+            "distance"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 29,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Life in the rural areas can be improved through the setting up of",
+        "options": [
+            "insurance companies",
+            "heavy industries",
+            "agro-based industries",
+            "foreign banks"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 30,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "In order to fully develop our natural resources, we must",
+        "options": [
+            "bring in experts from abroad",
+            "go for loans from abroad",
+            "train our human resource",
+            "compel our youth to undertake farming"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 31,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following is an effect of rapid population growth in Ghana?",
+        "options": [
+            "High dependency burden",
+            "Low productivity",
+            "High standard of living",
+            "Decrease in food production"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 32,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following activities does not cause air pollution?",
+        "options": [
+            "Increase of industrial fumes",
+            "Indiscriminate disposal of solid waste",
+            "Poor disposal of human excreta",
+            "Fishing with chemicals"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 33,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following conditions is not an effect of irresponsible adolescent behaviour?",
+        "options": [
+            "Increase in productive workforce",
+            "High cost of health care",
+            "Increase in crime wave",
+            "High rate of illiteracy"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 34,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following oceans lies between Africa and America?",
+        "options": [
+            "Arctic",
+            "Atlantic",
+            "Pacific",
+            "Indian"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 35,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The risk bearing of a business organization falls on the",
+        "options": [
+            "Customers",
+            "Entrepreneurs",
+            "Workers",
+            "Bankers"
+        ],
+        "correct_answer": "B"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 36,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "A bilateral co-operation of countries can best be described as",
+        "options": [
+            "several countries coming together to pursue a common goal",
+            "several regions in a country coming together to pursue a common goal",
+            "two countries coming together to pursue a common goal",
+            "two regions in a country coming together to pursue a common goal"
+        ],
+        "correct_answer": "C"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 37,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The following factors can increase productivity in Ghana except",
+        "options": [
+            "positive work ethics",
+            "improved salaries",
+            "involving workers in decision making",
+            "increasing working hours"
+        ],
+        "correct_answer": "D"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 38,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "One disadvantage of Sole proprietorship form of business in Ghana is",
+        "options": [
+            "inadequate capital for expansion",
+            "lack of unskilled labor",
+            "inadequate raw materials",
+            "poor management techniques"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 39,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "Which of the following is not a characteristic of a disciplined youth?",
+        "options": [
+            "Does not accept to work in the country",
+            "Upholds the good name of the country",
+            "Respect elders in the community",
+            "Does not engage in malpractices"
+        ],
+        "correct_answer": "A"
+    },
+    {
+        "subject": "Social Studies",
+        "year": 2020,
+        "paper": 1,
+        "section": "Objective Test",
+        "question_number": 40,
+        "question_type": "mcq",
+        "topic": "Objective Test",
+        "prompt": "The major problem of District Assemblies in Ghana is their inability to",
+        "options": [
+            "generate more funds for development",
+            "educate their people on Government policies",
+            "absorb all the available skill labour in the their community",
+            "reduce their expenditure in relation to revenue"
+        ],
+        "correct_answer": "A"
+    }
+]
