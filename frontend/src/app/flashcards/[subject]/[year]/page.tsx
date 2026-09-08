@@ -91,7 +91,7 @@ async function getQuestions(
 ): Promise<{ questions: McqQuestion[]; source: string }> {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:5000';
   try {
-    let res = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`, {
+    const res = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`, {
       cache: 'no-store'
     });
 
