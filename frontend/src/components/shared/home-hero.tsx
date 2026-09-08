@@ -18,7 +18,7 @@ export function HomeHero() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const currentPhrase = phrases[phraseIndex];
     const typeSpeed = isDeleting ? 40 : 80;
 
@@ -27,8 +27,10 @@ export function HomeHero() {
         setIsDeleting(true);
       }, 2000);
     } else if (isDeleting && displayedText === "") {
-      setIsDeleting(false);
-      setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      timeoutId = setTimeout(() => {
+        setIsDeleting(false);
+        setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      }, 500);
     } else {
       timeoutId = setTimeout(() => {
         const nextChar = isDeleting
