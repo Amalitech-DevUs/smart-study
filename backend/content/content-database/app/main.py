@@ -14,6 +14,17 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+def root():
+    return {
+        "service": "Content Database Service API",
+        "status": "online",
+        "docs": "/docs",
+        "health": "/health",
+        "endpoints": ["/questions", "/questions/{id}"]
+    }
+
+
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "service": "content-database"}

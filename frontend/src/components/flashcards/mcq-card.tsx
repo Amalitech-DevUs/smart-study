@@ -27,6 +27,7 @@ const subjectBadges: Record<SubjectColor, string> = {
   math: "bg-emerald-100 text-emerald-800 border-black",
   english: "bg-rose-100 text-rose-800 border-black",
   science: "bg-amber-100 text-amber-800 border-black",
+  "social-studies": "bg-indigo-100 text-indigo-800 border-black",
 };
 
 export function McqCard({

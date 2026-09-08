@@ -12,25 +12,25 @@ const subjects: Subject[] = [
   {
     slug: "mathematics",
     name: "Mathematics",
-    paperCount: 8,
+    paperCount: 1,
     description: "Practice algebra, geometry, word problems, and data handling questions.",
   },
   {
     slug: "english",
     name: "English Language",
-    paperCount: 8,
+    paperCount: 1,
     description: "Master comprehension passages, grammar rules, synonyms, and essay structures.",
   },
   {
     slug: "science",
     name: "Integrated Science",
-    paperCount: 8,
+    paperCount: 1,
     description: "Explore biological processes, chemical reactions, energy, and ecosystems.",
   },
   {
     slug: "social-studies",
     name: "Social Studies",
-    paperCount: 8,
+    paperCount: 1,
     description: "Revise governance, environmental conservation, history, and civic topics.",
   },
 ];

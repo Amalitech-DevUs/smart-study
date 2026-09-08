@@ -15,36 +15,37 @@ export type PlaceholderSubject = {
   papers: PlaceholderPaper[];
 };
 
-// TODO: replace with real data from the Content Database service
 export const placeholderSubjects: PlaceholderSubject[] = [
   {
     slug: "mathematics",
     name: "Mathematics",
     subjectColor: "math",
     papers: [
-      { year: 2024, questionCount: 40 },
-      { year: 2023, questionCount: 40 },
-      { year: 2022, questionCount: 40 },
+      { year: 2020, questionCount: 34 },
     ],
   },
   {
     slug: "english",
-    name: "English",
+    name: "English Language",
     subjectColor: "english",
     papers: [
-      { year: 2024, questionCount: 50 },
-      { year: 2023, questionCount: 50 },
-      { year: 2022, questionCount: 50 },
+      { year: 2020, questionCount: 30 },
     ],
   },
   {
     slug: "science",
-    name: "Science",
+    name: "Integrated Science",
     subjectColor: "science",
     papers: [
-      { year: 2024, questionCount: 40 },
-      { year: 2023, questionCount: 40 },
-      { year: 2022, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
+    ],
+  },
+  {
+    slug: "social-studies",
+    name: "Social Studies",
+    subjectColor: "social-studies",
+    papers: [
+      { year: 2020, questionCount: 40 },
     ],
   },
 ];
