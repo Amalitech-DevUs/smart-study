@@ -212,7 +212,7 @@ class JWT
      */
     public static function encode(
         array $payload,
-        #[\SensitiveParameter] $key,
+        $key,
         string $alg,
         ?string $keyId = null,
         ?array $head = null
@@ -259,7 +259,7 @@ class JWT
      */
     public static function sign(
         string $msg,
-        #[\SensitiveParameter] $key,
+        $key,
         string $alg
     ): string {
         if (empty(static::$supported_algs[$alg])) {
@@ -323,7 +323,7 @@ class JWT
     private static function verify(
         string $msg,
         string $signature,
-        #[\SensitiveParameter] $keyMaterial,
+        $keyMaterial,
         string $alg
     ): bool {
         if (empty(static::$supported_algs[$alg])) {
@@ -477,7 +477,7 @@ class JWT
      * @return Key
      */
     private static function getKey(
-        #[\SensitiveParameter] $keyOrKeyArray,
+        $keyOrKeyArray,
         ?string $kid
     ): Key {
         if ($keyOrKeyArray instanceof Key) {
@@ -708,7 +708,7 @@ class JWT
      * @param OpenSSLAsymmetricKey $key RSA key material
      * @throws DomainException Provided key is too short
      */
-    private static function validateRsaKeyLength(#[\SensitiveParameter] OpenSSLAsymmetricKey $key): void
+    private static function validateRsaKeyLength($key): void
     {
         if (!$keyDetails = openssl_pkey_get_details($key)) {
             throw new DomainException('Unable to validate key');
@@ -742,7 +742,7 @@ class JWT
      * @param string|OpenSSLAsymmetricKey|OpenSSLCertificate  $keyMaterial
      * @return non-empty-string
      */
-    private static function validateEdDSAKey(#[\SensitiveParameter] $keyMaterial): string
+    private static function validateEdDSAKey($keyMaterial): string
     {
         if (!\function_exists('sodium_crypto_sign_verify_detached')) {
             throw new DomainException('libsodium is not available');
@@ -767,7 +767,7 @@ class JWT
      * @throws DomainException Provided key is invalid
      */
     private static function signPS256(
-        #[\SensitiveParameter] string|OpenSSLAsymmetricKey|OpenSSLCertificate $key,
+        $key,
         string $message
     ): string {
         if (!class_exists('\phpseclib3\Crypt\RSA')) {
@@ -802,7 +802,7 @@ class JWT
      * @throws DomainException Provided key is invalid
      */
     private static function verifyPS256(
-        #[\SensitiveParameter] string|OpenSSLAsymmetricKey|OpenSSLCertificate $key,
+        $key,
         string $message,
         string $signature
     ): bool {

@@ -20,7 +20,7 @@ class User
         $stmt = $this->db->prepare($sql);
 
         if (!$stmt) {
-            throw new Exception("Failed to prepare query.");
+            throw new Exception("Failed to prepare query: " . $this->db->error);
         }
 
         $stmt->bind_param("s", $username);
@@ -46,13 +46,13 @@ class User
         $stmt = $this->db->prepare($sql);
 
         if (!$stmt) {
-            throw new Exception("Failed to prepare query.");
+            throw new Exception("Failed to prepare insert query: " . $this->db->error);
         }
 
         $stmt->bind_param("ss", $username, $pinHash);
 
         if (!$stmt->execute()) {
-            throw new Exception("Failed to create user.");
+            throw new Exception("Failed to create user: " . $stmt->error);
         }
 
         return $stmt->insert_id;

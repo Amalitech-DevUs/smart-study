@@ -9,14 +9,19 @@ use TypeError;
 
 class Key
 {
+    private $keyMaterial;
+    private string $algorithm;
+
     /**
      * @param string|OpenSSLAsymmetricKey|OpenSSLCertificate $keyMaterial
      * @param string $algorithm
      */
     public function __construct(
-        #[\SensitiveParameter] private $keyMaterial,
-        private string $algorithm
+        $keyMaterial,
+        string $algorithm
     ) {
+        $this->keyMaterial = $keyMaterial;
+        $this->algorithm = $algorithm;
         if (
             !\is_string($keyMaterial)
             && !$keyMaterial instanceof OpenSSLAsymmetricKey

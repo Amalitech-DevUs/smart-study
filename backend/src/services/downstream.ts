@@ -16,17 +16,31 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
   const start = Date.now();
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    const timeoutId = setTimeout(() => controller.abort(), 1500);
 
-    const response = await fetch(`${serviceUrl}/health`, {
-      method: 'GET',
+    let targetUrl = serviceUrl;
+    let method = 'GET';
+    let body: string | undefined = undefined;
+
+    if (serviceName === 'auth') {
+      targetUrl = serviceUrl;
+      method = 'POST';
+      body = JSON.stringify({});
+    } else {
+      targetUrl = `${serviceUrl.replace(/\/$/, '')}/health`;
+    }
+
+    const response = await fetch(targetUrl, {
+      method,
+      headers: serviceName === 'auth' ? { 'Content-Type': 'application/json' } : undefined,
+      body,
       signal: controller.signal
     });
     clearTimeout(timeoutId);
 
     const responseTimeMs = Date.now() - start;
 
-    if (response.ok) {
+    if (response.status < 500) {
       return {
         service: serviceName,
         url: serviceUrl,

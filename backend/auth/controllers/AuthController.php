@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/user.php';
 require_once __DIR__ . '/../utils/JwtHandler.php';
 
 class AuthController
