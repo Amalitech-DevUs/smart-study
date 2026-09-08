@@ -1,0 +1,16 @@
+[
+  {
+    "id": "art-1",
+    "title": "Mastering Computer Literacy for BECE ICT",
+    "category": "ICT",
+    "body": "Computer literacy is essential for candidates sitting for the BECE. Key concepts include understanding hardware components, software classification, network fundamentals, and internet safety...",
+    "publishedAt": "2026-08-15T10:00:00Z"
+  },
+  {
+    "id": "art-2",
+    "title": "Effective Examination Revision Techniques",
+    "category": "Study Skills",
+    "body": "Spaced repetition using flashcards, active recall, and practicing past questions under timed conditions have proven to significantly boost retention and performance in exams.",
+    "publishedAt": "2026-08-20T14:30:00Z"
+  }
+]

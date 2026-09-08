@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --brand-indigo: #1b2a63;
+  --brand-gold: #e8a33d;
+  --subject-math: #2e7d4f;
+  --subject-math-light: #eaf3de;
+  --subject-english: #d6432e;
+  --subject-english-light: #faece7;
+  --subject-science: #e8a33d;
+  --subject-science-light: #faeeda;
+  --subject-social-studies: #1b2a63;
+  --subject-social-studies-light: #eef0f8;
+  --success: #1e7a46;
+  --success-light: #e3f5e9;
+  --danger: #b23324;
+  --danger-light: #fce4e1;
+  --background: #faf9f5;
+  --text-primary: #1f2430;
+  --text-secondary: #6b6f7a;
+}
+
+@theme inline {
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-gold: var(--brand-gold);
+  --color-subject-math: var(--subject-math);
+  --color-subject-math-light: var(--subject-math-light);
+  --color-subject-english: var(--subject-english);
+  --color-subject-english-light: var(--subject-english-light);
+  --color-subject-science: var(--subject-science);
+  --color-subject-science-light: var(--subject-science-light);
+  --color-subject-social-studies: var(--subject-social-studies);
+  --color-subject-social-studies-light: var(--subject-social-studies-light);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-background: var(--background);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --font-heading: var(--font-heading-family);
+  --font-body: var(--font-body-family);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism & Depth Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-panel-dark {
+  background: rgba(27, 42, 99, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Soft Shadow Utilities */
+/* .shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(31, 36, 48, 0.08);
+}
+
+.shadow-glow-gold {
+  box-shadow: 0 0 25px -5px rgba(232, 163, 61, 0.35);
+}
+
+.shadow-glow-indigo {
+  box-shadow: 0 0 30px -5px rgba(27, 42, 99, 0.25);
+} */
+
+/* Micro-animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
