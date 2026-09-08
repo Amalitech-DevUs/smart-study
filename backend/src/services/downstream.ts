@@ -80,8 +80,21 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     clearTimeout(timeoutId);
 
     if (response.ok) {
-      const data = await response.json();
-      return { data: data.data || data, source: 'CONTENT_SERVICE' };
+      const rawData = await response.json();
+      const items = Array.isArray(rawData) ? rawData : (rawData.data || []);
+      const normalized = items.map((q: any) => ({
+        id: q.id,
+        subject: q.subject,
+        year: q.year,
+        paper: q.paper,
+        topic: q.topic,
+        prompt: q.prompt,
+        options: q.options,
+        correctAnswer: q.correctAnswer || q.correct_answer,
+        questionNumber: q.questionNumber || q.question_number,
+        explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+      }));
+      return { data: normalized, source: 'CONTENT_SERVICE' };
     }
   } catch (error) {
     // Fall back to seed dataset
