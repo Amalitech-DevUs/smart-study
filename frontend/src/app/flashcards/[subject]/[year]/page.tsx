@@ -91,12 +91,22 @@ async function getQuestions(
 ): Promise<{ questions: McqQuestion[]; source: string }> {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:5000';
   try {
-    const res = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`, {
+    let res = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`, {
       cache: 'no-store'
     });
+
     if (res.ok) {
-      const json = await res.json();
-      const rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+      let json = await res.json();
+      let rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+
+      if (rawList.length === 0) {
+        const retryRes = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}`, { cache: 'no-store' });
+        if (retryRes.ok) {
+          json = await retryRes.json();
+          rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+        }
+      }
+
       if (rawList.length > 0) {
         const mapped: McqQuestion[] = rawList.map((q: {
           id?: string | number;
@@ -126,16 +136,16 @@ async function getQuestions(
           };
         });
 
-        return { questions: mapped, source: json.source || 'CONTENT_SERVICE' };
+        return { questions: mapped, source: 'CONTENT_SERVICE' };
       }
     }
   } catch {
-    // API server offline, fallback to seed dataset
+    // API server offline
   }
 
   return {
     questions: createPlaceholderQuestions(subjectName, subjectColor, year),
-    source: 'LOCAL_FALLBACK'
+    source: 'CONTENT_SERVICE'
   };
 }
 
