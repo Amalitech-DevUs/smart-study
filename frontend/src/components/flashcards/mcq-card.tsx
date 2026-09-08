@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { CheckCircle2, XCircle, Sparkles } from "lucide-react";
 
-export type SubjectColor = "math" | "english" | "science";
+export type SubjectColor = "math" | "english" | "science" | "social-studies";
 
 export type McqOption = {
   id: string;
