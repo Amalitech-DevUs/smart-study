@@ -40,7 +40,7 @@ export function MessageList({ messages, onSelectPrompt }: MessageListProps) {
                 onClick={() => onSelectPrompt?.(prompt)}
                 className="rounded-2xl border border-slate-200/80 bg-white/80 p-3 text-left text-xs font-medium text-slate-700 shadow-sm transition-all hover:border-brand-gold hover:bg-white hover:shadow-md"
               >
-                "{prompt}"
+                {prompt}
               </button>
             ))}
           </div>
