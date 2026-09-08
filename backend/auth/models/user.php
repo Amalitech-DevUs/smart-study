@@ -34,6 +34,30 @@ class User
 
         return $result->fetch_assoc();
     }
+    public function findById(int $id): ?array
+{
+    $sql = "SELECT id, username, pin_hash, created_at
+            FROM users
+            WHERE id = ?
+            LIMIT 1";
+
+    $stmt = $this->db->prepare($sql);
+
+    if (!$stmt) {
+        throw new Exception("Failed to prepare query.");
+    }
+
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 0) {
+        return null;
+    }
+
+    return $result->fetch_assoc();
+}
 
     // Create a new user
     public function create(string $username, string $pin): int

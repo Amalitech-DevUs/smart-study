@@ -48,11 +48,11 @@ class AuthMiddleware
         }
 
         try {
-            $jwt = new JwtHandler();
+    $jwt = new JwtHandler();
 
-            return $jwt->validateToken($token);
+    return $jwt->validateToken($token);
 
-        } catch (Exception $e) {
+   } catch (Throwable $e) {
             http_response_code(401);
 
             echo json_encode([

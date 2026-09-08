@@ -1,16 +1,19 @@
 <?php
 
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/RefreshToken.php';
 require_once __DIR__ . '/../utils/JwtHandler.php';
 
 class AuthController
 {
     private User $user;
+    private RefreshToken $refreshToken;
     private JwtHandler $jwt;
 
     public function __construct(mysqli $db)
     {
         $this->user = new User($db);
+        $this->refreshToken = new RefreshToken($db);
         $this->jwt = new JwtHandler();
     }
 
@@ -50,10 +53,27 @@ class AuthController
 
         $user = $this->user->findByUsername($username);
 
-        // Generate JWT
-        $token = $this->jwt->generateToken(
+                // Generate JWT
+                $accessToken = $this->jwt->generateToken(
             (int) $user['id'],
             $user['username']
+        );
+
+        $refreshToken = $this->jwt->generateRefreshToken();
+
+        $refreshTokenHash = $this->jwt->hashRefreshToken(
+            $refreshToken
+        );
+
+        $expiresAt = date(
+            'Y-m-d H:i:s',
+            time() + (60 * 60 * 24 * 30)
+        );
+
+        $this->refreshToken->create(
+            (int) $user['id'],
+            $refreshTokenHash,
+            $expiresAt
         );
 
         return [
@@ -63,7 +83,58 @@ class AuthController
                 'id' => (int) $user['id'],
                 'username' => $user['username']
             ],
-            'accessToken' => $token
+            'accessToken' => $accessToken,
+            'refreshToken' => $refreshToken
         ];
     }
+
+    public function refresh(string $refreshToken): array
+{
+    if ($refreshToken === '') {
+        return [
+            'success' => false,
+            'message' => 'Refresh token is required.'
+        ];
+    }
+
+    $tokenHash = $this->jwt->hashRefreshToken($refreshToken);
+
+    $storedToken = $this->refreshToken->findByTokenHash($tokenHash);
+
+    if (!$storedToken) {
+        return [
+            'success' => false,
+            'message' => 'Invalid refresh token.'
+        ];
+    }
+
+    if (strtotime($storedToken['expires_at']) < time()) {
+        return [
+            'success' => false,
+            'message' => 'Refresh token has expired.'
+        ];
+    }
+
+    $user = $this->user->findById(
+        (int) $storedToken['user_id']
+    );
+
+    if (!$user) {
+        return [
+            'success' => false,
+            'message' => 'User not found.'
+        ];
+    }
+
+    $accessToken = $this->jwt->generateToken(
+        (int) $user['id'],
+        $user['username']
+    );
+
+    return [
+        'success' => true,
+        'message' => 'Access token refreshed successfully.',
+        'accessToken' => $accessToken
+    ];
+}
 }

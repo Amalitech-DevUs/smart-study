@@ -41,6 +41,16 @@ class JwtHandler
         );
     }
 
+    public function generateRefreshToken(): string
+    {
+        return bin2hex(random_bytes(64));
+    }
+
+    public function hashRefreshToken(string $refreshToken): string
+    {
+        return hash('sha256', $refreshToken);
+    }
+
     public function validateToken(string $token): object
     {
         return JWT::decode(

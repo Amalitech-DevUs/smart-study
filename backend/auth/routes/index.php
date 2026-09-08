@@ -95,6 +95,32 @@ if ($method === 'POST' && $path === '/auth/login') {
     exit;
 }
 
+if ($method === 'POST' && str_ends_with($path, '/auth/refresh')) {
+
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    $refreshToken = trim($input['refreshToken'] ?? '');
+
+    if ($refreshToken === '') {
+        http_response_code(400);
+
+        echo json_encode([
+            'success' => false,
+            'message' => 'Refresh token is required.'
+        ]);
+
+        exit;
+    }
+
+    $response = $authController->refresh($refreshToken);
+
+    http_response_code($response['success'] ? 200 : 401);
+
+    echo json_encode($response);
+
+    exit;
+}
+
 
 if ($method === 'GET' && str_ends_with($path, '/auth/me')) {
 
