@@ -1,0 +1,29 @@
+[
+  {
+    "id": "q1",
+    "subject": "Integrated Science",
+    "year": 2023,
+    "topic": "Photosynthesis",
+    "prompt": "Which gas is released during photosynthesis?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "correctAnswer": "Oxygen"
+  },
+  {
+    "id": "q2",
+    "subject": "Mathematics",
+    "year": 2022,
+    "topic": "Algebra",
+    "prompt": "Solve for x: 2x + 5 = 15",
+    "options": ["x = 3", "x = 5", "x = 10", "x = 7"],
+    "correctAnswer": "x = 5"
+  },
+  {
+    "id": "q3",
+    "subject": "Social Studies",
+    "year": 2023,
+    "topic": "Governance",
+    "prompt": "What is the organ of government responsible for law making in Ghana?",
+    "options": ["Judiciary", "Executive", "Legislature", "District Assembly"],
+    "correctAnswer": "Legislature"
+  }
+]
