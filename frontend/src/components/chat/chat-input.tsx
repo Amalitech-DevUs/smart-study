@@ -6,8 +6,10 @@ import { Send } from "lucide-react";
 type ChatInputProps = {
   value: string;
   isSending: boolean;
-  onChange: (value: string) => void;
-  onSend: (text: string) => void;
+  onChange?: (value: string) => void;
+  onSend?: (text?: string) => void;
+  onChangeAction?: (value: string) => void;
+  onSendAction?: (text?: string) => void;
 };
 
 export function ChatInput({
@@ -15,11 +17,16 @@ export function ChatInput({
   isSending,
   onChange,
   onSend,
+  onChangeAction,
+  onSendAction,
 }: ChatInputProps) {
+  const handleTextChange = onChange ?? onChangeAction;
+  const handleSend = onSend ?? onSendAction;
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!value.trim() || isSending) return;
-    onSend(value);
+    handleSend?.(value);
   };
 
   return (
@@ -31,7 +38,7 @@ export function ChatInput({
         type="text"
         value={value}
         disabled={isSending}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={(event) => handleTextChange?.(event.target.value)}
         placeholder="Ask a BECE subject question (e.g. Simplify 3x + 5 = 20)..."
         aria-label="Chat message"
         className="w-full min-h-[44px] rounded-lg border border-[#e2e8f0] bg-[#fbfbfa] py-2.5 px-3.5 text-sm text-[#0e1726] placeholder-[#525b68] outline-none transition-colors focus:border-[#0e1726] focus:bg-white disabled:bg-slate-100"
