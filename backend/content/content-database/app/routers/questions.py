@@ -13,6 +13,7 @@ router = APIRouter(
 
 from sqlalchemy import func
 
+@router.get("", response_model=list[QuestionResponse])
 @router.get("/", response_model=list[QuestionResponse])
 def get_questions(
     subject: str | None = None,

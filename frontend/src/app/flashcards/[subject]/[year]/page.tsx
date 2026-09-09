@@ -90,57 +90,79 @@ async function getQuestions(
   year: number,
 ): Promise<{ questions: McqQuestion[]; source: string }> {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:5000';
-  try {
-    const res = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`, {
-      cache: 'no-store'
-    });
+  const CONTENT_DB_URL = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
 
-    if (res.ok) {
-      let json = await res.json();
-      let rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+  const endpoints = [
+    `${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`,
+    `${CONTENT_DB_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`,
+    `${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}`,
+    `${CONTENT_DB_URL}/questions?subject=${encodeURIComponent(subjectName)}`,
+  ];
 
-      if (rawList.length === 0) {
-        const retryRes = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}`, { cache: 'no-store' });
-        if (retryRes.ok) {
-          json = await retryRes.json();
-          rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+  for (const url of endpoints) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3500);
+
+      const res = await fetch(url, {
+        signal: controller.signal,
+        cache: 'no-store'
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const json = await res.json();
+        const rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+
+        if (rawList.length > 0) {
+          const mapped: McqQuestion[] = rawList.map((q: {
+            id?: string | number;
+            prompt?: string;
+            question?: string;
+            options?: string[];
+            correctAnswer?: string;
+            correct_answer?: string;
+            explanation?: string;
+            year?: number;
+            paper?: number;
+            section?: string;
+            topic?: string;
+            questionNumber?: number;
+            question_number?: number;
+          }, idx: number) => {
+            const rawOpts: string[] = Array.isArray(q.options) ? q.options : ["Option A", "Option B", "Option C", "Option D"];
+            const optionKeys: Array<'a' | 'b' | 'c' | 'd'> = ['a', 'b', 'c', 'd'];
+            const correctKey = String(q.correctAnswer || q.correct_answer || 'A').toLowerCase();
+            const validCorrect = (['a', 'b', 'c', 'd'].includes(correctKey) ? correctKey : 'a') as 'a' | 'b' | 'c' | 'd';
+            const correctIndex = optionKeys.indexOf(validCorrect);
+            const correctText = rawOpts[correctIndex] || '';
+
+            return {
+              id: String(q.id || `${subjectSlug}-${year}-${idx + 1}`),
+              subject: subjectName,
+              subjectColor,
+              year: q.year || year,
+              paper: q.paper || 1,
+              section: q.section,
+              topic: q.topic,
+              questionNumber: q.questionNumber || q.question_number || (idx + 1),
+              totalQuestions: rawList.length,
+              question: q.prompt || q.question || `Question ${idx + 1}`,
+              options: optionKeys.map((key, i) => ({
+                id: key,
+                text: rawOpts[i] || `Option ${key.toUpperCase()}`
+              })),
+              correctOptionId: validCorrect,
+              explanation: q.explanation || `Option ${validCorrect.toUpperCase()} ("${correctText}") is the accurate answer according to official WAEC examination scoring standards.`
+            };
+          });
+
+          return { questions: mapped, source: 'CONTENT_SERVICE' };
         }
       }
-
-      if (rawList.length > 0) {
-        const mapped: McqQuestion[] = rawList.map((q: {
-          id?: string | number;
-          prompt?: string;
-          question?: string;
-          options?: string[];
-          correctAnswer?: string;
-          correct_answer?: string;
-          explanation?: string;
-        }, idx: number) => {
-          const rawOpts: string[] = Array.isArray(q.options) ? q.options : ["Option A", "Option B", "Option C", "Option D"];
-          const optionKeys: Array<'a' | 'b' | 'c' | 'd'> = ['a', 'b', 'c', 'd'];
-          const correctKey = String(q.correctAnswer || q.correct_answer || 'A').toLowerCase();
-          const validCorrect = (['a', 'b', 'c', 'd'].includes(correctKey) ? correctKey : 'a') as 'a' | 'b' | 'c' | 'd';
-
-          return {
-            id: String(q.id || `${subjectSlug}-${year}-${idx + 1}`),
-            subject: subjectName,
-            subjectColor,
-            question: q.prompt || q.question || `Question ${idx + 1}`,
-            options: optionKeys.map((key, i) => ({
-              id: key,
-              text: rawOpts[i] || `Option ${key.toUpperCase()}`
-            })),
-            correctOptionId: validCorrect,
-            explanation: q.explanation
-          };
-        });
-
-        return { questions: mapped, source: 'CONTENT_SERVICE' };
-      }
+    } catch {
+      // Continue to next fallback candidate
     }
-  } catch {
-    // API server offline
   }
 
   return {

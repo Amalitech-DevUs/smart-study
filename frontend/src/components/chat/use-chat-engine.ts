@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export type ChatMessage = {
   id: string;
@@ -58,10 +58,11 @@ async function readResponse(
     if (done) break;
 
     const chunk = decoder.decode(value, { stream: true });
-    for (const line of chunk.split("\n")) {
-      const data = line.startsWith("data:")
-        ? line.slice(5).trim()
-        : line.trim();
+    const lines = chunk.split("\n");
+
+    for (const line of lines) {
+      if (!line.startsWith("data:")) continue;
+      const data = line.replace(/^data:\s*/, "").trim();
       if (!data || data === "[DONE]") continue;
 
       try {
@@ -91,6 +92,16 @@ export function useChatEngine(): ChatEngineState {
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const promptParam = searchParams.get("prompt") || searchParams.get("q");
+      if (promptParam) {
+        setInput(promptParam);
+      }
+    }
+  }, []);
 
   const sendMessage = useCallback(
     async (text?: string) => {

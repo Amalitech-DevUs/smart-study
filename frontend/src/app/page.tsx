@@ -6,28 +6,28 @@ const subjects = [
   {
     name: "Mathematics",
     slug: "mathematics",
-    year: "2018 to 2023",
-    description: "Algebra, Geometry, Statistics, Vectors, and Business Math.",
+    year: "2020 to 2026",
+    description: "Algebra, plane geometry, word problems, statistics, and number bases.",
     topics: ["Algebra", "Geometry", "Statistics", "Vectors"],
-  },
-  {
-    name: "Integrated Science",
-    slug: "science",
-    year: "2018 to 2023",
-    description: "Biology, Chemistry, Physics, and Agricultural science.",
-    topics: ["Biology", "Chemistry", "Physics", "Agriculture"],
   },
   {
     name: "English Language",
     slug: "english",
-    year: "2018 to 2023",
+    year: "2020 to 2026",
     description: "Comprehension passages, grammar rules, vocabulary, and composition.",
-    topics: ["Comprehension", "Grammar", "Vocabulary", "Essay"],
+    topics: ["Comprehension", "Grammar", "Vocabulary", "Lexis"],
+  },
+  {
+    name: "Integrated Science",
+    slug: "science",
+    year: "2026 Mock Exam",
+    description: "Life processes, chemical compounds, electrical circuits, and soil science.",
+    topics: ["Biology", "Chemistry", "Physics", "Agriculture"],
   },
   {
     name: "Social Studies",
     slug: "social-studies",
-    year: "2018 to 2023",
+    year: "2020 Past Paper",
     description: "Governance, geography, Ghanaian history, and environmental management.",
     topics: ["Governance", "Geography", "History", "Environment"],
   },
@@ -112,10 +112,10 @@ export default function Home() {
 
                   <div className="mt-6 pt-4 border-t border-slate-100">
                     <Link
-                      href={`/flashcards?subject=${subj.slug}`}
+                      href={`/flashcards/${subj.slug}`}
                       className="inline-flex items-center text-xs font-semibold text-slate-900 hover:text-slate-600 transition-colors"
                     >
-                      Practice questions
+                      Practice questions &rarr;
                     </Link>
                   </div>
                 </div>

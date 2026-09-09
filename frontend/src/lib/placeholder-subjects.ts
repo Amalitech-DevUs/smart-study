@@ -22,6 +22,12 @@ export const placeholderSubjects: PlaceholderSubject[] = [
     subjectColor: "math",
     papers: [
       { year: 2020, questionCount: 34 },
+      { year: 2021, questionCount: 36 },
+      { year: 2022, questionCount: 37 },
+      { year: 2023, questionCount: 39 },
+      { year: 2024, questionCount: 36 },
+      { year: 2025, questionCount: 35 },
+      { year: 2026, questionCount: 38 },
     ],
   },
   {
@@ -30,6 +36,12 @@ export const placeholderSubjects: PlaceholderSubject[] = [
     subjectColor: "english",
     papers: [
       { year: 2020, questionCount: 30 },
+      { year: 2021, questionCount: 30 },
+      { year: 2022, questionCount: 30 },
+      { year: 2023, questionCount: 30 },
+      { year: 2024, questionCount: 40 },
+      { year: 2025, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
     ],
   },
   {

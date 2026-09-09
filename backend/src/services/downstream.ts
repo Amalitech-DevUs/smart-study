@@ -100,11 +100,13 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
         subject: q.subject,
         year: q.year,
         paper: q.paper,
+        section: q.section,
         topic: q.topic,
         prompt: q.prompt,
         options: q.options,
         correctAnswer: q.correctAnswer || q.correct_answer,
         questionNumber: q.questionNumber || q.question_number,
+        questionType: q.questionType || q.question_type || 'mcq',
         explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
       }));
       return { data: normalized, source: 'CONTENT_SERVICE' };
@@ -127,6 +129,47 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
   }
 
   return { data: result, source: 'LOCAL_SEED_BANK' };
+}
+
+/**
+ * Single Question Data Provider: Tries downstream Content DB service first, falls back to src/data/questions.json
+ */
+export async function fetchQuestionById(id: string | number) {
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+    const response = await fetch(`${contentUrl}/questions/${id}`, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    if (response.ok) {
+      const q = await response.json();
+      return {
+        data: {
+          id: q.id,
+          subject: q.subject,
+          year: q.year,
+          paper: q.paper,
+          section: q.section,
+          topic: q.topic,
+          prompt: q.prompt,
+          options: q.options,
+          correctAnswer: q.correctAnswer || q.correct_answer,
+          questionNumber: q.questionNumber || q.question_number,
+          questionType: q.questionType || q.question_type || 'mcq',
+          explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+        },
+        source: 'CONTENT_SERVICE'
+      };
+    }
+  } catch {
+    // Downstream service offline
+  }
+
+  const local = questionsData.find(q => String(q.id) === String(id));
+  if (local) {
+    return { data: local, source: 'LOCAL_SEED_BANK' };
+  }
+  return null;
 }
 
 /**
