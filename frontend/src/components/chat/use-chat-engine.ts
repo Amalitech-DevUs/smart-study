@@ -30,13 +30,23 @@ function createMessage(
   };
 }
 
-async function readResponse(response: Response): Promise<string> {
+async function readResponse(
+  response: Response,
+  onChunk?: (streamedText: string) => void,
+): Promise<string> {
   const contentType = response.headers.get("content-type") ?? "";
 
   if (!response.body || !contentType.includes("text/event-stream")) {
     const data = await response.json().catch(() => null);
     if (typeof data === "string") return data;
-    return data?.content ?? data?.message ?? data?.response ?? "";
+    return (
+      data?.reply ??
+      data?.data?.reply ??
+      data?.content ??
+      data?.message ??
+      data?.response ??
+      ""
+    );
   }
 
   const reader = response.body.getReader();
@@ -56,9 +66,19 @@ async function readResponse(response: Response): Promise<string> {
 
       try {
         const parsed = JSON.parse(data);
-        content += parsed.content ?? parsed.delta ?? parsed.message ?? "";
+        const text =
+          parsed.reply ??
+          parsed.content ??
+          parsed.delta ??
+          parsed.message ??
+          "";
+        if (text) {
+          content += text;
+          onChunk?.(content);
+        }
       } catch {
         content += data;
+        onChunk?.(content);
       }
     }
   }
@@ -84,8 +104,8 @@ export function useChatEngine(): ChatEngineState {
       setIsSending(true);
 
       try {
-        const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-        if (!baseUrl) throw new Error("Chat service is not configured.");
+        const baseUrl =
+          process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
         const response = await fetch(`${baseUrl.replace(/\/$/, "")}/chat`, {
           method: "POST",
@@ -95,13 +115,37 @@ export function useChatEngine(): ChatEngineState {
 
         if (!response.ok) throw new Error("Chat request failed.");
 
-        const assistantContent = await readResponse(response);
-        if (!assistantContent) throw new Error("Chat response was empty.");
+        const assistantId = `assistant-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        let messageAdded = false;
 
-        setMessages((currentMessages) => [
-          ...currentMessages,
-          createMessage("assistant", assistantContent),
-        ]);
+        const assistantContent = await readResponse(response, (liveText) => {
+          if (!messageAdded) {
+            messageAdded = true;
+            setMessages((current) => [
+              ...current,
+              {
+                id: assistantId,
+                role: "assistant",
+                content: liveText,
+                timestamp: new Date().toISOString(),
+              },
+            ]);
+          } else {
+            setMessages((current) =>
+              current.map((msg) =>
+                msg.id === assistantId ? { ...msg, content: liveText } : msg,
+              ),
+            );
+          }
+        });
+
+        if (!messageAdded) {
+          if (!assistantContent) throw new Error("Chat response was empty.");
+          setMessages((currentMessages) => [
+            ...currentMessages,
+            createMessage("assistant", assistantContent),
+          ]);
+        }
       } catch (requestError) {
         setError(
           requestError instanceof Error

@@ -78,6 +78,13 @@ class ChatRequest(BaseModel):
 
 async def stream_response(messages: list):
     """Stream tokens using the openai SDK."""
+    if not API_KEY:
+        yield json.dumps({
+            "reply": "Hello! I am Smart Study AI, your BECE tutor. To enable live AI answers, please add your GROQ_API_KEY (from https://console.groq.com/keys) or OPENROUTER_API_KEY in backend/ai-assistant/.env.",
+            "source": "system"
+        })
+        return
+
     try:
         response = await async_client.chat.completions.create(
             model=MODEL,
@@ -85,6 +92,7 @@ async def stream_response(messages: list):
             stream=True,
             max_tokens=500,
             temperature=0.7,
+            timeout=25.0,
         )
         async for chunk in response:
             if chunk.choices and chunk.choices[0].delta.content:
@@ -194,7 +202,8 @@ def main():
 if __name__ == "__main__":
     if "--server" in sys.argv:
         import uvicorn
-        print(f"Starting Smart Study AI API server on http://127.0.0.1:8000 (Provider: {PROVIDER_NAME}, Model: {MODEL})")
-        uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+        port = int(os.getenv("PORT", 5003))
+        print(f"Starting Smart Study AI API server on http://127.0.0.1:{port} (Provider: {PROVIDER_NAME}, Model: {MODEL})")
+        uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
     else:
         main()

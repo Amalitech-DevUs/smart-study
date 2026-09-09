@@ -116,3 +116,19 @@ export async function fetchArticles(category?: string) {
 
   return { data: result, source: 'LOCAL_SEED_BANK' };
 }
+
+/**
+ * AI Assistant Microservice Chat Forwarder:
+ * Connects to AI microservice on AI_SERVICE_URL (default: port 5003).
+ */
+export async function forwardChatToAiService(payload: {
+  message?: string;
+  messages?: Array<{ role: string; content: string }>;
+}) {
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
+  return fetch(`${aiUrl}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+}
