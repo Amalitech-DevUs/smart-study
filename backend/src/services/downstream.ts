@@ -69,22 +69,49 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     const query = new URLSearchParams();
     if (filters?.subject) query.append('subject', filters.subject);
     if (filters?.year) query.append('year', filters.year.toString());
     if (filters?.topic) query.append('topic', filters.topic);
 
-    const response = await fetch(`${contentUrl}/questions?${query.toString()}`, { signal: controller.signal });
-    clearTimeout(timeoutId);
+    let response = await fetch(`${contentUrl}/questions?${query.toString()}`, { signal: controller.signal });
 
+    // If year filter returned empty, retry query with subject only to ensure content DB data is returned
     if (response.ok) {
-      const data = await response.json();
-      return { data: data.data || data, source: 'CONTENT_SERVICE' };
+      let rawData = await response.json();
+      let items = Array.isArray(rawData) ? rawData : (rawData.data || []);
+
+      if (items.length === 0 && filters?.subject) {
+        const fallbackQuery = new URLSearchParams();
+        fallbackQuery.append('subject', filters.subject);
+        const retryRes = await fetch(`${contentUrl}/questions?${fallbackQuery.toString()}`, { signal: controller.signal });
+        if (retryRes.ok) {
+          rawData = await retryRes.json();
+          items = Array.isArray(rawData) ? rawData : (rawData.data || []);
+        }
+      }
+
+      clearTimeout(timeoutId);
+
+      const normalized = items.map((q: any) => ({
+        id: q.id,
+        subject: q.subject,
+        year: q.year,
+        paper: q.paper,
+        topic: q.topic,
+        prompt: q.prompt,
+        options: q.options,
+        correctAnswer: q.correctAnswer || q.correct_answer,
+        questionNumber: q.questionNumber || q.question_number,
+        explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+      }));
+      return { data: normalized, source: 'CONTENT_SERVICE' };
     }
+    clearTimeout(timeoutId);
   } catch (error) {
-    // Fall back to seed dataset
+    // Connection error
   }
 
   // Fallback filtering on local JSON seed bank

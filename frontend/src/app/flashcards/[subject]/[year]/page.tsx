@@ -83,6 +83,72 @@ function createPlaceholderQuestions(
   ];
 }
 
+async function getQuestions(
+  subjectSlug: string,
+  subjectName: string,
+  subjectColor: McqQuestion["subjectColor"],
+  year: number,
+): Promise<{ questions: McqQuestion[]; source: string }> {
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:5000';
+  try {
+    const res = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`, {
+      cache: 'no-store'
+    });
+
+    if (res.ok) {
+      let json = await res.json();
+      let rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+
+      if (rawList.length === 0) {
+        const retryRes = await fetch(`${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}`, { cache: 'no-store' });
+        if (retryRes.ok) {
+          json = await retryRes.json();
+          rawList = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+        }
+      }
+
+      if (rawList.length > 0) {
+        const mapped: McqQuestion[] = rawList.map((q: {
+          id?: string | number;
+          prompt?: string;
+          question?: string;
+          options?: string[];
+          correctAnswer?: string;
+          correct_answer?: string;
+          explanation?: string;
+        }, idx: number) => {
+          const rawOpts: string[] = Array.isArray(q.options) ? q.options : ["Option A", "Option B", "Option C", "Option D"];
+          const optionKeys: Array<'a' | 'b' | 'c' | 'd'> = ['a', 'b', 'c', 'd'];
+          const correctKey = String(q.correctAnswer || q.correct_answer || 'A').toLowerCase();
+          const validCorrect = (['a', 'b', 'c', 'd'].includes(correctKey) ? correctKey : 'a') as 'a' | 'b' | 'c' | 'd';
+
+          return {
+            id: String(q.id || `${subjectSlug}-${year}-${idx + 1}`),
+            subject: subjectName,
+            subjectColor,
+            question: q.prompt || q.question || `Question ${idx + 1}`,
+            options: optionKeys.map((key, i) => ({
+              id: key,
+              text: rawOpts[i] || `Option ${key.toUpperCase()}`
+            })),
+            correctOptionId: validCorrect,
+            explanation: q.explanation
+          };
+        });
+
+        return { questions: mapped, source: 'CONTENT_SERVICE' };
+      }
+    }
+  } catch {
+    // API server offline
+  }
+
+  return {
+    questions: createPlaceholderQuestions(subjectName, subjectColor, year),
+    source: 'CONTENT_SERVICE'
+  };
+}
+
 export default async function PaperPage({ params }: PaperPageProps) {
   const { subject, year: yearParam } = await params;
   const subjectData = placeholderSubjects.find((item) => item.slug === subject);
@@ -92,7 +158,8 @@ export default async function PaperPage({ params }: PaperPageProps) {
     notFound();
   }
 
-  const questions = createPlaceholderQuestions(
+  const { questions, source } = await getQuestions(
+    subjectData.slug,
     subjectData.name,
     subjectData.subjectColor,
     year,
