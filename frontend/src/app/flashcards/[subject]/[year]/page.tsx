@@ -158,7 +158,7 @@ export default async function PaperPage({ params }: PaperPageProps) {
     notFound();
   }
 
-  const { questions, source } = await getQuestions(
+  const { questions } = await getQuestions(
     subjectData.slug,
     subjectData.name,
     subjectData.subjectColor,
