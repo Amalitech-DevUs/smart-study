@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { GraduationCap, BookOpen, MessageSquare } from "lucide-react";
 
 const phrases = [
-  "Master Mathematics.",
-  "Master Integrated Science.",
-  "Master English Language.",
-  "Master Social Studies.",
-  "one card at a time.",
+  "Mathematics",
+  "Integrated Science",
+  "English Language",
+  "Social Studies",
 ];
 
 export function HomeHero() {
@@ -25,12 +23,12 @@ export function HomeHero() {
     if (!isDeleting && displayedText === currentPhrase) {
       timeoutId = setTimeout(() => {
         setIsDeleting(true);
-      }, 2000);
+      }, 2200);
     } else if (isDeleting && displayedText === "") {
       timeoutId = setTimeout(() => {
         setIsDeleting(false);
         setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-      }, 500);
+      }, 400);
     } else {
       timeoutId = setTimeout(() => {
         const nextChar = isDeleting
@@ -44,57 +42,48 @@ export function HomeHero() {
   }, [displayedText, isDeleting, phraseIndex]);
 
   return (
-    <section className="relative border-b border-[#0e1726]/10 bg-[#0e1726] px-6 py-14 text-white sm:py-20">
+    <section className="border-b border-slate-800 bg-[#0e1726] px-6 py-16 text-white sm:py-24">
       <div className="mx-auto max-w-4xl">
-        
-        {/* BECE Exam Header Badge */}
-        <div className="inline-flex items-center gap-2 rounded-md bg-[#f5a623]/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#f5a623] border border-[#f5a623]/30">
-          <GraduationCap className="h-4 w-4" />
-          <span>Ghana JHS BECE & WAEC Exam Prep</span>
+        <div className="inline-flex items-center rounded-full border border-slate-700 bg-slate-800/60 px-3.5 py-1 text-xs font-medium text-slate-300">
+          BECE and WAEC Exam Prep
         </div>
 
-        {/* Animated Main Headline */}
-        <h1 className="mt-5 font-heading text-3xl font-extrabold leading-tight text-white sm:text-5xl min-h-[110px] sm:min-h-[135px]">
-          Solve BECE Past Questions &{" "}
-          <span className="inline-block text-[#f5a623]">
+        <h1 className="mt-6 font-heading text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl min-h-[105px] sm:min-h-[135px]">
+          Master past questions in{" "}
+          <span className="text-[#f5a623]">
             {displayedText}
-            <span className="inline-block w-1 bg-[#f5a623] animate-pulse ml-1 text-transparent">|</span>
+            <span className="inline-block w-0.5 h-7 sm:h-11 bg-[#f5a623] align-middle ml-1 animate-pulse" />
           </span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          Practice official WAEC multiple-choice questions by subject and year. Get step-by-step guidance from your BECE study tutor whenever you need help.
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+          Practice official multiple-choice questions by subject and year. Get clear step-by-step guidance whenever you need help.
         </p>
 
-        {/* Primary Action Buttons */}
-        <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href="/flashcards"
-            className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg bg-[#f5a623] px-6 py-3 font-heading text-sm font-bold text-[#0e1726] transition-colors hover:bg-[#e0951a] focus-visible:ring-2 focus-visible:ring-white"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0e1726] transition-colors hover:bg-slate-100"
           >
-            <BookOpen className="h-4 w-4" />
-            <span>Start Practice Questions</span>
+            Start Practice
           </Link>
-          
+
           <Link
             href="/chat"
-            className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-6 py-3 font-heading text-sm font-bold text-slate-100 transition-colors hover:bg-slate-800 hover:text-white"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-700 bg-transparent px-7 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800"
           >
-            <MessageSquare className="h-4 w-4" />
-            <span>Ask BECE Tutor</span>
+            Ask AI Tutor
           </Link>
         </div>
 
-        {/* Key Subjects Strip */}
-        <div className="mt-10 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-400 border-t border-slate-800 pt-6">
-          <span className="text-slate-300">Core BECE Subjects:</span>
-          <span className="rounded bg-slate-800 px-2.5 py-1 text-slate-300">Mathematics</span>
-          <span className="rounded bg-slate-800 px-2.5 py-1 text-slate-300">Integrated Science</span>
-          <span className="rounded bg-slate-800 px-2.5 py-1 text-slate-300">English Language</span>
-          <span className="rounded bg-slate-800 px-2.5 py-1 text-slate-300">Social Studies</span>
+        <div className="mt-12 flex flex-wrap items-center gap-2 pt-6 border-t border-slate-800/80 text-xs text-slate-400">
+          <span className="text-slate-500 mr-2">Core subjects:</span>
+          {["Mathematics", "Integrated Science", "English Language", "Social Studies"].map((item) => (
+            <span key={item} className="rounded-md border border-slate-800 bg-slate-900/50 px-2.5 py-1 text-slate-300">
+              {item}
+            </span>
+          ))}
         </div>
-
       </div>
     </section>
   );

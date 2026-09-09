@@ -29,7 +29,7 @@ export function ChatWidget() {
   const { loggedIn, isLoading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
-  if (pathname === "/chat") {
+  if (pathname === "/chat" || pathname === "/login" || pathname === "/signup") {
     return null;
   }
 
@@ -68,7 +68,7 @@ export function ChatWidget() {
                   </p>
                   <Link
                     href={loginHref}
-                    className="mt-6 inline-flex min-h-11 items-center rounded-md bg-brand-gold px-5 py-3 font-medium text-brand-indigo transition-colors hover:bg-brand-gold/90"
+                    className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-slate-900 px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-slate-800"
                   >
                     Log in
                   </Link>
@@ -84,7 +84,7 @@ export function ChatWidget() {
         onClick={() => setIsOpen((open) => !open)}
         aria-label={isOpen ? "Close study assistant" : "Open study assistant"}
         aria-expanded={isOpen}
-        className="fixed bottom-24 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold text-brand-indigo shadow-[0_4px_14px_rgba(31,36,48,0.18)] transition-transform hover:scale-105 md:bottom-6 md:right-6"
+        className="fixed bottom-24 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-lg transition-transform hover:scale-105 hover:bg-slate-800 md:bottom-6 md:right-6"
       >
         <ChatIcon />
       </button>
