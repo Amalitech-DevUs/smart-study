@@ -166,25 +166,21 @@ export default async function PaperPage({ params }: PaperPageProps) {
   );
 
   return (
-    <main className="flex-1 bg-background px-6 py-10 pb-24 sm:py-14">
+    <main className="flex-1 bg-white px-6 py-10 pb-28 sm:py-14">
       <div className="mx-auto max-w-5xl">
-        <div className="flex items-center justify-between">
-          <Link
-            href={`/flashcards/${subjectData.slug}`}
-            className="text-sm font-medium text-text-secondary transition-colors hover:text-brand-indigo"
-          >
-            ← Back to {subjectData.name}
-          </Link>
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-            Source: {source}
-          </span>
-        </div>
-        <header className="mt-8">
-          <p className="text-sm font-medium uppercase tracking-wide text-brand-gold">
-            Past paper practice ({questions.length} Questions)
+        <Link
+          href={`/flashcards/${subjectData.slug}`}
+          className="inline-flex items-center gap-2 text-xs font-bold text-[#0e1726] transition-colors hover:text-[#c0392b]"
+        >
+          <span aria-hidden="true">&larr;</span>
+          <span>Back to {subjectData.name}</span>
+        </Link>
+        <header className="mt-6 border-b border-[#e2e8f0] pb-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#c0392b]">
+            Official Exam Practice
           </p>
-          <h1 className="mt-2 font-heading text-4xl font-bold text-brand-indigo sm:text-5xl">
-            {subjectData.name} · {year}
+          <h1 className="mt-2 font-heading text-3xl font-extrabold text-[#0e1726] sm:text-4xl">
+            {subjectData.name} ({year} BECE)
           </h1>
         </header>
         <div className="mt-10 flex justify-center">
