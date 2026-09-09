@@ -1,4 +1,3 @@
-import questionsData from '../data/questions.json';
 import articlesData from '../data/articles.json';
 
 export interface ServiceHealthStatus {
@@ -63,7 +62,7 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
 }
 
 /**
- * Question Data Provider: Tries downstream Content DB service first, falls back to src/data/questions.json
+ * Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
  */
 export async function fetchQuestions(filters?: { subject?: string; year?: number; topic?: string }) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -78,20 +77,9 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
 
     let response = await fetch(`${contentUrl}/questions?${query.toString()}`, { signal: controller.signal });
 
-    // If year filter returned empty, retry query with subject only to ensure content DB data is returned
     if (response.ok) {
       let rawData = await response.json();
       let items = Array.isArray(rawData) ? rawData : (rawData.data || []);
-
-      if (items.length === 0 && filters?.subject) {
-        const fallbackQuery = new URLSearchParams();
-        fallbackQuery.append('subject', filters.subject);
-        const retryRes = await fetch(`${contentUrl}/questions?${fallbackQuery.toString()}`, { signal: controller.signal });
-        if (retryRes.ok) {
-          rawData = await retryRes.json();
-          items = Array.isArray(rawData) ? rawData : (rawData.data || []);
-        }
-      }
 
       clearTimeout(timeoutId);
 
@@ -116,23 +104,11 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     // Connection error
   }
 
-  // Fallback filtering on local JSON seed bank
-  let result = questionsData;
-  if (filters?.subject) {
-    result = result.filter(q => q.subject.toLowerCase() === filters.subject!.toLowerCase());
-  }
-  if (filters?.year) {
-    result = result.filter(q => q.year === filters.year);
-  }
-  if (filters?.topic) {
-    result = result.filter(q => q.topic.toLowerCase().includes(filters.topic!.toLowerCase()));
-  }
-
-  return { data: result, source: 'LOCAL_SEED_BANK' };
+  return { data: [], source: 'CONTENT_SERVICE' };
 }
 
 /**
- * Single Question Data Provider: Tries downstream Content DB service first, falls back to src/data/questions.json
+ * Single Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
  */
 export async function fetchQuestionById(id: string | number) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -165,10 +141,6 @@ export async function fetchQuestionById(id: string | number) {
     // Downstream service offline
   }
 
-  const local = questionsData.find(q => String(q.id) === String(id));
-  if (local) {
-    return { data: local, source: 'LOCAL_SEED_BANK' };
-  }
   return null;
 }
 
