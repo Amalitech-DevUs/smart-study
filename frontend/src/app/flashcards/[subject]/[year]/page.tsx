@@ -16,53 +16,47 @@ async function getQuestions(
   year: number,
 ): Promise<{ questions: McqQuestion[]; source: string }> {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
-  const CONTENT_DB_URL = process.env.CONTENT_SERVICE_URL || "http://localhost:5002";
 
-  // Exclusively queries the live Content Service (either via Express Gateway or direct Content DB)
-  const endpoints = [
-    `${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`,
-    `${CONTENT_DB_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`,
-  ];
+  const endpoint = `${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`;
 
-  for (const url of endpoints) {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4000);
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
 
-      const res = await fetch(url, {
-        signal: controller.signal,
-        cache: "no-store",
-      });
-      clearTimeout(timeoutId);
+    const res = await fetch(endpoint, {
+      signal: controller.signal,
+      cache: "no-store",
+    });
+    clearTimeout(timeoutId);
 
-      if (res.ok) {
-        const json = await res.json();
-        const rawList = Array.isArray(json.data)
-          ? json.data
-          : Array.isArray(json)
-            ? json
-            : [];
+    if (res.ok) {
+      const json = await res.json();
+      const rawList = Array.isArray(json.data)
+        ? json.data
+        : Array.isArray(json)
+          ? json
+          : [];
 
-        if (rawList.length > 0) {
-          const mapped: McqQuestion[] = rawList.map(
-            (
-              q: {
-                id?: string | number;
-                prompt?: string;
-                question?: string;
-                options?: string[];
-                correctAnswer?: string;
-                correct_answer?: string;
-                explanation?: string;
-                year?: number;
-                paper?: number;
-                section?: string;
-                topic?: string;
-                questionNumber?: number;
-                question_number?: number;
-              },
-              idx: number,
-            ) => {
+      if (rawList.length > 0) {
+        const mapped: McqQuestion[] = rawList.map(
+          (
+            q: {
+              id?: string | number;
+              prompt?: string;
+              question?: string;
+              options?: string[];
+              correctAnswer?: string;
+              correct_answer?: string;
+              explanation?: string;
+              year?: number;
+              paper?: number;
+              section?: string;
+              topic?: string;
+              questionNumber?: number;
+              question_number?: number;
+            },
+            idx: number,
+          ) => {
               const rawOpts: string[] = Array.isArray(q.options)
                 ? q.options
                 : ["Option A", "Option B", "Option C", "Option D"];
@@ -96,18 +90,16 @@ async function getQuestions(
                   q.explanation ||
                   `Option ${validCorrect.toUpperCase()} ("${correctText}") is the accurate answer according to official WAEC examination scoring standards.`,
               };
-            },
-          );
+          },
+        );
 
-          return { questions: mapped, source: "CONTENT_SERVICE" };
-        }
+        return { questions: mapped, source: "CONTENT_SERVICE" };
       }
-    } catch {
-      // Continue to next endpoint attempt
     }
+  } catch {
+    // The routing layer or its downstream Content Database is unavailable.
   }
 
-  // Never return local/dummy fallback questions — always return empty if content service could not be reached
   return {
     questions: [],
     source: "CONTENT_SERVICE",

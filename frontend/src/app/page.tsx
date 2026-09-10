@@ -85,7 +85,10 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2">
             {subjects.map((subj, i) => (
               <ScrollReveal key={subj.slug} delay={i * 0.05}>
-                <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-sm">
+                <Link
+                  href={`/flashcards/${subj.slug}`}
+                  className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-[transform,box-shadow] duration-150 ease-out hover:-translate-y-1 hover:border-slate-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-500 cursor-pointer"
+                >
                   <div>
                     <div className="flex items-center justify-between">
                       <h3 className="font-heading text-lg font-bold text-slate-900">
@@ -111,14 +114,11 @@ export default function Home() {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-slate-100">
-                    <Link
-                      href={`/flashcards/${subj.slug}`}
-                      className="inline-flex items-center text-xs font-semibold text-slate-900 hover:text-slate-600 transition-colors"
-                    >
+                    <span className="inline-flex items-center text-xs font-semibold text-slate-900 transition-colors">
                       Practice questions &rarr;
-                    </Link>
+                    </span>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
