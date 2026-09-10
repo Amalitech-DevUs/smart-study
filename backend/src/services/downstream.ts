@@ -1,4 +1,3 @@
-import questionsData from '../data/questions.json';
 import articlesData from '../data/articles.json';
 
 export interface ServiceHealthStatus {
@@ -16,17 +15,31 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
   const start = Date.now();
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    const timeoutId = setTimeout(() => controller.abort(), 1500);
 
-    const response = await fetch(`${serviceUrl}/health`, {
-      method: 'GET',
+    let targetUrl = serviceUrl;
+    let method = 'GET';
+    let body: string | undefined = undefined;
+
+    if (serviceName === 'auth') {
+      targetUrl = serviceUrl;
+      method = 'POST';
+      body = JSON.stringify({});
+    } else {
+      targetUrl = `${serviceUrl.replace(/\/$/, '')}/health`;
+    }
+
+    const response = await fetch(targetUrl, {
+      method,
+      headers: serviceName === 'auth' ? { 'Content-Type': 'application/json' } : undefined,
+      body,
       signal: controller.signal
     });
     clearTimeout(timeoutId);
 
     const responseTimeMs = Date.now() - start;
 
-    if (response.ok) {
+    if (response.status < 500) {
       return {
         service: serviceName,
         url: serviceUrl,
@@ -49,43 +62,86 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
 }
 
 /**
- * Question Data Provider: Tries downstream Content DB service first, falls back to src/data/questions.json
+ * Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
  */
 export async function fetchQuestions(filters?: { subject?: string; year?: number; topic?: string }) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     const query = new URLSearchParams();
     if (filters?.subject) query.append('subject', filters.subject);
     if (filters?.year) query.append('year', filters.year.toString());
     if (filters?.topic) query.append('topic', filters.topic);
 
-    const response = await fetch(`${contentUrl}/questions?${query.toString()}`, { signal: controller.signal });
-    clearTimeout(timeoutId);
+    let response = await fetch(`${contentUrl}/questions?${query.toString()}`, { signal: controller.signal });
 
     if (response.ok) {
-      const data = await response.json();
-      return { data: data.data || data, source: 'CONTENT_SERVICE' };
+      let rawData = await response.json();
+      let items = Array.isArray(rawData) ? rawData : (rawData.data || []);
+
+      clearTimeout(timeoutId);
+
+      const normalized = items.map((q: any) => ({
+        id: q.id,
+        subject: q.subject,
+        year: q.year,
+        paper: q.paper,
+        section: q.section,
+        topic: q.topic,
+        prompt: q.prompt,
+        options: q.options,
+        correctAnswer: q.correctAnswer || q.correct_answer,
+        questionNumber: q.questionNumber || q.question_number,
+        questionType: q.questionType || q.question_type || 'mcq',
+        explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+      }));
+      return { data: normalized, source: 'CONTENT_SERVICE' };
     }
+    clearTimeout(timeoutId);
   } catch (error) {
-    // Fall back to seed dataset
+    // Connection error
   }
 
-  // Fallback filtering on local JSON seed bank
-  let result = questionsData;
-  if (filters?.subject) {
-    result = result.filter(q => q.subject.toLowerCase() === filters.subject!.toLowerCase());
-  }
-  if (filters?.year) {
-    result = result.filter(q => q.year === filters.year);
-  }
-  if (filters?.topic) {
-    result = result.filter(q => q.topic.toLowerCase().includes(filters.topic!.toLowerCase()));
+  return { data: [], source: 'CONTENT_SERVICE' };
+}
+
+/**
+ * Single Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ */
+export async function fetchQuestionById(id: string | number) {
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+    const response = await fetch(`${contentUrl}/questions/${id}`, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    if (response.ok) {
+      const q = await response.json();
+      return {
+        data: {
+          id: q.id,
+          subject: q.subject,
+          year: q.year,
+          paper: q.paper,
+          section: q.section,
+          topic: q.topic,
+          prompt: q.prompt,
+          options: q.options,
+          correctAnswer: q.correctAnswer || q.correct_answer,
+          questionNumber: q.questionNumber || q.question_number,
+          questionType: q.questionType || q.question_type || 'mcq',
+          explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+        },
+        source: 'CONTENT_SERVICE'
+      };
+    }
+  } catch {
+    // Downstream service offline
   }
 
-  return { data: result, source: 'LOCAL_SEED_BANK' };
+  return null;
 }
 
 /**
@@ -115,4 +171,20 @@ export async function fetchArticles(category?: string) {
   }
 
   return { data: result, source: 'LOCAL_SEED_BANK' };
+}
+
+/**
+ * AI Assistant Microservice Chat Forwarder:
+ * Connects to AI microservice on AI_SERVICE_URL (default: port 5003).
+ */
+export async function forwardChatToAiService(payload: {
+  message?: string;
+  messages?: Array<{ role: string; content: string }>;
+}) {
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
+  return fetch(`${aiUrl}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
 }

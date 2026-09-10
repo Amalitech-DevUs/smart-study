@@ -7,10 +7,10 @@ type MessageListProps = {
 };
 
 const samplePrompts = [
-  "Explain the Pythagorean theorem with an example",
-  "How does photosynthesis work in plants?",
-  "What is the difference between active and passive voice?",
-  "Summarize key causes of the Industrial Revolution",
+  "Simplify the algebraic expression: 3(2x + 5) - 4x",
+  "Explain the process of photosynthesis for BECE Science",
+  "What are the main functions of the Executive branch of government in Ghana?",
+  "What is the difference between active and passive voice in English?",
 ];
 
 export function MessageList({ messages, onSelectPrompt }: MessageListProps) {
@@ -18,18 +18,18 @@ export function MessageList({ messages, onSelectPrompt }: MessageListProps) {
     <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 font-body sm:p-6">
       {messages.length === 0 ? (
         <div className="my-auto flex flex-col items-center justify-center text-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-gold/15 text-brand-gold shadow-md">
-            <Bot className="h-7 w-7" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fff8eb] border border-[#f5a623]/30 text-[#b87609]">
+            <Bot className="h-6 w-6" />
           </div>
-          <h3 className="mt-4 font-heading text-2xl font-bold text-slate-900">
-            How can I help you study today?
+          <h3 className="mt-4 font-heading text-2xl font-extrabold text-[#0e1726]">
+            How can your BECE Tutor help today?
           </h3>
-          <p className="mt-2 max-w-md text-sm text-slate-500">
-            Ask any question about Mathematics, Science, English, or Social Studies past papers.
+          <p className="mt-1.5 max-w-md text-xs text-[#525b68]">
+            Ask any question about Mathematics, Integrated Science, English Language, or Social Studies.
           </p>
 
-          <div className="mt-8 flex w-full max-w-lg flex-col gap-2.5">
-            <p className="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold">
+          <div className="mt-6 flex w-full max-w-lg flex-col gap-2">
+            <p className="flex items-center justify-center gap-1 text-xs font-bold uppercase tracking-wider text-[#c0392b]">
               <Sparkles className="h-3.5 w-3.5" />
               Try asking:
             </p>
@@ -38,9 +38,9 @@ export function MessageList({ messages, onSelectPrompt }: MessageListProps) {
                 key={prompt}
                 type="button"
                 onClick={() => onSelectPrompt?.(prompt)}
-                className="rounded-2xl border border-slate-200/80 bg-white/80 p-3 text-left text-xs font-medium text-slate-700 shadow-sm transition-all hover:border-brand-gold hover:bg-white hover:shadow-md"
+                className="paper-card margin-accent-gold p-3 text-left text-xs font-medium text-[#0e1726] transition-colors hover:border-[#0e1726]"
               >
-                "{prompt}"
+                &quot;{prompt}&quot;
               </button>
             ))}
           </div>
@@ -57,20 +57,20 @@ export function MessageList({ messages, onSelectPrompt }: MessageListProps) {
               }`}
             >
               <div
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold shadow-sm ${
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-xs font-bold ${
                   isStudent
-                    ? "bg-brand-gold text-brand-indigo"
-                    : "bg-brand-indigo text-white"
+                    ? "bg-[#f5a623] text-[#0e1726]"
+                    : "bg-[#0e1726] text-white"
                 }`}
               >
                 {isStudent ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
               </div>
 
               <div
-                className={`max-w-[85%] rounded-3xl px-5 py-3.5 text-sm leading-relaxed shadow-sm ${
+                className={`max-w-[85%] rounded-lg px-4 py-3 text-xs leading-relaxed whitespace-pre-wrap ${
                   isStudent
-                    ? "rounded-tr-none bg-brand-indigo text-white"
-                    : "rounded-tl-none border border-slate-200/80 bg-white text-slate-800"
+                    ? "bg-[#0e1726] text-white"
+                    : "paper-card border border-[#e2e8f0] bg-white text-[#0e1726]"
                 }`}
               >
                 {message.content}
