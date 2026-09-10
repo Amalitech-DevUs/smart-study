@@ -3,9 +3,10 @@ node_modules/
 .DS_Store
 dist/
 build/
-
-# Python & databases
-__pycache__/
-*.pyc
-.venv/
-*.db
+.env
+/vendor/
+# Composer
+vendor/ 
+# SQLite
+*.sqlite
+*.sqlite3
