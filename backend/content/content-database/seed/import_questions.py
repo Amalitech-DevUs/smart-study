@@ -1,11 +1,18 @@
-﻿import json
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pydantic import ValidationError
 from sqlalchemy import select
 
-from app.db.session import SessionLocal
+from app.db.base import Base
+from app.db.session import SessionLocal, engine
 from app.models.question import Question
 from app.schemas.question import QuestionBase
+
+Base.metadata.create_all(bind=engine)
 
 with open("seed/questions.json", "r", encoding="utf-8") as file:
     questions_data = json.load(file)
