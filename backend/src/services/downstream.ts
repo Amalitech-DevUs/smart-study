@@ -174,6 +174,33 @@ export async function fetchArticles(category?: string) {
 }
 
 /**
+ * Single Article Data Provider: Tries downstream Content DB service first, falls back to src/data/articles.json
+ */
+export async function fetchArticleById(idOrSlug: string | number) {
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    const response = await fetch(`${contentUrl}/articles/${encodeURIComponent(String(idOrSlug))}`, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    if (response.ok) {
+      const data = await response.json();
+      return { data: data.data || data, source: 'CONTENT_SERVICE' };
+    }
+  } catch (error) {
+    // Fall back to seed dataset
+  }
+
+  const idStr = String(idOrSlug).toLowerCase();
+  const article = articlesData.find(a => String(a.id).toLowerCase() === idStr || a.slug?.toLowerCase() === idStr);
+  if (article) {
+    return { data: article, source: 'LOCAL_SEED_BANK' };
+  }
+  return null;
+}
+
+
+/**
  * AI Assistant Microservice Chat Forwarder:
  * Connects to AI microservice on AI_SERVICE_URL (default: port 5003).
  */

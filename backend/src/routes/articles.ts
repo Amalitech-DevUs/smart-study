@@ -1,8 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { validate } from '../middleware/validate';
 import { articlesQuerySchema, articleIdParamsSchema } from '../schemas';
-import { fetchArticles } from '../services/downstream';
-import articlesData from '../data/articles.json';
+import { fetchArticles, fetchArticleById } from '../services/downstream';
 
 const router = Router();
 
@@ -26,23 +25,32 @@ router.get('/', validate({ query: articlesQuerySchema }), async (req: Request, r
   }
 });
 
-// GET /articles/:id - Fetch single article by ID
-router.get('/:id', validate({ params: articleIdParamsSchema }), async (req: Request, res: Response) => {
-  const article = articlesData.find(a => a.id === req.params.id);
-  if (!article) {
-    return res.status(404).json({
-      success: false,
-      error: {
-        code: 'ARTICLE_NOT_FOUND',
-        message: `Article with ID ${req.params.id} was not found`
+// GET /articles/:id - Fetch single article by ID or Slug
+router.get('/:id', validate({ params: articleIdParamsSchema }), async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const result = await fetchArticleById(req.params.id);
+    if (!result || !result.data) {
+      return res.status(404).json({
+        success: false,
+        error: {
+          code: 'ARTICLE_NOT_FOUND',
+          message: `Article with ID or slug "${req.params.id}" was not found`
+        }
+      });
+    }
+
+    res.json({
+      success: true,
+      data: result.data,
+      meta: {
+        source: result.source,
+        timestamp: new Date().toISOString()
       }
     });
+  } catch (error) {
+    next(error);
   }
-
-  res.json({
-    success: true,
-    data: article
-  });
 });
 
 export default router;
+
