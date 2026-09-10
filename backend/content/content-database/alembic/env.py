@@ -9,6 +9,7 @@ from sqlalchemy import pool
 from alembic import context
 from app.db.base import Base
 from app.models.question import Question
+from app.models.article import Article
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
