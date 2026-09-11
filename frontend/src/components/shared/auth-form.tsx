@@ -70,7 +70,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       const destination =
         redirect?.startsWith("/") && !redirect.startsWith("//")
           ? redirect
-          : "/";
+          : "/dashboard";
       router.push(destination);
     } catch {
       setErrors({ form: "Unable to connect right now. Please try again." });

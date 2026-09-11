@@ -50,13 +50,21 @@ export function TopNav() {
         {/* Auth Section */}
         <div className="flex items-center gap-3">
           {!isLoading && loggedIn ? (
-            <Link
-              href="/profile"
-              className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:bg-slate-800"
-            >
-              <UserIcon className="h-3.5 w-3.5" />
-              <span>{username ?? "Profile"}</span>
-            </Link>
+            <>
+              <Link
+                href="/dashboard"
+                className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:bg-slate-800 hover:text-white"
+              >
+                <span>Dashboard</span>
+              </Link>
+              <Link
+                href="/profile"
+                className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:bg-slate-800"
+              >
+                <UserIcon className="h-3.5 w-3.5" />
+                <span>{username ?? "Profile"}</span>
+              </Link>
+            </>
           ) : (
             <>
               <Link

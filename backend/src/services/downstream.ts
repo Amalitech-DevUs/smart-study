@@ -1,4 +1,5 @@
 import articlesData from '../data/articles.json';
+import questionsData from '../data/questions.json';
 
 export interface ServiceHealthStatus {
   service: string;
@@ -101,14 +102,48 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     }
     clearTimeout(timeoutId);
   } catch (error) {
-    // Connection error
+    // Content DB service offline, proceeding to local seed bank fallback
   }
 
-  return { data: [], source: 'CONTENT_SERVICE' };
+  // Fallback to local verified questions seed bank (813 questions)
+  let localQuestions = questionsData as any[];
+
+  if (filters?.subject) {
+    localQuestions = localQuestions.filter(
+      q => q.subject && q.subject.toLowerCase() === filters.subject!.toLowerCase()
+    );
+  }
+  if (filters?.year) {
+    localQuestions = localQuestions.filter(
+      q => Number(q.year) === Number(filters.year)
+    );
+  }
+  if (filters?.topic) {
+    localQuestions = localQuestions.filter(
+      q => q.topic && q.topic.toLowerCase() === filters.topic!.toLowerCase()
+    );
+  }
+
+  const normalizedFallback = localQuestions.map((q: any) => ({
+    id: q.id,
+    subject: q.subject,
+    year: q.year,
+    paper: q.paper,
+    section: q.section,
+    topic: q.topic,
+    prompt: q.prompt,
+    options: q.options,
+    correctAnswer: q.correctAnswer || q.correct_answer,
+    questionNumber: q.questionNumber || q.question_number,
+    questionType: q.questionType || q.question_type || 'mcq',
+    explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+  }));
+
+  return { data: normalizedFallback, source: 'LOCAL_SEED_BANK' };
 }
 
 /**
- * Single Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ * Single Question Data Provider: Queries Content DB first, falls back to local seed bank
  */
 export async function fetchQuestionById(id: string | number) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -139,6 +174,30 @@ export async function fetchQuestionById(id: string | number) {
     }
   } catch {
     // Downstream service offline
+  }
+
+  const found = (questionsData as any[]).find(
+    q => String(q.id) === String(id) || String(q.question_number) === String(id)
+  );
+
+  if (found) {
+    return {
+      data: {
+        id: found.id,
+        subject: found.subject,
+        year: found.year,
+        paper: found.paper,
+        section: found.section,
+        topic: found.topic,
+        prompt: found.prompt,
+        options: found.options,
+        correctAnswer: found.correctAnswer || found.correct_answer,
+        questionNumber: found.questionNumber || found.question_number,
+        questionType: found.questionType || found.question_type || 'mcq',
+        explanation: found.explanation || `The correct answer is Option ${found.correctAnswer || found.correct_answer}.`
+      },
+      source: 'LOCAL_SEED_BANK'
+    };
   }
 
   return null;
