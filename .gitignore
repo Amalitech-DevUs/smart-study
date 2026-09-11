@@ -3,11 +3,9 @@ node_modules/
 .DS_Store
 dist/
 build/
-.env
+chroma_db/
 /vendor/
-# Composer
-vendor/ 
-# SQLite
+vendor/
 *.sqlite
 *.sqlite3
-*.db
+*.db

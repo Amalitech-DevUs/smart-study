@@ -1,13 +1,15 @@
 import os
 import sys
 import json
+import httpx
 from dotenv import load_dotenv
-from openai import OpenAI, AsyncOpenAI
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List, Optional, Union
+from typing import List, Optional
 from sse_starlette.sse import EventSourceResponse
+import chromadb
+from chromadb.config import Settings
 
 load_dotenv()
 
@@ -19,41 +21,28 @@ if GROQ_API_KEY:
     PROVIDER_NAME = "Groq"
     BASE_URL = "https://api.groq.com/openai/v1"
     API_KEY = GROQ_API_KEY
-    MODEL = os.getenv("GROQ_MODEL", "groq/compound-mini")
+    MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
 elif OPENROUTER_API_KEY:
     PROVIDER_NAME = "OpenRouter"
     BASE_URL = "https://openrouter.ai/api/v1"
     API_KEY = OPENROUTER_API_KEY
-    MODEL = os.getenv("OPENROUTER_MODEL", "nvidia/nemotron-3.5-lightning:free")
+    MODEL = os.getenv("OPENROUTER_MODEL", "inclusionai/ling-3.0-flash-vl:free")
 else:
     PROVIDER_NAME = "None"
     BASE_URL = "https://openrouter.ai/api/v1"
     API_KEY = None
-    MODEL = "meta-llama/llama-3.2-3b-instruct:free"
+    MODEL = "inclusionai/ling-3.0-flash-vl:free"
 
-# Sync client — used by the CLI chat loop
-sync_client = OpenAI(
-    base_url=BASE_URL,
-    api_key=API_KEY or "dummy_key",
-)
-
-# Async client — used by the FastAPI web endpoints
-async_client = AsyncOpenAI(
-    base_url=BASE_URL,
-    api_key=API_KEY or "dummy_key",
-)
-
-SYSTEM_PROMPT = """You are Smart Study AI, a friendly BECE tutor for Ghanaian JHS students.
-Scope: only answer questions related to BECE subjects (Mathematics, Integrated Science, English Language, Social Studies, and other core JHS subjects).
-Rules:
-- Explain simply, at a JHS student's level, with examples where useful.
-- If a question is unrelated to BECE study, politely decline and redirect the student.
-- Never provide direct answers to what looks like a live exam in progress — teach the concept instead.
-- Keep answers clear and not overly long."""
-
+SYSTEM_PROMPT = """You are Smart Study AI, a friendly, warm, and expert BECE study tutor for Ghanaian JHS students.
+Answer questions accurately and helpfully on BECE subjects (Mathematics, Integrated Science, English Language, Social Studies).
+Formatting and Tone Rules:
+- Speak naturally and conversationally, like a supportive teacher in the classroom.
+- Avoid cluttered markdown syntax: do NOT use horizontal divider lines (---) or excessive hashtags (###).
+- Organize your answers with clean bold topic headings and easy-to-read paragraphs or bullet points.
+- Give simple, easy-to-understand explanations with relatable Ghanaian examples where helpful.
+- Never output internal thinking notes; speak directly and kindly to the student."""
 
 # ── FastAPI Web Server ───────────────────────────────────────────────────────
-
 app = FastAPI(title="Smart Study AI - BECE Tutor")
 
 app.add_middleware(
@@ -64,44 +53,117 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ── ChromaDB Persistent Client for Layer 2 RAG ──────────────────────────────
+CHROMA_DIR = os.path.join(os.path.dirname(__file__), "chroma_db")
+chroma_client = None
+questions_collection = None
 
-class ChatMessage(BaseModel):
+try:
+    if os.path.exists(CHROMA_DIR):
+        chroma_client = chromadb.PersistentClient(path=CHROMA_DIR, settings=Settings(anonymized_telemetry=False))
+        questions_collection = chroma_client.get_collection(name="bece_questions")
+        print(f"ChromaDB initialized. 'bece_questions' collection has {questions_collection.count()} items.")
+except Exception as e:
+    print(f"Notice: ChromaDB not loaded at startup ({e}). Will attempt lazy connection on request.")
+
+
+def retrieve_relevant_bece_context(query: str, n_results: int = 3) -> tuple:
+    """Retrieve top relevant BECE past questions from ChromaDB for Layer 2 RAG."""
+    global chroma_client, questions_collection
+
+    if questions_collection is None:
+        try:
+            if os.path.exists(CHROMA_DIR):
+                chroma_client = chromadb.PersistentClient(path=CHROMA_DIR, settings=Settings(anonymized_telemetry=False))
+                questions_collection = chroma_client.get_collection(name="bece_questions")
+        except Exception as e:
+            print(f"ChromaDB connection error: {e}")
+            return "", []
+
+    if questions_collection is None:
+        return "", []
+
+    try:
+        results = questions_collection.query(
+            query_texts=[query],
+            n_results=n_results
+        )
+        documents = results.get("documents", [[]])[0]
+        metadatas = results.get("metadatas", [[]])[0]
+
+        if not documents:
+            return "", []
+
+        context_blocks = []
+        for i, doc in enumerate(documents):
+            context_blocks.append(f"[BECE Past Question Reference {i+1}]:\n{doc}")
+
+        return "\n\n".join(context_blocks), metadatas
+    except Exception as e:
+        print(f"RAG retrieval failed, falling back to Layer 1 prompt: {e}")
+        return "", []
+
+
+class ChatMessageModel(BaseModel):
     role: str
     content: str
 
 
 class ChatRequest(BaseModel):
-    # Supports both {"message": "..."} and {"messages": [...]}
     message: Optional[str] = None
-    messages: Optional[List[ChatMessage]] = None
+    messages: Optional[List[ChatMessageModel]] = None
 
 
-async def stream_response(messages: list):
-    """Stream tokens using the openai SDK."""
+async def stream_response(messages: list, source_tag: str):
+    """Stream response using httpx directly to the LLM API."""
     if not API_KEY:
         yield json.dumps({
-            "reply": "Hello! I am Smart Study AI, your BECE tutor. To enable live AI answers, please add your GROQ_API_KEY (from https://console.groq.com/keys) or OPENROUTER_API_KEY in backend/ai-assistant/.env.",
+            "reply": "To enable live AI answers, please add your GROQ_API_KEY (from https://console.groq.com/keys) or OPENROUTER_API_KEY in backend/ai-assistant/.env.",
             "source": "system"
         })
         return
 
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    if PROVIDER_NAME == "OpenRouter":
+        headers["HTTP-Referer"] = "https://smart-study.local"
+        headers["X-Title"] = "Smart Study AI"
+
+    payload = {
+        "model": MODEL,
+        "messages": messages,
+        "stream": True,
+        "max_tokens": 600,
+        "temperature": 0.4,
+    }
+
     try:
-        response = await async_client.chat.completions.create(
-            model=MODEL,
-            messages=messages,
-            stream=True,
-            max_tokens=500,
-            temperature=0.7,
-            timeout=25.0,
-        )
-        async for chunk in response:
-            if chunk.choices and chunk.choices[0].delta.content:
-                content = chunk.choices[0].delta.content
-                yield json.dumps({"reply": content, "source": PROVIDER_NAME.lower()})
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            async with client.stream("POST", f"{BASE_URL}/chat/completions", headers=headers, json=payload) as response:
+                if response.status_code != 200:
+                    yield json.dumps({"reply": "The study assistant is temporarily unavailable. Please try again shortly.", "source": "fallback"})
+                    return
+                async for line in response.aiter_lines():
+                    if line.startswith("data: "):
+                        data = line[6:].strip()
+                        if data == "[DONE]":
+                            break
+                        try:
+                            chunk = json.loads(data)
+                            if chunk.get("choices"):
+                                delta = chunk["choices"][0].get("delta", {})
+                                content = delta.get("content", "")
+                                if content:
+                                    yield json.dumps({"reply": content, "source": source_tag})
+                        except json.JSONDecodeError:
+                            continue
     except Exception as e:
         error_msg = str(e)
         if "429" in error_msg:
-            yield json.dumps({"reply": "Rate limit reached for the daily free tier. Please add GROQ_API_KEY in .env for unlimited free usage.", "source": "error"})
+            yield json.dumps({"reply": "Rate limit reached. Please add a GROQ_API_KEY in .env for unlimited free usage.", "source": "error"})
         else:
             yield json.dumps({"reply": "The study assistant is temporarily unavailable. Please try again shortly.", "source": "fallback"})
 
@@ -109,101 +171,84 @@ async def stream_response(messages: list):
 @app.post("/chat")
 async def chat(request: ChatRequest):
     """
-    Streaming chat endpoint.
+    Streaming chat endpoint with Layer 2 RAG.
     Accepts either:
     1. {"message": "Simplify: 3(2x + 5) - 4x"}
     2. {"messages": [{"role": "user", "content": "..."}]}
-    Returns: SSE stream of {"reply": "...", "source": "groq"|"openrouter"}
+    Returns: SSE stream of {"reply": "...", "source": "rag-layer2"|"prompt-layer1"|...}
     """
     formatted_messages = []
+    user_query = ""
 
     if request.message is not None:
         if not isinstance(request.message, str) or not request.message.strip():
             raise HTTPException(status_code=400, detail={"error": "message must be a non-empty string", "code": "INVALID_INPUT"})
-        formatted_messages = [{"role": "user", "content": request.message.strip()}]
+        user_query = request.message.strip()
+        formatted_messages = [{"role": "user", "content": user_query}]
     elif request.messages is not None:
         if not request.messages:
             raise HTTPException(status_code=400, detail={"error": "messages array cannot be empty", "code": "INVALID_INPUT"})
         formatted_messages = [{"role": m.role, "content": m.content} for m in request.messages]
+        user_query = next((m.content for m in reversed(request.messages) if m.role == "user"), "")
     else:
         raise HTTPException(status_code=400, detail={"error": "Either 'message' or 'messages' payload is required", "code": "INVALID_INPUT"})
 
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+    # Layer 2: Retrieve relevant BECE past questions from ChromaDB
+    context_text, _ = retrieve_relevant_bece_context(user_query, n_results=3)
+
+    if context_text:
+        augmented_system = (
+            f"{SYSTEM_PROMPT}\n\n"
+            "Below is relevant reference material from the official BECE past question bank:\n"
+            "==============================\n"
+            f"{context_text}\n"
+            "==============================\n\n"
+            "Use these references to ground your explanation in the actual BECE syllabus."
+        )
+        source_tag = "rag-layer2"
+    else:
+        augmented_system = SYSTEM_PROMPT
+        source_tag = f"prompt-layer1-{PROVIDER_NAME.lower()}"
+
+    messages = [{"role": "system", "content": augmented_system}]
     messages.extend(formatted_messages)
 
-    return EventSourceResponse(stream_response(messages))
+    return EventSourceResponse(stream_response(messages, source_tag))
 
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "provider": PROVIDER_NAME, "model": MODEL}
+    count = 0
+    if questions_collection:
+        try:
+            count = questions_collection.count()
+        except Exception:
+            count = 0
+    return {
+        "status": "ok",
+        "provider": PROVIDER_NAME,
+        "model": MODEL,
+        "rag_enabled": questions_collection is not None and count > 0,
+        "questions_indexed": count,
+    }
 
 
 # ── CLI Terminal Chatbot ─────────────────────────────────────────────────────
-
 def main():
-    """Run Smart Study AI as an interactive terminal chatbot with memory."""
+    """Run Smart Study AI as an interactive terminal chatbot."""
     if not API_KEY:
         print("Error: Neither GROQ_API_KEY nor OPENROUTER_API_KEY is set in .env", file=sys.stderr)
         sys.exit(1)
-
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
-
-    print(f"\n📚 Welcome to Smart Study AI — Your BECE Tutor! (Powered by {PROVIDER_NAME}: {MODEL})")
-    print("Ask me anything about Mathematics, Science, English, Social Studies, and other BECE subjects.")
+    print(f"\n📚 Welcome to Smart Study AI — Your BECE Tutor! (Provider: {PROVIDER_NAME}, Model: {MODEL})")
     print("Type 'exit' or 'quit' to end the session.\n")
-
-    while True:
-        try:
-            user_input = input("You: ").strip()
-        except (EOFError, KeyboardInterrupt):
-            print("\n\nGoodbye! Keep studying hard. You've got this! 💪")
-            break
-
-        if not user_input:
-            continue
-        if user_input.lower() in ("exit", "quit"):
-            print("\nSmart Study AI: Goodbye! Keep studying hard. You've got this! 💪")
-            break
-
-        messages.append({"role": "user", "content": user_input})
-
-        print("\nSmart Study AI: ", end="", flush=True)
-        try:
-            response = sync_client.chat.completions.create(
-                model=MODEL,
-                messages=messages,
-                stream=True,
-                max_tokens=500,
-                temperature=0.7,
-            )
-            reply = ""
-            for chunk in response:
-                if chunk.choices and chunk.choices[0].delta.content:
-                    content = chunk.choices[0].delta.content
-                    print(content, end="", flush=True)
-                    reply += content
-            print("\n")
-
-            messages.append({"role": "assistant", "content": reply})
-
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str and PROVIDER_NAME == "OpenRouter":
-                print("\n\n⚠️ OpenRouter daily free limit (50 requests) reached!")
-                print("To fix this and get 14,400 free requests/day:")
-                print("1. Get a free API key at: https://console.groq.com/keys")
-                print("2. Add `GROQ_API_KEY=gsk_...` to your backend/ai-assistant/.env file")
-            else:
-                print(f"\n[Error: {e}]\n")
-            messages.pop()
 
 
 if __name__ == "__main__":
     if "--server" in sys.argv:
         import uvicorn
-        port = int(os.getenv("PORT", 5003))
+        port = int(os.getenv("PORT", 8000))
         print(f"Starting Smart Study AI API server on http://127.0.0.1:{port} (Provider: {PROVIDER_NAME}, Model: {MODEL})")
-        uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
+        uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
     else:
-        main()
+        import uvicorn
+        uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

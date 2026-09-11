@@ -147,14 +147,18 @@ export async function fetchQuestionById(id: string | number) {
 /**
  * Article Data Provider: Tries downstream Content DB service first, falls back to src/data/articles.json
  */
-export async function fetchArticles(category?: string) {
+export async function fetchArticles(filters?: { category?: string; subject?: string }) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 2500);
 
-    const query = category ? `?category=${encodeURIComponent(category)}` : '';
-    const response = await fetch(`${contentUrl}/articles${query}`, { signal: controller.signal });
+    const params = new URLSearchParams();
+    if (filters?.category) params.append('category', filters.category);
+    if (filters?.subject) params.append('subject', filters.subject);
+
+    const queryString = params.toString() ? `?${params.toString()}` : '';
+    const response = await fetch(`${contentUrl}/articles${queryString}`, { signal: controller.signal });
     clearTimeout(timeoutId);
 
     if (response.ok) {
@@ -165,50 +169,82 @@ export async function fetchArticles(category?: string) {
     // Fall back to seed dataset
   }
 
-  let result = articlesData;
-  if (category) {
-    result = result.filter(a => a.category.toLowerCase() === category.toLowerCase());
+  let result = articlesData as Array<Record<string, any>>;
+  if (filters?.category) {
+    result = result.filter(a => a.category?.toLowerCase() === filters.category!.toLowerCase());
+  }
+  if (filters?.subject) {
+    result = result.filter(a => a.subject?.toLowerCase() === filters.subject!.toLowerCase());
   }
 
   return { data: result, source: 'LOCAL_SEED_BANK' };
 }
 
 /**
- * Single Article Data Provider: Tries downstream Content DB service first, falls back to src/data/articles.json
+ * Fetch a single article by either integer ID or string slug
  */
-export async function fetchArticleById(idOrSlug: string | number) {
+export async function fetchArticleByIdOrSlug(identifier: string) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+
+  // If numeric, try direct endpoint first
+  if (/^\d+$/.test(identifier)) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2500);
+      const response = await fetch(`${contentUrl}/articles/${identifier}`, { signal: controller.signal });
+      clearTimeout(timeoutId);
+
+      if (response.ok) {
+        const data = await response.json();
+        return { data: data.data || data, source: 'CONTENT_SERVICE' };
+      }
+    } catch (error) {
+      // Continue to search or fallback
+    }
+  }
+
+  // Try fetching all articles from Content DB to match by slug or id
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000);
-    const response = await fetch(`${contentUrl}/articles/${encodeURIComponent(String(idOrSlug))}`, { signal: controller.signal });
+    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const response = await fetch(`${contentUrl}/articles`, { signal: controller.signal });
     clearTimeout(timeoutId);
+
     if (response.ok) {
-      const data = await response.json();
-      return { data: data.data || data, source: 'CONTENT_SERVICE' };
+      const list = await response.json();
+      const articles = Array.isArray(list) ? list : list.data || [];
+      const found = articles.find((a: any) =>
+        String(a.slug || '').toLowerCase() === identifier.toLowerCase() ||
+        String(a.id) === identifier
+      );
+      if (found) {
+        return { data: found, source: 'CONTENT_SERVICE' };
+      }
     }
   } catch (error) {
-    // Fall back to seed dataset
+    // Fall back to local seed data
   }
 
-  const idStr = String(idOrSlug).toLowerCase();
-  const article = articlesData.find(a => String(a.id).toLowerCase() === idStr || a.slug?.toLowerCase() === idStr);
-  if (article) {
-    return { data: article, source: 'LOCAL_SEED_BANK' };
-  }
-  return null;
+  const localFound = (articlesData as Array<Record<string, any>>).find(a =>
+    String(a.slug || '').toLowerCase() === identifier.toLowerCase() ||
+    String(a.id).toLowerCase() === identifier.toLowerCase()
+  );
+
+  return { data: localFound || null, source: 'LOCAL_SEED_BANK' };
 }
 
+// Alias for development branch compatibility
+export const fetchArticleById = fetchArticleByIdOrSlug;
 
 /**
  * AI Assistant Microservice Chat Forwarder:
- * Connects to AI microservice on AI_SERVICE_URL (default: port 5003).
+ * Connects to AI microservice on AI_SERVICE_URL (default: port 8000).
  */
 export async function forwardChatToAiService(payload: {
   message?: string;
   messages?: Array<{ role: string; content: string }>;
 }) {
-  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:8000';
   return fetch(`${aiUrl}/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

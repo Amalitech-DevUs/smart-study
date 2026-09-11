@@ -12,10 +12,12 @@ type AuthFormProps = {
 export function AuthForm({ mode }: AuthFormProps) {
   const [username, setUsername] = useState("");
   const [pin, setPin] = useState("");
+  const [confirmPin, setConfirmPin] = useState("");
   const [showPin, setShowPin] = useState(false);
   const [errors, setErrors] = useState<{
     username?: string;
     pin?: string;
+    confirmPin?: string;
     form?: string;
   }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,6 +35,14 @@ export function AuthForm({ mode }: AuthFormProps) {
 
     if (!/^\d{4,6}$/.test(pin)) {
       nextErrors.pin = "PIN must be between 4 and 6 numbers";
+    }
+
+    if (isSignup) {
+      if (!confirmPin) {
+        nextErrors.confirmPin = "Please re-type your PIN to confirm";
+      } else if (confirmPin !== pin) {
+        nextErrors.confirmPin = "PINs do not match. Please verify your PIN.";
+      }
     }
 
     setErrors(nextErrors);
@@ -222,6 +232,35 @@ export function AuthForm({ mode }: AuthFormProps) {
                   <p className="mt-1 text-xs font-medium text-rose-600">{errors.pin}</p>
                 )}
               </div>
+
+              {isSignup && (
+                <div>
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="confirmPin" className="block text-xs font-semibold text-slate-700">
+                      Confirm Security PIN
+                    </label>
+                    <span className="text-[11px] text-slate-400">Re-enter PIN</span>
+                  </div>
+                  <div className="relative mt-1.5">
+                    <input
+                      id="confirmPin"
+                      name="confirmPin"
+                      type={showPin ? "text" : "password"}
+                      inputMode="numeric"
+                      pattern="[0-9]{4,6}"
+                      maxLength={6}
+                      placeholder="••••"
+                      value={confirmPin}
+                      onChange={(e) => setConfirmPin(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                      className="w-full min-h-[44px] rounded-lg border border-slate-200 bg-slate-50/50 pl-3.5 pr-10 text-sm tracking-widest text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-slate-400 focus:bg-white focus:ring-2 focus:ring-slate-900/5"
+                      aria-invalid={Boolean(errors.confirmPin)}
+                    />
+                  </div>
+                  {errors.confirmPin && (
+                    <p className="mt-1 text-xs font-medium text-rose-600">{errors.confirmPin}</p>
+                  )}
+                </div>
+              )}
 
               <button
                 type="submit"

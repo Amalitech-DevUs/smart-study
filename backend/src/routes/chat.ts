@@ -35,17 +35,25 @@ router.post('/', validate({ body: chatMessageSchema }), async (req: Request, res
       res.setHeader('Cache-Control', 'no-cache');
       res.setHeader('Connection', 'keep-alive');
 
-      const reader = aiResponse.body.getReader();
-      try {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          res.write(value);
+      const reader = (aiResponse.body as any).getReader
+        ? (aiResponse.body as any).getReader()
+        : null;
+
+      if (reader) {
+        try {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            res.write(value);
+          }
+        } finally {
+          res.end();
         }
-      } finally {
-        res.end();
+        return;
+      } else if ((aiResponse.body as any).pipe) {
+        (aiResponse.body as any).pipe(res);
+        return;
       }
-      return;
     }
 
     // Pass JSON payload through
@@ -59,7 +67,7 @@ router.post('/', validate({ body: chatMessageSchema }), async (req: Request, res
     return res.json({
       success: true,
       data: {
-        reply: `Smart Study AI tutor is currently offline. Please ensure the AI backend server is running on port 5003. In the meantime, you can explore flashcards or practice questions related to "${message}".`,
+        reply: `Smart Study AI tutor is currently offline. Please ensure the AI backend server is running. In the meantime, you can explore flashcards or practice questions related to "${message}".`,
         role: 'assistant',
         source: 'offline-fallback',
         timestamp: new Date().toISOString()
@@ -69,4 +77,3 @@ router.post('/', validate({ body: chatMessageSchema }), async (req: Request, res
 });
 
 export default router;
-

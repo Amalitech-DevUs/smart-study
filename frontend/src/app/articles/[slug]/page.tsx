@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpen, Clock, Calendar, Bookmark, Share2 } from "lucide-react";
+import { ArrowLeft, BookOpen, Clock, Calendar } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 type Article = {
