@@ -4,3 +4,8 @@ node_modules/
 dist/
 build/
 chroma_db/
+/vendor/
+vendor/
+*.sqlite
+*.sqlite3
+*.db

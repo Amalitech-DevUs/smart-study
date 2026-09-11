@@ -2,7 +2,6 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { validate } from '../middleware/validate';
 import { articlesQuerySchema, articleIdParamsSchema } from '../schemas';
 import { fetchArticles, fetchArticleByIdOrSlug } from '../services/downstream';
-import articlesData from '../data/articles.json';
 
 const router = Router();
 

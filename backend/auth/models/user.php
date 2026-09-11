@@ -2,9 +2,9 @@
 
 class User
 {
-    private mysqli $db;
+    private PDO $db;
 
-    public function __construct(mysqli $db)
+    public function __construct(PDO $db)
     {
         $this->db = $db;
     }
@@ -14,25 +14,17 @@ class User
     {
         $sql = "SELECT id, username, pin_hash, created_at
                 FROM users
-                WHERE username = ?
+                WHERE username = :username
                 LIMIT 1";
 
         $stmt = $this->db->prepare($sql);
+        $stmt->execute([
+            ':username' => $username
+        ]);
 
-        if (!$stmt) {
-            throw new Exception("Failed to prepare query: " . $this->db->error);
-        }
+        $user = $stmt->fetch();
 
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-
-        if ($result->num_rows === 0) {
-            return null;
-        }
-
-        return $result->fetch_assoc();
+        return $user ?: null;
     }
 
     // Create a new user
@@ -41,21 +33,16 @@ class User
         $pinHash = password_hash($pin, PASSWORD_BCRYPT);
 
         $sql = "INSERT INTO users (username, pin_hash)
-                VALUES (?, ?)";
+                VALUES (:username, :pin_hash)";
 
         $stmt = $this->db->prepare($sql);
 
-        if (!$stmt) {
-            throw new Exception("Failed to prepare insert query: " . $this->db->error);
-        }
+        $stmt->execute([
+            ':username' => $username,
+            ':pin_hash' => $pinHash
+        ]);
 
-        $stmt->bind_param("ss", $username, $pinHash);
-
-        if (!$stmt->execute()) {
-            throw new Exception("Failed to create user: " . $stmt->error);
-        }
-
-        return $stmt->insert_id;
+        return (int) $this->db->lastInsertId();
     }
 
     // Verify user's PIN
@@ -68,5 +55,24 @@ class User
         }
 
         return password_verify($pin, $user['pin_hash']);
+    }
+
+    // Find a user by ID
+    public function findById(int $id): ?array
+    {
+        $sql = "SELECT id, username, pin_hash, created_at
+                FROM users
+                WHERE id = :id
+                LIMIT 1";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute([
+            ':id' => $id
+        ]);
+
+        $user = $stmt->fetch();
+
+        return $user ?: null;
     }
 }

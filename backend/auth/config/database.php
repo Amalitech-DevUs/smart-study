@@ -2,45 +2,54 @@
 
 class Database
 {
-    private string $host;
-    private int $port;
-    private string $username;
-    private string $password;
     private string $database;
+    private string $schema;
 
-    public mysqli $connection;
+    public PDO $connection;
 
     public function __construct()
     {
-        $this->host = $_ENV['DB_HOST'] ?? $_SERVER['DB_HOST'] ?? '127.0.0.1';
-        $this->port = (int)($_ENV['DB_PORT'] ?? $_SERVER['DB_PORT'] ?? 3307);
-        $this->username = $_ENV['DB_USER'] ?? $_SERVER['DB_USER'] ?? 'root';
-        $this->password = $_ENV['DB_PASS'] ?? $_SERVER['DB_PASS'] ?? 'Akunini@2456';
-        $this->database = $_ENV['DB_NAME'] ?? $_SERVER['DB_NAME'] ?? 'smart_study';
+        $this->database = __DIR__ . '/../database/smart_study.sqlite';
+        $this->schema = __DIR__ . '/../database/schema.sql';
     }
 
-    public function connect(): mysqli
+    public function connect(): PDO
     {
-        $this->connection = @new mysqli(
-            $this->host,
-            $this->username,
-            $this->password,
-            $this->database,
-            $this->port
+        $this->connection = new PDO(
+            'sqlite:' . $this->database
         );
 
-        if ($this->connection->connect_error) {
-            http_response_code(500);
-            header('Content-Type: application/json');
-            echo json_encode([
-                'success' => false,
-                'message' => "Database connection failed: " . $this->connection->connect_error
-            ]);
-            exit();
-        }
+        $this->connection->setAttribute(
+            PDO::ATTR_ERRMODE,
+            PDO::ERRMODE_EXCEPTION
+        );
 
-        $this->connection->set_charset("utf8mb4");
+        $this->connection->setAttribute(
+            PDO::ATTR_DEFAULT_FETCH_MODE,
+            PDO::FETCH_ASSOC
+        );
+
+        // Enable foreign keys
+        $this->connection->exec('PRAGMA foreign_keys = ON');
+
+        // Create tables if they don't exist
+        $this->initializeDatabase();
 
         return $this->connection;
+    }
+
+    private function initializeDatabase(): void
+    {
+        if (!file_exists($this->schema)) {
+            throw new Exception('Database schema file not found.');
+        }
+
+        $schema = file_get_contents($this->schema);
+
+        if ($schema === false) {
+            throw new Exception('Unable to read database schema.');
+        }
+
+        $this->connection->exec($schema);
     }
 }

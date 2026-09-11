@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { GraduationCap, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const footerGroups = [
   {
