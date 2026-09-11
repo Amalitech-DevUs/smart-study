@@ -244,7 +244,7 @@ export async function forwardChatToAiService(payload: {
   message?: string;
   messages?: Array<{ role: string; content: string }>;
 }) {
-  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:8000';
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
   return fetch(`${aiUrl}/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

@@ -244,11 +244,7 @@ def main():
 
 
 if __name__ == "__main__":
-    if "--server" in sys.argv:
-        import uvicorn
-        port = int(os.getenv("PORT", 8000))
-        print(f"Starting Smart Study AI API server on http://127.0.0.1:{port} (Provider: {PROVIDER_NAME}, Model: {MODEL})")
-        uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
-    else:
-        import uvicorn
-        uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    port = int(os.getenv("PORT", 5003))
+    import uvicorn
+    print(f"Starting Smart Study AI API server on http://127.0.0.1:{port} (Provider: {PROVIDER_NAME}, Model: {MODEL})")
+    uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
