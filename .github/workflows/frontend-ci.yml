@@ -23,7 +23,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: frontend/package-lock.json
 
@@ -31,10 +31,10 @@ jobs:
         run: npm ci
 
       - name: Lint
-        run: npm run lint --if-present
+        run: npm run --if-present lint
 
       - name: Build (Next.js)
         run: npm run build
 
       - name: Run tests
-        run: npm test --if-present
+        run: npm run --if-present test

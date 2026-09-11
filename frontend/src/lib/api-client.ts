@@ -1,12 +1,12 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:5000';
 
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   error?: {
     code: string;
     message: string;
-    details?: any;
+    details?: unknown;
   };
   meta?: {
     count?: number;
@@ -18,7 +18,7 @@ export interface ApiResponse<T = any> {
 /**
  * Universal fetch wrapper for Backend API calls (port 5000)
  */
-export async function apiFetch<T = any>(
+export async function apiFetch<T = Record<string, unknown>>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<ApiResponse<T>> {
@@ -37,7 +37,7 @@ export async function apiFetch<T = any>(
 
     const data = await res.json();
     return data;
-  } catch (error) {
+  } catch {
     return {
       success: false,
       error: {
@@ -66,12 +66,23 @@ export async function fetchQuestionByIdApi(id: string) {
   return apiFetch(`/questions/${id}`);
 }
 
-export async function fetchArticlesApi(category?: string) {
-  const query = category ? `?category=${encodeURIComponent(category)}` : '';
-  return apiFetch(`/articles${query}`);
+export async function fetchArticlesApi(params?: { category?: string; subject?: string }) {
+  const query = new URLSearchParams();
+  if (params?.category) query.append('category', params.category);
+  if (params?.subject) query.append('subject', params.subject);
+
+  const queryString = query.toString();
+  return apiFetch(`/articles${queryString ? `?${queryString}` : ''}`);
 }
 
-export async function sendChatMessageApi(message: string, conversationHistory?: any[]) {
+export async function fetchArticleBySlugApi(slug: string) {
+  return apiFetch(`/articles/${encodeURIComponent(slug)}`);
+}
+
+export async function sendChatMessageApi(
+  message: string,
+  conversationHistory?: Array<{ role: string; content: string }>
+) {
   return apiFetch('/chat', {
     method: 'POST',
     body: JSON.stringify({ message, conversationHistory })

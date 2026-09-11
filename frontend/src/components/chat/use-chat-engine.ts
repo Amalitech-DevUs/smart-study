@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
 
 export type ChatMessage = {
   id: string;
@@ -30,13 +30,23 @@ function createMessage(
   };
 }
 
-async function readResponse(response: Response): Promise<string> {
+async function readResponse(
+  response: Response,
+  onChunk?: (streamedText: string) => void,
+): Promise<string> {
   const contentType = response.headers.get("content-type") ?? "";
 
   if (!response.body || !contentType.includes("text/event-stream")) {
     const data = await response.json().catch(() => null);
     if (typeof data === "string") return data;
-    return data?.content ?? data?.message ?? data?.response ?? "";
+    return (
+      data?.reply ??
+      data?.data?.reply ??
+      data?.content ??
+      data?.message ??
+      data?.response ??
+      ""
+    );
   }
 
   const reader = response.body.getReader();
@@ -48,17 +58,28 @@ async function readResponse(response: Response): Promise<string> {
     if (done) break;
 
     const chunk = decoder.decode(value, { stream: true });
-    for (const line of chunk.split("\n")) {
-      const data = line.startsWith("data:")
-        ? line.slice(5).trim()
-        : line.trim();
+    const lines = chunk.split("\n");
+
+    for (const line of lines) {
+      if (!line.startsWith("data:")) continue;
+      const data = line.replace(/^data:\s*/, "").trim();
       if (!data || data === "[DONE]") continue;
 
       try {
         const parsed = JSON.parse(data);
-        content += parsed.content ?? parsed.delta ?? parsed.message ?? "";
+        const text =
+          parsed.reply ??
+          parsed.content ??
+          parsed.delta ??
+          parsed.message ??
+          "";
+        if (text) {
+          content += text;
+          onChunk?.(content);
+        }
       } catch {
         content += data;
+        onChunk?.(content);
       }
     }
   }
@@ -68,7 +89,13 @@ async function readResponse(response: Response): Promise<string> {
 
 export function useChatEngine(): ChatEngineState {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(() => {
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      return searchParams.get("prompt") || searchParams.get("q") || "";
+    }
+    return "";
+  });
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -84,8 +111,8 @@ export function useChatEngine(): ChatEngineState {
       setIsSending(true);
 
       try {
-        const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-        if (!baseUrl) throw new Error("Chat service is not configured.");
+        const baseUrl =
+          process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
         const response = await fetch(`${baseUrl.replace(/\/$/, "")}/chat`, {
           method: "POST",
@@ -95,13 +122,37 @@ export function useChatEngine(): ChatEngineState {
 
         if (!response.ok) throw new Error("Chat request failed.");
 
-        const assistantContent = await readResponse(response);
-        if (!assistantContent) throw new Error("Chat response was empty.");
+        const assistantId = `assistant-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        let messageAdded = false;
 
-        setMessages((currentMessages) => [
-          ...currentMessages,
-          createMessage("assistant", assistantContent),
-        ]);
+        const assistantContent = await readResponse(response, (liveText) => {
+          if (!messageAdded) {
+            messageAdded = true;
+            setMessages((current) => [
+              ...current,
+              {
+                id: assistantId,
+                role: "assistant",
+                content: liveText,
+                timestamp: new Date().toISOString(),
+              },
+            ]);
+          } else {
+            setMessages((current) =>
+              current.map((msg) =>
+                msg.id === assistantId ? { ...msg, content: liveText } : msg,
+              ),
+            );
+          }
+        });
+
+        if (!messageAdded) {
+          if (!assistantContent) throw new Error("Chat response was empty.");
+          setMessages((currentMessages) => [
+            ...currentMessages,
+            createMessage("assistant", assistantContent),
+          ]);
+        }
       } catch (requestError) {
         setError(
           requestError instanceof Error
