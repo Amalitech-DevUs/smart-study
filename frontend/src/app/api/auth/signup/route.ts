@@ -20,7 +20,13 @@ export async function POST(request: Request) {
         { error: data.error?.message ?? data.error ?? "Authentication failed." },
         { status: backendResponse.status },
       );
-    const token = data.token ?? data.jwt ?? data.accessToken ?? data.data?.token ?? 'mock_jwt_signup_token';
+    const token = data.token ?? data.jwt ?? data.accessToken ?? data.data?.token;
+    if (typeof token !== "string") {
+      // In PHP auth, signup may only return user/message without auto-login token, or with token
+      // If no token returned, just return username without cookie so they can log in
+      const username = data.username ?? data.data?.user?.username;
+      return NextResponse.json({ username });
+    }
     const username = data.username ?? data.data?.user?.username;
     const response = NextResponse.json({ username });
     response.cookies.set(AUTH_COOKIE_NAME, token, {
