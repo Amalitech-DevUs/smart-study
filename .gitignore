@@ -3,3 +3,9 @@ node_modules/
 .DS_Store
 dist/
 build/
+chroma_db/
+/vendor/
+vendor/
+*.sqlite
+*.sqlite3
+*.db
