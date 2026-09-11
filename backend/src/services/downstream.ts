@@ -1,4 +1,5 @@
 import articlesData from '../data/articles.json';
+import questionsData from '../data/questions.json';
 
 export interface ServiceHealthStatus {
   service: string;
@@ -62,7 +63,7 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
 }
 
 /**
- * Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ * Question Data Provider: Tries downstream Content DB service first, falls back to src/data/questions.json
  */
 export async function fetchQuestions(filters?: { subject?: string; year?: number; topic?: string }) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -101,14 +102,25 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     }
     clearTimeout(timeoutId);
   } catch (error) {
-    // Connection error
+    // Fall back to seed dataset
   }
 
-  return { data: [], source: 'CONTENT_SERVICE' };
+  let result = questionsData as Array<Record<string, any>>;
+  if (filters?.subject) {
+    result = result.filter(q => q.subject?.toLowerCase() === filters.subject!.toLowerCase());
+  }
+  if (filters?.year) {
+    result = result.filter(q => Number(q.year) === Number(filters.year));
+  }
+  if (filters?.topic) {
+    result = result.filter(q => q.topic?.toLowerCase().includes(filters.topic!.toLowerCase()));
+  }
+
+  return { data: result, source: 'LOCAL_SEED_BANK' };
 }
 
 /**
- * Single Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ * Single Question Data Provider: Tries downstream Content DB service first, falls back to src/data/questions.json
  */
 export async function fetchQuestionById(id: string | number) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -139,6 +151,13 @@ export async function fetchQuestionById(id: string | number) {
     }
   } catch {
     // Downstream service offline
+  }
+
+  const found = (questionsData as Array<Record<string, any>>).find(
+    q => String(q.id).toLowerCase() === String(id).toLowerCase()
+  );
+  if (found) {
+    return { data: found, source: 'LOCAL_SEED_BANK' };
   }
 
   return null;

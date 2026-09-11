@@ -261,10 +261,14 @@ export function MessageList({
   };
 
   const handleRate = (id: string, type: "up" | "down") => {
-    setRatings((prev) => ({
-      ...prev,
-      [id]: prev[id] === type ? (undefined as any) : type,
-    }));
+    setRatings((prev) => {
+      if (prev[id] === type) {
+        const next = { ...prev };
+        delete next[id];
+        return next;
+      }
+      return { ...prev, [id]: type };
+    });
   };
 
   return (

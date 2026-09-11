@@ -5,7 +5,7 @@ import Link from "next/link";
 import { McqCard, type McqQuestion } from "./mcq-card";
 import { SaveProgressBanner } from "@/components/shared/save-progress-banner";
 import { useAuth } from "@/lib/use-auth";
-import { CheckCircle2, RotateCcw, ArrowLeft, Bot, Award, Clock } from "lucide-react";
+import { RotateCcw, ArrowLeft, Bot, Award, Clock } from "lucide-react";
 
 const timerOptions = [
   { value: "practice", label: "Practice", seconds: 0 },
@@ -30,6 +30,7 @@ function formatTime(seconds: number) {
 }
 
 export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
+  const [prevQuestions, setPrevQuestions] = useState(initialQuestions);
   const [queue, setQueue] = useState<McqQuestion[]>(initialQuestions);
   const [attempts, setAttempts] = useState(0);
   const [completedQuestions, setCompletedQuestions] = useState(0);
@@ -38,12 +39,13 @@ export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
   const [timedOut, setTimedOut] = useState(false);
   const { loggedIn, isLoading } = useAuth();
 
-  useEffect(() => {
+  if (prevQuestions !== initialQuestions) {
+    setPrevQuestions(initialQuestions);
     setQueue(initialQuestions);
     setCompletedQuestions(0);
     setAttempts(0);
     setTimedOut(false);
-  }, [initialQuestions]);
+  }
 
   useEffect(() => {
     if (timerMode === "practice" || queue.length === 0 || timedOut) {

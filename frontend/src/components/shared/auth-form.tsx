@@ -117,7 +117,7 @@ export function AuthForm({ mode }: AuthFormProps) {
 
               <div className="mt-8 space-y-3">
                 {[
-                  "Official BECE questions from 2018 to 2023",
+                  "Official BECE questions from 2020 to 2026",
                   "Step-by-step guidance on difficult problems",
                   "Quick flashcards to retain formulas and facts",
                 ].map((feature) => (

@@ -1,5 +1,4 @@
 import { ChatEngine } from "@/components/chat/chat-engine";
-import { BookOpen } from "lucide-react";
 
 export default function ChatPage() {
   return (

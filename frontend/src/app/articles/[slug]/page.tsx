@@ -84,7 +84,6 @@ export default async function ArticleDetailPage({ params }: ArticlePageProps) {
     notFound();
   }
 
-  const subjectName = article.subject || "General Study Guide";
   const theme = article.subject && subjectThemes[article.subject]
     ? subjectThemes[article.subject]
     : {
