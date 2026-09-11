@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 export type ChatMessage = {
   id: string;
@@ -89,15 +89,19 @@ async function readResponse(
 
 export function useChatEngine(): ChatEngineState {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [input, setInput] = useState(() => {
-    if (typeof window !== "undefined") {
-      const searchParams = new URLSearchParams(window.location.search);
-      return searchParams.get("prompt") || searchParams.get("q") || "";
-    }
-    return "";
-  });
+  const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const promptParam = searchParams.get("prompt") || searchParams.get("q");
+      if (promptParam) {
+        setInput(promptParam);
+      }
+    }
+  }, []);
 
   const sendMessage = useCallback(
     async (text?: string) => {

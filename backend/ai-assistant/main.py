@@ -8,8 +8,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 from sse_starlette.sse import EventSourceResponse
-import chromadb
-from chromadb.config import Settings
+try:
+    import chromadb
+    from chromadb.config import Settings
+except ImportError:
+    chromadb = None
+    Settings = None
 
 load_dotenv()
 
@@ -21,7 +25,7 @@ if GROQ_API_KEY:
     PROVIDER_NAME = "Groq"
     BASE_URL = "https://api.groq.com/openai/v1"
     API_KEY = GROQ_API_KEY
-    MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+    MODEL = os.getenv("GROQ_MODEL", "groq/compound-mini")
 elif OPENROUTER_API_KEY:
     PROVIDER_NAME = "OpenRouter"
     BASE_URL = "https://openrouter.ai/api/v1"
