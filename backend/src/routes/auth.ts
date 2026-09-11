@@ -10,7 +10,7 @@ import { signupSchema, loginSchema } from '../schemas';
 const router = Router();
 
 const getAuthServiceUrl = () => process.env.AUTH_SERVICE_URL || 'http://localhost:5001/routes/auth.php';
-const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_dev_key_bece_2026_production_key_32bytes';
+const getJwtSecret = () => process.env.JWT_SECRET || 'super_secret_dev_key_bece_2026_production_key_32bytes';
 
 // ── Offline Fallback Storage (JSON seed bank) ───────────────────────────────
 const DATA_DIR = path.resolve(__dirname, '../data');
@@ -52,7 +52,7 @@ function saveFallbackUsers(users: FallbackUser[]): void {
 }
 
 function hashPin(pin: string): string {
-  return crypto.createHash('sha256').update(pin + JWT_SECRET).digest('hex');
+  return crypto.createHash('sha256').update(pin + getJwtSecret()).digest('hex');
 }
 
 function generateFallbackJwt(userId: number, username: string): string {
@@ -61,7 +61,7 @@ function generateFallbackJwt(userId: number, username: string): string {
       user_id: userId,
       username: username,
     },
-    JWT_SECRET,
+    getJwtSecret(),
     { expiresIn: '7d' }
   );
 }
