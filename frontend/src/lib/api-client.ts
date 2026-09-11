@@ -66,9 +66,17 @@ export async function fetchQuestionByIdApi(id: string) {
   return apiFetch(`/questions/${id}`);
 }
 
-export async function fetchArticlesApi(category?: string) {
-  const query = category ? `?category=${encodeURIComponent(category)}` : '';
-  return apiFetch(`/articles${query}`);
+export async function fetchArticlesApi(params?: { category?: string; subject?: string }) {
+  const query = new URLSearchParams();
+  if (params?.category) query.append('category', params.category);
+  if (params?.subject) query.append('subject', params.subject);
+
+  const queryString = query.toString();
+  return apiFetch(`/articles${queryString ? `?${queryString}` : ''}`);
+}
+
+export async function fetchArticleBySlugApi(slug: string) {
+  return apiFetch(`/articles/${encodeURIComponent(slug)}`);
 }
 
 export async function sendChatMessageApi(

@@ -92,11 +92,51 @@ export default async function PaperPage({ params }: PaperPageProps) {
     notFound();
   }
 
-  const questions = createPlaceholderQuestions(
-    subjectData.name,
-    subjectData.subjectColor,
-    year,
-  );
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
+  let questions: McqQuestion[] = [];
+
+  try {
+    const res = await fetch(
+      `${baseUrl.replace(/\/$/, "")}/questions?subject=${encodeURIComponent(subjectData.name)}&year=${year}`,
+      { cache: "no-store" }
+    );
+    if (res.ok) {
+      const json = await res.json();
+      const rawList = Array.isArray(json.data) ? json.data : Array.isArray(json) ? json : [];
+      if (rawList.length > 0) {
+        const optionKeys: Array<"a" | "b" | "c" | "d"> = ["a", "b", "c", "d"];
+        questions = rawList.map((q: any, idx: number) => {
+          const rawOpts: string[] = Array.isArray(q.options) ? q.options : [];
+          const correctIdx = rawOpts.findIndex(
+            (opt) => opt.toLowerCase() === String(q.correctAnswer || q.correct_answer || "").toLowerCase()
+          );
+          const correctOptionId = (correctIdx >= 0 ? optionKeys[correctIdx] : "a") as "a" | "b" | "c" | "d";
+
+          return {
+            id: String(q.id || `${subjectData.slug}-${year}-${idx + 1}`),
+            subject: subjectData.name,
+            subjectColor: subjectData.subjectColor,
+            question: q.prompt || q.question || `Question ${idx + 1}`,
+            options: optionKeys.map((key, i) => ({
+              id: key,
+              text: rawOpts[i] || `Option ${key.toUpperCase()}`,
+            })),
+            correctOptionId,
+          };
+        });
+      }
+    }
+  } catch {
+    // Graceful fallback if backend is offline
+  }
+
+  if (questions.length === 0) {
+    questions = createPlaceholderQuestions(
+      subjectData.name,
+      subjectData.subjectColor,
+      year,
+    );
+  }
 
   return (
     <main className="flex-1 bg-white px-6 py-10 pb-28 sm:py-14">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, XCircle, Sparkles } from "lucide-react";
+import { CheckCircle2, XCircle } from "lucide-react";
 
 export type SubjectColor = "math" | "english" | "science";
 
@@ -53,11 +53,10 @@ export function McqCard({
     <article className="w-full max-w-2xl overflow-hidden rounded-3xl border border-white/60 bg-white/90 p-6 shadow-xl backdrop-blur-xl sm:p-8">
       <div className="flex items-center justify-between">
         <span
-          className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-bold uppercase tracking-wider ${
+          className={`inline-flex items-center px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full border ${
             subjectBadges[subjectColor] ?? "bg-indigo-100 text-indigo-800"
           }`}
         >
-          <Sparkles className="h-3.5 w-3.5" />
           {subject}
         </span>
         <span className="text-xs font-semibold text-slate-400">Multiple Choice</span>
