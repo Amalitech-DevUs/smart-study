@@ -5,6 +5,7 @@ header('Content-Type: application/json');
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../controllers/AuthController.php';
 require_once __DIR__ . '/../utils/AuthMiddleware.php';
+require_once __DIR__ . '/../controllers/ProgressController.php';
 
 
 $database = new Database();
@@ -107,6 +108,54 @@ if ($method === 'GET' && str_ends_with($path, '/auth/me')) {
             'username' => $tokenData->username
         ]
     ]);
+
+    exit;
+}
+
+/*
+|--------------------------------------------------------------------------
+| POST /progress/attempts
+|--------------------------------------------------------------------------
+*/
+
+if ($method === 'POST' && $path === '/auth/progress/attempts') {
+
+    $tokenData = AuthMiddleware::authenticate();
+
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    if (!is_array($input)) {
+        http_response_code(400);
+
+        echo json_encode([
+            'success' => false,
+            'message' => 'Invalid JSON body.'
+        ]);
+
+        exit;
+    }
+
+    $attempts = $input['attempts'] ?? null;
+
+    if (!is_array($attempts) || empty($attempts)) {
+        http_response_code(400);
+
+        echo json_encode([
+            'success' => false,
+            'message' => 'Attempts are required.'
+        ]);
+
+        exit;
+    }
+
+    $progressController = new ProgressController($db);
+
+    $response = $progressController->recordAttempts(
+        (int) $tokenData->user_id,
+        $attempts
+    );
+
+    echo json_encode($response);
 
     exit;
 }
