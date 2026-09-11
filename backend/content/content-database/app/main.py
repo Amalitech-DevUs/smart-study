@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers.questions import router as questions_router
+from app.routers.articles import router as articles_router
 
 app = FastAPI(title="Content Database Service API")
 
@@ -21,7 +22,7 @@ def root():
         "status": "online",
         "docs": "/docs",
         "health": "/health",
-        "endpoints": ["/questions", "/questions/{id}"]
+        "endpoints": ["/questions", "/questions/{id}", "/articles", "/articles/{id}"]
     }
 
 
@@ -31,3 +32,4 @@ def health_check():
 
 
 app.include_router(questions_router)
+app.include_router(articles_router)

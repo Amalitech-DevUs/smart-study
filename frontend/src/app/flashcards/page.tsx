@@ -34,8 +34,8 @@ const subjects: Subject[] = [
   {
     slug: "social-studies",
     name: "Social Studies",
-    paperCount: 1,
-    years: "2020 Past Paper",
+    paperCount: 7,
+    years: "2020 to 2026",
     description: "Ghanaian governance, physical environment, colonization history, and citizenship.",
   },
 ];

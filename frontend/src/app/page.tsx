@@ -27,7 +27,7 @@ const subjects = [
   {
     name: "Social Studies",
     slug: "social-studies",
-    year: "2020 Past Paper",
+    year: "2020 to 2026",
     description: "Governance, geography, Ghanaian history, and environmental management.",
     topics: ["Governance", "Geography", "History", "Environment"],
   },

@@ -3,7 +3,9 @@ node_modules/
 dist/
 *.log
 .DS_Store
-.venv/
 __pycache__/
 *.pyc
-
+.venv/
+chroma_db/
+*.egg-info/
+uv.lock

@@ -8,7 +8,7 @@ class AuthController
     private User $user;
     private JwtHandler $jwt;
 
-    public function __construct(mysqli $db)
+    public function __construct(PDO $db)
     {
         $this->user = new User($db);
         $this->jwt = new JwtHandler();

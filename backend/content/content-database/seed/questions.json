@@ -9773,5 +9773,4051 @@
       "-x - 8"
     ],
     "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "District Assemblies of Ghana construct the following projects except",
+    "options": [
+      "school buildings.",
+      "feeder roads.",
+      "trunk roads.",
+      "clinics."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One factor which results in high birth rate in Ghana is",
+    "options": [
+      "effective use of contraceptives.",
+      "drifting of the youth to urban centres.",
+      "ineffective birth control measures.",
+      "failure of the youth to acquire skills."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following business enterprises raise capital through the sale of shares?",
+    "options": [
+      "Partnership",
+      "Sole proprietorship",
+      "Joint stock companies",
+      "Co-operative societies"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is not a business enterprise?",
+    "options": [
+      "Rural banks.",
+      "Joint stock companies.",
+      "Financial savings.",
+      "Co-operative societies."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Movement and supply of utilities in settlements become easier and faster when the",
+    "options": [
+      "layout is good.",
+      "layout is haphazard.",
+      "settlement is compact.",
+      "settlement is linear."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The best way of disposing industrial and domestic waste is by",
+    "options": [
+      "dumping.",
+      "burning.",
+      "burying.",
+      "recycling."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Sustainable development in Ghana depends upon",
+    "options": [
+      "peace and stability.",
+      "untapped natural resources.",
+      "unskilled labour.",
+      "University graduates."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Conflicts in the community cannot be properly managed when there is",
+    "options": [
+      "forgiveness.",
+      "mediation.",
+      "reconciliation.",
+      "land disputes."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The main reason for producing cocoa in Ghana is to",
+    "options": [
+      "promote the manufacture of more cocoa products.",
+      "generate more foreign exchange.",
+      "make the farmers happy.",
+      "set up more factories."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following business enterprises is the commonest and easiest to form in Ghana?",
+    "options": [
+      "Partnership",
+      "Sole proprietorships",
+      "Public joint stock companies",
+      "Co-operative Societies"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana is bordered in the west by",
+    "options": [
+      "Cote d'Ivoire.",
+      "Burkina Faso.",
+      "Togo.",
+      "Nigeria."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which one of the following may cause unemployment in Ghana?",
+    "options": [
+      "Greater use of locally made goods",
+      "Reduction in tax on imported goods",
+      "Development of inter-regional trade",
+      "Extension of electricity to rural communities"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The best way of increasing productivity in the agricultural sector is through",
+    "options": [
+      "effective supervision.",
+      "the use of modern technology.",
+      "instituting best farmers' awards.",
+      "planning and target setting."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One benefit Ghana derives from her co-operation with other countries is the",
+    "options": [
+      "prevention of dumping of expired goods.",
+      "introduction of foreign culture.",
+      "prevention of the spread of communicable diseases.",
+      "country's ability to access international funds."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a working environment, productivity means",
+    "options": [
+      "output of the country.",
+      "management of workers.",
+      "output per worker.",
+      "quantity of resource."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A general pardon for an offence against the state is known as",
+    "options": [
+      "amnesty.",
+      "freedom.",
+      "permit.",
+      "plebiscite."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is not a feature of a sketched map?",
+    "options": [
+      "Title",
+      "Key",
+      "Scale",
+      "Land mark"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "If Ghana is to be self-reliant, it must adopt the following methods except",
+    "options": [
+      "less dependent on foreign goods.",
+      "use of expertise from Ghana.",
+      "overdependence on foreign assistance.",
+      "improve agriculture."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "When the sun is overhead on the Tropic of Capricorn, areas in the southern hemisphere experience",
+    "options": [
+      "Winter.",
+      "Spring.",
+      "Summer.",
+      "Autumn."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "National unity in Ghana can be promoted through",
+    "options": [
+      "formal education.",
+      "freedom of worship.",
+      "use of made in Ghana goods.",
+      "religious tolerance."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Latitudes and Longitudes can be used to",
+    "options": [
+      "show contour lines on maps.",
+      "locate objects on maps.",
+      "show the direction of a stream.",
+      "show heights of mountains."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Rivers meander in their lower course because, the",
+    "options": [
+      "valley is almost flat.",
+      "valley is very steep.",
+      "rivers erode vertically.",
+      "deposition is very low."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana's population can best be described as youthful because a large portion of its people are between ages",
+    "options": [
+      "45-59.",
+      "30-44.",
+      "15-29.",
+      "0-14."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Head of the Traditional Government in Ghana is",
+    "options": [
+      "District Chief Executive.",
+      "Paramount Chief.",
+      "Regional Co-ordinator.",
+      "Divisional Chief."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The outbreak of Cholera can be prevented by",
+    "options": [
+      "supplying drugs.",
+      "improving nutrition.",
+      "providing clinics.",
+      "improving sanitation."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Public corporations are set up mainly to provide",
+    "options": [
+      "money for development.",
+      "emergency services.",
+      "utility services.",
+      "trading services."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An example of positive effects of colonization in Ghana is",
+    "options": [
+      "barter trade.",
+      "formal education.",
+      "Christian marriage.",
+      "human sacrifice."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following factors cannot promote political stability in Ghana?",
+    "options": [
+      "Dictatorship in administration",
+      "Freedom of speech",
+      "Multiparty democracy",
+      "Open government"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Sagrenti War of 1874 was fought between the",
+    "options": [
+      "Fante and Asante.",
+      "British and Fante.",
+      "Akyem and Asante.",
+      "British and Asante."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Latitudinal position of Ghana on the map",
+    "options": [
+      "4 degrees North and 11 degrees North approximately.",
+      "5 degrees North and 11 degrees North approximately.",
+      "4 degrees North and 13 degrees North approximately.",
+      "3 degrees North and 12 degrees North"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Indiscipline among the youth can be reduced through",
+    "options": [
+      "increasing health care.",
+      "enriching the youth with money.",
+      "encouraging desire for wealth.",
+      "public education."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Industries which are controlled and managed by the state are called",
+    "options": [
+      "cottage industries.",
+      "public corporations.",
+      "government departments.",
+      "co-operative societies."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The main function of the executive organ of government is",
+    "options": [
+      "interpretation of the law.",
+      "passing of laws.",
+      "implementation of policies.",
+      "approval of budget."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following tourist attractions is mostly associated with Kintampo in the Bono East region?",
+    "options": [
+      "Monkey sanctuary",
+      "Bird viewing",
+      "Savanna Vegetation",
+      "Waterfalls"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An individual who behaves in an honest and just manner is said to be performing",
+    "options": [
+      "civic responsibility.",
+      "civic right.",
+      "natural responsibility.",
+      "political responsibility."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following values promotes unity among Ghanaians?",
+    "options": [
+      "Logic",
+      "Tolerance",
+      "Humility",
+      "Hospitality"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is not a coastal feature?",
+    "options": [
+      "Cliff",
+      "Beach",
+      "Tide",
+      "Valley"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2021,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Political conflicts in Ghana can best be minimized through",
+    "options": [
+      "tolerating opposing views.",
+      "adopting a common language.",
+      "banning of private newspapers.",
+      "voting for a strong President."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following can aid economic independence of a nation?",
+    "options": [
+      "Giving more aid to needy countries",
+      "Generating enough revenue locally",
+      "Increasing imported goods",
+      "Defending the 1992 constitution"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following does not constitute a right of a Ghanaian according to the 1992 constitution?",
+    "options": [
+      "Right to unlawful assembly",
+      "Right to personal liberty",
+      "Right to life",
+      "Freedom of Association"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The application of science to improve upon the quality of life or work is also known as",
+    "options": [
+      "education",
+      "technology",
+      "computers",
+      "machine"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The following activities bring disgrace to the people and Ghana as a whole except",
+    "options": [
+      "the chieftaincy institution.",
+      "female genital mutilation.",
+      "armed robbery.",
+      "galamsey mining."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following activities is a duty of a citizen of Ghana?",
+    "options": [
+      "Attending religious meetings",
+      "Instigating mass boycott of development",
+      "Owning huge property",
+      "Defending the 1992 constitution"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following measures cannot improve the quality of life in the rural areas of Ghana?",
+    "options": [
+      "Unregulated family planning",
+      "Extending good roads to the rural communities",
+      "Greater access to improved formal education",
+      "Establishment of industries in the rural areas"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The early introduction of formal education by the colonialists in the Gold Coast, led to",
+    "options": [
+      "improvement in foreign trade.",
+      "improvement in civil service.",
+      "increase in labour force.",
+      "improvement in crop production."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The following are aspects of culture except",
+    "options": [
+      "beliefs",
+      "ceremony",
+      "language",
+      "food"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The growth rate of Ghana's population can be reduced mainly through",
+    "options": [
+      "family planning.",
+      "legislation",
+      "public education.",
+      "abortion"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The revolution of the earth around the sun causes",
+    "options": [
+      "day and night.",
+      "deflection of winds and ocean currents.",
+      "the four seasons.",
+      "the rise and fall of the tides."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The scale on the map is 1:200,000. If the distance on the map is 2 cm, find the actual distance on the ground?",
+    "options": [
+      "1.2 km",
+      "20 km",
+      "2 km",
+      "4 km"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Why are laws made?",
+    "options": [
+      "For family unity",
+      "For conformity",
+      "For instant justice",
+      "For development"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is not an element of the weather?",
+    "options": [
+      "Wind",
+      "Humidity",
+      "Tide",
+      "Thermometer"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The safest place to save money is the",
+    "options": [
+      "susu",
+      "bank",
+      "credit union",
+      "money box"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Increasing opportunities for employment in the Ghanaian society can help to reduce",
+    "options": [
+      "acts of indiscipline",
+      "the cost of living.",
+      "responsibility to the state.",
+      "influx of foreign materials into the country."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following activities show interaction between the physical and social environments?",
+    "options": [
+      "A father advising the child",
+      "A mother breastfeeding the baby",
+      "Man listening to music",
+      "Elephants drinking water from the river"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Ghana Coat of Arms was designed by",
+    "options": [
+      "Amon Kotei",
+      "Philip Gbeho",
+      "Ephraim Amu",
+      "Sophia Doku"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An account which is operated with the use of cheque, is known as",
+    "options": [
+      "Current account",
+      "Moneybox savings",
+      "Post office savings",
+      "Savings account"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One of the ways of promoting unity among the ethnic groups in Ghana is through",
+    "options": [
+      "Christian and Islamic rights",
+      "consulting the gods",
+      "adult education",
+      "inter-ethnic marriages"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which principle is used to check abuse of power in governance?",
+    "options": [
+      "Rule of law",
+      "Separation of powers",
+      "Executive Veto",
+      "Parliamentary immunity"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The savanna vegetation zones produce cattle because of the",
+    "options": [
+      "Fulani herdsmen",
+      "extensive grassland",
+      "hot climate",
+      "abundant rainfall"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The process of identifying signals of conflict and encouraging people to work out their differences is known as",
+    "options": [
+      "resolution",
+      "prevention",
+      "involvement",
+      "management"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following factor can best make private sector businesses more profitable",
+    "options": [
+      "Availability of ready market",
+      "Construction of improved roads",
+      "Stability in supply of adequate electricity",
+      "Adequate supply of labour"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The colour blue is used on topographical map to indicate",
+    "options": [
+      "buildings",
+      "rivers and lakes",
+      "mountains",
+      "rocks"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following does not reflect the importance of festivals in Ghana?",
+    "options": [
+      "Plans are made for developmental projects",
+      "Chiefs are enstooled",
+      "Family members come together",
+      "Disputes are encouraged"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One factor that can affect the academic performance of students negatively is",
+    "options": [
+      "effective supervision",
+      "loitering and truancy",
+      "prefects",
+      "co-curricula activities"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Laws in the country are made by the",
+    "options": [
+      "parliament",
+      "Government",
+      "Judiciary",
+      "District assembly"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The statement scale 1cm to 5km can be converted to representative fraction to read",
+    "options": [
+      "1 : 50,000",
+      "1 : 500,000",
+      "1 : 50",
+      "1 : 5,000"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The health of the people of Ghana can be improved through the",
+    "options": [
+      "supply of electricity",
+      "application of proper environmental sanitation activities",
+      "expanding non-formal education",
+      "setting up of industries"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "For Ghanaians to come out of negative influence of colonial mentality, they should",
+    "options": [
+      "develop high sense of self-reliance.",
+      "stop foreigners from coming into Ghana.",
+      "develop taste for European goods.",
+      "adopt foreign cultures."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following levels is imposed by the District Assemblies in Ghana",
+    "options": [
+      "Income tax",
+      "Driving Licenses",
+      "Market tolls",
+      "Court fines"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The person who combines the factors of production such as land, labour and capital is called",
+    "options": [
+      "shop keeper",
+      "operation",
+      "producer",
+      "entrepreneur"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In Ghana festivals usually serve all the following purposes except",
+    "options": [
+      "outdooring of new-born babies",
+      "community development planning",
+      "providing entertainment",
+      "pouring of libations to the ancestors"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is associated with a scale of a map",
+    "options": [
+      "Linear",
+      "Tilted",
+      "Compass",
+      "Balanced"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The sole proprietor enjoys all the following advantages except",
+    "options": [
+      "high profits",
+      "privacy",
+      "quick decisions",
+      "unlimited liability"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following factors is one of the major reasons for Ghana's cultural diversity",
+    "options": [
+      "Colonization",
+      "Migration",
+      "Foreign trade",
+      "internal trade"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following accounts for the presence of the equatorial forest in south western Ghana?",
+    "options": [
+      "Lumbering",
+      "Afforestation",
+      "Cloud cover",
+      "Rainfall"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Food production in Ghana faces the problem of",
+    "options": [
+      "foreign exchange",
+      "post-harvest losses",
+      "rainfall",
+      "loss of trees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following measures can increase tomato yield in Ghana",
+    "options": [
+      "Improved marketing",
+      "Availability of credit to farmers",
+      "Rainfall",
+      "Processing factories"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2022,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana's export are highly dominated by",
+    "options": [
+      "capital goods",
+      "primary products",
+      "finished goods",
+      "crude exports"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following best promotes the smooth operation of Separation of Powers in Ghana?",
+    "options": [
+      "Presidency",
+      "Chief Justice",
+      "Constitution",
+      "Speaker of parliament"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To prevent human rights abuse in Ghana, the court must",
+    "options": [
+      "Allow their settings to be telecast by TV stations",
+      "Be fair to all manner of persons",
+      "Extend their sitting hours to late evening",
+      "Set up a supreme court in every district"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following cultural practices should be maintained in Ghana?",
+    "options": [
+      "Incision of tribal marks",
+      "Widowhood rights",
+      "Trokosi",
+      "Child naming"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana is bordered to the east by which of the following countries?",
+    "options": [
+      "Togo",
+      "Cote d'Ivoire",
+      "Burkina Faso",
+      "Nigeria"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is a good measure for preventing human rights violation in Ghana?",
+    "options": [
+      "Extending formal education to all",
+      "Organizing free and fair elections",
+      "Making external travel more accessible",
+      "Establishing more human rights institutions"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In which type of rock can coal be found?",
+    "options": [
+      "Igneous rock",
+      "Volcanic rock",
+      "Sedimentary rock",
+      "Plutonic"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following cultural practices is considered acceptable in the Ghanaian society?",
+    "options": [
+      "Trokosi",
+      "Dipo",
+      "Female Genital Mutilation",
+      "Widowhood rights"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One of the founding fathers of Ghana who left the United Gold Coast Convention (U.G.C.C) to form his own party was",
+    "options": [
+      "J.B Danquah.",
+      "Kwame Nkrumah.",
+      "Ako Adjei.",
+      "Nana William Ofori Atta."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The main duty of the police in a community is to",
+    "options": [
+      "Arrest criminal",
+      "Intimidate people",
+      "Direct traffic",
+      "Keep law and order"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A society is said to be disciplined when its members",
+    "options": [
+      "Work hard to promote the well-being of the society",
+      "Obey the rules and the regulations that govern the society",
+      "Agree to choose their leaders very peacefully",
+      "Are friendly, especially towards foreigners."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which one of the following factors was not a cause of the 1948 riots in the Gold Coast?",
+    "options": [
+      "Nkrumah's suspension from the U.G.C.C.",
+      "Rising prices of goods",
+      "Mass unemployment",
+      "General discontent against European rule"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following latitudes divides the world into two equal halves?",
+    "options": [
+      "0 degrees",
+      "23 1/2 degrees N",
+      "23 1/2 degrees S",
+      "66 1/2 degrees N"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following investment cover one's properties against fire outbreaks?",
+    "options": [
+      "Treasury bill",
+      "Government bonds",
+      "Insurance policy",
+      "Company shares"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is not an indigenous Ghanaian language?",
+    "options": [
+      "Dagare",
+      "Ga",
+      "Nzema",
+      "Hausa"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following rivers flow into Lake Volta?",
+    "options": [
+      "Afram",
+      "Pra",
+      "Densu",
+      "Tano"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The two main types of cooperation that exist among nations are",
+    "options": [
+      "Bilateral and Cultural",
+      "Bilateral and multilateral",
+      "Economic and technical",
+      "Educational and multilateral."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which place did the Akans settle first during their migration to their present locations?",
+    "options": [
+      "Denkyira",
+      "Dormaa Ahinkro",
+      "Bono Manso",
+      "Chiraa"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following areas in Ghana is most likely to experience relief rainfall?",
+    "options": [
+      "Volta lowlands",
+      "Accra plains",
+      "Northern lowlands",
+      "Kwahu scarp"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Lake Bosomtwe, which is one of the natural lakes in the world is located in the",
+    "options": [
+      "Ashanti Region.",
+      "Brong-Ahafo Region.",
+      "Central Region.",
+      "Eastern Region."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One of the many ways by which conflicts are reduced in the society is through",
+    "options": [
+      "Prayers",
+      "Meditation",
+      "Mediation",
+      "Punishment"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana's dependence on foreign loans can be minimized by",
+    "options": [
+      "Diversifying and processing more for exports",
+      "The importation of skilled labour",
+      "The size of her population",
+      "Printing more money"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The imaginary lines shown on maps which help to determine time are called",
+    "options": [
+      "Longitudes",
+      "Equator",
+      "Latitudes",
+      "Great circles"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The largest ethnic group in Ghana is the",
+    "options": [
+      "Ga-Adangmes.",
+      "Ewes.",
+      "Guans.",
+      "Akans."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A bill becomes a law when it is signed by the",
+    "options": [
+      "Chief Justice",
+      "Attorney General",
+      "President",
+      "Speaker of parliament"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The local government system is meant to",
+    "options": [
+      "Provide resources for all",
+      "Elect leaders",
+      "Support the traditional justice system",
+      "Bring government closer to the people"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A disciplined child is the one who",
+    "options": [
+      "Is well educated in the family",
+      "Is well trained in the family",
+      "Obeys the rules of the family",
+      "Organizes the family for communal labour."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following towns is a manganese producing centre in Ghana?",
+    "options": [
+      "Nkwatia",
+      "Nsuta",
+      "Saltpond",
+      "Mpraeso"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Europeans presence and activities on the Gold Coast included the following except",
+    "options": [
+      "Trading with the people",
+      "Evangelizing the people",
+      "Destroying farm lands for gold",
+      "Spreading European civilization"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Primary production is important in Ghana because it provides",
+    "options": [
+      "Credit",
+      "Capital",
+      "Employment",
+      "Services"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following did not form part of the reasons for the formation of the Fante Confederation?",
+    "options": [
+      "Promote education of the people on their rights",
+      "Protest against the Poll Tax Ordinance",
+      "Protect the people from external attack",
+      "Provide social amenities for the people"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "International sporting activities do not only serve to promote friendship but also to",
+    "options": [
+      "Generate income for the countries",
+      "Win trophies",
+      "Receive aids and grants",
+      "Improve cultural practices"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A scale presented in a line form is known as",
+    "options": [
+      "Map scale",
+      "Statement scale",
+      "Representative scale",
+      "Linear scale"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Irresponsible behaviour of adolescents can result in",
+    "options": [
+      "Child abuse",
+      "Responsible parenting",
+      "Peer pressure",
+      "School dropout"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The southwest monsoon winds, more often than not bring rainfall to the southern parts of Ghana between",
+    "options": [
+      "December and March",
+      "January and April",
+      "February and June",
+      "April and October"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Greenwich meridian passes through one of the following places.",
+    "options": [
+      "Accra",
+      "Sunyani",
+      "Tema",
+      "Ho"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "If the time at town (A) on longitude 20 degrees E is 9:00 a.m., what will be the time at town (B) on longitude 80 degrees E?",
+    "options": [
+      "1:00 p.m.",
+      "1:00 a.m.",
+      "8:00 p.m.",
+      "8:00 a.m."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The main source of light energy on the Earth is the",
+    "options": [
+      "Hydro",
+      "Moon",
+      "Sun",
+      "Stars"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One factor that can make the adolescent drop out of school is",
+    "options": [
+      "Chaste life",
+      "Early parenthood",
+      "Social dignity",
+      "Moral discipline"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In the solar system, the Earth is one of the",
+    "options": [
+      "Globes",
+      "Latitudes",
+      "Longitudes",
+      "Planets"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2023,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Universal Adult Suffrage guarantees the right to",
+    "options": [
+      "Respect the laws of the land",
+      "Pay taxes on time",
+      "Vote to elect leaders",
+      "Register as a citizen"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "You need to make a detailed map of a mountainous area. This map will be used by the people who enjoy outdoor activities and by people who manage the land. Which of the following options is the best way to make an accurate map?",
+    "options": [
+      "Add 3D and colour gradient",
+      "Rely primarily on satellite imagery",
+      "Conduct field surveys and measure elevation",
+      "Simplify the contour lines"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following military rulers of Ghana implemented the Economic Recovery Program (ERP)?",
+    "options": [
+      "Frederick K. Akuffo",
+      "Jerry J. Rawlings",
+      "Ignatius K. Acheampong",
+      "Joseph A. Ankrah"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Two political events occurred in Ghana in 1960. One of the events was the presidential election. Which of the following political developments happened after the presidential election in 1960?",
+    "options": [
+      "Ghana became a colony again",
+      "Ghana remained a monarchy",
+      "Ghana became a republic",
+      "Ghana was divided into a northern and southern territory"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A market square in your community is in need of a clean-up and restoration. Which of the following options will best help address the challenge?",
+    "options": [
+      "Donating money to the market square but not getting involved personally",
+      "Joining community volunteer groups to help in the clean-up exercise",
+      "Ignoring the issue and hoping someone else will take care of it",
+      "Organizing a solo clean-up exercise"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana's public sector faces various challenges with respect to human resource development. Which of the following challenges is the most suitable challenge in the above given scenario?",
+    "options": [
+      "Financial challenges",
+      "Inefficient bureaucracy",
+      "Limited career advancement opportunities",
+      "Limited access to quality education"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Every Ghanaian citizen is expected to demonstrate commitment to democratic values. Which of the following actions best demonstrates the above expectation?",
+    "options": [
+      "Voting in national elections",
+      "Criticizing the government on social media",
+      "Volunteering for community service",
+      "Participating in peaceful protests"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the most likely effect of a large family size on the family's living conditions?",
+    "options": [
+      "Environmental conditions enhanced",
+      "Increased access to resources",
+      "Improved housing conditions",
+      "Overcrowding and reduced space"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The best approach to help resolve the difference between political parties during general elections is",
+    "options": [
+      "allowing the formation of more political parties.",
+      "encouraging youth participation in national politics.",
+      "encouraging traditional leaders to play partisan politics.",
+      "strengthening the judiciary."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the most common form of marriage in Ghana?",
+    "options": [
+      "Arranged marriage",
+      "Monogamous marriage",
+      "Common-Law marriage",
+      "Polygamous marriage"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana is made up of people with different cultures. What is the primary benefit if all the people unite? It will",
+    "options": [
+      "improve national security.",
+      "increase economic growth.",
+      "improve international reputation.",
+      "strengthen social cohesion."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A region experiences a significant decrease in temperature and rainfall over a few decades. What factor could be the most likely cause of this?",
+    "options": [
+      "Deforestation",
+      "Rise in global temperature",
+      "Increase in ocean current",
+      "Shift in wind pattern"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the best way to address deviant behaviour in an adolescent?",
+    "options": [
+      "Punishment",
+      "Ignoring it",
+      "Counselling",
+      "Parental neglect"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One similarity between Ghana and its neighbouring country, Togo, is they both have",
+    "options": [
+      "a border with Nigeria.",
+      "the same colonial parties.",
+      "a coastline along the Atlantic Ocean.",
+      "similar population size."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In 1966, a military Coup d'etat overthrew the government of Dr. Kwame Nkrumah. What was the main reason for the Coup?",
+    "options": [
+      "Economic mismanagement and corruption",
+      "Failure to implement socialist policies",
+      "External interference from the Russian government",
+      "Political instability and tribal conflicts"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which type of map will be most suitable for determining the elevation of a mountain range?",
+    "options": [
+      "Political map",
+      "Topographical map",
+      "Road map",
+      "Weather map"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following challenges did Ghana face soon after independence in 1957?",
+    "options": [
+      "Building of new roads and drainage systems with limited funds",
+      "Dealing with internal conflicts and political instability",
+      "Building of ports and harbours",
+      "Sourcing for donor support"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "There is an ongoing illegal mining activity in a community. The miners are using earth moving machines, cyanide and mercury. Sixty acres of vegetation cover is pulled down every hour. Which of the following options best describes the long term effect of their activities on the land?",
+    "options": [
+      "Erosion",
+      "Degradation",
+      "Depletion",
+      "Percolation"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One way to maintain peace and security in your community is by",
+    "options": [
+      "ignoring your neighbours.",
+      "starting a fight.",
+      "joining a gang.",
+      "volunteering for community service."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following fundamental human rights is protected by the 1992 constitution of Ghana? The right to",
+    "options": [
+      "use arms.",
+      "free education at tertiary level.",
+      "full employment.",
+      "freedom of speech."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A company is expanding globally and needs to socialize employees to new cultural norms. Which of the following approaches would be most effective?",
+    "options": [
+      "Encourage employees to adapt to the new culture on their own",
+      "Provide employees with a cultural sensitivity training program",
+      "Encourage employees to maintain their existing cultural practices.",
+      "Provide employees with a detailed guide to world cultures"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which one of the following took place after the 27th April, 1960 referendum?",
+    "options": [
+      "Ghana became a democratic state.",
+      "The first political party was formed.",
+      "Kwame Nkrumah was inaugurated as Prime Minister.",
+      "Queen Elizabeth II was inaugurated as Prime Minister."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following scenarios explains the main purpose of the Internet?",
+    "options": [
+      "Connecting electronic devices and making lives more convenient",
+      "Robots building several vehicles at a time",
+      "Developing new medicine kits",
+      "Scientists going to space and other planets"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Two communities are claiming ownership of a river which serves as their livelihood. This has resulted in conflicts between the two communities for many years. Which of the following mediations will best help to resolve the conflict?",
+    "options": [
+      "Avoid future conflicts",
+      "Facilitate communication and mutually acceptable solutions",
+      "Determine who is right or wrong",
+      "Impose a solution on the parties"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The following factors affect Ghana's ability to exploit its natural resources effectively except",
+    "options": [
+      "low level technology.",
+      "inadequate capital resource.",
+      "limited technical expertise.",
+      "farming activities."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A company is planning to build a soap factory in a rural area. The factory will provide jobs for the youth but may also pollute nearby rivers. Which of the following options best represents a sustainable development approach?",
+    "options": [
+      "Build the factory without environmental considerations",
+      "Build the factory with an environmental impact assessment",
+      "Build the factory with some environmental considerations",
+      "Reject the factory proposal to protect the environment"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Respecting the rights of others and performing our responsibilities to the state help to promote",
+    "options": [
+      "building political parties.",
+      "responsible citizenship.",
+      "community development.",
+      "national integration."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In 1957 the people of Ghana gained independence from the British colonial rule after a long political struggle. What was the main reason for Ghana's independence? To",
+    "options": [
+      "adopt a new political system and form a government",
+      "make Ghanaian culture and traditions superior to the British",
+      "gain economic freedom and control our natural resources",
+      "unite with other African countries and form a single nation"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "People join social security and pension schemes in order to",
+    "options": [
+      "ensure retirement income.",
+      "raise money to satisfy political ambitions.",
+      "maintain standard of living in the cities.",
+      "supplement income for relations in the villages."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The most significant attitude that helps to enhance self identity of the individual in the community is",
+    "options": [
+      "always wearing clean clothes.",
+      "engaging in peer teaching in school.",
+      "avoiding peer influence in the community.",
+      "showing respect to the elderly."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A farmer is preparing to plant crops next week. Why is it important for the farmer to check the weather forecast? To",
+    "options": [
+      "prepare for a storm.",
+      "plan a harvest festival.",
+      "determine the ideal time for planting.",
+      "predict the best time for irrigation."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The destruction of farm lands by cattle and the confrontation between herdsmen and farming communities in Ghana can best be resolved by",
+    "options": [
+      "allowing the game and wildlife department to take charge of cattle rearing in the communities.",
+      "local farmers always standing by to drive away herdsmen.",
+      "encouraging the practice of cattle-ranching in our communities.",
+      "seizing and distributing some of the cattle to the affected communities."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the main function of socialization? To",
+    "options": [
+      "enforce laws and regulations.",
+      "teach individuals how to survive.",
+      "provide education.",
+      "transmit culture and values."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following entrepreneurial skills is most important for someone starting a business to acquire in order to help overcome unexpected challenges?",
+    "options": [
+      "Leadership",
+      "Risk taking",
+      "Adaptability",
+      "Savings"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The first general election held in the Gold Coast in 1951 was won by the",
+    "options": [
+      "Convention People's Party.",
+      "National Alliance for the Liberals.",
+      "National Liberation Movement.",
+      "United Gold Coast Convention."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "It has been observed that the population of Ghana has been rising rapidly over the years. What is the primary reason for the rapidly growing population?",
+    "options": [
+      "High birth rate and low death rate",
+      "Improved health care and sanitation",
+      "Increased education and family planning",
+      "Increased immigration and low emigration"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following scenarios best describes an application of social security benefits?",
+    "options": [
+      "A teacher receives a scholarship to study abroad",
+      "A family member receives financial support after the death of the breadwinner",
+      "A community receives funds for a new irrigation project",
+      "An entrepreneur receives a loan to expand the business"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What type of climate, typically found near the equator, is characterized by very high temperatures and very low rainfall?",
+    "options": [
+      "Desert climate",
+      "Temperate climate",
+      "Polar climate",
+      "Tropical climate"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Controlling plastic waste has become a major environmental concern to the city authorities in Ghana. Which of the following options best helps minimize the negative impact of plastic waste disposal problem?",
+    "options": [
+      "Arresting all plastic waste producers",
+      "Placing a ban on single use plastics",
+      "Levying plastic waste producers",
+      "Using jute and paper bags"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following agricultural practices helps to prevent soil erosion?",
+    "options": [
+      "Cover cropping",
+      "Mono-culture",
+      "Crop rotation",
+      "Shifting cultivation"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A teacher, Mr. Jones, encourages his students to work together on a group project. What agency of socialization is influencing the students' behaviour?",
+    "options": [
+      "Education",
+      "Media",
+      "Family",
+      "Peer group"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In which continent are the Appalachian mountains located?",
+    "options": [
+      "Africa",
+      "North America",
+      "South America",
+      "Australia"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The main purpose of sex education in Ghanaian schools is to",
+    "options": [
+      "increase the likelihood of early marriage.",
+      "promote reproductive health and responsible behavior.",
+      "discourage communication between adolescents and health care providers.",
+      "promote chastity among adolescents."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One of the effective ways by which parents carry out socialization of the family members is by",
+    "options": [
+      "teaching them the importance of drum music and dance.",
+      "telling them ancient stories.",
+      "rebuking and punitive punishment.",
+      "open communication and admonishment."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In what way does the ageing population of Ghana affect the country's health system? It",
+    "options": [
+      "decreases the demand for healthcare services.",
+      "increases the burden on healthcare resources.",
+      "leads to a surplus of healthcare professionals.",
+      "reduces the supply of medication to children."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What role does Social Security and National Insurance Trust (SSNIT) play in the life of a pensioner?",
+    "options": [
+      "Payment of social benefits and all health needs",
+      "Provision of a source of income after retirement",
+      "Promotion of independence in old age",
+      "Promotion of reliance on government welfare program"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A lot of foreigners visit Ghana yearly to see beautiful sceneries. By this, they contribute to the economy through",
+    "options": [
+      "exploitation of natural resources.",
+      "exploitation of culture.",
+      "revenue generation and foreign exchange.",
+      "developing infrastructure only."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What role does cultural tourism play in preserving Ghana's traditional heritage? It",
+    "options": [
+      "promotes drumming and dancing.",
+      "promotes cultural exchange and appreciation of our way of life.",
+      "facilitates access to traditional artefacts in the community.",
+      "exposes cultural activities."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In 1948, there was a riot following the killing of three ex-servicemen at the Osu Christianborg Castle Crossroads. What significant impact did it have on nationalists' activities in the Gold Coast? It",
+    "options": [
+      "resulted in the transfer of the governor.",
+      "strengthened agitation against colonial administration.",
+      "encouraged patriotism and respect for rule of law.",
+      "strengthened colonial rule against the nationalists."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following options is the most destructive effect of volcanic eruption on the environment?",
+    "options": [
+      "Gas emission",
+      "Water pollution",
+      "Lava flows on vegetation",
+      "Loss of lives and property"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The demarcation of administrative regions and districts of Ghana are best highlighted on",
+    "options": [
+      "an imaginary map.",
+      "an economic map.",
+      "a political map.",
+      "a historical map."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Sanitation has been a major challenge in some communities in Ghana. What is the most sustainable way to improve sanitation in your community?",
+    "options": [
+      "Building more landfills for waste disposal",
+      "Providing many incinerators in the community",
+      "Recycling and education",
+      "Sweeping and collecting waste materials in the community"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Why is it useful to provide a legend on a map? To",
+    "options": [
+      "display the title",
+      "show the compass direction",
+      "explain the symbols",
+      "indicate the scale"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Contours on a map indicate what phenomenon?",
+    "options": [
+      "Elevation changes",
+      "Temperature changes",
+      "Pressure changes",
+      "Changes in rainfall"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Topographical maps are important to study because they show",
+    "options": [
+      "mainly the drainage of the land.",
+      "the plant cover of the land.",
+      "the elevation of land forms.",
+      "the distribution of settlements only."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How does your role as an active citizen contribute to the development of your community? By",
+    "options": [
+      "promoting self interest and peace of mind",
+      "fostering cooperation and collaboration",
+      "encouraging isolation from others and staying aloof",
+      "prioritizing personal interests over communal well being"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In what way does early exposure to sexual content on the media affect the adolescents?",
+    "options": [
+      "Admiration for the opposite sex",
+      "Sexual abstinence",
+      "Strong association with peers",
+      "Uncontrolled sexual activity"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The primary aim of elections in Ghana is to",
+    "options": [
+      "allow the powerful to govern without restraint.",
+      "protect the rights of children and mothers only.",
+      "provide tax reliefs to groups of people with common interests.",
+      "change governments peacefully and orderly."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What will be the best effect on the development of your community if you engage in voluntary activities? It will",
+    "options": [
+      "encourage people to pay their taxes.",
+      "promote peace and harmony.",
+      "foster a sense of belonging and shared responsibility.",
+      "hinder social progress and development."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your school is embarking on an excursion in Asia to see famous mountains. Which of the following mountains are they likely to see?",
+    "options": [
+      "Andes mountains",
+      "Atlas mountains",
+      "The Rocky mountains",
+      "Himalayas mountains"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Most Ghanaian communities experience flooding during the raining season due to",
+    "options": [
+      "nature having its way.",
+      "poor hygienic conditions.",
+      "long period of dry season.",
+      "siting of buildings on water ways."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following would you advise against by way of reducing dependence on foreign financial support?",
+    "options": [
+      "Developing the human resource",
+      "Patronizing Ghanaian products",
+      "Adding value to our primary products",
+      "Borrowing from the international market"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following cultural elements would you say identifies ethnic groups of Ghana the most?",
+    "options": [
+      "Dance",
+      "Food",
+      "Language",
+      "Music"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The productivity of a worker in an organization can best be improved by",
+    "options": [
+      "regular supervision and punishment.",
+      "engaging in short reading courses.",
+      "engaging in retraining workshops.",
+      "providing the necessary tools only."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What role does peer socialization play in shaping adolescent behavior and attitude? It",
+    "options": [
+      "reinforces parental authority.",
+      "encourages conformity to family traditions.",
+      "influences language, fashion and social norms.",
+      "promotes isolation from peer groups."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the major effect of illegal mining on the water bodies of Ghana?",
+    "options": [
+      "Destroys aquatic and plant life",
+      "Reduces the flow of water bodies",
+      "Changes the colour of the water bodies only",
+      "Empowers the youth negatively"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana was ushered into the fourth republican government in",
+    "options": [
+      "1981.",
+      "1966.",
+      "1979.",
+      "1992."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One negative effect of colonization on the Ghanaian society is the",
+    "options": [
+      "introduction of formal education.",
+      "introduction of currency.",
+      "adulteration of our culture.",
+      "introduction of plantation farming."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Criminal activities in the society can best be minimized if there is effective",
+    "options": [
+      "arbitration.",
+      "law enforcement.",
+      "parental care.",
+      "prison service."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The constitution of a country is important because it",
+    "options": [
+      "punishes criminals and politicians.",
+      "allows the Speaker to become the Head of State.",
+      "serves as basis for the practice of good governance.",
+      "can be amended anytime and has fixed term."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your younger brother's homework requires he identifies types of business enterprise. Which of the following should not be part of his list?",
+    "options": [
+      "Rural Banks",
+      "Joint Stock Companies",
+      "Non-Governmental Organizations - NGOs",
+      "Co-operative societies"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your father intends to begin a new business by raising capital through the sale of shares. This type of business enterprise is known as",
+    "options": [
+      "partnership.",
+      "sole proprietorship.",
+      "Joint Stock Company.",
+      "co-operative society."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The main function of the executive organ of government is",
+    "options": [
+      "approval of budget.",
+      "implementation of policies.",
+      "interpretation of the law.",
+      "law making and arbitration."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One major way you can defend the integrity of Ghana as a citizen is by",
+    "options": [
+      "promoting inter-ethnic marriages.",
+      "respecting other people's culture.",
+      "obeying the laws of the country.",
+      "promoting national festivals."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Rapid population growth of any country will result in",
+    "options": [
+      "better medical facilities.",
+      "high family expectation on female adults.",
+      "pressure on social facilities in the communities.",
+      "proper upbringing of many children."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To ensure the survival of private enterprises, the government of Ghana must support",
+    "options": [
+      "advertising the products of private enterprises, oversees and provide tax exemption.",
+      "controlling and providing vital services and strict control.",
+      "payment of their tax obligation and other commitments.",
+      "providing efficient management and direct control."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Apart from law making, Ghana's legislature also",
+    "options": [
+      "ensures accountability of the Executive to the people.",
+      "formulates and implements policies for development.",
+      "protects powerful entities in the state.",
+      "assents bills to become laws."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "On 28th of February, 1948, three ex-servicemen were shot and killed while marching peacefully to present a petition to the governor of the Gold Coast. These ex-servicemen were",
+    "options": [
+      "Corporal Attipoe, Flt. Lt. J.J. Rawlings and Gen. I.K. Acheampong.",
+      "Corporal Attipoe, Gen. Afrifa and Lt. Gen. E. K. Kotoka.",
+      "Corporal Attipoe, Lt. Gen. E.K. Kotoka and Gen. I.K. Acheampong.",
+      "Corporal Attipoe, Private Odartey-Lamptey and Sergeant Adjetey."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What makes it impossible to determine the actual distance from a sketch map? It",
+    "options": [
+      "is roughly drawn.",
+      "covers a large area.",
+      "has no key.",
+      "has no scale."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One major benefit Ghana derives from legal mining activities is",
+    "options": [
+      "generation of revenue for development.",
+      "granting of loans for mining activities and employment.",
+      "availability of rocks for road construction.",
+      "presidential awards received by mining companies."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Prime Minister of the Second Republic of Ghana was",
+    "options": [
+      "Dr Hilla Limann.",
+      "Dr K. A. Busia.",
+      "Dr Kwame Nkrumah.",
+      "Prof Evans Atta Mills."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How can you reduce air pollution in your environment? By using",
+    "options": [
+      "fertilizer on farms",
+      "D.D.T. in fishing",
+      "liquified petroleum gas",
+      "chemicals to destroy mosquitoes"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Human Rights abuse has become very common in the Ghanaian society lately. How best can this be prevented?",
+    "options": [
+      "Advising the offenders",
+      "Media houses exposing the abuses",
+      "Responsible parenting",
+      "Isolating offenders from the society"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following human activities in the highland areas of Ghana, mostly pollute the atmosphere?",
+    "options": [
+      "Farming",
+      "Mining",
+      "Quarrying",
+      "Herding"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Positive Action was declared in the Gold Coast in January 1950 by",
+    "options": [
+      "J.B Danquah.",
+      "E.A Ofori-Atta.",
+      "G.A Grant.",
+      "Kwame Nkrumah."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "As a civil servant working in Ghana, what is the importance of having a social security number? It",
+    "options": [
+      "allows you to vote in elections.",
+      "enables you to open a bank account.",
+      "provides access to free healthcare services.",
+      "help you to receive retirement benefits."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One positive effect of colonization you have studied and observed is",
+    "options": [
+      "creation of artificial geographical boundaries.",
+      "introduction of European culture.",
+      "introduction of modern transportation facilities.",
+      "introduction of democracy."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An example of a plateau with steep slopes in Ghana is",
+    "options": [
+      "Afadzato mountains.",
+      "Akwapim ranges.",
+      "Kwahu scarp.",
+      "Osudoko hills."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana was ushered into the second republican government in",
+    "options": [
+      "1969.",
+      "1972.",
+      "1966.",
+      "1992."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "After spending so much time revision on Adolescent Reproductive Health, you can best explain it to your peers as",
+    "options": [
+      "a state of being in good health.",
+      "the total well-being of the reproductive system.",
+      "various stages in the growth of the adolescent.",
+      "taking care of the reproductive organ."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which natural disaster causes sudden vibration of the Earth's surface, and often resulting in damage to buildings and infrastructure?",
+    "options": [
+      "Hurricane",
+      "Earthquake",
+      "Tsunami",
+      "Tornado"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which feature of the earth has a wide flat area of land, with minimal changes in elevation?",
+    "options": [
+      "Plain",
+      "Mountain",
+      "Delta",
+      "Plateau"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "After working in a modern automobile mechanic shop owned by your father during the vacation, you noticed and realized that difficult tasks are done more easily and faster",
+    "options": [
+      "when adequate capital is available.",
+      "when the work load is small.",
+      "when labour is well educated.",
+      "through the use of modern science and technology."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What role do parents play in supporting adolescent reproductive health? They",
+    "options": [
+      "encourage discussions on peer influence.",
+      "provide physical needs of the adolescent.",
+      "provide accurate information on reproductive health.",
+      "encourage a hygienic life style."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Self-identity is important because it helps the individual to",
+    "options": [
+      "live harmoniously with everyone.",
+      "get lessons from friends.",
+      "understand foreign languages.",
+      "respect authority."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "As a citizen of Ghana, which of the following actions best demonstrates your commitment to democratic values and nation building?",
+    "options": [
+      "Voting during election",
+      "Volunteering for community service",
+      "Participating in peaceful protest",
+      "Criticizing the government on social media"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Creation of dams along major river bodies will mainly help reduce",
+    "options": [
+      "farm yield.",
+      "perennial flooding.",
+      "water borne diseases.",
+      "soil fertility."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which agent of socialization in your environment is responsible for teaching social norms and values?",
+    "options": [
+      "Education",
+      "Government",
+      "Media",
+      "Family"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The primary function of the Judiciary is",
+    "options": [
+      "administration of justice.",
+      "registration of citizens.",
+      "making of laws",
+      "swearing of affidavits."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How can Ghanaians correct negative values and attitudes gained from colonization?",
+    "options": [
+      "Learning English language in our schools",
+      "Introducing a new system of government",
+      "Providing religious education in our schools",
+      "Cultivating positive work ethics"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How can vocational training programmes in your environment contribute to human resource development n Ghana? By",
+    "options": [
+      "encouraging reading and writing.",
+      "limiting access to educational opportunities.",
+      "improving the skills of the individual",
+      "promoting employment among the youth."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The executive arm of government is responsible for",
+    "options": [
+      "enacting laws for the country.",
+      "assenting to bills passed into laws.",
+      "interpreting laws of the country.",
+      "controlling state spending."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The interpretation of the constitution is the responsibility of the",
+    "options": [
+      "Legislature.",
+      "Cabinet.",
+      "Judiciary.",
+      "Executive."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Understanding the rights and obligations as a citizen of a state directly aligns to",
+    "options": [
+      "peace building.",
+      "responsible citizenship.",
+      "community development.",
+      "political awareness."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the most effective way energy can be conserved in our homes?",
+    "options": [
+      "Using light bulbs",
+      "Using energy-efficient LED light bulbs",
+      "Leaving lights on in unoccupied rooms",
+      "Keeping lights on during the day to brighten the room"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What is the most common environmental challenge that results from rapid population growth in your community?",
+    "options": [
+      "Overgrazing",
+      "Water pollution",
+      "Soil erosion",
+      "Improper waste disposal"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The President of the third republic of Ghana was",
+    "options": [
+      "Dr. K.A. Busia.",
+      "Prof. Evans Atta Mills.",
+      "Dr. Hilla Limann.",
+      "Dr. Kwame Nkrumah."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Imagine you are a youth leader in your community assigned to convey a message to promote peaceful elections. Which of the following creative ways will be most effective to use?",
+    "options": [
+      "Organizing a political debate",
+      "Writing a letter to the editor",
+      "Designing an animation for social media",
+      "Giving a speech in a school"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "You are having a discussion in class with your peers about Human Rights. Which of the following options is not a relevant body in preventing Human Rights abuse?",
+    "options": [
+      "Committee on Youth Organization (C.Y.O.)",
+      "Formed Police Unit (F.P.U.)",
+      "National Commission for Civic Education (N.C.C.E.)",
+      "Domestic Violence and Victim Support Unit (D.OV.V.S.U.)"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In order to live in peace and harmony in our communities, Ghanaians need to promote",
+    "options": [
+      "hardwork.",
+      "religion.",
+      "fairness.",
+      "education."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Adolescents in your locality who engage in behaviours that are against the norms of the society are likely to",
+    "options": [
+      "be infected with malaria.",
+      "distant themselves from parents.",
+      "have peer pressure.",
+      "become chaste."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Water bodies in their natural state are of great benefits to Ghanaians. Which of the following options is the main benefit derived from water bodies?",
+    "options": [
+      "Animal rearing",
+      "Domestic use",
+      "Swimming",
+      "Travelling"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which mapping skill can assist you to identify and interpret symbols used on a map?",
+    "options": [
+      "Map orientation",
+      "Use of scale",
+      "Grid referencing",
+      "Legend interpretation"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What role does entrepreneurship education play in fostering human development in Ghana? It",
+    "options": [
+      "destroys the monopoly of manufacturing industries.",
+      "empowers individuals to start and manage business.",
+      "encourages job-seeking.",
+      "promotes the growth of Agro-Industries."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following people do not have the right to vote during elections at your constituency for a new Member of Parliament?",
+    "options": [
+      "Visually Impaired",
+      "Disabled",
+      "Deaf",
+      "Mentally challenged"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How does access to contraceptives impact adolescent reproductive health in your community? It",
+    "options": [
+      "increases the risk of sexually transmitted infections.",
+      "promotes early initiation of sexual activity.",
+      "reduces the likelihood of unintended pregnancies.",
+      "increases the likelihood of unintended pregnancies."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One noticeable feature of technology in the world today is that it",
+    "options": [
+      "involves a lot of money.",
+      "enhances criminal activities.",
+      "needs time and attention.",
+      "keeps improving at a faster rate."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghana's population is described as youthful because a large proportion of the total population falls within ages",
+    "options": [
+      "0 - 30 years.",
+      "46 - 60 years.",
+      "31 - 45 years.",
+      "61 - 80 years."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The best way to make polluted water in rural communities safe for drinking at home is by",
+    "options": [
+      "distillation.",
+      "boiling.",
+      "chlorination.",
+      "filtration."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "As a Ghanaian, you have realized many of your classmates and neighbours do not show interest in visiting tourist sites in Ghana. This is because",
+    "options": [
+      "people like to appreciate nature.",
+      "there are no tourist guards at the site.",
+      "people learn about the culture of Ghana.",
+      "people do not appreciate the value of leisure."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Social Studies",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How will the patronage of sceneries in your community promote employment opportunities?",
+    "options": [
+      "Through construction of roads",
+      "Through generation of income",
+      "By constructing rest houses",
+      "By moving around the scenery"
+    ],
+    "correct_answer": "C"
   }
 ]

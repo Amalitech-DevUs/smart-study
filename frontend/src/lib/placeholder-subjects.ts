@@ -58,6 +58,12 @@ export const placeholderSubjects: PlaceholderSubject[] = [
     subjectColor: "social-studies",
     papers: [
       { year: 2020, questionCount: 40 },
+      { year: 2021, questionCount: 38 },
+      { year: 2022, questionCount: 40 },
+      { year: 2023, questionCount: 40 },
+      { year: 2024, questionCount: 40 },
+      { year: 2025, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
     ],
   },
 ];

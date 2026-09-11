@@ -1,92 +1,79 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ChatEngine } from "./chat-engine";
-import { useAuth } from "@/lib/use-auth";
-
-function ChatIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M19 11a7 7 0 0 1-7 7H6l-3 3V11a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7Z" />
-      <path d="M8 11h.01M12 11h.01M16 11h.01" />
-    </svg>
-  );
-}
+import { Maximize2, Minimize2, X } from "lucide-react";
+import { AppLogoIcon, AppLogoBadge } from "@/components/shared/app-logo";
 
 export function ChatWidget() {
   const pathname = usePathname();
-  const { loggedIn, isLoading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   if (pathname === "/chat" || pathname === "/login" || pathname === "/signup") {
     return null;
   }
 
-  const loginHref = `/login?redirect=${encodeURIComponent(pathname)}`;
-
   return (
     <>
       {isOpen && (
-        <aside className="fixed inset-x-4 bottom-24 z-30 h-[min(70vh,38rem)] overflow-hidden rounded-lg border border-text-secondary/15 bg-background shadow-[0_8px_30px_rgba(31,36,48,0.16)] md:inset-y-0 md:bottom-0 md:left-auto md:right-0 md:h-full md:w-[min(25rem,100vw)] md:rounded-none md:rounded-l-lg">
-          <div className="flex items-center justify-between border-b border-text-secondary/15 bg-brand-indigo px-4 py-3 text-white">
-            <h2 className="font-heading text-xl font-bold">Study assistant</h2>
-            <button
-              type="button"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close study assistant"
-              className="rounded-full px-2 py-1 text-xl leading-none text-white transition-colors hover:bg-white/10"
-            >
-              ×
-            </button>
+        <aside
+          className={`fixed z-50 overflow-hidden border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-in-out ${
+            isExpanded
+              ? "inset-4 md:inset-auto md:bottom-6 md:right-6 md:w-[720px] md:h-[780px] md:max-h-[85vh] rounded-2xl"
+              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] md:inset-x-auto md:bottom-6 md:right-6 md:w-[400px] md:h-[580px] rounded-2xl"
+          }`}
+        >
+          {/* Top Bar Header */}
+          <div className="flex items-center justify-between border-b border-slate-200 bg-[#0e1726] px-4 py-3 text-white">
+            <div className="flex items-center gap-2.5">
+              <AppLogoBadge size="sm" />
+              <div>
+                <h2 className="font-heading text-sm font-bold leading-tight">SmartStudy Tutor</h2>
+                <p className="text-[10px] text-slate-400">AI Study Companion &bull; Online</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-1 text-slate-300">
+              {/* Expand / Minimize Toggle */}
+              <button
+                type="button"
+                onClick={() => setIsExpanded(!isExpanded)}
+                aria-label={isExpanded ? "Collapse window" : "Expand window"}
+                className="hidden md:flex h-7 w-7 items-center justify-center rounded-md hover:bg-slate-800 hover:text-white transition-colors"
+              >
+                {isExpanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+              </button>
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close assistant"
+                className="flex h-7 w-7 items-center justify-center rounded-md hover:bg-slate-800 hover:text-white transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
           </div>
-          <div className="h-[calc(100%-4rem)] p-3">
-            {isLoading ? (
-              <div className="flex h-full items-center justify-center text-sm text-text-secondary">
-                Checking your session...
-              </div>
-            ) : loggedIn ? (
-              <ChatEngine />
-            ) : (
-              <div className="flex h-full items-center justify-center p-6 text-center">
-                <div>
-                  <h3 className="font-heading text-2xl font-bold text-brand-indigo">
-                    Log in to ask a question
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-text-secondary">
-                    Your current page will still be here when you return.
-                  </p>
-                  <Link
-                    href={loginHref}
-                    className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-slate-900 px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-slate-800"
-                  >
-                    Log in
-                  </Link>
-                </div>
-              </div>
-            )}
+
+          {/* Chat Body */}
+          <div className="h-[calc(100%-54px)] bg-slate-50/40">
+            <ChatEngine />
           </div>
         </aside>
       )}
 
+      {/* Trigger floating button */}
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
         aria-label={isOpen ? "Close study assistant" : "Open study assistant"}
         aria-expanded={isOpen}
-        className="fixed bottom-24 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-lg transition-transform hover:scale-105 hover:bg-slate-800 md:bottom-6 md:right-6"
+        className="fixed bottom-20 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#0e1726] text-white shadow-lg transition-transform hover:scale-105 hover:bg-slate-800 md:bottom-6 md:right-6 border border-slate-700"
       >
-        <ChatIcon />
+        {isOpen ? <X className="h-5 w-5" /> : <AppLogoIcon className="h-5 w-5 text-amber-400" />}
       </button>
     </>
   );

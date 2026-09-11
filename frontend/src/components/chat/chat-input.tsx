@@ -1,7 +1,7 @@
 "use client";
 
-import { FormEvent } from "react";
-import { Send } from "lucide-react";
+import { FormEvent, KeyboardEvent, useRef } from "react";
+import { SendHorizonal } from "lucide-react";
 
 type ChatInputProps = {
   value: string;
@@ -22,45 +22,52 @@ export function ChatInput({
 }: ChatInputProps) {
   const handleTextChange = onChange ?? onChangeAction;
   const handleSend = onSend ?? onSendAction;
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = (event?: FormEvent<HTMLFormElement>) => {
+    event?.preventDefault();
     if (!value.trim() || isSending) return;
     handleSend?.(value);
   };
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex items-center gap-2 border-t border-[#e2e8f0] bg-white p-3"
-    >
-      <input
-        type="text"
-        value={value}
-        disabled={isSending}
-        onChange={(event) => handleTextChange?.(event.target.value)}
-        placeholder="Ask a BECE subject question (e.g. Simplify 3x + 5 = 20)..."
-        aria-label="Chat message"
-        className="w-full min-h-[44px] rounded-lg border border-[#e2e8f0] bg-[#fbfbfa] py-2.5 px-3.5 text-sm text-[#0e1726] placeholder-[#525b68] outline-none transition-colors focus:border-[#0e1726] focus:bg-white disabled:bg-slate-100"
-      />
-      {isSending ? (
-        <span
-          className="flex h-11 w-12 shrink-0 items-center justify-center gap-1 rounded-lg bg-[#0e1726] text-white"
-          aria-label="Sending message"
-        >
-          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#f5a623] [animation-delay:-0.2s]" />
-          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#f5a623] [animation-delay:-0.1s]" />
-          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#f5a623]" />
-        </span>
-      ) : (
+    <div className="border-t border-slate-200/80 bg-white px-3 py-2.5 sm:px-4 sm:py-3">
+      <form
+        onSubmit={handleSubmit}
+        className="relative flex items-center rounded-full border border-slate-300 bg-slate-50/70 pl-4 pr-1.5 py-1 shadow-xs transition-all focus-within:border-slate-800 focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900/5"
+      >
+        <input
+          ref={inputRef}
+          type="text"
+          value={value}
+          disabled={isSending}
+          onChange={(event) => handleTextChange?.(event.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Ask a BECE past question or concept..."
+          aria-label="Chat message"
+          className="w-full bg-transparent py-1 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none leading-normal disabled:opacity-50"
+        />
+
         <button
           type="submit"
-          disabled={!value.trim()}
-          className="flex h-11 w-12 shrink-0 items-center justify-center rounded-lg bg-[#f5a623] text-[#0e1726] transition-colors hover:bg-[#e0951a] disabled:cursor-not-allowed disabled:opacity-40"
+          disabled={!value.trim() || isSending}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0e1726] text-white transition-all hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed shadow-xs"
+          aria-label="Send message"
         >
-          <Send className="h-4 w-4" />
+          {isSending ? (
+            <span className="h-2 w-2 rounded-full bg-amber-400 animate-ping" />
+          ) : (
+            <SendHorizonal className="h-3.5 w-3.5 text-amber-400" />
+          )}
         </button>
-      )}
-    </form>
+      </form>
+    </div>
   );
 }

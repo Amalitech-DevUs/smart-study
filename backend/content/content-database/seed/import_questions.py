@@ -14,7 +14,8 @@ from app.schemas.question import QuestionBase
 
 Base.metadata.create_all(bind=engine)
 
-with open("seed/questions.json", "r", encoding="utf-8") as file:
+seed_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "questions.json")
+with open(seed_file, "r", encoding="utf-8") as file:
     questions_data = json.load(file)
 
 db = SessionLocal()
