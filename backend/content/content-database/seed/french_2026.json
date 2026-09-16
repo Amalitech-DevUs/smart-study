@@ -1,0 +1,682 @@
+[
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Nana Kwame parle de sa famille à sa nouvelle correspondante sur Instagram. Je m'appelle Nana Kwame. Je suis d'une famille nombreuse. Nous sommes cinq frères et deux sœurs. Mes frères s'appellent Kojo, Kwamena, Fiifi et Yaw. Mes sœurs sont Selina et Rosaline, la cadette, qui est née juste après moi. Elles sont toutes les deux infirmières. Les trois premiers frères sont tous hommes d'affaires. Yaw et moi sommes étudiants. Mes parents viennent de Mampong, près de Kumasi. Mais nous habitons à Winneba. Mon père, M. Tandoh, est médecin comme mon grand-père maternel. Ma mère, Mme Tandoh, est avocate à Swedru. Question: Il y a ___ membres dans la famille Tandoh.",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Nana Kwame parle de sa famille à sa nouvelle correspondante sur Instagram. Je m'appelle Nana Kwame. Je suis d'une famille nombreuse. Nous sommes cinq frères et deux sœurs. Mes frères s'appellent Kojo, Kwamena, Fiifi et Yaw. Mes sœurs sont Selina et Rosaline, la cadette, qui est née juste après moi. Elles sont toutes les deux infirmières. Les trois premiers frères sont tous hommes d'affaires. Yaw et moi sommes étudiants. Mes parents viennent de Mampong, près de Kumasi. Mais nous habitons à Winneba. Mon père, M. Tandoh, est médecin comme mon grand-père maternel. Ma mère, Mme Tandoh, est avocate à Swedru. Question: Nana Kwame est le ___ enfant.",
+    "options": [
+      "troisième",
+      "quatrième",
+      "sixième",
+      "septième"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Nana Kwame parle de sa famille à sa nouvelle correspondante sur Instagram. Je m'appelle Nana Kwame. Je suis d'une famille nombreuse. Nous sommes cinq frères et deux sœurs. Mes frères s'appellent Kojo, Kwamena, Fiifi et Yaw. Mes sœurs sont Selina et Rosaline, la cadette, qui est née juste après moi. Elles sont toutes les deux infirmières. Les trois premiers frères sont tous hommes d'affaires. Yaw et moi sommes étudiants. Mes parents viennent de Mampong, près de Kumasi. Mais nous habitons à Winneba. Mon père, M. Tandoh, est médecin comme mon grand-père maternel. Ma mère, Mme Tandoh, est avocate à Swedru. Question: Les sœurs de Nana Kwame travaillent",
+    "options": [
+      "à l'hôpital",
+      "à l'université",
+      "au marché",
+      "au tribunal"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Nana Kwame parle de sa famille à sa nouvelle correspondante sur Instagram. Je m'appelle Nana Kwame. Je suis d'une famille nombreuse. Nous sommes cinq frères et deux sœurs. Mes frères s'appellent Kojo, Kwamena, Fiifi et Yaw. Mes sœurs sont Selina et Rosaline, la cadette, qui est née juste après moi. Elles sont toutes les deux infirmières. Les trois premiers frères sont tous hommes d'affaires. Yaw et moi sommes étudiants. Mes parents viennent de Mampong, près de Kumasi. Mais nous habitons à Winneba. Mon père, M. Tandoh, est médecin comme mon grand-père maternel. Ma mère, Mme Tandoh, est avocate à Swedru. Question: La ville natale de la famille Tandoh est",
+    "options": [
+      "Kumasi",
+      "Mampong",
+      "Swedru",
+      "Winneba"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Nana Kwame parle de sa famille à sa nouvelle correspondante sur Instagram. Je m'appelle Nana Kwame. Je suis d'une famille nombreuse. Nous sommes cinq frères et deux sœurs. Mes frères s'appellent Kojo, Kwamena, Fiifi et Yaw. Mes sœurs sont Selina et Rosaline, la cadette, qui est née juste après moi. Elles sont toutes les deux infirmières. Les trois premiers frères sont tous hommes d'affaires. Yaw et moi sommes étudiants. Mes parents viennent de Mampong, près de Kumasi. Mais nous habitons à Winneba. Mon père, M. Tandoh, est médecin comme mon grand-père maternel. Ma mère, Mme Tandoh, est avocate à Swedru. Question: Le père de Mme Tandoh est",
+    "options": [
+      "professeur",
+      "avocat",
+      "médecin",
+      "infirmier"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Pierre fixe un rendez-vous avec son amie, Rebecca. Il l'invite à faire du sport avec lui. Pierre : Allô, Rebecca! Rebecca : Allô, Pierre! Comment ça va? Pierre : Je me porte bien. Et toi? Rebecca : Ça va bien. Pierre : Tu es libre ce samedi? Rebecca : Non, je dois aller au marché, et après au cinéma le soir. Pierre : Je voulais t'inviter au terrain de sport. Rebecca : Pour faire quoi? Pierre : Jouer au volley-ball, au basket-ball ou au badminton. Rebecca : Mais je n'aime pas le sport. Pierre : Pourtant tu joues au tennis... Rebecca : Non, c'est ma sœur Anastasia qui joue au tennis. Moi, j'aime plutôt écouter de la musique et danser. Je danse la salsa avec Joujou tous les week-ends. Pierre : Ah bon! Moi, je n'aime pas danser. Alors, à la prochaine! Question: Pierre invite son amie",
+    "options": [
+      "au cinéma",
+      "au marché",
+      "à faire du sport",
+      "à danser la salsa"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Pierre fixe un rendez-vous avec son amie, Rebecca. Il l'invite à faire du sport avec lui. Pierre : Allô, Rebecca! Rebecca : Allô, Pierre! Comment ça va? Pierre : Je me porte bien. Et toi? Rebecca : Ça va bien. Pierre : Tu es libre ce samedi? Rebecca : Non, je dois aller au marché, et après au cinéma le soir. Pierre : Je voulais t'inviter au terrain de sport. Rebecca : Pour faire quoi? Pierre : Jouer au volley-ball, au basket-ball ou au badminton. Rebecca : Mais je n'aime pas le sport. Pierre : Pourtant tu joues au tennis... Rebecca : Non, c'est ma sœur Anastasia qui joue au tennis. Moi, j'aime plutôt écouter de la musique et danser. Je danse la salsa avec Joujou tous les week-ends. Pierre : Ah bon! Moi, je n'aime pas danser. Alors, à la prochaine! Question: Que fait Rebecca les samedis?",
+    "options": [
+      "Elle regarde la télévision.",
+      "Elle fait des courses.",
+      "Elle danse avec Pierre.",
+      "Elle joue au tennis."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Pierre fixe un rendez-vous avec son amie, Rebecca. Il l'invite à faire du sport avec lui. Pierre : Allô, Rebecca! Rebecca : Allô, Pierre! Comment ça va? Pierre : Je me porte bien. Et toi? Rebecca : Ça va bien. Pierre : Tu es libre ce samedi? Rebecca : Non, je dois aller au marché, et après au cinéma le soir. Pierre : Je voulais t'inviter au terrain de sport. Rebecca : Pour faire quoi? Pierre : Jouer au volley-ball, au basket-ball ou au badminton. Rebecca : Mais je n'aime pas le sport. Pierre : Pourtant tu joues au tennis... Rebecca : Non, c'est ma sœur Anastasia qui joue au tennis. Moi, j'aime plutôt écouter de la musique et danser. Je danse la salsa avec Joujou tous les week-ends. Pierre : Ah bon! Moi, je n'aime pas danser. Alors, à la prochaine! Question: Pierre aime",
+    "options": [
+      "regarder le sport",
+      "faire le sport",
+      "écouter de la musique",
+      "danser à la musique"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Pierre fixe un rendez-vous avec son amie, Rebecca. Il l'invite à faire du sport avec lui. Pierre : Allô, Rebecca! Rebecca : Allô, Pierre! Comment ça va? Pierre : Je me porte bien. Et toi? Rebecca : Ça va bien. Pierre : Tu es libre ce samedi? Rebecca : Non, je dois aller au marché, et après au cinéma le soir. Pierre : Je voulais t'inviter au terrain de sport. Rebecca : Pour faire quoi? Pierre : Jouer au volley-ball, au basket-ball ou au badminton. Rebecca : Mais je n'aime pas le sport. Pierre : Pourtant tu joues au tennis... Rebecca : Non, c'est ma sœur Anastasia qui joue au tennis. Moi, j'aime plutôt écouter de la musique et danser. Je danse la salsa avec Joujou tous les week-ends. Pierre : Ah bon! Moi, je n'aime pas danser. Alors, à la prochaine! Question: Qui aiment la danse?",
+    "options": [
+      "Pierre et Joujou",
+      "Pierre et Rebecca",
+      "Rebecca et Joujou",
+      "Anastasia et Rebecca"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Pierre fixe un rendez-vous avec son amie, Rebecca. Il l'invite à faire du sport avec lui. Pierre : Allô, Rebecca! Rebecca : Allô, Pierre! Comment ça va? Pierre : Je me porte bien. Et toi? Rebecca : Ça va bien. Pierre : Tu es libre ce samedi? Rebecca : Non, je dois aller au marché, et après au cinéma le soir. Pierre : Je voulais t'inviter au terrain de sport. Rebecca : Pour faire quoi? Pierre : Jouer au volley-ball, au basket-ball ou au badminton. Rebecca : Mais je n'aime pas le sport. Pierre : Pourtant tu joues au tennis... Rebecca : Non, c'est ma sœur Anastasia qui joue au tennis. Moi, j'aime plutôt écouter de la musique et danser. Je danse la salsa avec Joujou tous les week-ends. Pierre : Ah bon! Moi, je n'aime pas danser. Alors, à la prochaine! Question: Selon le passage,",
+    "options": [
+      "Rebecca aime le sport",
+      "Pierre aime chanter",
+      "Anastasia aime le tennis",
+      "Joujou aime chanter"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Atsu explique à son cousin sur WhatsApp pourquoi il est toujours en retard pour les cours. C'est vrai que je suis toujours en retard au cours. Voici pourquoi. Je me lève de bonne heure. À cinq heures, je balaie la cour et le salon. À six heures moins le quart, je vais chercher de l'eau à la rivière. Puis, je fais la vaisselle. Ensuite, je lave mon petit frère avant de me laver. Vers sept heures, nous prenons le petit déjeuner. À sept heures et demie, j'emmène mon petit frère à son école avant d'arriver à l'école à pied. Question: Atsu se lève",
+    "options": [
+      "tard",
+      "tôt",
+      "après l'heure",
+      "avant l'heure"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Atsu explique à son cousin sur WhatsApp pourquoi il est toujours en retard pour les cours. C'est vrai que je suis toujours en retard au cours. Voici pourquoi. Je me lève de bonne heure. À cinq heures, je balaie la cour et le salon. À six heures moins le quart, je vais chercher de l'eau à la rivière. Puis, je fais la vaisselle. Ensuite, je lave mon petit frère avant de me laver. Vers sept heures, nous prenons le petit déjeuner. À sept heures et demie, j'emmène mon petit frère à son école avant d'arriver à l'école à pied. Question: À cinq heures, Atsu ___ dans le salon.",
+    "options": [
+      "court",
+      "mange",
+      "travaille",
+      "étudie"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Atsu explique à son cousin sur WhatsApp pourquoi il est toujours en retard pour les cours. C'est vrai que je suis toujours en retard au cours. Voici pourquoi. Je me lève de bonne heure. À cinq heures, je balaie la cour et le salon. À six heures moins le quart, je vais chercher de l'eau à la rivière. Puis, je fais la vaisselle. Ensuite, je lave mon petit frère avant de me laver. Vers sept heures, nous prenons le petit déjeuner. À sept heures et demie, j'emmène mon petit frère à son école avant d'arriver à l'école à pied. Question: À ___, Atsu cherche de l'eau à la rivière.",
+    "options": [
+      "5h 15",
+      "5h 45",
+      "6h 15",
+      "6h 45"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Atsu explique à son cousin sur WhatsApp pourquoi il est toujours en retard pour les cours. C'est vrai que je suis toujours en retard au cours. Voici pourquoi. Je me lève de bonne heure. À cinq heures, je balaie la cour et le salon. À six heures moins le quart, je vais chercher de l'eau à la rivière. Puis, je fais la vaisselle. Ensuite, je lave mon petit frère avant de me laver. Vers sept heures, nous prenons le petit déjeuner. À sept heures et demie, j'emmène mon petit frère à son école avant d'arriver à l'école à pied. Question: Juste après son retour de la rivière, Atsu",
+    "options": [
+      "prend son repas",
+      "fait la lessive",
+      "lave les assiettes",
+      "balaie la cour"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Atsu explique à son cousin sur WhatsApp pourquoi il est toujours en retard pour les cours. C'est vrai que je suis toujours en retard au cours. Voici pourquoi. Je me lève de bonne heure. À cinq heures, je balaie la cour et le salon. À six heures moins le quart, je vais chercher de l'eau à la rivière. Puis, je fais la vaisselle. Ensuite, je lave mon petit frère avant de me laver. Vers sept heures, nous prenons le petit déjeuner. À sept heures et demie, j'emmène mon petit frère à son école avant d'arriver à l'école à pied. Question: Comment Atsu va-t-il à l'école?",
+    "options": [
+      "En voiture",
+      "En bus",
+      "À pied",
+      "À vélo"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Un journaliste raconte le comportement des élèves le jour de la rentrée. Après les vacances, les élèves sont tristes quand ils retournent à l'école. C'est fini, le temps passé à jouer toute la journée avec des amis. Ils quittent leurs parents et amis pour aller à l'école. Le jour de la rentrée, certains élèves prennent le bus. D'autres arrivent en taxi. Ceux qui habitent près de l'école arrivent un peu fatigués, à vélo ou à pied. Tous les apprenants sont contents de se retrouver pour continuer les études. Alors, ils s'embrassent et se racontent des histoires drôles tout en riant. Question: Le jour de la rentrée, c'est",
+    "options": [
+      "le jour où les élèves vont à l'école",
+      "le jour où les élèves quittent la maison",
+      "le premier jour de l'année scolaire",
+      "le dernier jour de l'année scolaire"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Un journaliste raconte le comportement des élèves le jour de la rentrée. Après les vacances, les élèves sont tristes quand ils retournent à l'école. C'est fini, le temps passé à jouer toute la journée avec des amis. Ils quittent leurs parents et amis pour aller à l'école. Le jour de la rentrée, certains élèves prennent le bus. D'autres arrivent en taxi. Ceux qui habitent près de l'école arrivent un peu fatigués, à vélo ou à pied. Tous les apprenants sont contents de se retrouver pour continuer les études. Alors, ils s'embrassent et se racontent des histoires drôles tout en riant. Question: Selon le texte, les élèves sont tristes parce qu'ils",
+    "options": [
+      "se retrouvent",
+      "s'embrassent",
+      "quittent leurs parents et amis",
+      "se racontent des histoires"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Un journaliste raconte le comportement des élèves le jour de la rentrée. Après les vacances, les élèves sont tristes quand ils retournent à l'école. C'est fini, le temps passé à jouer toute la journée avec des amis. Ils quittent leurs parents et amis pour aller à l'école. Le jour de la rentrée, certains élèves prennent le bus. D'autres arrivent en taxi. Ceux qui habitent près de l'école arrivent un peu fatigués, à vélo ou à pied. Tous les apprenants sont contents de se retrouver pour continuer les études. Alors, ils s'embrassent et se racontent des histoires drôles tout en riant. Question: Certains élèves qui habitent loin de l'école arrivent",
+    "options": [
+      "à pied",
+      "à vélo",
+      "en taxi",
+      "en riant"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Un journaliste raconte le comportement des élèves le jour de la rentrée. Après les vacances, les élèves sont tristes quand ils retournent à l'école. C'est fini, le temps passé à jouer toute la journée avec des amis. Ils quittent leurs parents et amis pour aller à l'école. Le jour de la rentrée, certains élèves prennent le bus. D'autres arrivent en taxi. Ceux qui habitent près de l'école arrivent un peu fatigués, à vélo ou à pied. Tous les apprenants sont contents de se retrouver pour continuer les études. Alors, ils s'embrassent et se racontent des histoires drôles tout en riant. Question: Selon le passage,",
+    "options": [
+      "chaque élève arrive à l'école à pied",
+      "chaque élève arrive à l'école en taxi",
+      "tous les élèves habitent loin de l'école",
+      "quelques élèves habitent loin de l'école"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Reading Comprehension",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Reading Comprehension",
+    "prompt": "Un journaliste raconte le comportement des élèves le jour de la rentrée. Après les vacances, les élèves sont tristes quand ils retournent à l'école. C'est fini, le temps passé à jouer toute la journée avec des amis. Ils quittent leurs parents et amis pour aller à l'école. Le jour de la rentrée, certains élèves prennent le bus. D'autres arrivent en taxi. Ceux qui habitent près de l'école arrivent un peu fatigués, à vélo ou à pied. Tous les apprenants sont contents de se retrouver pour continuer les études. Alors, ils s'embrassent et se racontent des histoires drôles tout en riant. Question: Les élèves se racontent des histoires drôles en riant parce qu'ils sont",
+    "options": [
+      "fatigués",
+      "heureux",
+      "mécontents",
+      "tristes"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "D'habitude, les élèves ne ___ pas les matins.",
+    "options": [
+      "se couchent",
+      "se lavent",
+      "se lèvent",
+      "s'habillent"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Le moyen de transport le plus rapide pour un voyage du Ghana vers la France est",
+    "options": [
+      "la pirogue",
+      "la voiture",
+      "le train",
+      "l'avion"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Pour se faire couper les cheveux, mon père va chez un",
+    "options": [
+      "tailleur",
+      "chauffeur",
+      "coiffeur",
+      "chasseur"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Un ___ siffle pendant un match de foot.",
+    "options": [
+      "joueur",
+      "gardien",
+      "arbitre",
+      "entraîneur"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Pour féliciter un ami, je lui dis:",
+    "options": [
+      "Bonne chance!",
+      "Bravo!",
+      "Du courage!",
+      "Enchanté!"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Les apprenants font des dessins avec",
+    "options": [
+      "une table",
+      "une chaise",
+      "un crayon",
+      "un tableau"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Chaque matin, ___ les nouvelles à la radio.",
+    "options": [
+      "je suis",
+      "je regarde",
+      "j'étudie",
+      "j'achète"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Chantale a peur de l'eau, donc elle ne ___ pas.",
+    "options": [
+      "boit",
+      "nage",
+      "se lave",
+      "s'habille"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Pour protéger son corps contre le froid, Amina porte",
+    "options": [
+      "un manteau",
+      "un maillot",
+      "une culotte",
+      "une chemise"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Vocabulary and Structure",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Vocabulary and Structure",
+    "prompt": "Ce matin, Simon a un rendez-vous avec son oncle; c'est-à-dire avec",
+    "options": [
+      "le père de son frère",
+      "le père de sa mère",
+      "le frère de son père",
+      "le frère de sa sœur"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (31)?",
+    "options": [
+      "fréquente",
+      "attend",
+      "va",
+      "marche"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (32)?",
+    "options": [
+      "qui",
+      "dont",
+      "que",
+      "où"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (33)?",
+    "options": [
+      "d'",
+      "à",
+      "en",
+      "l'"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (34)?",
+    "options": [
+      "pour",
+      "de",
+      "avant",
+      "à"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (35)?",
+    "options": [
+      "et",
+      "puis",
+      "pourtant",
+      "avec"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (36)?",
+    "options": [
+      "Quand",
+      "Ensuite",
+      "Aussitôt que",
+      "Pendant que"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (37)?",
+    "options": [
+      "as",
+      "a",
+      "es",
+      "est"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (38)?",
+    "options": [
+      "réponds",
+      "répond",
+      "répondre",
+      "répondez"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (39)?",
+    "options": [
+      "on",
+      "ils",
+      "lui",
+      "leur"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "French",
+    "year": 2026,
+    "paper": 1,
+    "section": "Cloze Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Cloze Test",
+    "prompt": "Korley et son ami. Korley est un garçon qui (31) une école primaire (32) beaucoup de parents envoient leurs enfants. Korley veut toujours arriver (33) avance à l'école. Tous les jours, il se lève tôt (34) faire le nettoyage (35) son frère. (36), il se prépare et après le petit déjeuner, il quitte la maison. En route, il appelle son ami. « Jima, tu (37) là ? » « Oui, et je suis prêt », (38) Jima. Le moment de sortir et les deux marchent vers l'arrêt. Après les cours, quand (39) ouvre la bibliothèque, Korley et Jima, les deux meilleurs élèves (40) la classe y vont. Là-bas, ils font leurs devoirs avant de rentrer. Which word fills gap (40)?",
+    "options": [
+      "à",
+      "dans",
+      "en",
+      "de"
+    ],
+    "correct_answer": "D"
+  }
+]
