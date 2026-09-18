@@ -63,7 +63,7 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
 }
 
 /**
- * Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ * Question Data Provider: Queries downstream Content DB service first, falls back to local seed bank
  */
 export async function fetchQuestions(filters?: { subject?: string; year?: number; topic?: string }) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -105,7 +105,7 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     // Content DB service offline, proceeding to local seed bank fallback
   }
 
-  // Fallback to local verified questions seed bank (813 questions)
+  // Fallback to local verified questions seed bank (853 questions)
   let localQuestions = questionsData as any[];
 
   if (filters?.subject) {
@@ -177,7 +177,7 @@ export async function fetchQuestionById(id: string | number) {
   }
 
   const found = (questionsData as any[]).find(
-    q => String(q.id) === String(id) || String(q.question_number) === String(id)
+    q => String(q.id).toLowerCase() === String(id).toLowerCase() || String(q.question_number) === String(id)
   );
 
   if (found) {
