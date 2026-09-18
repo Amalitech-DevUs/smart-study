@@ -5,7 +5,7 @@ import Link from "next/link";
 import { McqCard, type McqQuestion } from "./mcq-card";
 import { SaveProgressBanner } from "@/components/shared/save-progress-banner";
 import { useAuth } from "@/lib/use-auth";
-import { CheckCircle2, RotateCcw, ArrowLeft, Bot, Award, Clock } from "lucide-react";
+import { RotateCcw, ArrowLeft, Bot, Award, Clock } from "lucide-react";
 
 const timerOptions = [
   { value: "practice", label: "Practice", seconds: 0 },
