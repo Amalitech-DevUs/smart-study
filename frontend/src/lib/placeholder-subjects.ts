@@ -66,6 +66,14 @@ export const placeholderSubjects: PlaceholderSubject[] = [
       { year: 2026, questionCount: 40 },
     ],
   },
+  {
+    slug: "french",
+    name: "French",
+    subjectColor: "french",
+    papers: [
+      { year: 2026, questionCount: 40 },
+    ],
+  },
 ];
 
 export const sampleQuestions: McqQuestion[] = [

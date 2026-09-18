@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth";
 import { placeholderSubjects } from "@/lib/placeholder-subjects";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
@@ -8,7 +9,13 @@ type SubjectPageProps = {
 };
 
 export default async function SubjectPage({ params }: SubjectPageProps) {
+  const user = await getCurrentUser();
   const { subject } = await params;
+
+  if (!user.loggedIn) {
+    redirect(`/login?redirect=/flashcards/${subject}`);
+  }
+
   const subjectData = placeholderSubjects.find((item) => item.slug === subject);
 
   if (!subjectData) {

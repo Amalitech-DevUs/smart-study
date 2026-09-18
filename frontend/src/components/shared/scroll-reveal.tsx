@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useScroll, useSpring } from "framer-motion";
 
-type Direction = "up" | "left" | "right" | "down";
+type Direction = "up" | "left" | "right" | "down" | "scale" | "fade";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -16,20 +16,28 @@ interface ScrollRevealProps {
 
 const variants: Record<Direction, Variants> = {
   up: {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 32 },
     visible: { opacity: 1, y: 0 },
   },
   down: {
-    hidden: { opacity: 0, y: -40 },
+    hidden: { opacity: 0, y: -32 },
     visible: { opacity: 1, y: 0 },
   },
   left: {
-    hidden: { opacity: 0, x: -40 },
+    hidden: { opacity: 0, x: -32 },
     visible: { opacity: 1, x: 0 },
   },
   right: {
-    hidden: { opacity: 0, x: 40 },
+    hidden: { opacity: 0, x: 32 },
     visible: { opacity: 1, x: 0 },
+  },
+  scale: {
+    hidden: { opacity: 0, scale: 0.94, y: 16 },
+    visible: { opacity: 1, scale: 1, y: 0 },
+  },
+  fade: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
 };
 
@@ -40,7 +48,7 @@ export function ScrollReveal({
   delay = 0,
   duration = 0.5,
   amount = 0.15,
-  once = false,
+  once = true,
 }: ScrollRevealProps) {
   return (
     <motion.div
@@ -51,11 +59,30 @@ export function ScrollReveal({
       transition={{
         duration,
         delay,
-        ease: [0.22, 1, 0.36, 1], // custom spring-like ease
+        ease: [0.22, 1, 0.36, 1], // spring-like smooth ease
       }}
       variants={variants[direction]}
     >
       {children}
     </motion.div>
+  );
+}
+
+/**
+ * Animated progress bar that fills up as the student scrolls down the page.
+ */
+export function ScrollProgressBar({ className = "" }: { className?: string }) {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  return (
+    <motion.div
+      style={{ scaleX }}
+      className={`fixed top-0 left-0 right-0 h-1 origin-left z-50 bg-white shadow-[0_1px_6px_rgba(255,255,255,0.5)] pointer-events-none ${className}`}
+    />
   );
 }

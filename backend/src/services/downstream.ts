@@ -69,7 +69,7 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    const timeoutId = setTimeout(() => controller.abort(), 1500);
 
     const query = new URLSearchParams();
     if (filters?.subject) query.append('subject', filters.subject);
@@ -297,16 +297,28 @@ export const fetchArticleById = fetchArticleByIdOrSlug;
 
 /**
  * AI Assistant Microservice Chat Forwarder:
- * Connects to AI microservice on AI_SERVICE_URL (default: port 8000).
+ * Connects to AI microservice on AI_SERVICE_URL (default: port 5003).
+ * Uses a 90-second timeout so slow free-tier models don't hang Express forever.
  */
 export async function forwardChatToAiService(payload: {
   message?: string;
   messages?: Array<{ role: string; content: string }>;
 }) {
   const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
-  return fetch(`${aiUrl}/chat`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  });
+  const controller = new AbortController();
+  // 90 seconds — enough for slow free-tier LLMs, prevents indefinite hangs
+  const timeoutId = setTimeout(() => controller.abort(), 90_000);
+  try {
+    const response = await fetch(`${aiUrl}/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (err) {
+    clearTimeout(timeoutId);
+    throw err;
+  }
 }

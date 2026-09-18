@@ -2,16 +2,26 @@
 
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "@/lib/use-auth";
 import { ChatEngine } from "./chat-engine";
 import { Maximize2, Minimize2, X } from "lucide-react";
 import { AppLogoIcon, AppLogoBadge } from "@/components/shared/app-logo";
 
 export function ChatWidget() {
   const pathname = usePathname();
+  const { loggedIn, isLoading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  if (pathname === "/chat" || pathname === "/login" || pathname === "/signup") {
+  if (
+    isLoading ||
+    !loggedIn ||
+    pathname === "/chat" ||
+    pathname === "/login" ||
+    pathname === "/signup" ||
+    pathname === "/register" ||
+    pathname.startsWith("/flashcards")
+  ) {
     return null;
   }
 

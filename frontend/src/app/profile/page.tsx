@@ -1,128 +1,148 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { RequireAuth } from "@/components/shared/require-auth";
 import { useAuth } from "@/lib/use-auth";
-import { LogOut, ArrowLeft, User as UserIcon, Shield, CheckCircle2, Calendar, BookOpen } from "lucide-react";
+import {
+  LogOut,
+  ArrowLeft,
+  Shield,
+  Calendar,
+  BookOpen,
+  MessageSquare,
+  ChevronRight,
+  GraduationCap,
+  Award,
+} from "lucide-react";
 
 export default function ProfilePage() {
-  const router = useRouter();
-  const { username } = useAuth();
+  const { username, logout } = useAuth();
 
-  const handleLogout = async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" });
-      router.push("/login");
-      router.refresh();
-    } catch {
-      router.push("/login");
-    }
-  };
+  const initials = username ? username.slice(0, 2).toUpperCase() : "ST";
 
   return (
     <RequireAuth>
-      <main className="min-h-screen bg-slate-50/50 py-10 px-4 sm:px-6">
-        <div className="max-w-2xl mx-auto">
-          {/* Header Navigation */}
-          <div className="flex items-center justify-between pb-6 border-b border-slate-200">
-            <Link
-              href="/dashboard"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span>Back to Dashboard</span>
-            </Link>
+      <div className="min-h-screen bg-[#f8f9fc]">
+        {/* Top nav bar */}
+        <header className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-3.5 sm:px-8">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors hover:text-slate-900"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Dashboard
+          </Link>
+          <button
+            type="button"
+            onClick={logout}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-transparent px-3 py-1.5 text-xs font-semibold text-slate-500 transition-all hover:border-rose-100 hover:bg-rose-50 hover:text-rose-600"
+          >
+            <LogOut className="h-3.5 w-3.5" />
+            Log out
+          </button>
+        </header>
 
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-600 hover:text-rose-700 transition-colors"
-            >
-              <LogOut className="h-3.5 w-3.5" />
-              <span>Log out</span>
-            </button>
-          </div>
+        <main className="mx-auto max-w-2xl px-5 py-8 sm:px-8 sm:py-10">
+          {/* Profile hero card */}
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            {/* Navy header strip */}
+            <div className="h-20 bg-gradient-to-r from-[#0e1726] to-slate-700" />
 
-          {/* Profile Card */}
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xs">
-            <div className="flex items-center gap-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 text-white font-heading text-xl font-bold">
-                {username ? username.slice(0, 2).toUpperCase() : "ST"}
+            {/* Avatar + info (overlaps strip) */}
+            <div className="px-6 pb-6 sm:px-8 sm:pb-8">
+              <div className="-mt-10 flex items-end justify-between">
+                <div className="flex h-20 w-20 items-center justify-center rounded-2xl border-4 border-white bg-[#0e1726] font-heading text-xl font-extrabold text-white shadow-md">
+                  {initials}
+                </div>
+                <div className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  Active Account
+                </div>
               </div>
-              <div>
-                <h1 className="font-heading text-xl font-bold text-slate-900">
+
+              <div className="mt-3">
+                <h1 className="font-heading text-xl font-extrabold text-slate-900">
                   {username || "Student"}
                 </h1>
-                <p className="text-xs text-slate-500">BECE Candidate • Ghana</p>
-                <div className="mt-1.5 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
-                  <CheckCircle2 className="h-3 w-3" />
-                  <span>Active Student Account</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Account Details */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-left">
-              <div className="rounded-xl border border-slate-100 bg-slate-50/70 p-4">
-                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-                  <UserIcon className="h-4 w-4 text-slate-400" />
-                  <span>Username</span>
-                </div>
-                <p className="mt-1.5 font-heading text-sm font-bold text-slate-900">
-                  {username || "Not set"}
+                <p className="text-xs text-slate-500 mt-0.5">
+                  BECE Candidate · Ghana
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-100 bg-slate-50/70 p-4">
-                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-                  <Shield className="h-4 w-4 text-slate-400" />
-                  <span>Security PIN</span>
-                </div>
-                <p className="mt-1.5 font-heading text-sm font-bold text-slate-900">
-                  ••••••
-                </p>
+              {/* Detail grid */}
+              <div className="mt-6 grid grid-cols-2 gap-3 border-t border-slate-100 pt-6">
+                {[
+                  {
+                    icon: GraduationCap,
+                    label: "Username",
+                    value: username || "Not set",
+                  },
+                  {
+                    icon: Shield,
+                    label: "Security PIN",
+                    value: "••••••",
+                  },
+                  {
+                    icon: Calendar,
+                    label: "Exam Target",
+                    value: "BECE 2026",
+                  },
+                  {
+                    icon: BookOpen,
+                    label: "Syllabus",
+                    value: "JHS 1 – 3",
+                  },
+                ].map(({ icon: Icon, label, value }) => (
+                  <div
+                    key={label}
+                    className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-4"
+                  >
+                    <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100">
+                      <Icon className="h-4 w-4 text-slate-500" />
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-medium text-slate-400">{label}</p>
+                      <p className="mt-0.5 text-sm font-bold text-slate-900">{value}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <div className="rounded-xl border border-slate-100 bg-slate-50/70 p-4">
-                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-                  <Calendar className="h-4 w-4 text-slate-400" />
-                  <span>Exam Target</span>
-                </div>
-                <p className="mt-1.5 font-heading text-sm font-bold text-slate-900">
-                  BECE 2026
+              {/* Achievement strip */}
+              <div className="mt-4 flex items-center gap-2 rounded-xl border border-amber-100 bg-amber-50/70 px-4 py-3">
+                <Award className="h-5 w-5 text-amber-500 shrink-0" />
+                <p className="text-xs text-amber-800">
+                  <strong>853+ questions</strong> available across 5 subjects and 7 years of WAEC papers.
                 </p>
               </div>
-
-              <div className="rounded-xl border border-slate-100 bg-slate-50/70 p-4">
-                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
-                  <BookOpen className="h-4 w-4 text-slate-400" />
-                  <span>Syllabus Covered</span>
-                </div>
-                <p className="mt-1.5 font-heading text-sm font-bold text-slate-900">
-                  Core Subjects (JHS 1 - 3)
-                </p>
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="mt-8 flex flex-wrap gap-3 pt-6 border-t border-slate-100">
-              <Link
-                href="/chat"
-                className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-semibold text-white hover:bg-slate-800 transition-colors shadow-xs"
-              >
-                <span>Go to AI Tutor</span>
-              </Link>
-              <Link
-                href="/flashcards"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
-              >
-                <span>Practice Questions</span>
-              </Link>
             </div>
           </div>
-        </div>
-      </main>
+
+          {/* Quick actions */}
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-2">
+            <Link
+              href="/chat"
+              className="group flex items-center justify-between rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-2.5">
+                <MessageSquare className="h-4 w-4 text-amber-500" />
+                <span>AI Tutor</span>
+              </div>
+              <ChevronRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/flashcards"
+              className="group flex items-center justify-between rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-2.5">
+                <BookOpen className="h-4 w-4 text-slate-600" />
+                <span>Practice</span>
+              </div>
+              <ChevronRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        </main>
+      </div>
     </RequireAuth>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth";
 import { ArrowLeft, BookOpen, Clock, Calendar } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
@@ -78,6 +79,11 @@ async function getArticle(slug: string): Promise<Article | null> {
 
 export default async function ArticleDetailPage({ params }: ArticlePageProps) {
   const { slug } = await params;
+  const user = await getCurrentUser();
+  if (!user.loggedIn) {
+    redirect(`/login?redirect=/articles/${encodeURIComponent(slug)}`);
+  }
+
   const article = await getArticle(slug);
 
   if (!article) {

@@ -1,38 +1,45 @@
+import Link from "next/link";
 import { ChatEngine } from "@/components/chat/chat-engine";
 import { RequireAuth } from "@/components/shared/require-auth";
-import { BookOpen } from "lucide-react";
+import { ArrowLeft, Bot } from "lucide-react";
 
 export default function ChatPage() {
   return (
     <RequireAuth>
-      <main className="flex flex-1 flex-col bg-slate-50/50 px-4 py-8 pb-28 sm:px-6 sm:py-10">
-        <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col">
-          <header className="mb-6 border-b border-slate-200 pb-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  <span>AI Study Companion</span>
-                </div>
-                <h1 className="mt-1 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                  BECE Study Tutor
-                </h1>
-                <p className="mt-1 text-xs sm:text-sm text-slate-500">
-                  Available 24/7 to break down exam problems, clarify concepts, and guide your revision.
-                </p>
-              </div>
+      <div className="flex h-[calc(100vh-61px)] flex-col bg-white">
+        {/* Slim top bar */}
+        <div className="flex shrink-0 items-center justify-between border-b border-slate-200/90 bg-white px-4 py-3 sm:px-6 md:px-8">
+          <div className="mx-auto flex w-full max-w-3xl items-center justify-between">
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors hover:text-slate-900"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>Dashboard</span>
+            </Link>
 
-              <div className="hidden sm:flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600 shadow-xs">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="font-medium">Tutor Online</span>
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0e1726]">
+                <Bot className="h-3.5 w-3.5 text-amber-400" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-slate-900 leading-none">BECE Study Tutor</p>
+                <p className="text-[10px] text-slate-400 leading-none mt-0.5">Powered by SmartStudy AI</p>
               </div>
             </div>
-          </header>
 
-          <div className="flex flex-1 flex-col rounded-2xl bg-white shadow-xs min-h-[600px] border border-slate-200 overflow-hidden">
-            <ChatEngine />
+            <div className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              Online
+            </div>
           </div>
         </div>
-      </main>
+
+        {/* Chat engine fills remaining height */}
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+          <ChatEngine />
+        </div>
+      </div>
     </RequireAuth>
   );
 }
