@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { GraduationCap, ArrowUpRight } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 
 const footerGroups = [
   {
@@ -27,6 +30,13 @@ const footerGroups = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // Hide footer on Login and Signup pages
+  if (pathname === "/login" || pathname === "/signup") {
+    return null;
+  }
+
   return (
     /* pb-24 on mobile ensures the fixed BottomNav bar does not cover any footer content */
     <footer className="border-t border-slate-200/80 bg-white px-6 pt-12 pb-24 md:pb-12 text-slate-800">
@@ -34,13 +44,8 @@ export function Footer() {
         
         {/* Brand Column */}
         <div className="lg:col-span-2">
-          <Link href="/" className="inline-flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-indigo text-brand-gold shadow-sm">
-              <GraduationCap className="h-5 w-5" />
-            </div>
-            <span className="font-heading text-2xl font-bold tracking-tight text-brand-indigo">
-              Smart<span className="text-brand-gold">Study</span>
-            </span>
+          <Link href="/" className="font-heading text-xl font-bold tracking-tight text-slate-900">
+            SmartStudy
           </Link>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-500">
             Empowering students with exam-aligned past questions, bite-sized practice, and 24/7 AI study assistance.

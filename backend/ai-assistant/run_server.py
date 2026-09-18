@@ -1,8 +1,16 @@
 import os
-os.chdir(r"C:\Users\phili\OneDrive\Desktop\amalitech-project\smart-study\backend\ai-assistant")
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(current_dir)
+
 from dotenv import load_dotenv
 load_dotenv()
+
+port = int(os.getenv("PORT", 5003))
 print("CWD:", os.getcwd())
-print("API Key:", os.getenv("OPENROUTER_API_KEY")[:20] + "..." if os.getenv("OPENROUTER_API_KEY") else "NOT SET")
+has_key = bool(os.getenv("GROQ_API_KEY") or os.getenv("OPENROUTER_API_KEY"))
+print("API Key configured:", "YES" if has_key else "NO")
+
 import uvicorn
-uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False)
+uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)

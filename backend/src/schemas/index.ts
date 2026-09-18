@@ -30,7 +30,8 @@ export const questionIdParamsSchema = z.object({
 // Article Schemas
 // ==========================================
 export const articlesQuerySchema = z.object({
-  category: z.string().optional()
+  category: z.string().optional(),
+  subject: z.string().optional()
 });
 
 export const articleIdParamsSchema = z.object({

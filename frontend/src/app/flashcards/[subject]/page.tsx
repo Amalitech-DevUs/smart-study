@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { placeholderSubjects } from "@/lib/placeholder-subjects";
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 type SubjectPageProps = {
   params: Promise<{ subject: string }>;
@@ -15,41 +16,49 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
   }
 
   return (
-    <main className="flex-1 bg-background px-6 py-10 pb-24 sm:py-14">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          href="/flashcards"
-          className="text-sm font-medium text-text-secondary transition-colors hover:text-brand-indigo"
-        >
-          ← Back to subjects
-        </Link>
+    <main className="flex-1 bg-white px-6 py-10 pb-28 sm:py-14">
+      <div className="mx-auto max-w-4xl">
+        <ScrollReveal>
+          <Link
+            href="/flashcards"
+            className="text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
+          >
+            &larr; All subjects
+          </Link>
 
-        <header className="mt-8">
-          <p className="text-sm font-medium uppercase tracking-wide text-brand-gold">
-            Past papers
-          </p>
-          <h1 className="mt-2 font-heading text-4xl font-bold text-brand-indigo sm:text-5xl">
-            {subjectData.name}
-          </h1>
-          <p className="mt-3 text-text-secondary">
-            Choose a year to start practicing.
-          </p>
-        </header>
+          <header className="mt-4 border-b border-slate-200 pb-6">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Exam Papers
+            </p>
+            <h1 className="mt-2 font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl">
+              {subjectData.name} Papers
+            </h1>
+            <p className="mt-2 text-sm text-slate-600">
+              Select an exam year to begin multiple-choice practice.
+            </p>
+          </header>
+        </ScrollReveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {subjectData.papers.map((paper) => (
-            <Link
-              key={paper.year}
-              href={`/flashcards/${subjectData.slug}/${paper.year}`}
-              className="rounded-lg border border-text-secondary/15 bg-white p-5 shadow-sm transition-colors hover:border-brand-gold"
-            >
-              <span className="font-heading text-3xl font-bold text-brand-indigo">
-                {paper.year}
-              </span>
-              <p className="mt-3 text-sm text-text-secondary">
-                {paper.questionCount} questions
-              </p>
-            </Link>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {subjectData.papers.map((paper, index) => (
+            <ScrollReveal key={paper.year} delay={index * 0.05}>
+              <Link
+                href={`/flashcards/${subjectData.slug}/${paper.year}`}
+                className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-sm"
+              >
+                <div>
+                  <span className="font-heading text-3xl font-extrabold text-slate-900">
+                    {paper.year}
+                  </span>
+                  <p className="mt-2 text-xs text-slate-500">
+                    {paper.questionCount} WAEC questions
+                  </p>
+                </div>
+                <div className="mt-6 border-t border-slate-100 pt-3 text-xs font-semibold text-slate-900 group-hover:text-slate-600 transition-colors">
+                  Start practice &rarr;
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </div>

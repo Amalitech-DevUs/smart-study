@@ -2,52 +2,45 @@
 
 import Link from "next/link";
 import { useAuth } from "@/lib/use-auth";
-import { GraduationCap, User as UserIcon } from "lucide-react";
+import { User as UserIcon } from "lucide-react";
 
 export function MobileTopBar() {
   const { loggedIn, username, isLoading } = useAuth();
 
   return (
-    <header className="sticky top-0 z-40 flex items-center justify-between border-b border-slate-800 bg-[#0b132b] px-4 py-3 text-white md:hidden">
-
+    <header className="sticky top-0 z-40 flex items-center justify-between border-b border-slate-800 bg-[#0e1726] px-4 py-3 text-white md:hidden">
       {/* Brand */}
-      <Link href="/" className="flex items-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-gold text-brand-indigo">
-          <GraduationCap className="h-4 w-4" />
-        </div>
-        <span className="font-heading text-lg font-bold tracking-tight text-white">
-          Smart<span className="text-brand-gold">Study</span>
-        </span>
+      <Link href="/" className="font-heading text-base font-bold tracking-tight text-white">
+        SmartStudy
       </Link>
 
-      {/* Auth Buttons */}
+      {/* Auth */}
       <div className="flex items-center gap-2">
         {!isLoading && loggedIn ? (
           <Link
             href="/profile"
-            className="flex items-center gap-1.5 rounded-lg border border-brand-gold/30 bg-brand-gold/10 px-3 py-1 text-xs font-bold text-brand-gold"
+            className="flex items-center gap-1.5 rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-200"
           >
-            <UserIcon className="h-3.5 w-3.5" />
+            <UserIcon className="h-3 w-3" />
             <span>{username ?? "Profile"}</span>
           </Link>
         ) : (
           <>
             <Link
               href="/login"
-              className="px-2.5 py-1 text-xs font-semibold text-slate-300 hover:text-white"
+              className="px-2 py-1 text-xs font-medium text-slate-300 hover:text-white"
             >
-              Log In
+              Log in
             </Link>
             <Link
               href="/signup"
-              className="rounded-lg bg-brand-gold px-3 py-1 text-xs font-bold text-brand-indigo"
+              className="rounded-md bg-white px-2.5 py-1 text-xs font-semibold text-slate-950 hover:bg-slate-100"
             >
-              Sign Up
+              Sign up
             </Link>
           </>
         )}
       </div>
-
     </header>
   );
 }

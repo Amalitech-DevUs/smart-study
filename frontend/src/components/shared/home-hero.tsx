@@ -3,85 +3,87 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const fullText = "one card at a time.";
+const phrases = [
+  "Mathematics",
+  "Integrated Science",
+  "English Language",
+  "Social Studies",
+];
 
 export function HomeHero() {
+  const [phraseIndex, setPhraseIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
+    const currentPhrase = phrases[phraseIndex];
+    const typeSpeed = isDeleting ? 40 : 80;
 
-    const typeSpeed = isDeleting ? 50 : 90;
-
-    if (!isDeleting && displayedText === fullText) {
-      // Pause at the end before erasing
+    if (!isDeleting && displayedText === currentPhrase) {
       timeoutId = setTimeout(() => {
         setIsDeleting(true);
-      }, 2500);
+      }, 2200);
     } else if (isDeleting && displayedText === "") {
-      // Pause before typing again
       timeoutId = setTimeout(() => {
         setIsDeleting(false);
-      }, 500);
+        setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      }, 400);
     } else {
       timeoutId = setTimeout(() => {
         const nextChar = isDeleting
-          ? fullText.slice(0, displayedText.length - 1)
-          : fullText.slice(0, displayedText.length + 1);
+          ? currentPhrase.slice(0, displayedText.length - 1)
+          : currentPhrase.slice(0, displayedText.length + 1);
         setDisplayedText(nextChar);
       }, typeSpeed);
     }
 
     return () => clearTimeout(timeoutId);
-  }, [displayedText, isDeleting]);
+  }, [displayedText, isDeleting, phraseIndex]);
 
   return (
-    <section className="relative flex flex-col items-center justify-center border-b border-slate-800 bg-[#0b132b] px-6 py-20 text-center text-white sm:py-28">
-      <div className="relative z-10 max-w-3xl">
-
-        {/* Clean Pill Badge */}
-        <div className="mx-auto mb-6 inline-flex items-center rounded-full border border-slate-700 bg-slate-800/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold">
-          BECE & WAEC Exam Revision
+    <section className="border-b border-slate-800 bg-[#0e1726] px-6 py-16 text-white sm:py-24">
+      <div className="mx-auto max-w-4xl">
+        <div className="inline-flex items-center rounded-full border border-slate-700 bg-slate-800/60 px-3.5 py-1 text-xs font-medium text-slate-300">
+          BECE and WAEC Exam Prep
         </div>
 
-        {/* Headline with Typewriter Animation */}
-        <h1 className="font-heading text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl min-h-[120px] sm:min-h-[150px]">
-          Ace your BECE & WAEC,{" "}
-          <span className="inline-block text-brand-gold">
+        <h1 className="mt-6 font-heading text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl min-h-[105px] sm:min-h-[135px]">
+          Master past questions in{" "}
+          <span className="text-[#f5a623]">
             {displayedText}
-            <span className="inline-block w-1 bg-brand-gold animate-pulse ml-0.5 sm:ml-1 text-transparent">|</span>
+            <span className="inline-block w-0.5 h-7 sm:h-11 bg-[#f5a623] align-middle ml-1 animate-pulse" />
           </span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          Master real exam questions through bite-sized flashcard sessions, interactive step-by-step solutions, and instant AI study support.
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+          Practice official multiple-choice questions by subject and year. Get clear step-by-step guidance whenever you need help.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href="/flashcards"
-            className="flex min-h-11 w-full items-center justify-center rounded-xl bg-brand-gold px-7 py-3 font-heading text-sm font-bold text-brand-indigo transition-all hover:bg-[#f3b250] active:scale-95 sm:w-auto"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0e1726] transition-colors hover:bg-slate-100"
           >
-            Start Practice Free
+            Start Practice
           </Link>
+
           <Link
             href="/chat"
-            className="flex min-h-11 w-full items-center justify-center rounded-xl border border-slate-700 bg-slate-800/60 px-7 py-3 font-heading text-sm font-semibold text-slate-200 transition-all hover:bg-slate-800 hover:text-white active:scale-95 sm:w-auto"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-700 bg-transparent px-7 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800"
           >
-            Ask AI Assistant
+            Ask AI Tutor
           </Link>
         </div>
 
-        {/* Clean bullet features */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-slate-400">
-          <span>• Past Exam Questions</span>
-          <span>• Real-time Feedback</span>
-          <span>• Detailed Explanations</span>
+        <div className="mt-12 flex flex-wrap items-center gap-2 pt-6 border-t border-slate-800/80 text-xs text-slate-400">
+          <span className="text-slate-500 mr-2">Core subjects:</span>
+          {["Mathematics", "Integrated Science", "English Language", "Social Studies"].map((item) => (
+            <span key={item} className="rounded-md border border-slate-800 bg-slate-900/50 px-2.5 py-1 text-slate-300">
+              {item}
+            </span>
+          ))}
         </div>
-
       </div>
     </section>
   );

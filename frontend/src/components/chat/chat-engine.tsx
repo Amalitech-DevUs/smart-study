@@ -14,8 +14,12 @@ export function ChatEngine() {
   };
 
   return (
-    <section className="flex min-h-[30rem] w-full min-w-0 flex-1 flex-col overflow-hidden rounded-3xl border border-white/60 bg-white/85 shadow-2xl backdrop-blur-xl">
-      <MessageList messages={messages} onSelectPrompt={handleSelectPrompt} />
+    <div className="flex h-full w-full min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-200">
+      <MessageList
+        messages={messages}
+        onSelectPrompt={handleSelectPrompt}
+        onEditQuestion={(text) => setInput(text)}
+      />
       {error ? <ChatFallback /> : null}
       <ChatInput
         value={input}
@@ -23,6 +27,6 @@ export function ChatEngine() {
         onChange={setInput}
         onSend={sendMessage}
       />
-    </section>
+    </div>
   );
 }
