@@ -272,8 +272,9 @@ export function MessageList({
   };
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-5">
-      {messages.length === 0 ? (
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 py-6 sm:px-6 md:px-8">
+      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col">
+        {messages.length === 0 ? (
         <div className="my-auto flex flex-col items-center justify-center text-center w-full max-w-md mx-auto py-4 sm:py-6 px-1">
           <AppLogoBadge size="lg" />
 
@@ -497,6 +498,7 @@ export function MessageList({
           <div ref={bottomRef} />
         </div>
       )}
+      </div>
     </div>
   );
 }

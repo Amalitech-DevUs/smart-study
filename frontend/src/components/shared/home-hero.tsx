@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/lib/use-auth";
 
 const phrases = [
   "Mathematics",
@@ -11,9 +13,17 @@ const phrases = [
 ];
 
 export function HomeHero() {
+  const router = useRouter();
+  const { loggedIn, isLoading } = useAuth();
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading && loggedIn) {
+      router.replace("/dashboard");
+    }
+  }, [loggedIn, isLoading, router]);
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -62,17 +72,17 @@ export function HomeHero() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
-            href="/flashcards"
+            href="/signup"
             className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0e1726] transition-colors hover:bg-slate-100"
           >
             Start Practice
           </Link>
 
           <Link
-            href="/chat"
+            href="/login"
             className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-700 bg-transparent px-7 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800"
           >
-            Ask AI Tutor
+            Sign In
           </Link>
         </div>
 

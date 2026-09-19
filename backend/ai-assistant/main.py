@@ -8,8 +8,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 from sse_starlette.sse import EventSourceResponse
-import chromadb
-from chromadb.config import Settings
+try:
+    import chromadb
+    from chromadb.config import Settings
+except ImportError:
+    chromadb = None
+    Settings = None
 
 load_dotenv()
 
@@ -22,16 +26,35 @@ if GROQ_API_KEY:
     BASE_URL = "https://api.groq.com/openai/v1"
     API_KEY = GROQ_API_KEY
     MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+    OPENROUTER_FREE_MODELS = []
 elif OPENROUTER_API_KEY:
     PROVIDER_NAME = "OpenRouter"
     BASE_URL = "https://openrouter.ai/api/v1"
     API_KEY = OPENROUTER_API_KEY
-    MODEL = os.getenv("OPENROUTER_MODEL", "inclusionai/ling-3.0-flash-vl:free")
+    # Verified prioritized pool of free models on OpenRouter
+    OPENROUTER_FREE_MODELS = [
+        os.getenv("OPENROUTER_MODEL", "liquid/lfm-2.5-2.6b:free"),
+        "liquid/lfm-2.5-2.6b:free",
+        "nvidia/nemotron-3.5-lightning:free",
+        "z-ai/glm-5.2:free",
+        "inclusionai/ling-3.0-flash-vl:free",
+        "nex-agi/nex-n2.5-mini:free",
+        "nex-agi/nex-n2.5-pro:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "thinkingmachines/inkling-small:free",
+        "poolside/laguna-s-2.1:free",
+        "cohere/north-mini-code:free",
+        "openrouter/auto",
+    ]
+    # Deduplicate while preserving order
+    OPENROUTER_FREE_MODELS = list(dict.fromkeys(OPENROUTER_FREE_MODELS))
+    MODEL = OPENROUTER_FREE_MODELS[0]
 else:
     PROVIDER_NAME = "None"
     BASE_URL = "https://openrouter.ai/api/v1"
     API_KEY = None
-    MODEL = "inclusionai/ling-3.0-flash-vl:free"
+    MODEL = "liquid/lfm-2.5-2.6b:free"
+    OPENROUTER_FREE_MODELS = []
 
 SYSTEM_PROMPT = """You are Smart Study AI, a friendly, warm, and expert BECE study tutor for Ghanaian JHS students.
 Answer questions accurately and helpfully on BECE subjects (Mathematics, Integrated Science, English Language, Social Studies).
@@ -115,7 +138,9 @@ class ChatRequest(BaseModel):
 
 
 async def stream_response(messages: list, source_tag: str):
-    """Stream response using httpx directly to the LLM API."""
+    """Stream response using httpx directly to the LLM API with automatic model inter-switching."""
+    global MODEL
+
     if not API_KEY:
         yield json.dumps({
             "reply": "To enable live AI answers, please add your GROQ_API_KEY (from https://console.groq.com/keys) or OPENROUTER_API_KEY in backend/ai-assistant/.env.",
@@ -131,41 +156,66 @@ async def stream_response(messages: list, source_tag: str):
     if PROVIDER_NAME == "OpenRouter":
         headers["HTTP-Referer"] = "https://smart-study.local"
         headers["X-Title"] = "Smart Study AI"
+        # Prioritize currently working MODEL, then fallback through all candidate free models
+        candidate_models = [MODEL] + [m for m in OPENROUTER_FREE_MODELS if m != MODEL]
+    else:
+        candidate_models = [MODEL]
 
-    payload = {
-        "model": MODEL,
-        "messages": messages,
-        "stream": True,
-        "max_tokens": 600,
-        "temperature": 0.4,
-    }
+    streamed_any = False
+    last_error_code = None
 
-    try:
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            async with client.stream("POST", f"{BASE_URL}/chat/completions", headers=headers, json=payload) as response:
-                if response.status_code != 200:
-                    yield json.dumps({"reply": "The study assistant is temporarily unavailable. Please try again shortly.", "source": "fallback"})
-                    return
-                async for line in response.aiter_lines():
-                    if line.startswith("data: "):
-                        data = line[6:].strip()
-                        if data == "[DONE]":
-                            break
-                        try:
-                            chunk = json.loads(data)
-                            if chunk.get("choices"):
-                                delta = chunk["choices"][0].get("delta", {})
-                                content = delta.get("content", "")
-                                if content:
-                                    yield json.dumps({"reply": content, "source": source_tag})
-                        except json.JSONDecodeError:
-                            continue
-    except Exception as e:
-        error_msg = str(e)
-        if "429" in error_msg:
-            yield json.dumps({"reply": "Rate limit reached. Please add a GROQ_API_KEY in .env for unlimited free usage.", "source": "error"})
+    for candidate in candidate_models:
+        payload = {
+            "model": candidate,
+            "messages": messages,
+            "stream": True,
+            "max_tokens": 600,
+            "temperature": 0.4,
+        }
+
+        try:
+            async with httpx.AsyncClient(timeout=45.0) as client:
+                async with client.stream("POST", f"{BASE_URL}/chat/completions", headers=headers, json=payload) as response:
+                    if response.status_code != 200:
+                        last_error_code = response.status_code
+                        raw_body = await response.aread()
+                        err_text = raw_body.decode("utf-8", errors="replace")[:300]
+                        print(f"[AI AUTO-SWITCH] Model '{candidate}' returned {response.status_code}: {err_text}. Automatically inter-switching to next free model...", flush=True)
+                        continue  # Try next free model!
+
+                    # 200 OK: Model responded successfully!
+                    if candidate != MODEL:
+                        print(f"[AI MODEL UPDATED] Set active working model to '{candidate}'.", flush=True)
+                        MODEL = candidate
+
+                    async for line in response.aiter_lines():
+                        if line.startswith("data: "):
+                            data = line[6:].strip()
+                            if data == "[DONE]":
+                                break
+                            try:
+                                chunk = json.loads(data)
+                                if chunk.get("choices"):
+                                    delta = chunk["choices"][0].get("delta", {})
+                                    content = delta.get("content", "")
+                                    if content:
+                                        streamed_any = True
+                                        yield json.dumps({"reply": content, "source": source_tag})
+                            except json.JSONDecodeError:
+                                continue
+
+                    if streamed_any:
+                        return
+
+        except Exception as e:
+            print(f"[AI AUTO-SWITCH] Exception with model '{candidate}': {e}. Trying next free model...", flush=True)
+            continue
+
+    if not streamed_any:
+        if last_error_code == 429:
+            yield json.dumps({"reply": "Free study AI channels are experiencing peak demand. Please try asking again in a few seconds.", "source": "error"})
         else:
-            yield json.dumps({"reply": "The study assistant is temporarily unavailable. Please try again shortly.", "source": "fallback"})
+            yield json.dumps({"reply": "The study assistant is temporarily refreshing its AI model channels. Please try asking again in a moment.", "source": "fallback"})
 
 
 @app.post("/chat")
@@ -244,11 +294,7 @@ def main():
 
 
 if __name__ == "__main__":
-    if "--server" in sys.argv:
-        import uvicorn
-        port = int(os.getenv("PORT", 8000))
-        print(f"Starting Smart Study AI API server on http://127.0.0.1:{port} (Provider: {PROVIDER_NAME}, Model: {MODEL})")
-        uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
-    else:
-        import uvicorn
-        uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    port = int(os.getenv("PORT", 5003))
+    import uvicorn
+    print(f"Starting Smart Study AI API server on http://127.0.0.1:{port} (Provider: {PROVIDER_NAME}, Model: {MODEL})")
+    uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
