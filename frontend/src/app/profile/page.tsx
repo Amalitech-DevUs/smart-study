@@ -4,7 +4,6 @@ import Link from "next/link";
 import { RequireAuth } from "@/components/shared/require-auth";
 import { useAuth } from "@/lib/use-auth";
 import {
-  LogOut,
   ArrowLeft,
   Shield,
   Calendar,
@@ -16,33 +15,24 @@ import {
 } from "lucide-react";
 
 export default function ProfilePage() {
-  const { username, logout } = useAuth();
+  const { username } = useAuth();
 
   const initials = username ? username.slice(0, 2).toUpperCase() : "ST";
 
   return (
     <RequireAuth>
       <div className="min-h-screen bg-[#f8f9fc]">
-        {/* Top nav bar */}
-        <header className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-3.5 sm:px-8">
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors hover:text-slate-900"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Dashboard
-          </Link>
-          <button
-            type="button"
-            onClick={logout}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-transparent px-3 py-1.5 text-xs font-semibold text-slate-500 transition-all hover:border-rose-100 hover:bg-rose-50 hover:text-rose-600"
-          >
-            <LogOut className="h-3.5 w-3.5" />
-            Log out
-          </button>
-        </header>
-
         <main className="mx-auto max-w-2xl px-5 py-8 sm:px-8 sm:py-10">
+          {/* Back to Dashboard */}
+          <div className="mb-6">
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors hover:text-slate-900"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Back to Dashboard
+            </Link>
+          </div>
           {/* Profile hero card */}
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             {/* Navy header strip */}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/use-auth";
-import { User as UserIcon, GraduationCap, LogOut } from "lucide-react";
+import { User as UserIcon, LogOut } from "lucide-react";
 import { NotificationCenter } from "@/components/shared/notification-center";
 
 export function TopNav() {
@@ -41,12 +41,9 @@ export function TopNav() {
         {/* Brand */}
         <Link
           href={loggedIn ? "/dashboard" : "/"}
-          className="inline-flex items-center gap-2 font-heading text-lg font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
+          className="font-heading text-lg font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
         >
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400 text-slate-950">
-            <GraduationCap className="h-4 w-4" />
-          </div>
-          <span>SmartStudy</span>
+          SmartStudy
         </Link>
 
         {/* Navigation Links - Hidden on root landing page for a clean landing experience */}

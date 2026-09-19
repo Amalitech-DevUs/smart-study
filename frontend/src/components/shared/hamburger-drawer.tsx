@@ -12,7 +12,6 @@ import {
   FileText,
   User,
   LogOut,
-  GraduationCap,
 } from "lucide-react";
 
 export function HamburgerDrawer() {
@@ -124,10 +123,7 @@ export function HamburgerDrawer() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center gap-2 font-heading text-sm font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
                 >
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400 text-slate-950">
-                    <GraduationCap className="h-4 w-4" />
-                  </div>
-                  <span>SmartStudy</span>
+                  <span className="font-heading text-sm font-bold tracking-tight text-white">SmartStudy</span>
                 </Link>
 
                 <button
