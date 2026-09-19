@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { McqCard, type McqQuestion } from "./mcq-card";
 import { SaveProgressBanner } from "@/components/shared/save-progress-banner";
@@ -18,6 +18,7 @@ type TimerMode = (typeof timerOptions)[number]["value"];
 
 type SessionRunnerProps = {
   initialQuestions: McqQuestion[];
+  sessionKey?: string;
 };
 
 function formatTime(seconds: number) {
@@ -29,26 +30,91 @@ function formatTime(seconds: number) {
   return `${minutes}:${remainingSeconds}`;
 }
 
-export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
-  const [prevQuestions, setPrevQuestions] = useState(initialQuestions);
+export function SessionRunner({ initialQuestions, sessionKey }: SessionRunnerProps) {
+  const storageKey = sessionKey ? `smartstudy_session_${sessionKey}` : null;
+
   const [queue, setQueue] = useState<McqQuestion[]>(initialQuestions);
   const [attempts, setAttempts] = useState(0);
   const [completedQuestions, setCompletedQuestions] = useState(0);
   const [timerMode, setTimerMode] = useState<TimerMode>("practice");
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [timedOut, setTimedOut] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  // Persisted: tracks the option the user selected for the CURRENT question so that
+  // navigating away to the AI chat page and coming back restores the answer reveal.
+  const [currentAnswer, setCurrentAnswer] = useState<string | null>(null);
   const { loggedIn, isLoading } = useAuth();
 
-  if (prevQuestions !== initialQuestions) {
-    setPrevQuestions(initialQuestions);
-    setQueue(initialQuestions);
-    setCompletedQuestions(0);
-    setAttempts(0);
-    setTimedOut(false);
-  }
+  // Guard: only load from localStorage ONCE on mount.
+  // Using a ref prevents initialQuestions reference changes (server re-renders)
+  // from overwriting already-restored session state.
+  const hasLoadedRef = useRef(false);
 
   useEffect(() => {
-    if (timerMode === "practice" || queue.length === 0 || timedOut) {
+    // Only run once
+    if (hasLoadedRef.current) return;
+    hasLoadedRef.current = true;
+
+    if (!storageKey || typeof window === "undefined") {
+      setIsLoaded(true);
+      return;
+    }
+
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed.queueIds) && typeof parsed.completed === "number") {
+          const idMap = new Map(initialQuestions.map((q) => [String(q.id), q]));
+          const restoredQueue: McqQuestion[] = [];
+          for (const id of parsed.queueIds) {
+            const q = idMap.get(String(id));
+            if (q) restoredQueue.push(q);
+          }
+
+          if (restoredQueue.length > 0 || parsed.completed > 0) {
+            setQueue(restoredQueue);
+            setCompletedQuestions(parsed.completed || 0);
+            setAttempts(parsed.attempts || 0);
+            if (parsed.timerMode) setTimerMode(parsed.timerMode);
+            if (typeof parsed.timeRemaining === "number") setTimeRemaining(parsed.timeRemaining);
+            if (parsed.timedOut) setTimedOut(true);
+            if (typeof parsed.currentAnswer === "string") setCurrentAnswer(parsed.currentAnswer);
+          }
+        }
+      }
+    } catch {
+      // Ignore parse errors and use initial state
+    } finally {
+      setIsLoaded(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Persist state to localStorage on changes
+  useEffect(() => {
+    if (!isLoaded || !storageKey || typeof window === "undefined") return;
+
+    try {
+      const payload = {
+        queueIds: queue.map((q) => q.id),
+        completed: completedQuestions,
+        attempts: attempts,
+        timerMode: timerMode,
+        timeRemaining: timeRemaining,
+        timedOut: timedOut,
+        currentAnswer: currentAnswer,
+        timestamp: Date.now(),
+      };
+      localStorage.setItem(storageKey, JSON.stringify(payload));
+    } catch {
+      // Storage quota or disabled
+    }
+  }, [queue, completedQuestions, attempts, timerMode, timeRemaining, timedOut, currentAnswer, isLoaded, storageKey]);
+
+  // Timer countdown
+  useEffect(() => {
+    if (timerMode === "practice" || queue.length === 0 || timedOut || !isLoaded) {
       return;
     }
 
@@ -65,13 +131,16 @@ export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [queue.length, timerMode, timedOut]);
+  }, [queue.length, timerMode, timedOut, isLoaded]);
 
-  const handleAnswer = () => {
+  const handleAnswer = (optionId: string) => {
     setAttempts((currentAttempts) => currentAttempts + 1);
+    setCurrentAnswer(optionId);
   };
 
   const handleNext = (_optionId: string, isCorrect: boolean) => {
+    // Clear the saved answer before moving to the next question
+    setCurrentAnswer(null);
     if (isCorrect) {
       setCompletedQuestions((currentCompleted) => currentCompleted + 1);
       setQueue((currentQueue) => currentQueue.slice(1));
@@ -83,10 +152,16 @@ export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
   };
 
   const handleRestart = () => {
+    if (storageKey && typeof window !== "undefined") {
+      localStorage.removeItem(storageKey);
+    }
     setQueue(initialQuestions);
     setCompletedQuestions(0);
     setAttempts(0);
     setTimedOut(false);
+    setTimeRemaining(0);
+    setTimerMode("practice");
+    setCurrentAnswer(null);
   };
 
   const totalQuestions = initialQuestions.length;
@@ -149,46 +224,64 @@ export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
                 </button>
               ))}
             </div>
+
+            {/* Reset / Start Over Button */}
+            {!isFinished && completedQuestions > 0 && (
+              <button
+                type="button"
+                onClick={handleRestart}
+                className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-400 hover:text-rose-600 transition-colors"
+                title="Restart question session"
+              >
+                <RotateCcw className="h-3 w-3" />
+                <span>Reset</span>
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Linear Progress Bar */}
-        {!isFinished && (
-          <div className="mt-4">
-            <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
-              <div
-                className="h-full bg-emerald-500 transition-all duration-300 ease-out"
-                style={{ width: `${progressPercent}%` }}
-              />
-            </div>
-          </div>
-        )}
+        {/* Progress Bar */}
+        <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-slate-100">
+          <div
+            className="h-full bg-[#f5a623] transition-all duration-300 ease-out"
+            style={{ width: `${progressPercent}%` }}
+          />
+        </div>
       </div>
 
+      {/* Session Content */}
       {isFinished ? (
-        <div className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 text-center shadow-xl">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 shadow-inner">
-            <Award className="h-9 w-9" />
+        <div className="w-full rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-md">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600 shadow-sm">
+            <Award className="h-8 w-8" />
           </div>
 
-          <h2 className="mt-5 font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl">
-            {timedOut ? "Time is Up!" : "Paper Completed!"}
+          <h2 className="mt-4 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            {timedOut ? "Time's Up!" : "Practice Session Completed!"}
           </h2>
-          <p className="mt-2 text-sm text-slate-600 max-w-md mx-auto">
-            You worked through {completedQuestions} official WAEC questions in this session. Review your performance stats below:
+          <p className="mt-1.5 text-xs text-slate-500 max-w-md mx-auto">
+            {timedOut
+              ? "Your timed examination interval ended. Review your score and retry to improve speed."
+              : "Excellent work! You have completed and reviewed every question in this paper."}
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 max-w-lg mx-auto">
-            <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4 text-center">
-              <p className="text-2xl font-bold text-slate-900">{completedQuestions}</p>
-              <p className="text-xs font-medium text-slate-500">Questions Solved</p>
+          <div className="mt-6 grid grid-cols-3 gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+            <div>
+              <p className="font-heading text-xl font-extrabold text-slate-900 sm:text-2xl">
+                {completedQuestions}
+              </p>
+              <p className="text-xs font-medium text-slate-500">Mastered</p>
             </div>
-            <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4 text-center">
-              <p className="text-2xl font-bold text-emerald-600">{accuracy}%</p>
-              <p className="text-xs font-medium text-slate-500">Accuracy Rate</p>
+            <div>
+              <p className="font-heading text-xl font-extrabold text-slate-900 sm:text-2xl">
+                {accuracy}%
+              </p>
+              <p className="text-xs font-medium text-slate-500">Accuracy</p>
             </div>
-            <div className="col-span-2 sm:col-span-1 rounded-2xl border border-slate-100 bg-slate-50/70 p-4 text-center">
-              <p className="text-2xl font-bold text-slate-900">{attempts}</p>
+            <div>
+              <p className="font-heading text-xl font-extrabold text-slate-900 sm:text-2xl">
+                {attempts}
+              </p>
               <p className="text-xs font-medium text-slate-500">Total Attempts</p>
             </div>
           </div>
@@ -233,6 +326,7 @@ export function SessionRunner({ initialQuestions }: SessionRunnerProps) {
           currentIndex={completedQuestions + 1}
           totalCount={totalQuestions}
           isLastQuestion={queue.length === 1}
+          initialSelectedOptionId={currentAnswer}
           onAnswer={handleAnswer}
           onNext={handleNext}
         />

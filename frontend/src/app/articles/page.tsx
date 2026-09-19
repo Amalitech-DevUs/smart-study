@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth";
+import { ArrowLeft, BookOpen } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 type Article = {
@@ -156,6 +159,11 @@ function calculateReadTime(text?: string): string {
 }
 
 export default async function ArticlesPage() {
+  const user = await getCurrentUser();
+  if (!user.loggedIn) {
+    redirect("/login?redirect=/articles");
+  }
+
   const articles = await getArticles();
 
   // Pick top study habits or first general article as featured
@@ -201,14 +209,26 @@ export default async function ArticlesPage() {
   }
 
   return (
-    <main className="flex-1 bg-white pb-28 pt-10 sm:pt-14">
+    <main className="flex-1 bg-white pb-28 pt-8 sm:pt-12">
       <div className="mx-auto max-w-4xl px-6">
+        {/* Back Link */}
+        <div className="mb-6">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            <span>Back to Dashboard</span>
+          </Link>
+        </div>
+
         <ScrollReveal>
           <header className="mb-10 border-b border-slate-200 pb-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Revision Notes
-            </p>
-            <h1 className="mt-2 font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200/60 px-3 py-0.5 text-xs font-semibold text-amber-800 mb-3">
+              <BookOpen className="h-3.5 w-3.5 text-amber-600" />
+              <span>BECE Revision Notes</span>
+            </div>
+            <h1 className="font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl">
               Study Guides & Summaries
             </h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-600">
