@@ -60,7 +60,7 @@ export default function DashboardPage() {
                   {greeting}
                 </p>
                 <h1 className="mt-1.5 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                  {username || "Student"} 👋
+                  {username || "Student"}
                 </h1>
                 <p className="mt-1.5 text-sm text-slate-500">
                   Your BECE revision workspace. Pick up where you left off.
