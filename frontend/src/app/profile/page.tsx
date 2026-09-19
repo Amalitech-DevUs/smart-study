@@ -112,7 +112,7 @@ export default function ProfilePage() {
               <div className="mt-4 flex items-center gap-2 rounded-xl border border-amber-100 bg-amber-50/70 px-4 py-3">
                 <Award className="h-5 w-5 text-amber-500 shrink-0" />
                 <p className="text-xs text-amber-800">
-                  <strong>853+ questions</strong> available across 5 subjects and 7 years of WAEC papers.
+                  <strong>1,130+ questions</strong> available across 8 subjects and 7 years of WAEC papers.
                 </p>
               </div>
             </div>

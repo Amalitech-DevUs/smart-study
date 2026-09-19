@@ -72,8 +72,8 @@ export default function DashboardPage() {
             <ScrollReveal delay={0.08} direction="scale">
               <div className="mb-8 grid grid-cols-3 divide-x divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md">
                 {[
-                  { label: "Questions", value: "853+" },
-                  { label: "Subjects", value: "5" },
+                  { label: "Questions", value: "1,130+" },
+                  { label: "Subjects", value: "8" },
                   { label: "Exam Years", value: "7" },
                 ].map((stat) => (
                   <div key={stat.label} className="px-5 py-4 text-center">
@@ -125,7 +125,7 @@ export default function DashboardPage() {
                       Past Question Papers
                     </h2>
                     <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
-                      Solve 853+ official WAEC questions with instant grading and explanations.
+                      Solve 1,130+ official WAEC questions across 8 subjects with instant grading and explanations.
                     </p>
                   </div>
                   <div className="mt-5 flex items-center gap-1 text-xs font-bold text-slate-700 transition-colors group-hover:text-slate-900">

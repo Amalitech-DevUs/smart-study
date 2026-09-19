@@ -51,13 +51,40 @@ const subjects = [
     accent: "border-l-blue-600",
     badge: "bg-blue-50 text-blue-800",
   },
+  {
+    name: "Computing",
+    slug: "computing",
+    year: "2024-2026",
+    description: "Computer hardware, algorithms, networking, logic, and online safety.",
+    topics: ["Hardware", "Programming Logic", "Networking", "Cybersecurity"],
+    accent: "border-l-cyan-600",
+    badge: "bg-cyan-50 text-cyan-800",
+  },
+  {
+    name: "Religious & Moral Education",
+    slug: "rme",
+    year: "2026 Paper 1",
+    description: "Creation stories, moral values, religious practices, and traditional teachings.",
+    topics: ["Moral Teachings", "Festivals", "Religion", "Ethics"],
+    accent: "border-l-orange-600",
+    badge: "bg-orange-50 text-orange-800",
+  },
+  {
+    name: "Creative Arts & Design",
+    slug: "creative-arts",
+    year: "2024-2026",
+    description: "Visual arts, performing arts, Ghanaian crafts, and design fundamentals.",
+    topics: ["Visual Arts", "Design Principles", "Performing Arts", "Crafts"],
+    accent: "border-l-purple-600",
+    badge: "bg-purple-50 text-purple-800",
+  },
 ];
 
 const features = [
   {
     icon: BookOpen,
     title: "Official Past Papers",
-    description: "853+ verified multiple-choice questions from real WAEC examinations, 2020 to 2026.",
+    description: "1,130+ verified multiple-choice questions from real WAEC examinations across 8 subjects, 2020 to 2026.",
   },
   {
     icon: Bot,
