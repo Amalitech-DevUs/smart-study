@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 type Article = {
@@ -224,8 +224,7 @@ export default async function ArticlesPage() {
 
         <ScrollReveal>
           <header className="mb-10 border-b border-slate-200 pb-8">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200/60 px-3 py-0.5 text-xs font-semibold text-amber-800 mb-3">
-              <BookOpen className="h-3.5 w-3.5 text-amber-600" />
+            <div className="inline-flex items-center rounded-full bg-amber-50 border border-amber-200/60 px-3 py-0.5 text-xs font-semibold text-amber-800 mb-3">
               <span>BECE Revision Notes</span>
             </div>
             <h1 className="font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl">

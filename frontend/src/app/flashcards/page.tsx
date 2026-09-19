@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { ArrowLeft, BookOpen, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 type Subject = {
@@ -138,8 +138,7 @@ export default async function FlashcardsPage() {
 
         <ScrollReveal>
           <div className="mb-8 border-b border-slate-200 pb-7">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600 mb-3 shadow-sm">
-              <BookOpen className="h-3.5 w-3.5 text-slate-500" />
+            <div className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600 mb-3 shadow-sm">
               WAEC Exam Preparation
             </div>
             <h1 className="font-heading text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
