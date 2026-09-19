@@ -94,7 +94,7 @@ export default function DashboardPage() {
                 >
                   <div>
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-800">
-                      <MessageSquare className="h-5 w-5 text-amber-400" />
+                      <MessageSquare className="h-5 w-5 text-slate-300" />
                     </div>
                     <h2 className="mt-4 font-heading text-base font-bold text-white">
                       AI Study Companion
@@ -103,7 +103,7 @@ export default function DashboardPage() {
                       Ask any BECE question. Get step-by-step explanations in plain English.
                     </p>
                   </div>
-                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-amber-400 transition-colors group-hover:text-amber-300">
+                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-slate-300 transition-colors group-hover:text-white">
                     <Sparkles className="h-3.5 w-3.5" />
                     <span>Open Tutor</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -140,11 +140,11 @@ export default function DashboardPage() {
                 <ScrollReveal delay={0.2} direction="up">
                   <Link
                     href="/articles"
-                    className="group flex flex-col justify-between rounded-2xl border border-amber-200 bg-amber-50/60 p-6 transition-all hover:border-amber-300 hover:bg-amber-50 hover:shadow-sm active:scale-[0.99]"
+                    className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-300 hover:shadow-sm active:scale-[0.99]"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 transition-colors group-hover:bg-amber-200">
-                        <FileText className="h-5 w-5 text-amber-700" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 transition-colors group-hover:bg-slate-200">
+                        <FileText className="h-5 w-5 text-slate-700" />
                       </div>
                       <div>
                         <h2 className="font-heading text-base font-bold text-slate-900">
@@ -155,7 +155,7 @@ export default function DashboardPage() {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-4 flex items-center gap-1 text-xs font-bold text-amber-800 transition-colors group-hover:text-amber-900">
+                    <div className="mt-4 flex items-center gap-1 text-xs font-bold text-slate-700 transition-colors group-hover:text-slate-900">
                       <span>Read guides</span>
                       <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                     </div>
@@ -178,8 +178,12 @@ export default function DashboardPage() {
                   { name: "English", slug: "english" },
                   { name: "Science", slug: "science" },
                   { name: "Social Studies", slug: "social-studies" },
+                  { name: "French", slug: "french" },
+                  { name: "Computing", slug: "computing" },
+                  { name: "RME", slug: "rme" },
+                  { name: "Creative Arts", slug: "creative-arts" },
                 ].map((subj, idx) => (
-                  <ScrollReveal key={subj.slug} delay={0.26 + idx * 0.04} direction="up">
+                  <ScrollReveal key={subj.slug} delay={0.26 + idx * 0.03} direction="up">
                     <Link
                       href={`/flashcards/${subj.slug}`}
                       className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-xs font-semibold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm"
@@ -196,7 +200,7 @@ export default function DashboardPage() {
             <ScrollReveal delay={0.36} direction="scale">
               <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="flex items-center gap-3.5">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-200">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-700 border border-slate-200">
                     <Flame className="h-5 w-5" />
                   </div>
                   <div>
@@ -213,7 +217,7 @@ export default function DashboardPage() {
                   href="/flashcards/mathematics"
                   className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#0e1726] px-4 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors"
                 >
-                  <Target className="h-3.5 w-3.5 text-amber-400" />
+                  <Target className="h-3.5 w-3.5 text-slate-300" />
                   <span>Start Practice</span>
                 </Link>
               </div>
