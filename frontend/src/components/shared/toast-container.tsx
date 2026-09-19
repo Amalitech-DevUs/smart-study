@@ -42,7 +42,6 @@ export function ToastContainer() {
       <AnimatePresence mode="popLayout">
         {toasts.map((toast) => {
           const cfg = toastConfig[toast.type];
-          const Icon = cfg.icon;
 
           return (
             <motion.div

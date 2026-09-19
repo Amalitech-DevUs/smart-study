@@ -210,7 +210,7 @@ export async function fetchArticles(filters?: { category?: string; subject?: str
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 800);
 
     const params = new URLSearchParams();
     if (filters?.category) params.append('category', filters.category);
@@ -243,13 +243,23 @@ export async function fetchArticles(filters?: { category?: string; subject?: str
  * Fetch a single article by either integer ID or string slug
  */
 export async function fetchArticleByIdOrSlug(identifier: string) {
+  // Check local seed bank first for instantaneous, reliable response
+  const localFound = (articlesData as Array<Record<string, any>>).find(a =>
+    String(a.slug || '').toLowerCase() === identifier.toLowerCase() ||
+    String(a.id).toLowerCase() === identifier.toLowerCase()
+  );
+
+  if (localFound) {
+    return { data: localFound, source: 'LOCAL_SEED_BANK' };
+  }
+
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
 
   // If numeric, try direct endpoint first
   if (/^\d+$/.test(identifier)) {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2500);
+      const timeoutId = setTimeout(() => controller.abort(), 800);
       const response = await fetch(`${contentUrl}/articles/${identifier}`, { signal: controller.signal });
       clearTimeout(timeoutId);
 
@@ -265,7 +275,7 @@ export async function fetchArticleByIdOrSlug(identifier: string) {
   // Try fetching all articles from Content DB to match by slug or id
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 800);
     const response = await fetch(`${contentUrl}/articles`, { signal: controller.signal });
     clearTimeout(timeoutId);
 
@@ -284,12 +294,7 @@ export async function fetchArticleByIdOrSlug(identifier: string) {
     // Fall back to local seed data
   }
 
-  const localFound = (articlesData as Array<Record<string, any>>).find(a =>
-    String(a.slug || '').toLowerCase() === identifier.toLowerCase() ||
-    String(a.id).toLowerCase() === identifier.toLowerCase()
-  );
-
-  return { data: localFound || null, source: 'LOCAL_SEED_BANK' };
+  return { data: null, source: 'LOCAL_SEED_BANK' };
 }
 
 // Alias for development branch compatibility

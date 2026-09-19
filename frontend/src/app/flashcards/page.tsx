@@ -11,10 +11,6 @@ type Subject = {
   questionCount: number;
   years: string;
   description: string;
-  accentBorder: string;
-  accentBg: string;
-  accentText: string;
-  accentBadge: string;
 };
 
 const subjects: Subject[] = [
@@ -25,10 +21,6 @@ const subjects: Subject[] = [
     questionCount: 280,
     years: "2020–2026",
     description: "Algebra, plane geometry, word problems, statistics, and number bases.",
-    accentBorder: "border-l-[#1e7e4e]",
-    accentBg: "bg-emerald-50",
-    accentText: "text-emerald-700",
-    accentBadge: "bg-emerald-50 text-emerald-700 border-emerald-200",
   },
   {
     slug: "english",
@@ -37,10 +29,6 @@ const subjects: Subject[] = [
     questionCount: 280,
     years: "2020–2026",
     description: "Comprehension passages, grammar rules, vocabulary, antonyms, and composition.",
-    accentBorder: "border-l-[#c0392b]",
-    accentBg: "bg-rose-50",
-    accentText: "text-rose-700",
-    accentBadge: "bg-rose-50 text-rose-700 border-rose-200",
   },
   {
     slug: "science",
@@ -49,10 +37,6 @@ const subjects: Subject[] = [
     questionCount: 60,
     years: "2026 Mock",
     description: "Life processes, chemical compounds, electrical circuits, and soil science.",
-    accentBorder: "border-l-[#f5a623]",
-    accentBg: "bg-amber-50",
-    accentText: "text-amber-700",
-    accentBadge: "bg-amber-50 text-amber-700 border-amber-200",
   },
   {
     slug: "social-studies",
@@ -61,10 +45,6 @@ const subjects: Subject[] = [
     questionCount: 196,
     years: "2020–2026",
     description: "Ghanaian governance, physical environment, colonization history, and citizenship.",
-    accentBorder: "border-l-[#0e1726]",
-    accentBg: "bg-slate-100",
-    accentText: "text-slate-700",
-    accentBadge: "bg-slate-100 text-slate-700 border-slate-200",
   },
   {
     slug: "french",
@@ -73,10 +53,6 @@ const subjects: Subject[] = [
     questionCount: 40,
     years: "2026",
     description: "Grammaire, vocabulaire, compréhension de texte, et conjugaison pour le BECE.",
-    accentBorder: "border-l-[#2563eb]",
-    accentBg: "bg-blue-50",
-    accentText: "text-blue-700",
-    accentBadge: "bg-blue-50 text-blue-700 border-blue-200",
   },
   {
     slug: "computing",
@@ -85,10 +61,6 @@ const subjects: Subject[] = [
     questionCount: 120,
     years: "2024–2026",
     description: "Computer systems, algorithms, hardware, networking, programming logic, and cybersecurity.",
-    accentBorder: "border-l-[#0891b2]",
-    accentBg: "bg-cyan-50",
-    accentText: "text-cyan-700",
-    accentBadge: "bg-cyan-50 text-cyan-700 border-cyan-200",
   },
   {
     slug: "rme",
@@ -97,10 +69,6 @@ const subjects: Subject[] = [
     questionCount: 40,
     years: "2026",
     description: "Creation stories, moral teachings, traditional beliefs, festivals, and ethical living.",
-    accentBorder: "border-l-[#ea580c]",
-    accentBg: "bg-orange-50",
-    accentText: "text-orange-700",
-    accentBadge: "bg-orange-50 text-orange-700 border-orange-200",
   },
   {
     slug: "creative-arts",
@@ -109,10 +77,6 @@ const subjects: Subject[] = [
     questionCount: 120,
     years: "2024–2026",
     description: "Visual arts, performing arts, design principles, Ghanaian cultural crafts, and aesthetics.",
-    accentBorder: "border-l-[#9333ea]",
-    accentBg: "bg-purple-50",
-    accentText: "text-purple-700",
-    accentBadge: "bg-purple-50 text-purple-700 border-purple-200",
   },
 ];
 
@@ -156,7 +120,7 @@ export default async function FlashcardsPage() {
             <ScrollReveal key={subj.slug} delay={index * 0.06}>
               <Link
                 href={`/flashcards/${subj.slug}`}
-                className={`group flex flex-col justify-between rounded-2xl border border-slate-200 border-l-4 ${subj.accentBorder} bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99]`}
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99]"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
@@ -164,7 +128,7 @@ export default async function FlashcardsPage() {
                       {subj.name}
                     </h2>
                     <span
-                      className={`shrink-0 rounded-lg border px-2.5 py-1 text-[11px] font-bold ${subj.accentBadge}`}
+                      className="shrink-0 rounded-lg border border-slate-200 bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-700"
                     >
                       {subj.years}
                     </span>
@@ -180,7 +144,7 @@ export default async function FlashcardsPage() {
                     <span>·</span>
                     <span>~{subj.questionCount} questions</span>
                   </div>
-                  <div className={`flex items-center gap-1 text-xs font-bold ${subj.accentText} transition-all group-hover:gap-2`}>
+                  <div className="flex items-center gap-1 text-xs font-bold text-slate-700 transition-all group-hover:gap-2 group-hover:text-slate-900">
                     Select year
                     <ChevronRight className="h-3.5 w-3.5" />
                   </div>

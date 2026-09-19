@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useAuth } from "@/lib/use-auth";
-import { GraduationCap, ArrowLeft, Home, Compass } from "lucide-react";
+import { ArrowLeft, Home, Compass } from "lucide-react";
 
 export default function NotFound() {
   const { loggedIn } = useAuth();
@@ -45,7 +45,6 @@ export default function NotFound() {
               href="/flashcards"
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-2.5 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95"
             >
-              <GraduationCap className="h-4 w-4 text-amber-500" />
               Browse Flashcards
             </Link>
           )}
