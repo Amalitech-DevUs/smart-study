@@ -1,40 +1,32 @@
 "use client";
 
 import { useNotifications, ToastType } from "@/lib/notification-context";
-import { CheckCircle2, AlertCircle, AlertTriangle, Info, X } from "lucide-react";
+import { X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const toastConfig: Record<
   ToastType,
-  { icon: typeof CheckCircle2; border: string; bg: string; text: string; iconColor: string }
+  { border: string; bg: string; text: string }
 > = {
   success: {
-    icon: CheckCircle2,
     border: "border-emerald-500/30",
     bg: "bg-slate-900/95",
     text: "text-slate-100",
-    iconColor: "text-emerald-400",
   },
   error: {
-    icon: AlertCircle,
     border: "border-rose-500/30",
     bg: "bg-slate-900/95",
     text: "text-slate-100",
-    iconColor: "text-rose-400",
   },
   warning: {
-    icon: AlertTriangle,
     border: "border-amber-500/30",
     bg: "bg-slate-900/95",
     text: "text-slate-100",
-    iconColor: "text-amber-400",
   },
   info: {
-    icon: Info,
     border: "border-blue-500/30",
     bg: "bg-slate-900/95",
     text: "text-slate-100",
-    iconColor: "text-blue-400",
   },
 };
 
@@ -61,7 +53,6 @@ export function ToastContainer() {
               exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
               className={`pointer-events-auto flex items-start gap-3 rounded-xl border ${cfg.border} ${cfg.bg} p-4 shadow-xl backdrop-blur-md`}
             >
-              <Icon className={`mt-0.5 h-5 w-5 shrink-0 ${cfg.iconColor}`} />
               <div className="flex-1 text-xs">
                 {toast.title && (
                   <p className="font-heading font-semibold text-white mb-0.5">
