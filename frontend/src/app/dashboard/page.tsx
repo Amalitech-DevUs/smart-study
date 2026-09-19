@@ -174,15 +174,15 @@ export default function DashboardPage() {
 
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[
-                  { name: "Mathematics", slug: "mathematics", color: "border-l-[#1e7e4e] hover:bg-emerald-50" },
-                  { name: "English", slug: "english", color: "border-l-[#c0392b] hover:bg-rose-50" },
-                  { name: "Science", slug: "science", color: "border-l-[#f5a623] hover:bg-amber-50" },
-                  { name: "Social Studies", slug: "social-studies", color: "border-l-[#0e1726] hover:bg-slate-100" },
+                  { name: "Mathematics", slug: "mathematics" },
+                  { name: "English", slug: "english" },
+                  { name: "Science", slug: "science" },
+                  { name: "Social Studies", slug: "social-studies" },
                 ].map((subj, idx) => (
                   <ScrollReveal key={subj.slug} delay={0.26 + idx * 0.04} direction="up">
                     <Link
                       href={`/flashcards/${subj.slug}`}
-                      className={`flex items-center justify-between rounded-lg border border-l-4 border-slate-200 bg-white px-3.5 py-3 text-xs font-semibold text-slate-700 transition-all hover:shadow-sm ${subj.color}`}
+                      className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-xs font-semibold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm"
                     >
                       <span className="truncate">{subj.name}</span>
                       <ChevronRight className="h-3.5 w-3.5 shrink-0 text-slate-400" />
