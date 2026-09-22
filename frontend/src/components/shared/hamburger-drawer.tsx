@@ -21,6 +21,7 @@ export function HamburgerDrawer() {
 
   // Close drawer on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- close the menu after navigation so the drawer stays in sync with the current route.
     setIsOpen(false);
   }, [pathname]);
 

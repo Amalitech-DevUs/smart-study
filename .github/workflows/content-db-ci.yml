@@ -44,11 +44,9 @@ jobs:
         run: python -m compileall -q .
 
       - name: Run tests
-        # No automated tests exist yet. DATABASE_URL is intentionally left
-        # unset here — the service defaults to local SQLite, so no Postgres
-        # service container is needed for this to run. Once tests are added,
-        # this step activates automatically via --if-present-style behavior
-        # (pytest exits 5, "no tests collected", rather than failing, when
-        # no test files are found).
-        if: steps.check.outputs.exists == 'true'
-        run: pytest || [ $? -eq 5 ]
+        run: |
+          if python -c "import pytest" 2>/dev/null; then
+            pytest || [ $? -eq 5 ]
+          else
+            echo "pytest not installed yet in requirements.txt — skipping until tests are added."
+          fi

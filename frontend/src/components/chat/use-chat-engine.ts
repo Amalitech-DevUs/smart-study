@@ -102,6 +102,7 @@ export function useChatEngine(): ChatEngineState {
         if (saved) {
           const parsed = JSON.parse(saved);
           if (Array.isArray(parsed) && parsed.length > 0) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring persisted chat messages from localStorage on mount, which is only available in the browser.
             setMessages(parsed);
           }
         }

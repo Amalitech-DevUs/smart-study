@@ -53,6 +53,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Initial check on mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- fetch auth state once on mount because it depends on the browser session/cookie state.
     checkAuth();
   }, [checkAuth]);
 
