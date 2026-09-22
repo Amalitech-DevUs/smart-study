@@ -92,6 +92,7 @@ export function NotificationProvider({ children }: { children: React.ReactNode }
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect -- restore persisted notifications from localStorage on first client mount.
           setNotifications(parsed);
         }
       }

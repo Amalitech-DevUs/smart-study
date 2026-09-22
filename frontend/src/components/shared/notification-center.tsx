@@ -10,8 +10,6 @@ import {
 } from "lucide-react";
 import {
   useNotifications,
-  AppNotification,
-  NotificationType,
 } from "@/lib/notification-context";
 import { AnimatePresence, motion } from "framer-motion";
 

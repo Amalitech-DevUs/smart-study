@@ -38,9 +38,15 @@ jobs:
         run: uv sync
 
       - name: Syntax check
+        # No lint tool is configured yet. Baseline syntax check only.
         if: steps.check.outputs.exists == 'true'
         run: uv run python -m compileall -q .
 
       - name: Run tests
+        # pytest is declared as a dependency but no tests exist yet.
+        # GROQ_API_KEY / OPENROUTER_API_KEY are intentionally left unset —
+        # per the service's own fallback behavior, it runs without a
+        # provider configured rather than requiring a real key to import.
+        # "No tests collected" (pytest exit code 5) is treated as a pass.
         if: steps.check.outputs.exists == 'true'
         run: uv run pytest || [ $? -eq 5 ]

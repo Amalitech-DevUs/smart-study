@@ -37,9 +37,16 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: PHP syntax check
+        # No formal lint tool is configured yet. This runs PHP's built-in
+        # syntax linter (php -l) across every .php file as a baseline check —
+        # catches parse errors, not style or logic issues.
         run: find . -name "*.php" -print0 | xargs -0 -n1 php -l
 
       - name: Run manual test scripts
+        # No formal test framework (e.g. PHPUnit) exists yet — these are the
+        # manual verification scripts referenced in the service's own docs.
+        # Each runs only if the file is present, and a non-zero exit from
+        # either will fail this job.
         run: |
           if [ -f test_db.php ]; then php test_db.php; fi
           if [ -f test_jwt.php ]; then php test_jwt.php; fi

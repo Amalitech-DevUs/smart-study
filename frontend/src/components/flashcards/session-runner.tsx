@@ -56,6 +56,7 @@ export function SessionRunner({ initialQuestions, sessionKey }: SessionRunnerPro
     hasLoadedRef.current = true;
 
     if (!storageKey || typeof window === "undefined") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- this mount guard prevents hydration mismatch during client-only session restoration.
       setIsLoaded(true);
       return;
     }

@@ -37,6 +37,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Syntax check
+        # No lint tool (e.g. ruff, flake8) is configured yet. This runs
+        # Python's own compileall as a baseline check — catches syntax
+        # errors, not style or logic issues.
         if: steps.check.outputs.exists == 'true'
         run: python -m compileall -q .
 

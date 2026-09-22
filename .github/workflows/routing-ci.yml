@@ -43,6 +43,11 @@ jobs:
         if: steps.check.outputs.exists == 'true'
         run: npm ci
 
+      # No lint script exists yet in backend/package.json.
+      # Add a "Lint" step here once one is added — until then this is
+      # intentionally skipped rather than faked with --if-present, so it's
+      # clear from this file that linting isn't happening yet.
+
       - name: Build (TypeScript)
         if: steps.check.outputs.exists == 'true'
         run: npm run build
