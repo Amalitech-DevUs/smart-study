@@ -1,0 +1,54 @@
+name: Content Database CI
+
+on:
+  pull_request:
+    paths:
+      - "backend/content/content-database/**"
+  push:
+    branches: [main, develop]
+    paths:
+      - "backend/content/content-database/**"
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend/content/content-database
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: backend/content/content-database/requirements.txt
+
+      - name: Check for requirements.txt
+        id: check
+        run: echo "exists=$([ -f backend/content/content-database/requirements.txt ] && echo true || echo false)" >> $GITHUB_OUTPUT
+        working-directory: .
+
+      - name: Install dependencies
+        if: steps.check.outputs.exists == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Syntax check
+        # No lint tool (e.g. ruff, flake8) is configured yet. This runs
+        # Python's own compileall as a baseline check — catches syntax
+        # errors, not style or logic issues.
+        if: steps.check.outputs.exists == 'true'
+        run: python -m compileall -q .
+
+      - name: Run tests
+        # No automated tests exist yet. DATABASE_URL is intentionally left
+        # unset here — the service defaults to local SQLite, so no Postgres
+        # service container is needed for this to run. Once tests are added,
+        # this step activates automatically via --if-present-style behavior
+        # (pytest exits 5, "no tests collected", rather than failing, when
+        # no test files are found).
+        if: steps.check.outputs.exists == 'true'
+        run: pytest || [ $? -eq 5 ]

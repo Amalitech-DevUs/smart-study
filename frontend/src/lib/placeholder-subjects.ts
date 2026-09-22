@@ -66,6 +66,42 @@ export const placeholderSubjects: PlaceholderSubject[] = [
       { year: 2026, questionCount: 40 },
     ],
   },
+  {
+    slug: "french",
+    name: "French",
+    subjectColor: "french",
+    papers: [
+      { year: 2026, questionCount: 40 },
+    ],
+  },
+  {
+    slug: "computing",
+    name: "Computing",
+    subjectColor: "computing",
+    papers: [
+      { year: 2024, questionCount: 40 },
+      { year: 2025, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
+    ],
+  },
+  {
+    slug: "rme",
+    name: "Religious and Moral Education",
+    subjectColor: "rme",
+    papers: [
+      { year: 2026, questionCount: 40 },
+    ],
+  },
+  {
+    slug: "creative-arts",
+    name: "Creative Arts and Design",
+    subjectColor: "creative-arts",
+    papers: [
+      { year: 2024, questionCount: 40 },
+      { year: 2025, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
+    ],
+  },
 ];
 
 export const sampleQuestions: McqQuestion[] = [

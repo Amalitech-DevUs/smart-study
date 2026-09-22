@@ -1,4 +1,5 @@
 import articlesData from '../data/articles.json';
+import questionsData from '../data/questions.json';
 
 export interface ServiceHealthStatus {
   service: string;
@@ -62,13 +63,13 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
 }
 
 /**
- * Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ * Question Data Provider: Queries downstream Content DB service first, falls back to local seed bank
  */
 export async function fetchQuestions(filters?: { subject?: string; year?: number; topic?: string }) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    const timeoutId = setTimeout(() => controller.abort(), 1500);
 
     const query = new URLSearchParams();
     if (filters?.subject) query.append('subject', filters.subject);
@@ -101,14 +102,48 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     }
     clearTimeout(timeoutId);
   } catch (error) {
-    // Connection error
+    // Content DB service offline, proceeding to local seed bank fallback
   }
 
-  return { data: [], source: 'CONTENT_SERVICE' };
+  // Fallback to local verified questions seed bank (853 questions)
+  let localQuestions = questionsData as any[];
+
+  if (filters?.subject) {
+    localQuestions = localQuestions.filter(
+      q => q.subject && q.subject.toLowerCase() === filters.subject!.toLowerCase()
+    );
+  }
+  if (filters?.year) {
+    localQuestions = localQuestions.filter(
+      q => Number(q.year) === Number(filters.year)
+    );
+  }
+  if (filters?.topic) {
+    localQuestions = localQuestions.filter(
+      q => q.topic && q.topic.toLowerCase() === filters.topic!.toLowerCase()
+    );
+  }
+
+  const normalizedFallback = localQuestions.map((q: any) => ({
+    id: q.id,
+    subject: q.subject,
+    year: q.year,
+    paper: q.paper,
+    section: q.section,
+    topic: q.topic,
+    prompt: q.prompt,
+    options: q.options,
+    correctAnswer: q.correctAnswer || q.correct_answer,
+    questionNumber: q.questionNumber || q.question_number,
+    questionType: q.questionType || q.question_type || 'mcq',
+    explanation: q.explanation || `The correct answer is Option ${q.correctAnswer || q.correct_answer}.`
+  }));
+
+  return { data: normalizedFallback, source: 'LOCAL_SEED_BANK' };
 }
 
 /**
- * Single Question Data Provider: Exclusively queries the downstream Content DB service (no local fallback)
+ * Single Question Data Provider: Queries Content DB first, falls back to local seed bank
  */
 export async function fetchQuestionById(id: string | number) {
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
@@ -141,6 +176,30 @@ export async function fetchQuestionById(id: string | number) {
     // Downstream service offline
   }
 
+  const found = (questionsData as any[]).find(
+    q => String(q.id).toLowerCase() === String(id).toLowerCase() || String(q.question_number) === String(id)
+  );
+
+  if (found) {
+    return {
+      data: {
+        id: found.id,
+        subject: found.subject,
+        year: found.year,
+        paper: found.paper,
+        section: found.section,
+        topic: found.topic,
+        prompt: found.prompt,
+        options: found.options,
+        correctAnswer: found.correctAnswer || found.correct_answer,
+        questionNumber: found.questionNumber || found.question_number,
+        questionType: found.questionType || found.question_type || 'mcq',
+        explanation: found.explanation || `The correct answer is Option ${found.correctAnswer || found.correct_answer}.`
+      },
+      source: 'LOCAL_SEED_BANK'
+    };
+  }
+
   return null;
 }
 
@@ -151,7 +210,7 @@ export async function fetchArticles(filters?: { category?: string; subject?: str
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 800);
 
     const params = new URLSearchParams();
     if (filters?.category) params.append('category', filters.category);
@@ -184,13 +243,23 @@ export async function fetchArticles(filters?: { category?: string; subject?: str
  * Fetch a single article by either integer ID or string slug
  */
 export async function fetchArticleByIdOrSlug(identifier: string) {
+  // Check local seed bank first for instantaneous, reliable response
+  const localFound = (articlesData as Array<Record<string, any>>).find(a =>
+    String(a.slug || '').toLowerCase() === identifier.toLowerCase() ||
+    String(a.id).toLowerCase() === identifier.toLowerCase()
+  );
+
+  if (localFound) {
+    return { data: localFound, source: 'LOCAL_SEED_BANK' };
+  }
+
   const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
 
   // If numeric, try direct endpoint first
   if (/^\d+$/.test(identifier)) {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2500);
+      const timeoutId = setTimeout(() => controller.abort(), 800);
       const response = await fetch(`${contentUrl}/articles/${identifier}`, { signal: controller.signal });
       clearTimeout(timeoutId);
 
@@ -206,7 +275,7 @@ export async function fetchArticleByIdOrSlug(identifier: string) {
   // Try fetching all articles from Content DB to match by slug or id
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 800);
     const response = await fetch(`${contentUrl}/articles`, { signal: controller.signal });
     clearTimeout(timeoutId);
 
@@ -225,12 +294,7 @@ export async function fetchArticleByIdOrSlug(identifier: string) {
     // Fall back to local seed data
   }
 
-  const localFound = (articlesData as Array<Record<string, any>>).find(a =>
-    String(a.slug || '').toLowerCase() === identifier.toLowerCase() ||
-    String(a.id).toLowerCase() === identifier.toLowerCase()
-  );
-
-  return { data: localFound || null, source: 'LOCAL_SEED_BANK' };
+  return { data: null, source: 'LOCAL_SEED_BANK' };
 }
 
 // Alias for development branch compatibility
@@ -238,16 +302,28 @@ export const fetchArticleById = fetchArticleByIdOrSlug;
 
 /**
  * AI Assistant Microservice Chat Forwarder:
- * Connects to AI microservice on AI_SERVICE_URL (default: port 8000).
+ * Connects to AI microservice on AI_SERVICE_URL (default: port 5003).
+ * Uses a 90-second timeout so slow free-tier models don't hang Express forever.
  */
 export async function forwardChatToAiService(payload: {
   message?: string;
   messages?: Array<{ role: string; content: string }>;
 }) {
-  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:8000';
-  return fetch(`${aiUrl}/chat`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  });
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
+  const controller = new AbortController();
+  // 90 seconds — enough for slow free-tier LLMs, prevents indefinite hangs
+  const timeoutId = setTimeout(() => controller.abort(), 90_000);
+  try {
+    const response = await fetch(`${aiUrl}/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (err) {
+    clearTimeout(timeoutId);
+    throw err;
+  }
 }

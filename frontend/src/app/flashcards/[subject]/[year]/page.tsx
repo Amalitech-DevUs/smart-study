@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/auth";
 import { SessionRunner } from "@/components/flashcards/session-runner";
 import type { McqQuestion } from "@/components/flashcards/mcq-card";
 import { placeholderSubjects } from "@/lib/placeholder-subjects";
@@ -107,7 +108,13 @@ async function getQuestions(
 }
 
 export default async function PaperPage({ params }: PaperPageProps) {
+  const user = await getCurrentUser();
   const { subject, year: yearParam } = await params;
+
+  if (!user.loggedIn) {
+    redirect(`/login?redirect=/flashcards/${subject}/${yearParam}`);
+  }
+
   const subjectData = placeholderSubjects.find((item) => item.slug === subject);
   const year = Number(yearParam);
 
@@ -143,7 +150,10 @@ export default async function PaperPage({ params }: PaperPageProps) {
 
         <div className="mt-10 flex justify-center">
           {questions.length > 0 ? (
-            <SessionRunner initialQuestions={questions} />
+            <SessionRunner
+              initialQuestions={questions}
+              sessionKey={`${subjectData.slug}-${year}`}
+            />
           ) : (
             <div className="w-full max-w-2xl rounded-3xl border border-amber-200 bg-amber-50/70 p-8 text-center shadow-lg">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
