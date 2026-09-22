@@ -61,7 +61,10 @@ export default function FlashcardsPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {subjects.map((subj, index) => (
             <ScrollReveal key={subj.slug} delay={index * 0.05}>
-              <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-sm">
+              <Link
+                href={`/flashcards/${subj.slug}`}
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-[transform,box-shadow] duration-150 ease-out hover:-translate-y-1 hover:border-slate-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-500 cursor-pointer"
+              >
                 <div>
                   <div className="flex items-baseline justify-between">
                     <h2 className="font-heading text-xl font-bold text-slate-900">
@@ -80,14 +83,11 @@ export default function FlashcardsPage() {
                   <span className="text-xs text-slate-400">
                     {subj.paperCount} exam papers
                   </span>
-                  <Link
-                    href={`/flashcards/${subj.slug}`}
-                    className="inline-flex items-center text-xs font-semibold text-slate-900 hover:text-slate-600 transition-colors"
-                  >
+                  <span className="inline-flex items-center text-xs font-semibold text-slate-900 transition-colors">
                     Select year
-                  </Link>
+                  </span>
                 </div>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
