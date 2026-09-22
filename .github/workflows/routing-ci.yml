@@ -1,0 +1,52 @@
+name: Routing Layer CI
+
+on:
+  pull_request:
+    paths:
+      - "backend/**"
+      - "!backend/auth/**"
+      - "!backend/content/**"
+      - "!backend/ai-assistant/**"
+  push:
+    branches: [main, develop]
+    paths:
+      - "backend/**"
+      - "!backend/auth/**"
+      - "!backend/content/**"
+      - "!backend/ai-assistant/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for package.json
+        id: check
+        run: echo "exists=$([ -f backend/package.json ] && echo true || echo false)" >> $GITHUB_OUTPUT
+        working-directory: .
+
+      - name: Set up Node
+        if: steps.check.outputs.exists == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        if: steps.check.outputs.exists == 'true'
+        run: npm ci
+
+      - name: Build (TypeScript)
+        if: steps.check.outputs.exists == 'true'
+        run: npm run build
+
+      - name: Run tests
+        if: steps.check.outputs.exists == 'true'
+        run: npm test --if-present

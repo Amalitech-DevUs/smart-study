@@ -1,0 +1,46 @@
+name: AI Assistant CI
+
+on:
+  pull_request:
+    paths:
+      - "backend/ai-assistant/**"
+  push:
+    branches: [main, develop]
+    paths:
+      - "backend/ai-assistant/**"
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend/ai-assistant
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Check for pyproject.toml
+        id: check
+        run: echo "exists=$([ -f backend/ai-assistant/pyproject.toml ] && echo true || echo false)" >> $GITHUB_OUTPUT
+        working-directory: .
+
+      - name: Install dependencies
+        if: steps.check.outputs.exists == 'true'
+        run: uv sync
+
+      - name: Syntax check
+        if: steps.check.outputs.exists == 'true'
+        run: uv run python -m compileall -q .
+
+      - name: Run tests
+        if: steps.check.outputs.exists == 'true'
+        run: uv run pytest || [ $? -eq 5 ]

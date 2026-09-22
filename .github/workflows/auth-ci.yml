@@ -1,0 +1,45 @@
+name: Auth Service CI
+
+on:
+  pull_request:
+    paths:
+      - "backend/auth/**"
+  push:
+    branches: [main, develop]
+    paths:
+      - "backend/auth/**"
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend/auth
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: pdo, pdo_sqlite, sqlite3
+          coverage: none
+
+      - name: Check for composer.json
+        id: check
+        run: echo "exists=$([ -f backend/auth/composer.json ] && echo true || echo false)" >> $GITHUB_OUTPUT
+        working-directory: .
+
+      - name: Install dependencies (Composer)
+        if: steps.check.outputs.exists == 'true'
+        run: composer install --prefer-dist --no-progress
+
+      - name: PHP syntax check
+        run: find . -name "*.php" -print0 | xargs -0 -n1 php -l
+
+      - name: Run manual test scripts
+        run: |
+          if [ -f test_db.php ]; then php test_db.php; fi
+          if [ -f test_jwt.php ]; then php test_jwt.php; fi
