@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import {
   parseQuestionPrompt,
@@ -81,15 +81,18 @@ export function McqCard({
   onNext,
   onPrevious,
 }: McqCardProps) {
-  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(
-    initialSelectedOptionId ?? null,
-  );
+  const [selection, setSelection] = useState<{
+    question: string;
+    optionId: string | null;
+  }>({
+    question,
+    optionId: initialSelectedOptionId ?? null,
+  });
 
-  // Sync state when switching questions
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync selection when current question changes
-    setSelectedOptionId(initialSelectedOptionId ?? null);
-  }, [initialSelectedOptionId, question]);
+  const selectedOptionId =
+    selection.question === question
+      ? selection.optionId
+      : (initialSelectedOptionId ?? null);
 
   // Safe normalized values
   const safeOptions = Array.isArray(options) ? options : [];
@@ -105,7 +108,7 @@ export function McqCard({
 
     const optKey = String(optionId || "").trim().toLowerCase();
     const isCorrect = Boolean(normalizedCorrectId && optKey === normalizedCorrectId);
-    setSelectedOptionId(optionId);
+    setSelection({ question, optionId });
     onAnswer?.(optionId, isCorrect);
   };
 
