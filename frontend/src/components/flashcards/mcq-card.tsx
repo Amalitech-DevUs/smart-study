@@ -15,7 +15,15 @@ import { PassageViewer } from "./PassageViewer";
 import { PracticeFeedback } from "./PracticeFeedback";
 import { ReviewFeedback } from "./ReviewFeedback";
 
-export type SubjectColor = "math" | "english" | "science" | "social-studies" | "french";
+export type SubjectColor =
+  | "math"
+  | "english"
+  | "science"
+  | "social-studies"
+  | "french"
+  | "computing"
+  | "rme"
+  | "creative-arts";
 
 export type McqOption = OptionItem;
 
@@ -60,7 +68,6 @@ export function McqCard({
   correctOptionId = "",
   year,
   paper,
-  section: _section,
   topic,
   explanation,
   questionNumber,
@@ -80,6 +87,7 @@ export function McqCard({
 
   // Sync state when switching questions
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync selection when current question changes
     setSelectedOptionId(initialSelectedOptionId ?? null);
   }, [initialSelectedOptionId, question]);
 

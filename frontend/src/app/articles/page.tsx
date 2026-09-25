@@ -1,153 +1,26 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
-
-type Article = {
-  id: number | string;
-  slug: string;
-  title: string;
-  category: string;
-  subject?: string | null;
-  body: string;
-  publishedAt?: string;
-  readTime?: string;
-};
-
-// Fallback articles in case backend / content service is not yet reachable
-const fallbackArticles: Article[] = [
-  {
-    id: 1,
-    slug: "number-bases-bece",
-    title: "Understanding Number Bases for BECE",
-    subject: "Mathematics",
-    category: "Mathematics",
-    readTime: "5 min read",
-    body: "Mastering binary, octal, and base 10 conversions for JHS candidates."
-  },
-  {
-    id: 2,
-    slug: "algebra-word-problems",
-    title: "How to Tackle Algebra Word Problems",
-    subject: "Mathematics",
-    category: "Mathematics",
-    readTime: "7 min read",
-    body: "Step-by-step strategies for translating words into algebraic equations."
-  },
-  {
-    id: 3,
-    slug: "geometry-shortcuts",
-    title: "Geometry Shortcuts Every Student Should Know",
-    subject: "Mathematics",
-    category: "Mathematics",
-    readTime: "6 min read",
-    body: "Angle properties of parallel lines and triangles explained simply."
-  },
-  {
-    id: 4,
-    slug: "comprehension-strategies",
-    title: "Comprehension Passage Strategies",
-    subject: "English Language",
-    category: "English Language",
-    readTime: "4 min read",
-    body: "How to read actively, spot main ideas, and answer context clues."
-  },
-  {
-    id: 5,
-    slug: "essay-blueprint",
-    title: "Essay Writing: The Blueprint to an A",
-    subject: "English Language",
-    category: "English Language",
-    readTime: "8 min read",
-    body: "Structuring formal letters, narrative essays, and articles for maximum marks."
-  },
-  {
-    id: 6,
-    slug: "waec-grammar-mistakes",
-    title: "Common Grammar Mistakes in WAEC",
-    subject: "English Language",
-    category: "English Language",
-    readTime: "5 min read",
-    body: "Subject-verb agreement, tenses, and idioms commonly tested in BECE."
-  },
-  {
-    id: 7,
-    slug: "periodic-table-tips",
-    title: "How to Memorize the Periodic Table Fast",
-    subject: "Integrated Science",
-    category: "Integrated Science",
-    readTime: "6 min read",
-    body: "Mnemonics and patterns to master the first 20 elements effortlessly."
-  },
-  {
-    id: 8,
-    slug: "life-processes",
-    title: "Life Processes: Simplified",
-    subject: "Integrated Science",
-    category: "Integrated Science",
-    readTime: "5 min read",
-    body: "Photosynthesis, respiration, excretion, and circulation broken down."
-  },
-  {
-    id: 9,
-    slug: "science-diagrams",
-    title: "Common Science Diagrams You Must Draw",
-    subject: "Integrated Science",
-    category: "Integrated Science",
-    readTime: "7 min read",
-    body: "Accurate labelling guides for the plant cell, flower, and respiratory system."
-  },
-  {
-    id: 10,
-    slug: "ghana-government",
-    title: "Ghana Government Structure Explained",
-    subject: "Social Studies",
-    category: "Social Studies",
-    readTime: "6 min read",
-    body: "The roles of the Executive, Legislature, and Judiciary in Ghana's democracy."
-  },
-  {
-    id: 11,
-    slug: "bece-history-events",
-    title: "Key Historical Events for BECE",
-    subject: "Social Studies",
-    category: "Social Studies",
-    readTime: "8 min read",
-    body: "From the Bond of 1844 to independence in 1957: milestones you must know."
-  },
-  {
-    id: 12,
-    slug: "human-rights",
-    title: "Human Rights and the Ghanaian Student",
-    subject: "Social Studies",
-    category: "Social Studies",
-    readTime: "4 min read",
-    body: "Fundamental human rights, responsibilities, and civic duties."
-  },
-  {
-    id: 13,
-    slug: "top-study-habits",
-    title: "10 Study Habits That Top BECE Candidates Use",
-    subject: null,
-    category: "Study Skills",
-    readTime: "10 min read",
-    body: "Practical revision techniques and daily time-management habits compiled from top-performing junior high students across Ghana."
-  }
-];
+import { masterArticles, type Article } from "@/lib/articles-data";
 
 async function getArticles(): Promise<Article[]> {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2000);
     const res = await fetch(`${baseUrl.replace(/\/$/, "")}/articles`, {
       cache: "no-store",
+      signal: controller.signal,
     });
-    if (!res.ok) return fallbackArticles;
+    clearTimeout(timeoutId);
+    if (!res.ok) return masterArticles;
     const json = await res.json();
     const data = Array.isArray(json.data) ? json.data : Array.isArray(json) ? json : [];
-    return data.length > 0 ? data : fallbackArticles;
+    return data.length > 0 ? data : masterArticles;
   } catch {
-    return fallbackArticles;
+    return masterArticles;
   }
 }
 
@@ -224,8 +97,7 @@ export default async function ArticlesPage() {
 
         <ScrollReveal>
           <header className="mb-10 border-b border-slate-200 pb-8">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200/60 px-3 py-0.5 text-xs font-semibold text-amber-800 mb-3">
-              <BookOpen className="h-3.5 w-3.5 text-amber-600" />
+            <div className="inline-flex items-center rounded-full bg-amber-50 border border-amber-200/60 px-3 py-0.5 text-xs font-semibold text-amber-800 mb-3">
               <span>BECE Revision Notes</span>
             </div>
             <h1 className="font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl">

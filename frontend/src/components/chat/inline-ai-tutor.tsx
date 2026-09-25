@@ -11,9 +11,6 @@ import {
   Send,
   RotateCcw,
   Loader2,
-  HelpCircle,
-  CheckCircle2,
-  AlertCircle,
 } from "lucide-react";
 
 export type InlineAiTutorProps = {
@@ -37,6 +34,63 @@ type Message = {
   timestamp: string;
 };
 
+function createTutorMessage(role: Message["role"], content: string): Message {
+  return {
+    id: `${role}-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    role,
+    content,
+    timestamp: new Date().toISOString(),
+  };
+}
+
+async function readTutorStream(
+  res: Response,
+  onChunk: (text: string) => void,
+): Promise<string> {
+  const contentType = res.headers.get("content-type") || "";
+  if (!contentType.includes("text/event-stream") || !res.body) {
+    const json = await res.json().catch(() => null);
+    return (
+      json?.data?.reply ||
+      json?.reply ||
+      json?.content ||
+      "Here is the key concept to keep in mind: revise the definition and practice similar problems."
+    );
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let accumulated = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    const chunk = decoder.decode(value, { stream: true });
+    const lines = chunk.split("\n");
+
+    for (const line of lines) {
+      if (!line.startsWith("data:")) continue;
+      const data = line.replace(/^data:\s*/, "").trim();
+      if (!data || data === "[DONE]") continue;
+
+      try {
+        const parsed = JSON.parse(data);
+        const text = parsed.reply ?? parsed.content ?? parsed.delta ?? "";
+        if (text) {
+          accumulated += text;
+          onChunk(accumulated);
+        }
+      } catch {
+        accumulated += data;
+        onChunk(accumulated);
+      }
+    }
+  }
+
+  return accumulated;
+}
+
 export function InlineAiTutor({
   isOpen,
   onClose,
@@ -48,7 +102,6 @@ export function InlineAiTutor({
   selectedOptionId,
   correctOptionId,
   explanation,
-  mode = "practice",
 }: InlineAiTutorProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -101,13 +154,7 @@ export function InlineAiTutor({
   const sendQuery = async (userPrompt: string) => {
     if (!userPrompt.trim() || isLoading) return;
 
-    const studentMsg: Message = {
-      id: `student-${Date.now()}`,
-      role: "student",
-      content: userPrompt,
-      timestamp: new Date().toISOString(),
-    };
-
+    const studentMsg = createTutorMessage("student", userPrompt);
     setMessages((prev) => [...prev, studentMsg]);
     setInput("");
     setIsLoading(true);
@@ -140,83 +187,31 @@ Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple lan
 
       if (!res.ok) throw new Error("Could not reach AI service.");
 
-      const contentType = res.headers.get("content-type") || "";
-      const assistantId = `assistant-${Date.now()}`;
+      const assistantId = `assistant-${studentMsg.id}`;
+      let hasAdded = false;
 
-      if (contentType.includes("text/event-stream") && res.body) {
-        const reader = res.body.getReader();
-        const decoder = new TextDecoder();
-        let accumulated = "";
-        let hasAdded = false;
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          const chunk = decoder.decode(value, { stream: true });
-          const lines = chunk.split("\n");
-
-          for (const line of lines) {
-            if (!line.startsWith("data:")) continue;
-            const data = line.replace(/^data:\s*/, "").trim();
-            if (!data || data === "[DONE]") continue;
-
-            try {
-              const parsed = JSON.parse(data);
-              const text =
-                parsed.reply ?? parsed.content ?? parsed.delta ?? "";
-              if (text) {
-                accumulated += text;
-                if (!hasAdded) {
-                  hasAdded = true;
-                  setMessages((prev) => [
-                    ...prev,
-                    {
-                      id: assistantId,
-                      role: "assistant",
-                      content: accumulated,
-                      timestamp: new Date().toISOString(),
-                    },
-                  ]);
-                } else {
-                  setMessages((prev) =>
-                    prev.map((m) =>
-                      m.id === assistantId ? { ...m, content: accumulated } : m,
-                    ),
-                  );
-                }
-              }
-            } catch {
-              accumulated += data;
-              if (!hasAdded) {
-                hasAdded = true;
-                setMessages((prev) => [
-                  ...prev,
-                  {
-                    id: assistantId,
-                    role: "assistant",
-                    content: accumulated,
-                    timestamp: new Date().toISOString(),
-                  },
-                ]);
-              } else {
-                setMessages((prev) =>
-                  prev.map((m) =>
-                    m.id === assistantId ? { ...m, content: accumulated } : m,
-                  ),
-                );
-              }
-            }
-          }
+      const reply = await readTutorStream(res, (accumulated) => {
+        if (!hasAdded) {
+          hasAdded = true;
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: assistantId,
+              role: "assistant",
+              content: accumulated,
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+        } else {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantId ? { ...m, content: accumulated } : m,
+            ),
+          );
         }
-      } else {
-        const json = await res.json();
-        const reply =
-          json.data?.reply ||
-          json.reply ||
-          json.content ||
-          "Here is the key concept to keep in mind: revise the definition and practice similar problems.";
+      });
 
+      if (!hasAdded && reply) {
         setMessages((prev) => [
           ...prev,
           {

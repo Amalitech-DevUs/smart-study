@@ -16,6 +16,13 @@ export function HamburgerDrawer() {
   const pathname = usePathname();
   const { loggedIn, logout } = useAuth();
 
+  // Close drawer on route change
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- close the menu after navigation so the drawer stays in sync with the current route.
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";

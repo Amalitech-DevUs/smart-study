@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useAuth } from "@/lib/use-auth";
 
 export type ChatMessage = {
@@ -113,6 +113,7 @@ export function useChatEngine(): ChatEngineState {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring persisted chat messages from localStorage on mount, which is only available in the browser.
           setMessages(parsed);
         } else {
           setMessages([]);

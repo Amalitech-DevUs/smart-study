@@ -62,7 +62,8 @@ export function SessionRunner({
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Unique session ID
-  const sessionIdRef = useRef<string>(`session-${Date.now()}`);
+  const [initialSessionId] = useState(() => `session-${Date.now()}`);
+  const sessionIdRef = useRef<string>(initialSessionId);
   const loadedUserRef = useRef<string | null>(null);
 
   const totalQuestions = initialQuestions.length;
@@ -77,6 +78,7 @@ export function SessionRunner({
     loadedUserRef.current = userPrefix;
 
     if (!storageKey) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- this mount guard prevents hydration mismatch during client-only session restoration.
       setIsLoaded(true);
       return;
     }

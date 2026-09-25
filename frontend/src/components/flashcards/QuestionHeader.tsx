@@ -28,6 +28,21 @@ const subjectBadges: Record<SubjectColor, { bg: string; text: string; border: st
     text: "text-blue-800",
     border: "border-blue-200",
   },
+  computing: {
+    bg: "bg-cyan-50",
+    text: "text-cyan-800",
+    border: "border-cyan-200",
+  },
+  rme: {
+    bg: "bg-orange-50",
+    text: "text-orange-800",
+    border: "border-orange-200",
+  },
+  "creative-arts": {
+    bg: "bg-purple-50",
+    text: "text-purple-800",
+    border: "border-purple-200",
+  },
 };
 
 type Props = {

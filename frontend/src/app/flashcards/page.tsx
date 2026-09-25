@@ -1,16 +1,9 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import { getCurrentUser } from "@/lib/auth";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { SUBJECTS } from "@/lib/constants/subjects";
 
-export default async function FlashcardsPage() {
-  const user = await getCurrentUser();
-  if (!user.loggedIn) {
-    redirect("/login?redirect=/flashcards");
-  }
-
+export default function FlashcardsPage() {
   return (
     <main className="flex-1 min-h-screen bg-[#f8f9fa] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
@@ -26,14 +19,14 @@ export default async function FlashcardsPage() {
         </div>
 
         <ScrollReveal>
-          <div className="mb-8 border-b border-slate-200 pb-6">
+          <header className="mb-8 border-b border-slate-200 pb-6">
             <h1 className="font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
               Past Examination Papers
             </h1>
             <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-slate-600">
               Select a WAEC core subject below to browse past exam papers, practice untimed by topic, or simulate official 45-minute timed examinations.
             </p>
-          </div>
+          </header>
         </ScrollReveal>
 
         {/* Subject cards */}

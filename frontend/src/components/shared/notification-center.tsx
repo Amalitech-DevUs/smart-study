@@ -7,43 +7,11 @@ import {
   CheckCheck,
   Trash2,
   X,
-  GraduationCap,
-  Sparkles,
-  Flame,
-  Bot,
 } from "lucide-react";
 import {
   useNotifications,
-  AppNotification,
-  NotificationType,
 } from "@/lib/notification-context";
 import { AnimatePresence, motion } from "framer-motion";
-
-const typeIcons: Record<
-  NotificationType,
-  { icon: typeof GraduationCap; color: string; bg: string }
-> = {
-  exam: {
-    icon: GraduationCap,
-    color: "text-amber-400",
-    bg: "bg-amber-400/10 border-amber-400/20",
-  },
-  update: {
-    icon: Sparkles,
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10 border-emerald-400/20",
-  },
-  streak: {
-    icon: Flame,
-    color: "text-orange-400",
-    bg: "bg-orange-400/10 border-orange-400/20",
-  },
-  tip: {
-    icon: Bot,
-    color: "text-blue-400",
-    bg: "bg-blue-400/10 border-blue-400/20",
-  },
-};
 
 export function NotificationCenter() {
   const [isOpen, setIsOpen] = useState(false);
@@ -191,24 +159,14 @@ export function NotificationCenter() {
                 </div>
               ) : (
                 filteredNotifications.map((notif) => {
-                  const typeCfg = typeIcons[notif.type];
-                  const Icon = typeCfg.icon;
-
                   return (
                     <div
                       key={notif.id}
                       onClick={() => markAsRead(notif.id)}
-                      className={`group relative flex items-start gap-3 p-3.5 transition-colors hover:bg-slate-850/60 cursor-pointer ${
+                      className={`group relative flex items-start justify-between gap-3 p-3.5 transition-colors hover:bg-slate-850/60 cursor-pointer ${
                         !notif.read ? "bg-slate-900/50" : "bg-transparent"
                       }`}
                     >
-                      {/* Icon */}
-                      <div
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border ${typeCfg.bg} ${typeCfg.color}`}
-                      >
-                        <Icon className="h-4 w-4" />
-                      </div>
-
                       {/* Content */}
                       <div className="flex-1 min-w-0 pr-4">
                         <div className="flex items-baseline justify-between gap-1 mb-0.5">

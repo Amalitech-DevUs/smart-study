@@ -13821,6 +13821,2726 @@
     "correct_answer": "C"
   },
   {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A student wants to summarize a large amount of data in Microsoft Excel using PivotTable. The correct step to take is to click on",
+    "options": [
+      "Insert Tab, then PivotTable",
+      "Home Tab, then PivotTable",
+      "Data Tab, then PivotTable",
+      "View Tab, then PivotTable"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The settings and permissions specific to a user on Windows are known as",
+    "options": [
+      "log",
+      "account",
+      "configuration",
+      "customization"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The privacy setting on a social media account helps a user to",
+    "options": [
+      "make posts visible to everyone",
+      "control who can see one's posts and information",
+      "automatically share posts with everyone",
+      "prevent one from using the platform"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following Microsoft Excel functions is written correctly?",
+    "options": [
+      "=SUM(A10:A17)",
+      "=SUM(A10:17A)",
+      "=SUM(10A:A17)",
+      "=SUM(10A:17A)"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Debugging in programming is a technique used to",
+    "options": [
+      "test code",
+      "create bugs intentionally",
+      "write code to play games",
+      "fix errors in the code"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A Desktop Publishing user can create a new document through the following ways except",
+    "options": [
+      "blank publication",
+      "print publication",
+      "built-in template",
+      "featured template"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Arku entered 20 into a computer as the quantity of pencils bought. How will the number be represented for processing?",
+    "options": [
+      "11001",
+      "10010",
+      "10100",
+      "10011"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A quiz master asked participants to complete the statement: while Internet Explorer is used to access information from the Internet, Windows File Explorer is used to",
+    "options": [
+      "manage and organize files and folders",
+      "edit files in the explorer window",
+      "manage and organize music and videos",
+      "browse the internet using explorer"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The central device that communicates with other network devices and manages resources is a",
+    "options": [
+      "client",
+      "server",
+      "switch",
+      "hub"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One of your classmates continuously sends threat messages through social media platforms to you. This act is known as",
+    "options": [
+      "cyberstalking",
+      "cyberattack",
+      "cyberbullying",
+      "cybersecurity"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Computer manufacturing went through series of developmental stages with each stage characterized by a unique technological advancement. The use of integrated circuits is a characteristic of the",
+    "options": [
+      "fourth generation",
+      "third generation",
+      "second generation",
+      "first generation"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Good health practice suggests that we take intermittent breaks while working. The importance of taking breaks during prolonged computer use is to",
+    "options": [
+      "conserve energy in the computer",
+      "avoid eye strain and muscle fatigue",
+      "increase productivity in users",
+      "increase screen time when working"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The peripheral device shown in Figure 1 (a device with a cable connected to an oval scanning surface, used as a biometric fingerprint scanner) is used to capture",
+    "options": [
+      "video data",
+      "image data",
+      "textual data",
+      "audio data"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The introduction of Artificial Intelligence has come with its related ethical concerns such as",
+    "options": [
+      "improved healthcare",
+      "increased productivity",
+      "job creation",
+      "bias in algorithm"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Cindy was trying to access information from the WAEC website but whenever she enters the URL, it takes her to a different website. Her friend advised that she must ensure the URL entered is correct because it identifies",
+    "options": [
+      "the address of the web resource",
+      "graphics used in the web resource",
+      "ads in the web resource",
+      "the texts of the web resource"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A teacher tasked students to demonstrate an activity using a flowchart diagram. The appropriate symbol to be used at the processing stage of the activity is",
+    "options": [
+      "parallelogram",
+      "rhombus",
+      "oval",
+      "rectangle"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In pseudocode, the keyword FOR indicates",
+    "options": [
+      "variables or constants in the code",
+      "input or output structure in the code",
+      "decision control structure in the code",
+      "loop with fixed number of iterations in the code"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Cybercriminals can obstruct data in transmission to and from a device or a network using a data threat attack technique called",
+    "options": [
+      "fabrication",
+      "interruption",
+      "interception",
+      "modification"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A student inserted a picture into a Microsoft PowerPoint presentation and needed to work on the picture to adjust the brightness and contrast to make it clearer. The best tool to help the student achieve the task is",
+    "options": [
+      "Picture Size",
+      "Format Picture",
+      "Picture Layout",
+      "Picture Effects"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "When the 4 x 3 grid is selected under Insert Table in Microsoft Word, it creates",
+    "options": [
+      "a table of 3 columns and 4 rows",
+      "a table of 3 columns and 3 rows",
+      "a table of 4 columns and 4 rows",
+      "a table of 4 columns and 3 rows"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A social media platform that allows members to post questions and start discussions is",
+    "options": [
+      "Blogs",
+      "Wikis",
+      "Podcasts",
+      "Forums"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Merge and Centre button in a Spreadsheet application is used to",
+    "options": [
+      "select multiple cells and center the content",
+      "create a new worksheet and center the content",
+      "combine and center the content of selected cells",
+      "combine and center the content of the worksheet"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The concept of Artificial Intelligence's ability to suggest related information to a user who regularly surfs the internet is referred to as",
+    "options": [
+      "deep learning",
+      "neural network",
+      "computer vision",
+      "logical reasoning"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following services best describes an entrepreneurial opportunity in computer networking?",
+    "options": [
+      "Teaching desktop publishing in schools",
+      "Developing game applications for schools",
+      "Designing websites for businesses and schools",
+      "Setting up Wi-Fi networks for cafes and schools"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The environmentally responsible use of computers and electronic devices is known as",
+    "options": [
+      "green computing",
+      "cloud computing",
+      "mobile computing",
+      "quantum computing"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A collaborative robot is a robot that",
+    "options": [
+      "works only without electricity",
+      "cannot work near humans",
+      "works only on the Internet",
+      "works alongside humans"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The e-mail protocol used to send messages is",
+    "options": [
+      "HTTP",
+      "FTP",
+      "POP3",
+      "SMTP"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Watching a video from a pen drive involves the computer accessing the video through",
+    "options": [
+      "deleting",
+      "writing",
+      "reading",
+      "formatting"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In Microsoft PowerPoint, the feature used to apply predefined formatting styles to text is",
+    "options": [
+      "Slide Master",
+      "Theme Layout",
+      "Transitions",
+      "Quick Styles"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A teacher tasked her students to create a date with year, month and day format. The most appropriate Microsoft Excel function to achieve the date format is",
+    "options": [
+      "DATE()",
+      "DATEDIF()",
+      "CURDATE()",
+      "DATEVALUE()"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Screenshot feature under the Insert Tab of a Microsoft PowerPoint application allows a user to insert a screenshot of",
+    "options": [
+      "active application",
+      "opened applications",
+      "foreground applications",
+      "downloaded applications"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The robotic club of a school is to construct a robot to be able to detect objects around it. The most appropriate sensor to be used is",
+    "options": [
+      "light sensor",
+      "tactile sensor",
+      "torque sensor",
+      "proximity sensor"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A student in the computer laboratory wants to change the style, size and colour of a typeface in the Microsoft Word application. The appropriate tool to be used is",
+    "options": [
+      "font",
+      "styles",
+      "clipboard",
+      "paragraph"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A computing project work requires students to design a blog for a school. The best item to be used for customizing the blog is the school's",
+    "options": [
+      "flag",
+      "logo",
+      "crest",
+      "uniform"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A blog has many sections. The purpose of the comment section is to",
+    "options": [
+      "share personal information with readers",
+      "promote other blogs on the same platform",
+      "engage with readers and encourage discussion",
+      "sell products and services to readers and friends"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The examination scores in Computing of a class were entered into a Microsoft Excel worksheet. The appropriate function for finding the largest score in the class is",
+    "options": [
+      "AVG",
+      "MIN",
+      "MAX",
+      "SUM"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What does the formula =IF(A1>10,\"Pass\",\"Fail\") do in a Spreadsheet application?",
+    "options": [
+      "checks if the value in cell A1 is equal to 10 and returns Fail",
+      "checks if the value in cell A1 is less than 10 and returns Pass",
+      "checks if the value in cell A1 is greater than 10 and returns Fail",
+      "checks if the value in cell A1 is greater than 10 and returns Pass"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a computer shop, the attendant advised a customer to buy the fifth-generation computer due to its feature that uses",
+    "options": [
+      "transistors",
+      "vacuum tubes",
+      "microprocessors",
+      "artificial intelligence"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Desktop Publishing feature that best helps a user to align objects, texts and elements in a publication is called",
+    "options": [
+      "ruler",
+      "layout",
+      "guides",
+      "margins"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a printing industry, the device that uses the mechanism of laying down a transparent dye and melting dots of wax-based ink to produce an output is a",
+    "options": [
+      "wax heater",
+      "wax printer",
+      "thermal heater",
+      "thermal printer"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Computers have become smaller, faster, and more reliable due to the use of microprocessors in the",
+    "options": [
+      "second generation",
+      "third generation",
+      "fourth generation",
+      "fifth generation"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The graphic tablet is a kind of device used to capture",
+    "options": [
+      "RFID signals",
+      "QR code scans",
+      "magnetic card data",
+      "handwritings, drawings and inputs"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To make teaching and learning of computing more interactive, the teacher intends to demonstrate an activity by showing diagrams, images and videos on a large screen in the classroom. The most appropriate device to achieve this objective by the teacher is",
+    "options": [
+      "printer",
+      "plotter",
+      "monitor",
+      "projector"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The purpose of a storage device in a computer system is for",
+    "options": [
+      "keeping and retrieving data",
+      "displaying graphic elements",
+      "executing computer programs",
+      "connecting devices to the Internet"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A school prefect approached the computing club to guide him design a presentation using Microsoft PowerPoint. The prefect intends to practice the presentation and record the time spent for each slide to make his presentation run smooth. The best feature the computing club will suggest to the prefect is",
+    "options": [
+      "presenter notes",
+      "presenter feature",
+      "rehearse feature",
+      "rehearse timings"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "After the computing class, a colleague approached you to further explain to him how to reference a worksheet cell in Microsoft Excel. In the explanation, you mentioned that, to reference a cell, one need to use the cell",
+    "options": [
+      "value",
+      "address",
+      "content",
+      "function"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Bello formatted Microsoft Excel worksheet cells with different colours based on specific conditions and it was very beautiful. Which of the given features can a student use to achieve the same results as Bello?",
+    "options": [
+      "Conditional sorting",
+      "Conditional filtering",
+      "Conditional validation",
+      "Conditional formatting"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following terminologies is associated with computer network?",
+    "options": [
+      "Junk",
+      "Trojan",
+      "Firewall",
+      "Defragmenter"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Zalia is very good at posting her pictures and location of where ever she goes on her social media platforms for her friends to see. The potential risk associated with Zalia's activities online is",
+    "options": [
+      "identity theft",
+      "learning difficulties",
+      "strengthening friendships",
+      "building a professional network"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Surfing the Internet requires the use of search engines which was designed to help users find",
+    "options": [
+      "information on the Internet",
+      "information from e-mail messages",
+      "information from the computer hard disk drive",
+      "information from files and folders on the computer"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In the concept of programming, a comment in a program code is used to",
+    "options": [
+      "explain portions of the code",
+      "make the program run faster",
+      "change the output of the program",
+      "temporarily remove a line of code"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Robotic systems have components that relates to the functioning of the human organs. The component of the robot that acts like the human brain is the",
+    "options": [
+      "motors",
+      "sensors",
+      "batteries",
+      "controllers"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The most powerful technological innovation made during the development of fifth-generation computers was the use of",
+    "options": [
+      "vacuum tubes",
+      "integrated circuits",
+      "VLSI microprocessors",
+      "ULSI microprocessors"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A customer gave a new laptop to a technician to set accounts on Windows that is required to make changes to all system settings. The best account type that you will advise the technician to consider is",
+    "options": [
+      "Guest",
+      "Remote",
+      "Standard",
+      "Administrator"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "JHS students were given a project by their computing teacher to create a virtual museum for the storage of electronic artifacts. The possible tool for this assignment is",
+    "options": [
+      "Cloud computing",
+      "Social networking",
+      "Augmented reality",
+      "Artificial intelligence"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Secretary to the Parliament of Ghana sits on an ergonomic chair to work in the office because it",
+    "options": [
+      "ensures proper sitting arrangements",
+      "makes the workplace looks attractive",
+      "aligns the chairs properly with the workstation",
+      "promotes proper body alignment and support"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Text formatting options in Word processing applications include",
+    "options": [
+      "subscript",
+      "underline",
+      "superscript",
+      "strikethrough"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A user intends to create and customize diagrams in Microsoft PowerPoint application for a presentation. The best feature to help the user achieve the task is",
+    "options": [
+      "Charts",
+      "Shapes",
+      "WordArt",
+      "SmartArt"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a Desktop Publishing project work, a student's work contained more text than it can display. This situation is best described as",
+    "options": [
+      "layout",
+      "template",
+      "overflow",
+      "alignment"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The purpose of the IF function in Microsoft Excel application is to",
+    "options": [
+      "calculate the average of a range of cells",
+      "manipulate text from multiple cells into one cell",
+      "perform a logical test and return a value for a condition",
+      "return the value from a specified row and column intersection"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What value will the Microsoft Excel function =COUNT(A1:A10) return?",
+    "options": [
+      "1",
+      "9",
+      "10",
+      "11"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "At the Internet cafe, Kofi connected his laptop to the Internet without using cable and Akua also connected her laptop to the Internet using cable. An example of Akua's connection type is",
+    "options": [
+      "Infrared",
+      "Bluetooth",
+      "Wi-Fi adaptor",
+      "Ethernet adapter"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The computing teacher during computing class advised the students that studying computer networking provides entrepreneurial opportunities. Which of the following statements in your opinion justifies the advice given to the students?",
+    "options": [
+      "Offering consulting services",
+      "Developing video games online",
+      "Creating social media platforms",
+      "Designing smartphone Apps for schools"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "After replacing his old smartphone with a new one, Muba cannot access most of his saved contacts. His friend advised that he should have saved the contacts in an e-mail environment. The feature that would have allowed Muba to save and organize the contacts in the e-mail environment is referred to as",
+    "options": [
+      "draft",
+      "folders",
+      "attach files",
+      "address book"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a computing class, a video of a user who gained unauthorized access into an organization's computer system was shown and discussed. The user's act in the video is termed",
+    "options": [
+      "hacking",
+      "encryption",
+      "cyberbully",
+      "authentication"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An entry on a blog that contains texts, images or multimedia content is called",
+    "options": [
+      "post",
+      "name",
+      "status",
+      "account"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A programmer uses a good algorithm to write a software. The algorithm being used is characterized by the following except",
+    "options": [
+      "efficiency",
+      "simplicity",
+      "correctness",
+      "complexity"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Robots are used in many areas of the society. An example of the application of robots in the society includes",
+    "options": [
+      "virtual reality",
+      "machine learning",
+      "artificial intelligence",
+      "autonomous vehicles"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A quiz master asked participants to complete the statement: while download folder is the default location for downloaded files, my recent folder is the default location for documents",
+    "options": [
+      "just printed",
+      "to be saved",
+      "just worked on",
+      "to be worked on"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The term multimedia is widely used in several areas in the computing environment. What will you tell the computing teacher about the function of a multimedia feature in Word processing application?",
+    "options": [
+      "It converts texts into audio formats",
+      "It translates texts into different languages",
+      "It removes images from word document",
+      "It adds interactive elements like buttons and links"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a group presentation, a group was to demonstrate how to insert an online video into a slide they have created. The first step to be considered by the group is to click on the",
+    "options": [
+      "Insert tab",
+      "Design tab",
+      "Online video",
+      "Download video"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A designer consistently reminds his staff to use template in Desktop publishing because it helps",
+    "options": [
+      "create documents in unique ways",
+      "provide a starting point for document design",
+      "decorate the document for distribution",
+      "provide opportunity for users to print"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A man shared his property to his children and wife in a particular ratio. The most appropriate chart type that can be used to represent the sharing of the property is",
+    "options": [
+      "pie chart",
+      "bar chart",
+      "line chart",
+      "scatter chart"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The correct syntax of the IF() function in Microsoft Excel application is",
+    "options": [
+      "=IF(logical_test : [value_if_true], [value_if_false])",
+      "=IF(logical_test, [value_if_true], [value_if_false])",
+      "=IF(logical_test. {[value_if_true]}, {[value_if_false]})",
+      "=[F(logical_test, TRUE([value_if_true]), FALSE([value_if_false]))"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Most JHS students can send pictures to their friends through various social media platforms but find it difficult to send it through an electronic mail. The most appropriate feature in an electronic mail to accomplish this task is",
+    "options": [
+      "compose",
+      "categorize",
+      "attach files",
+      "draft messages"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A weekend assignment requires students to create a blog for the school. The best activity needed for the assignment is to",
+    "options": [
+      "pick the blog name and niche",
+      "display advertisement of the blog",
+      "provide consulting services to the bloggers",
+      "determine the product to sell on the blog"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Miss Fatima, the computing teacher, taught the class basic programming terms. Explain to your friend what Miss Fatima said. Pseudocode is",
+    "options": [
+      "compiled programming codes",
+      "structured programming symbols",
+      "flowchart decisions using symbols",
+      "step-by-step outline of a program using informal language"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A student is very good at converting any integer to binary but finds it difficult to convert from hexadecimal to binary. Help the student to convert the hexadecimal number A2 (base 16) to binary.",
+    "options": [
+      "10000110 (base 2)",
+      "10100010 (base 2)",
+      "10010001 (base 2)",
+      "10001010 (base 2)"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A programmer has indented the codes in the program being written. The purpose of the indentation is to",
+    "options": [
+      "make the code difficult to read by users",
+      "hide the code from others when writing it",
+      "create bugs in the program to disturb the codes",
+      "show the start and end of a conditional statement"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The role of neural networks in Artificial Intelligence in modern technology is to",
+    "options": [
+      "control robots within their environment for work and safety",
+      "enhance Internet speed for fast movements of the robots",
+      "create computer virus for robots to find solutions to them",
+      "simulate human brain function for learning and problem-solving"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Some school authorities use passwords on their school's Wi-Fi to prevent",
+    "options": [
+      "access to important information",
+      "unauthorized access",
+      "the use of pendrives",
+      "data loss"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In the construction and operation of a robot, the robot control system is required to",
+    "options": [
+      "regulate the robot's movement",
+      "detect objects in the robot's environment",
+      "supply electrical power to the robot",
+      "make decisions based on artificial intelligence"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The device shown (an external portable hard drive connected via USB cable) is used to",
+    "options": [
+      "scan information",
+      "store information",
+      "print information",
+      "process information"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A secretary is working on a document in Microsoft Word that contains the dollar sign. The tool to help the secretary to replace the dollar sign with the Ghana cedis sign is the",
+    "options": [
+      "shapes tool",
+      "wordart tool",
+      "symbol tool",
+      "equation tool"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The feature in Word processing application that allow a user to bold, italicize or underline a selected text is found on the",
+    "options": [
+      "standard toolbar",
+      "menu bar",
+      "format toolbar",
+      "title bar"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a computing class, the teacher delivered a lesson using a presentation in Microsoft PowerPoint application with transition effects. The purpose of the transition effects is to",
+    "options": [
+      "make the slides look colourful",
+      "create a printable slide presentation",
+      "add sound effects to the slides",
+      "create a smooth flow between slides"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To access the location to an event, one can either type the GPS address or scan the",
+    "options": [
+      "SMS code",
+      "Bar code",
+      "Pass code",
+      "QR code"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The use of scientific knowledge to create tools and techniques for solving problem is termed",
+    "options": [
+      "information",
+      "intelligence",
+      "technology",
+      "computing"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The National Information Technology Authority provides educational resources to schools by using",
+    "options": [
+      "web services",
+      "print services",
+      "mail services",
+      "client services"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In defining the logic of a program, conditional statements are used to",
+    "options": [
+      "declare variable",
+      "make decisions",
+      "write comments",
+      "create loops"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A school's computer network setup includes computers, routers and switches. The function of the router is to",
+    "options": [
+      "connect multiple network",
+      "allow users to use the network",
+      "amplify the network signal",
+      "connect devices within the network"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A friend approached you to assist in selecting a software to prepare a presentation. The appropriate software to recommend is",
+    "options": [
+      "PowerPoint",
+      "Publisher",
+      "Photoshop",
+      "Excel"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The element of design in Desktop Publishing application that helps a user to ensure consistent font styles and sizes for headings and body text when designing a product is",
+    "options": [
+      "typography",
+      "transition",
+      "orientation",
+      "animation"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A clerk at the reception of a hospital uses an input device connected to the computer to",
+    "options": [
+      "send information to the computer",
+      "process information in the computer",
+      "store information on the computer",
+      "remove information from the computer"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Kofi was saving a file on the computer but the computer gave an error message on the name of the file because the file name",
+    "options": [
+      "used capital letter to separate words",
+      "described the content of the file",
+      "used short and meaningful words",
+      "contained special characters"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which network device serves as the central connection point for all workstation computers in a typical wired Internet cafe setup?",
+    "options": [
+      "Repeater",
+      "Modem",
+      "Gateway",
+      "Switch"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The primary location to find All Programs that have been installed on the computer is through",
+    "options": [
+      "notification area",
+      "start menu",
+      "system tray",
+      "task view"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The period for the evolution of the fourth generation of computer started from",
+    "options": [
+      "2006",
+      "1994",
+      "1995",
+      "1971"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To place a text close to and around an image in a desktop publishing document, use",
+    "options": [
+      "Send Backward",
+      "Align Middle",
+      "Bring Forward",
+      "Wrap Text"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To search for Microsoft Excel file in a folder, the file extension to use is",
+    "options": [
+      ".ppt",
+      ".docx",
+      ".pub",
+      ".xlsx"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Computer programmers use data types to hold information when developing software. The data type that is not valid in programming is",
+    "options": [
+      "Float",
+      "Boolean",
+      "Integer",
+      "Circular"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The following activities are types of robotic locomotion except",
+    "options": [
+      "shouting",
+      "jumping",
+      "crawling",
+      "rolling"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A group of interconnected computers and other computing devices connected to share resources is referred to as",
+    "options": [
+      "link",
+      "network",
+      "system",
+      "hyperlink"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Artificial Intelligence concept that is limited to a specific area of application is considered to be",
+    "options": [
+      "weak AI",
+      "smart AI",
+      "super AI",
+      "strong AI"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "One thousand candidates wrote an examination and their scores have been tabulated in a Microsoft Excel worksheet. The function that can be used to determine candidates who passed is",
+    "options": [
+      "IF",
+      "SUMIF",
+      "COUNT",
+      "COUNTIF"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A step-by-step procedure or set of instructions for solving a problem is known as",
+    "options": [
+      "loop",
+      "algorithm",
+      "function",
+      "instruction"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A partially displayed text in Microsoft Excel worksheet cell can be fully displayed by adjusting the column width or row height using the",
+    "options": [
+      "View tab",
+      "Edit menu",
+      "Insert tab",
+      "Format menu"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A small portable and battery-operated projector that is designed to project content from a smartphone or laptop is called",
+    "options": [
+      "data projector",
+      "video projector",
+      "pico projector",
+      "multimedia projector"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A student entered data into a worksheet and realized a wrong entry. The action to correct the error is to",
+    "options": [
+      "double-click on the cell",
+      "click outside the cell",
+      "right-click on the cell",
+      "right-click on sheet1"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The feature that allows a user to freeze specific rows or columns in a spreadsheet application is",
+    "options": [
+      "freeze tab",
+      "freeze panes",
+      "freeze cells",
+      "freeze sheets"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The flowchart symbol that requires one point entry and two points exit is the",
+    "options": [
+      "parallelogram",
+      "diamond",
+      "rectangle",
+      "oval"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Students were tasked to surf the Internet for information on cyberbullying. This information could be accessed through the use of",
+    "options": [
+      "Domain Name Server",
+      "Uniform Resource Locator",
+      "User Datagram Protocol",
+      "Transmission Control Protocol"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "For computers to multi-task and provide user friendly environment, computer manufacturers introduced the windows operating system during the",
+    "options": [
+      "second generation",
+      "fourth generation",
+      "third generation",
+      "fifth generation"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A potential consequence of a student spending too much time on social media platform is",
+    "options": [
+      "enhanced physical fitness",
+      "improved concentration",
+      "increased social isolation",
+      "enhanced sleep quality"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a class, the teacher explained that current technology allows applications to analyse a user's previous music listening history to suggest new songs for the user. This technology is best described as",
+    "options": [
+      "Artificial Intelligence",
+      "Augmented Reality",
+      "Perceptual Computing",
+      "Virtual Reality"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Sam is using a computer and notices that the screen is glaring. The most likely reason for the glare screen is that",
+    "options": [
+      "the computer is over heated",
+      "the computer is running too many programs",
+      "the computer screen is too small",
+      "there is too much light reflecting off the screen"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A Microsoft PowerPoint Presentation contains inconsistent colour scheme. The tab that will help a user to apply a consistent colour scheme is the",
+    "options": [
+      "Insert tab",
+      "Review tab",
+      "Design tab",
+      "Animation tab"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a computing class, the teacher taught the students that it is important to regularly update software because, updates",
+    "options": [
+      "make the computer run faster",
+      "change the appearance of the user interface",
+      "improve the performance of the software",
+      "delete unnecessary files from the software"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The purpose of a hashtag (#) on social media platforms is to",
+    "options": [
+      "categorize and group contents on the site",
+      "highlight important texts on the site",
+      "pose questions to users on the site",
+      "represent sarcasm on the site"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Computing",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What does the function IF do in a spreadsheet formula?",
+    "options": [
+      "Counts the number of cells in a range",
+      "Adds up a range of cells",
+      "Perform conditional testing",
+      "Multiplies two numbers"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "During classroom activities, several behaviours were noticed. Which of these behaviours showed lack of good manners?",
+    "options": [
+      "Interrupting someone while they are speaking",
+      "Greeting teachers politely when they arrive",
+      "Saying please and thank you when requesting for help",
+      "Waiting patiently for your turn during a discussion"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is the best way a student can use leisure?",
+    "options": [
+      "Attend extra classes",
+      "Attend church services",
+      "Acquire new skills",
+      "Perform house chores"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of these drugs is commonly abused by individuals?",
+    "options": [
+      "Heroin",
+      "Caffeine",
+      "Ibuprofen",
+      "Paracetamol"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Communities celebrate festivals for many reasons. Which one of these does not align with the reason for which your community celebrates its festivals?",
+    "options": [
+      "Giving thanks to the gods for favours received",
+      "Comparing the achievements of the living and the dead",
+      "Planning for developmental projects in the community",
+      "Promoting family and community reunion"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "During a school festival, students from different religions were tasked to plan a presentation. Which approach would best demonstrate religious tolerance in this case?",
+    "options": [
+      "Assigning mixed religion groups to encourage collaboration",
+      "Allowing students to form their own groups",
+      "Letting only students of one religion lead the festival",
+      "Separating students strictly by religion for all activities"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In order to promote peaceful co-existence among members of different religions, there is the need to",
+    "options": [
+      "be tolerant of each other's beliefs.",
+      "bear witness of your beliefs to other people.",
+      "help spread other's beliefs.",
+      "report activities of other religions to your religious authority."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Kwame took his friend's pen without asking and later realized that what he did was wrong. What should he do as the first step if he wants to make things right?",
+    "options": [
+      "Admit that he was wrong",
+      "Ask his teacher to punish him",
+      "Buy a new pen for his friend",
+      "Promise his friend he would never repeat his mistake"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A parent wants to give their new born baby a name. What factor should they consider the most important?",
+    "options": [
+      "Date of the baby's birth",
+      "Age of the baby",
+      "Their tribe as parents",
+      "The place of birth of the baby"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Fatima wants to learn how Prophet Muhammed (SAW) prayed and behaved in his daily life. Which source should she study?",
+    "options": [
+      "Hadith",
+      "Fiqh",
+      "Sunnah",
+      "Qu'ran"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following traditional leaders saved his people from the hands of a wicked king?",
+    "options": [
+      "Okomfo Anokye",
+      "Egya Ahor",
+      "Togbe Tsali",
+      "Toha Zie"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What quality did Joseph display when he welcomed his brothers after many years?",
+    "options": [
+      "Forgiveness",
+      "Courage",
+      "Generosity",
+      "Wisdom"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A teacher explains that God's titles help people to understand who He is. Which of these actions shows how this knowledge can be applied?",
+    "options": [
+      "Praying and glorifying God",
+      "Following traditions carefully",
+      "Respecting God and helping others",
+      "Using it to guide decisions"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of these actions best reflects Yaa Asantewaa's leadership qualities?",
+    "options": [
+      "Leading a group to challenge unfair treatment collectively",
+      "Helping individuals to navigate difficulties on their own",
+      "Suggesting improvements without coordinating with others",
+      "Writing about fairness and justice in a school publication"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A friend wants to start a program to help the less privileged in his community. How can she apply Khadijah's example. By",
+    "options": [
+      "mentoring the children while supporting the programme",
+      "encouraging others to participate and contribute actively",
+      "offering both moral and material support to initiative",
+      "organizing resources and planning the programme effectively"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a traditional society, certain rule are made to control the behaviour of members. Which of the following best describe these prohibitions?",
+    "options": [
+      "Rules that are meant for only visitors",
+      "Ideas that are meant for only leaders",
+      "Rules that stop people from doing wrong",
+      "Suggestions for things people might like to do"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is believed to be the most important part of performing Muslim prayer (Salat)? Performance of",
+    "options": [
+      "Tarawih",
+      "Ruku",
+      "Taslim",
+      "Wudu"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following explanations best justifies the fact that low self-esteem can lead to drug abuse? Low self-esteem",
+    "options": [
+      "can increase vulnerability to negative influences.",
+      "causes unavoidable addiction.",
+      "immediately results in criminal activities.",
+      "prevents student from socializing entirely."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The family system in every society is functional in the following ways except",
+    "options": [
+      "procreation.",
+      "institution of reward system.",
+      "provision of basic needs.",
+      "socialization."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Mr Ansah pays part of his salary into a fund every month. Which benefit is he most likely to gain making this contribution after retirement?",
+    "options": [
+      "Personal investment",
+      "Educational funding",
+      "Capital for business",
+      "Financial security"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Bible teaches that God created the sun, moon and stars for specific purposes. Which of the following is not one of the purposes? To",
+    "options": [
+      "influence human decisions",
+      "give light to the earth",
+      "separate day from night",
+      "serve as objects of human worship"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Yaw was warned not to make noise during lessons but he ignored the warning. He was punished as a result. Why was this punishment necessary? It",
+    "options": [
+      "deterred others from doing same.",
+      "embarrassed him in front of others.",
+      "made the student fear the teacher.",
+      "show that the teacher has authority."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of these values can be inferred from the parable of the lost coin?",
+    "options": [
+      "Hard work always leads to prosperity.",
+      "Every individual has great worth.",
+      "Material possessions are more important than relationships.",
+      "Wealth should be carefully accumulated and protected."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Abu is asked to give money to influence a clerk so he can get his results early but he refused. Which moral value is Abu demonstrating?",
+    "options": [
+      "Honesty",
+      "Fairness",
+      "Integrity",
+      "Responsibility"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Ewe name for God \"Mawu\" signifies His being mighty. Which of these actions best explains how this understanding can influence the way people relate to God?",
+    "options": [
+      "Participate in religious activities",
+      "Approach God with reverence",
+      "See God as distant",
+      "Treat God with seriousness"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "At a traffic junction, motorists were entreated to obey the traffic police. Why is obeying authority important in this situation? It",
+    "options": [
+      "gives authority much power.",
+      "allows drivers more room to operate.",
+      "helps to ensure public safety.",
+      "stops people from driving at night."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The following factors are causes of corruption in Ghana except",
+    "options": [
+      "excessive greed.",
+      "desire for popularity.",
+      "unhealthy competition.",
+      "suicidal tendencies."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ama always greets politely, listens attentively to classmates and waits patiently for her turn to speak. This behaviour best demonstrates",
+    "options": [
+      "integrity.",
+      "courtesy.",
+      "morality.",
+      "courage."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Aku wants to buy a bag which is on top of her list, a pencil case and some snacks but her money is not enough to buy everything. What budgeting principles would she be practising if she decides to buy the bag?",
+    "options": [
+      "Prioritizing",
+      "Planning",
+      "Saving",
+      "Reviewing"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Kwame receives 50 cedis as allowance. He decides to keep it safely in his wallet instead of spending it immediately so that he can buy a school bag later. Which characteristic of money is being illustrated here?",
+    "options": [
+      "Medium of exchange",
+      "Acceptability",
+      "Unit of account",
+      "Store of value"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In which of the following ways does protecting forest reserves reflect human's responsibility to God's creation?",
+    "options": [
+      "Ensuring the survival of the biosphere",
+      "Allowing unrestricted logging to support economic growth",
+      "Providing space for recreational activities",
+      "Replacing natural forest with commercial plantation"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Mr and Mrs Akoto often disagree on how to spend money at home. Sometimes, the argument becomes toxic and it is beginning to break their marriage. Which of the following actions do you think can best help them to have a peaceful home?",
+    "options": [
+      "Avoiding discussion on money matters",
+      "Allowing only one person to make decision on money",
+      "Complaining to neighbours about the issue",
+      "Sharing ideas and making decisions together"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Kojo who is fourteen years old has become rebellious and arrogant towards his parents and peers. What may be the possible cause of his behaviour? He is",
+    "options": [
+      "being influenced by his peers.",
+      "being influenced by social media.",
+      "going through physical changes at puberty.",
+      "undergoing emotional changes at puberty."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "People enjoy religious songs for various reasons. Which of these best explains why these songs are meaningful to believers? The songs",
+    "options": [
+      "help to fulfil their dreams.",
+      "connect them to their faith.",
+      "help them to put the world behind.",
+      "provide them with pleasure."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Amina noticed that students in her school often felt hungry after class. She decided to start selling healthy snacks. Which entrepreneurial skill is Amina applying?",
+    "options": [
+      "Obedience to rules",
+      "Financial management",
+      "Opportunity identification",
+      "Risk management"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your classmate, Yaw, is always the first to come to School. On days that he is not the first, he tries not to miss school. Which attitude to work is Yaw practising?",
+    "options": [
+      "Honesty",
+      "Diligence",
+      "Punctuality",
+      "Responsibility"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is an advantage of the extended family over the nuclear family system? It",
+    "options": [
+      "ensures that all family members live in the same house.",
+      "allows family members to share responsibilities.",
+      "makes parents less responsible for their children.",
+      "prevents conflicts from happening in the family."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A Muslim community wants to honour a deceased member, which of these actions would reflect their traditional practice?",
+    "options": [
+      "Performing ghusul",
+      "Preventing public viewing",
+      "Offering Janazah",
+      "Sacrificing a ram"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A school is having a challenge in deciding on an activity that would best reflect the key value of Idul-Ad-ha. Which of these activities would you recommend?",
+    "options": [
+      "Preparing cultural display and traditional meals for celebration",
+      "Inviting parents and community members to celebrate with students",
+      "Organizing special prayers to mark the festivals",
+      "Organizing a seminar on obedience, sacrifice and generosity"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "According to the creation story, God separated the waters from the waters. What does this separation refer to?",
+    "options": [
+      "Day and night",
+      "Animals and humans",
+      "Lands and plants",
+      "Sky and sea"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Religious and Moral Education",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "During libation, why do the traditional worshippers address their prayers to the ancestor? Because ancestors are believed to be",
+    "options": [
+      "closer to the gods.",
+      "controllers of charm.",
+      "god's divinities.",
+      "very courageous."
+    ],
+    "correct_answer": "A"
+  },
+  {
     "subject": "French",
     "year": 2026,
     "paper": 1,
@@ -13835,9 +16555,7 @@
       "7",
       "9"
     ],
-    "correct_answer": "D",
-    "id": "french-2026-p1-q1",
-    "correctAnswer": "D"
+    "correct_answer": "D"
   },
   {
     "subject": "French",
@@ -13854,9 +16572,7 @@
       "sixième",
       "septième"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q2",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -13873,9 +16589,7 @@
       "au marché",
       "au tribunal"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q3",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -13892,9 +16606,7 @@
       "Swedru",
       "Winneba"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q4",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -13911,9 +16623,7 @@
       "médecin",
       "infirmier"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q5",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -13930,9 +16640,7 @@
       "à faire du sport",
       "à danser la salsa"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q6",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -13949,9 +16657,7 @@
       "Elle danse avec Pierre.",
       "Elle joue au tennis."
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q7",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -13968,9 +16674,7 @@
       "écouter de la musique",
       "danser à la musique"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q8",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -13987,9 +16691,7 @@
       "Rebecca et Joujou",
       "Anastasia et Rebecca"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q9",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14006,9 +16708,7 @@
       "Anastasia aime le tennis",
       "Joujou aime chanter"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q10",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14025,9 +16725,7 @@
       "après l'heure",
       "avant l'heure"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q11",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14044,9 +16742,7 @@
       "travaille",
       "étudie"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q12",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14063,9 +16759,7 @@
       "6h 15",
       "6h 45"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q13",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14082,9 +16776,7 @@
       "lave les assiettes",
       "balaie la cour"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q14",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14101,9 +16793,7 @@
       "À pied",
       "À vélo"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q15",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14120,9 +16810,7 @@
       "le premier jour de l'année scolaire",
       "le dernier jour de l'année scolaire"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q16",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14139,9 +16827,7 @@
       "quittent leurs parents et amis",
       "se racontent des histoires"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q17",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14158,9 +16844,7 @@
       "en taxi",
       "en riant"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q18",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14177,9 +16861,7 @@
       "tous les élèves habitent loin de l'école",
       "quelques élèves habitent loin de l'école"
     ],
-    "correct_answer": "D",
-    "id": "french-2026-p1-q19",
-    "correctAnswer": "D"
+    "correct_answer": "D"
   },
   {
     "subject": "French",
@@ -14196,9 +16878,7 @@
       "mécontents",
       "tristes"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q20",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14215,9 +16895,7 @@
       "se lèvent",
       "s'habillent"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q21",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -14234,9 +16912,7 @@
       "le train",
       "l'avion"
     ],
-    "correct_answer": "D",
-    "id": "french-2026-p1-q22",
-    "correctAnswer": "D"
+    "correct_answer": "D"
   },
   {
     "subject": "French",
@@ -14253,9 +16929,7 @@
       "coiffeur",
       "chasseur"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q23",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14272,9 +16946,7 @@
       "arbitre",
       "entraîneur"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q24",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14291,9 +16963,7 @@
       "Du courage!",
       "Enchanté!"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q25",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14310,9 +16980,7 @@
       "un crayon",
       "un tableau"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q26",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14329,9 +16997,7 @@
       "j'étudie",
       "j'achète"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q27",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -14348,9 +17014,7 @@
       "se lave",
       "s'habille"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q28",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14367,9 +17031,7 @@
       "une culotte",
       "une chemise"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q29",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -14386,9 +17048,7 @@
       "le frère de son père",
       "le frère de sa sœur"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q30",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14405,9 +17065,7 @@
       "va",
       "marche"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q31",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -14424,9 +17082,7 @@
       "que",
       "où"
     ],
-    "correct_answer": "D",
-    "id": "french-2026-p1-q32",
-    "correctAnswer": "D"
+    "correct_answer": "D"
   },
   {
     "subject": "French",
@@ -14443,9 +17099,7 @@
       "en",
       "l'"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q33",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14462,9 +17116,7 @@
       "avant",
       "à"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q34",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -14481,9 +17133,7 @@
       "pourtant",
       "avec"
     ],
-    "correct_answer": "D",
-    "id": "french-2026-p1-q35",
-    "correctAnswer": "D"
+    "correct_answer": "D"
   },
   {
     "subject": "French",
@@ -14500,9 +17150,7 @@
       "Aussitôt que",
       "Pendant que"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q36",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14519,9 +17167,7 @@
       "es",
       "est"
     ],
-    "correct_answer": "C",
-    "id": "french-2026-p1-q37",
-    "correctAnswer": "C"
+    "correct_answer": "C"
   },
   {
     "subject": "French",
@@ -14538,9 +17184,7 @@
       "répondre",
       "répondez"
     ],
-    "correct_answer": "B",
-    "id": "french-2026-p1-q38",
-    "correctAnswer": "B"
+    "correct_answer": "B"
   },
   {
     "subject": "French",
@@ -14557,9 +17201,7 @@
       "lui",
       "leur"
     ],
-    "correct_answer": "A",
-    "id": "french-2026-p1-q39",
-    "correctAnswer": "A"
+    "correct_answer": "A"
   },
   {
     "subject": "French",
@@ -14576,8 +17218,2046 @@
       "en",
       "de"
     ],
-    "correct_answer": "D",
-    "id": "french-2026-p1-q40",
-    "correctAnswer": "D"
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the benefit of using digital tools for freehand drawing.",
+    "options": [
+      "Always make drawings smaller",
+      "Always make drawings bigger",
+      "They have endless colour options",
+      "They have limited undo options"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Maame intends to make 1,000 yards of batik for one of her customers. Select the most suitable resist material she would use for the work.",
+    "options": [
+      "Starch",
+      "Twine",
+      "Raffia",
+      "Wax"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist wants to decorate a plain T-shirt for a friend. The artist made cut-out motifs from a fabric and stitched onto the plain T-shirt to create a stylized design. Which of the following techniques is employed by the artist in decorating the T-shirt?",
+    "options": [
+      "Appliqué",
+      "Attachment",
+      "Crocheting",
+      "Hemming"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist wants to decorate a plain T-shirt for a friend. The artist made cut-out motifs from a fabric and stitched onto the plain T-shirt to create a stylized design. Select the statement that explains the reason for decorating the T-shirt.",
+    "options": [
+      "To enhance the visual appeal",
+      "To create the initial concept",
+      "For easy identification of the T-shirt",
+      "For easy maintenance of the tools used"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Amadu, in an attempt to make his still-life drawing look real, used parallel lines to depict the tones. This suggests that his shading is based on",
+    "options": [
+      "criss-crossing.",
+      "hatching.",
+      "mass shading.",
+      "stippling."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A school employed a professional dancer to train its learners on new dance movements for an upcoming dance competition. The technical name for the professional dancer is",
+    "options": [
+      "composer.",
+      "choreographer.",
+      "instructor.",
+      "producer."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The fur on a dog can be associated with which of these elements of design?",
+    "options": [
+      "Line",
+      "Shape",
+      "Space",
+      "Texture"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the statement that describes a plot.",
+    "options": [
+      "An orderly arrangement of events of a play",
+      "A cue of a piece of drama",
+      "Systematic collection of stories and events",
+      "Summation of a story of a play"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In composing a piece of music, Emma decides to use chord I due to the soh in it. Select another chord that she can use apart from chord I.",
+    "options": [
+      "Chord II",
+      "Chord III",
+      "Chord VI",
+      "Chord VII"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Adjawa is inspired by nature to draw trees in her sketchbook. How would she effectively depict the texture of the tree bark?",
+    "options": [
+      "Use of zigzag lines",
+      "Use of cool colours",
+      "Use of random lines",
+      "Use of bright colours"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Identify the number of quavers that make a semibreve.",
+    "options": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Creative Art teacher of Kaison International School took the class to the school park for sightseeing. After discussing the natural and manmade things around the school, the teacher then tasked learners to associate the things observed to elements of design. Select the natural things that the learners can associate with the element dot.",
+    "options": [
+      "Sand particles, stones and seeds",
+      "Sand particles, vehicle tyres and balls",
+      "Seeds, balls and vehicle tyres",
+      "Seeds, balls and beads"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Fante people of Ghana are noted for displaying variety of dances during occasions. Among such dances include",
+    "options": [
+      "Adowa and Gome",
+      "Apatampa and Adowa",
+      "Bamaya and Bɔbɔɔbɔ",
+      "Gome and Bɔbɔɔbɔ"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The learners of Kaison International School visited a gallery to be educated on techniques used by artists in producing artworks. Assemblage is among the techniques adopted in producing the artworks displayed. As one of the learners, identify the main characteristic of the assemblage works displayed.",
+    "options": [
+      "Combines found objects into sculpture",
+      "Has two-dimensional art forms",
+      "Involves only natural materials",
+      "Involves only man-made objects"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following notes is the fourth degree of a piece of music being performed in the key of A flat major?",
+    "options": [
+      "C flat",
+      "D flat",
+      "D natural",
+      "E natural"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Akosua wants to use the mass shading technique to render a two-dimensional drawing solid. Identify the most appropriate type of pencil for the task.",
+    "options": [
+      "H",
+      "2H",
+      "B",
+      "2B"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Bɔbɔɔbɔ is a traditional dance performed by the Ewe people of Ghana. Select the primary importance of this dance.",
+    "options": [
+      "For celebration of events",
+      "Expressing emotions",
+      "Preserving cultural heritage",
+      "For showcasing of wealth"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Red, yellow, green and black are colours used in the flag of Ghana. The colour yellow symbolizes",
+    "options": [
+      "agricultural prosperity.",
+      "artistic heritage of the country.",
+      "mineral wealth of the country.",
+      "sun and its energy."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Atsiagbeko dance of the Ewe people of Ghana is said to be a",
+    "options": [
+      "recreational dance.",
+      "religious dance.",
+      "spontaneous dance.",
+      "war dance."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "At what point should a designer share a prototype with a client for feedback?",
+    "options": [
+      "Define stage",
+      "Incubate stage",
+      "Ideate stage",
+      "Test stage"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following statements are true about Dance and Drama? I. They educate and entertain audience II. Both have elements III. They have no characters IV. Both are taught in schools",
+    "options": [
+      "I and IV only",
+      "I and II only",
+      "I, II and III only",
+      "I, II and IV only"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A designer wants to print clothes for their upcoming rally. \"The Agbo Women\" political party has 800,000 delegates. Yellow, Blue and Black are the colours for the political party. Identify the appropriate printing method to be used in printing the clothes for the delegates.",
+    "options": [
+      "Block printing",
+      "Stencil printing",
+      "Frottage printing",
+      "Serigraphy printing"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A designer wants to print clothes for their upcoming rally. \"The Agbo Women\" political party has 800,000 delegates. Yellow, Blue and Black are the colours for the political party. Select the number of screens to be developed in printing the clothes.",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A designer wants to print clothes for their upcoming rally. \"The Agbo Women\" political party has 800,000 delegates. Yellow, Blue and Black are the colours for the political party. Which of the following colours of the political party would be printed first?",
+    "options": [
+      "Blue",
+      "Black",
+      "Green",
+      "Yellow"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Tim decides to design a pattern for his school's Friday wear. Identify the set of principles of design he would use.",
+    "options": [
+      "Variety, unity and balance",
+      "Balance, unity and colour",
+      "Contrast, balance and lines",
+      "Rhythm, variety and form"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the moral lesson from the lyrics \"Mani mmere wo mpaboa no\" in the song \"Kwaku Ananse\" by Amerado.",
+    "options": [
+      "Do not be envious",
+      "Hard work always pays",
+      "Be determined",
+      "Be assertive"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In designing a poster for a musical festival, which of the following lines would an artist use to depict energy and movement?",
+    "options": [
+      "Vertical",
+      "Horizontal",
+      "Diagonal",
+      "Curved"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Anny wants his music to have three sections, with the last section sounding same as the first section. Select the form of music he would choose.",
+    "options": [
+      "CAC",
+      "ABC",
+      "ABA",
+      "BCA"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following is a technique for creating drama?",
+    "options": [
+      "Diction",
+      "Dynamics",
+      "Interpolation",
+      "Pitch"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In weaving a stole for graduation, Johny uses warp and weft yarns. For every new weft yarn he inserts into the shed, he beats to the",
+    "options": [
+      "fell of the stole.",
+      "middle of the stole.",
+      "side of the stole.",
+      "selvedge of the stole."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In designing a school bag, the role of working drawing is to",
+    "options": [
+      "make a sketch model.",
+      "evaluate the final product.",
+      "help in identifying problems.",
+      "serve as a guide for production."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the set of musical instruments that are mostly used for traditional ensembles.",
+    "options": [
+      "Piano and Donno",
+      "Rattle and Donno",
+      "Guitar and Donno",
+      "Organ and Donno"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The Creative art teacher mounted different artworks in the classroom for the learners to appreciate them. What activity are the learners expected to do?",
+    "options": [
+      "Call their parents to come and buy the artworks",
+      "Only look and criticize the artworks displayed",
+      "Only look at the artworks and draw them in their sketchbooks",
+      "Talk about the good qualities in the artworks displayed"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The school choir of Kromkrom D/A JHS performed the \"Hallelujah Chorus\" at the end of the year graduation ceremony. Which category of music can this rendition be associated with?",
+    "options": [
+      "Western pop music",
+      "Western folk music",
+      "Western art music",
+      "Western church music"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Identify the statement that best describes an art exhibition.",
+    "options": [
+      "It is a display of artworks for artists to compete among themselves",
+      "A permanent display of artworks to educate the public",
+      "A temporary display of artworks for sales and public viewing",
+      "It is a display of artworks to tell the history of the artists"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A group called \"Young Stars\" of Kromkrom D/A JHS wants to create a skit to educate learners about the importance of proper handwashing. Identify the most effective way to convey their message to learners.",
+    "options": [
+      "Use complex scientific terms",
+      "Use humor and related characters",
+      "Show graphic images of germs and diseases",
+      "Give a talk on importance of handwashing"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A quarter note is placed on the 4th line of the staff. Its stem will be drawn",
+    "options": [
+      "upward and on the right of the note.",
+      "upward and on the left of the note.",
+      "downward and on the left of the note.",
+      "downward and on the right of the note."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The famous Ablade Glover wants to paint a scene from a Ghanaian market. Which of the following techniques is he likely to use?",
+    "options": [
+      "Fine detailed brush work",
+      "Fine detailed dubbing",
+      "Bold strokes with a palette knife",
+      "Splattering with a brush"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist creates series of paintings that tell a story. The artist style of painting is associated with",
+    "options": [
+      "abstract art.",
+      "decorative art.",
+      "narrative art.",
+      "representational art."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of these artists makes paintings of marine animals and their environment?",
+    "options": [
+      "Ablade Glover",
+      "Ben Agbee",
+      "Betty Acquah",
+      "Kobina Nyarko"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Abiwa is printing on a fabric. She aims at ensuring an even distribution of paste on the surface of the fabric. Identify the tool that she would use.",
+    "options": [
+      "Brayer",
+      "Ink pad",
+      "Palette knife",
+      "Block"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In making an artwork, Ama gathers and joins different discarded materials to create a new whole. Select the technique Ama used.",
+    "options": [
+      "Carving",
+      "Assemblage",
+      "Etching",
+      "Engraving"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the most appropriate binder used in papier mache.",
+    "options": [
+      "Formica glue",
+      "Resin",
+      "Starch",
+      "White glue"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In the design process, investigating a problem includes determining the",
+    "options": [
+      "size and forms of the article to produce.",
+      "cost of materials to use.",
+      "colour, symbols and features of the products.",
+      "production tools to use."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A 3-dimensional form of a square is the",
+    "options": [
+      "cone.",
+      "cube.",
+      "cuboid.",
+      "cylinder."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Mr. Adamu is an artist who wants to design a poster for one of his customers. Select the digital tools that he could use for the work.",
+    "options": [
+      "A-4 sheets, scanner and a computer.",
+      "Computer, A-4 sheets and Adobe Photoshop.",
+      "Photoshop, scanner and A-4 sheets.",
+      "Scanner, Adobe Photoshop and a computer."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your school anthem is in 3/4 time. Which of the following conducting patterns would the conductor use?",
+    "options": [
+      "A square-shaped pattern",
+      "A triangular pattern",
+      "A straight-line pattern",
+      "A circular pattern"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Many songs address topical issues in the Ghanaian community. Which of the following is not a step in transcribing such songs?",
+    "options": [
+      "Choosing a song",
+      "Listening carefully",
+      "Writing down the lyrics",
+      "Composing a new melody"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How long should you hold a half note/minim in 4/4 times?",
+    "options": [
+      "1 beat/count",
+      "2 beats/counts",
+      "3 beats/counts",
+      "4 beats/counts"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In Ghana, most people wear black or red cloth during funerals to show they are mourning. However, these same colours worn by demonstrators signify their",
+    "options": [
+      "displeasure about poor working conditions.",
+      "full support towards developmental projects.",
+      "happiness about working conditions.",
+      "readiness to work for the country."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "What does the circular movement in Ghanaian traditional dance represent?",
+    "options": [
+      "Individual strength",
+      "Togetherness and community",
+      "Fighting and war",
+      "A straight path to success"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following artists is known for painting with a palette knife instead of a brush?",
+    "options": [
+      "Ablade Glover",
+      "Francis Boateng",
+      "Kofi Antubam",
+      "Theodosia Okoh"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "If a dancer kneels or squats in a traditional dance, what message might she be conveying?",
+    "options": [
+      "She is tired and needs rest.",
+      "She is showing respect or submission.",
+      "She is preparing to jump.",
+      "She is pleading."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the technique that involves shaping materials into three-dimensional forms.",
+    "options": [
+      "Knitting",
+      "Modelling",
+      "Printing",
+      "Appliquéing"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A well-known playwright in Ghana is",
+    "options": [
+      "Majeed Michel.",
+      "Ebo Whyte.",
+      "Yvonne Nelson.",
+      "Jaqline Appiah."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist wants to mix oil paints for quick painting. Select the most appropriate solvent to mix the paints.",
+    "options": [
+      "Kerosine",
+      "Lacquer",
+      "Turpentine",
+      "Alcohol"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Two modern Ghanaian dancers who promoted Ghanaian culture on Britain's Got Talent (BGT) platform are",
+    "options": [
+      "Afronita and Mzbel.",
+      "Afronita and Elya.",
+      "Afronita and Abigail.",
+      "Afronita and Eboni."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Agatey wishes to present a gift to his friend in a self-made paper wrapper. Which of the following would enable him to achieve his wish?",
+    "options": [
+      "Atomizer, charcoal and spray diffuser",
+      "Charcoal, poster colour and spray diffuser",
+      "Stiff brush, paper and charcoal",
+      "Spray diffuser, paper and poster colour"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following Northern traditional dances is a war dance?",
+    "options": [
+      "Bamaaya",
+      "Nagali",
+      "Takai",
+      "Damba"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a composition, objects of the same kind and weight placed on either side of a central line forms",
+    "options": [
+      "a formal balance.",
+      "an informal balance.",
+      "an irregular balance.",
+      "a radial balance."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your music teacher wants a song to start loudly and then gradually become softer. Which of the following dynamic marks would you suggest?",
+    "options": [
+      "Crescendo",
+      "Diminuendo",
+      "Forte",
+      "Piano"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Sally was tasked to weave a mat. Select the best measure that she would take to ensure that the mat lies flat.",
+    "options": [
+      "Use thicker thread",
+      "Double the thread",
+      "Beat the thread tighter",
+      "Use fine threads"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist mixes one tablespoon of a red colour with another tablespoon of a blue colour. What colour will the artist achieve?",
+    "options": [
+      "Green",
+      "Orange",
+      "Yellow",
+      "Violet"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In creating a piece of an artwork that reflects Ghanaian traditions, which of the following would be essential to include?",
+    "options": [
+      "Modern architectural structures",
+      "Portraits of political leaders",
+      "Scenes of urban life",
+      "Symbols of ancestral heritage"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Art appreciation helps one to become aware of",
+    "options": [
+      "all the various designs in nature.",
+      "all the good qualities of an art.",
+      "the size of work.",
+      "the title of work."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Your class is creating its own rhythm for a clapping exercise. If your teacher wants the class to clap softly, which dynamic mark should the class use?",
+    "options": [
+      "Forte",
+      "Andante",
+      "Piano",
+      "Allegro"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Juuba intends to paint a poster with cool colours. Identify the set of cool colours Juuba could use.",
+    "options": [
+      "Blue, yellow and violet",
+      "Green, violet and blue",
+      "Orange, blue and red",
+      "Red, yellow and orange"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following traditional instruments belongs to the membranophone family?",
+    "options": [
+      "Gankogni",
+      "Gyile",
+      "Atumpan",
+      "Axatse"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A composer is writing a song for the school choir. Which tempo marking should be used to mark portions to be performed in a lively and fast pace?",
+    "options": [
+      "Largo",
+      "Andante",
+      "Allegro",
+      "Moderato"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "To prevent injury when working in the art studio, one has to",
+    "options": [
+      "clean the tools after use.",
+      "leave the tools by the window.",
+      "pack tools in toolbox after use.",
+      "pocket sharp and pointed tools."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In producing sculpture, the artist uses which of the following sets of materials?",
+    "options": [
+      "Fabric, acrylic and clay",
+      "Metal, wood and clay",
+      "Metal, fabric and charcoal",
+      "Wood, conté and clay"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Martin Owusu is known for his contribution to the development of Ghanaian",
+    "options": [
+      "music.",
+      "dance.",
+      "poetry.",
+      "drama."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The red colour in the national flag of Ghana symbolizes",
+    "options": [
+      "unity of the people.",
+      "rich natural resources.",
+      "struggle for independence.",
+      "vegetation of the land."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Francis Nii Yartey is known for his contribution to the development of",
+    "options": [
+      "music.",
+      "dance.",
+      "poetry.",
+      "drama."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Design can be described as a",
+    "options": [
+      "basic shape of an artwork.",
+      "form of colourful artwork.",
+      "plan within a work of art.",
+      "skill to produce tools."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The area occupied by the objects in a composition is described as the",
+    "options": [
+      "background.",
+      "foreground.",
+      "negative space.",
+      "positive space."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A school's drama club is preparing for a play. Which of the following performance spaces should the actors wait and get ready in before stepping onto the stage?",
+    "options": [
+      "Audience area",
+      "Backstage",
+      "Sound booth",
+      "Lighting grid"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "If tempera, acrylic and Indian ink are classified as wet media, then dry media would include",
+    "options": [
+      "charcoal, crayon and poster colour.",
+      "crayon, pastel and charcoal.",
+      "poster colour, conté and pastel.",
+      "pastel, poster colour and crayon."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "During a performance, an actor needs to enter the stage without being seen before their scene begins. Which part of the performance space should he use?",
+    "options": [
+      "Sound booth",
+      "Wings",
+      "Audience area",
+      "Lighting grid"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Johnny created a drawing from a scene in a dream he had. Johnny is into",
+    "options": [
+      "figure drawing.",
+      "imaginative drawing.",
+      "silhouette drawing.",
+      "still life drawing."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Fareed designs for the production of clothes, shoes and accessories. Which field of design is Fareed into?",
+    "options": [
+      "Fashion design",
+      "Interior design",
+      "Industrial design",
+      "Web design"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The surface quality of the work of art is described as",
+    "options": [
+      "colour.",
+      "form.",
+      "shape.",
+      "texture."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Soft lead pencils are graded with the letter",
+    "options": [
+      "D.",
+      "C.",
+      "B.",
+      "A."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Biomimicry is a concept of",
+    "options": [
+      "designing.",
+      "painting.",
+      "shading.",
+      "etching."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In a design, colour contrasting is achieved by using",
+    "options": [
+      "dark tones of a colour.",
+      "similar colours.",
+      "light tones of a colour.",
+      "complementary colours."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In printing a cloth for a school, Amu decides to use elements that give the feeling of sharp difference in the design. This suggests that he applied the principle of",
+    "options": [
+      "contrast.",
+      "harmony.",
+      "balance.",
+      "rhythm."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Time signature is best described as the",
+    "options": [
+      "speed of a piece of music.",
+      "key of piece of music.",
+      "number of beats in a bar.",
+      "number of bar in a song."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which symbol is placed at the beginning of the staff to indicate high pitch?",
+    "options": [
+      "Sharp",
+      "Treble clef",
+      "Note",
+      "Time signature"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following voice types is not found in a four-part choir?",
+    "options": [
+      "Tenor",
+      "Soprano",
+      "Baritone",
+      "Alto"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Identify the stage in which articles are tested to determine if it fulfills its intended purpose.",
+    "options": [
+      "Evaluation",
+      "Prototype",
+      "Production",
+      "Definition"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In Ghanaian dance, hand gestures",
+    "options": [
+      "make the dancer look taller.",
+      "help the dancer show emotions.",
+      "are used for waving at the audience.",
+      "keep the music in time."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Choose the appropriate medium for mixing acrylic paint.",
+    "options": [
+      "Kerosene",
+      "Water",
+      "Linseed oil",
+      "Paraffin oil"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Ghanaian traditional dances often include drumming to",
+    "options": [
+      "make the dance more rhythmic.",
+      "bring the dancers together.",
+      "make the music sound louder.",
+      "showcase the dance movements."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The electric grid can be associated with which of the following elements of design.",
+    "options": [
+      "Dot",
+      "Line",
+      "Shape",
+      "Space"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A Ghanaian drama which is based on folktales and legends is",
+    "options": [
+      "modern theatre drama.",
+      "traditional oral drama.",
+      "Akan drama.",
+      "television drama."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of the following equipment is used for throwing clay?",
+    "options": [
+      "Turn table",
+      "Kneading table",
+      "Rig mill",
+      "Potter wheel"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which of these themes is popular in Ghanaian drama?",
+    "options": [
+      "Traditional Festivals",
+      "Everyday life",
+      "Fashion trends",
+      "Trading activities."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Identify a digital tool which is commonly used for freehand drawing.",
+    "options": [
+      "Ball pen",
+      "Drawing pin",
+      "Graphic table",
+      "Stylus pen"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Drumming and dancing are important in Ghanaian drama because they",
+    "options": [
+      "entertain the audience and performers.",
+      "add energy and meaning to the performance.",
+      "help the actors in speaking.",
+      "make the performance easier."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Identify the pair of tools used in producing a stole.",
+    "options": [
+      "Roller and screen",
+      "Shuttle and skeiner",
+      "Squeegee and gloves",
+      "Thimble and needle"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Performers use different body profiles on stage to",
+    "options": [
+      "engage the audience.",
+      "express their intentions.",
+      "avoid looking at the audience.",
+      "fill empty space on stage."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Mensah is experimenting with lines to suggest movement in a design. What principle is he going to achieve?",
+    "options": [
+      "Contrast",
+      "Balance",
+      "Rhythm",
+      "Unity"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In art appreciation, the kind of tools, materials, designs and styles used in an art work determine the",
+    "options": [
+      "inventory of the items",
+      "interpretation of the work.",
+      "technical qualities of the work.",
+      "identification of the work."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The green colour in the Ghana flag symbolizes the",
+    "options": [
+      "sun's energy.",
+      "mineral wealth.",
+      "agricultural prosperity.",
+      "artistic heritage."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist arranges five circles of various sizes and colours in a design. It suggests that the artist is using the principle of",
+    "options": [
+      "variety.",
+      "proportion.",
+      "emphasis.",
+      "dominance."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Singers use different pitches in their singing to make",
+    "options": [
+      "the sounds heard.",
+      "their singing interesting.",
+      "it easy to follow the song.",
+      "sure all voices are heard."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In designing, the ideal stage comes immediately after",
+    "options": [
+      "prototype.",
+      "empathize.",
+      "define.",
+      "test."
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The musical term that indicates a return to the original speed is",
+    "options": [
+      "poco.",
+      "a tempo.",
+      "coda.",
+      "da capo."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Which prominent Ghanaian personality is celebrated for his choral impact on music, as a musicologist and ethnomusicologist?",
+    "options": [
+      "P.K. Yankson",
+      "J.H.K. Nketia",
+      "E.J. Collins",
+      "A.B. Crentsil"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The appropriate material for joining two pieces of clay slab is",
+    "options": [
+      "glue.",
+      "slip.",
+      "starch.",
+      "resin."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Pick out the key consideration in selecting a finish for a ceramic ware.",
+    "options": [
+      "Absorbency of the clay",
+      "Colour of the clay body",
+      "Temperature for firing",
+      "Weight of the ware"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "How many quavers are equivalent to a minim?",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "During an excursion to the national gallery, it was observed that the curator had showcased art from the local artist only. This describes",
+    "options": [
+      "retrospective exhibition.",
+      "solo show exhibition.",
+      "group show exhibition.",
+      "biennale exhibition."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The 7th degree of the 'F' major scale is",
+    "options": [
+      "B.",
+      "C.",
+      "D.",
+      "E."
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "An artist makes his works known through",
+    "options": [
+      "exhibition.",
+      "painting.",
+      "sketching.",
+      "demonstration."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "Select the common themes for Kofi Antobam's art works.",
+    "options": [
+      "Abstract scenes",
+      "Historical events",
+      "Modern scenes",
+      "National symbols"
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "A duet is a performance by",
+    "options": [
+      "one performer.",
+      "two performers.",
+      "three performers.",
+      "four performers."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The mother of a new born baby wore blue and white cloth during the naming ceremony of her baby. In Ghana, the colours used symbolize",
+    "options": [
+      "calm, joy and relaxation.",
+      "calm, wealth and relaxation.",
+      "joy, calm and royalty.",
+      "relaxation, royalty and peace."
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "The song structure where several sections have the same melody but different lyrics is",
+    "options": [
+      "chorus.",
+      "verse.",
+      "bridge.",
+      "coda."
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Creative Arts and Design",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Objective Test",
+    "prompt": "In designing, texture can be described as",
+    "options": [
+      "smooth and shiny.",
+      "smooth and visual.",
+      "tactile and visual.",
+      "tactile and shiny."
+    ],
+    "correct_answer": "C"
   }
 ]

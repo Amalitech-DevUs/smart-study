@@ -1,19 +1,9 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { ArrowLeft, BookOpen, Clock, Calendar } from "lucide-react";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
-
-type Article = {
-  id?: number | string;
-  slug: string;
-  title: string;
-  body: string;
-  category: string;
-  subject?: string | null;
-  published_at?: string;
-  publishedAt?: string;
-};
+import { findArticleBySlugOrId, type Article } from "@/lib/articles-data";
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -21,60 +11,56 @@ type ArticlePageProps = {
 
 const subjectThemes: Record<string, { bg: string; text: string; border: string; slug: string }> = {
   Mathematics: {
-    bg: "bg-emerald-50",
-    text: "text-emerald-700",
-    border: "border-emerald-200",
+    bg: "bg-slate-100",
+    text: "text-slate-700",
+    border: "border-slate-200",
     slug: "mathematics",
   },
   "English Language": {
-    bg: "bg-rose-50",
-    text: "text-rose-700",
-    border: "border-rose-200",
+    bg: "bg-slate-100",
+    text: "text-slate-700",
+    border: "border-slate-200",
     slug: "english",
   },
   "Integrated Science": {
-    bg: "bg-sky-50",
-    text: "text-sky-700",
-    border: "border-sky-200",
+    bg: "bg-slate-100",
+    text: "text-slate-700",
+    border: "border-slate-200",
     slug: "science",
   },
   "Social Studies": {
-    bg: "bg-amber-50",
-    text: "text-amber-700",
-    border: "border-amber-200",
+    bg: "bg-slate-100",
+    text: "text-slate-700",
+    border: "border-slate-200",
     slug: "social-studies",
   },
 };
 
 async function getArticle(slug: string): Promise<Article | null> {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
-  const CONTENT_DB_URL = process.env.CONTENT_SERVICE_URL || "http://localhost:5002";
 
-  const endpoints = [
-    `${API_BASE_URL}/articles/${slug}`,
-    `${CONTENT_DB_URL}/articles/${slug}`,
-  ];
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    const res = await fetch(`${API_BASE_URL}/articles/${slug}`, {
+      signal: controller.signal,
+      cache: "no-store",
+    });
+    clearTimeout(timeoutId);
 
-  for (const url of endpoints) {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(url, { signal: controller.signal, cache: "no-store" });
-      clearTimeout(timeoutId);
-
-      if (res.ok) {
-        const json = await res.json();
-        const article = json.data || json;
-        if (article && article.title) {
-          return article;
-        }
+    if (res.ok) {
+      const json = await res.json();
+      const article = json.data || json;
+      if (article && article.title) {
+        return article;
       }
-    } catch {
-      // Try next endpoint
     }
+  } catch {
+    // API endpoint unreachable or timed out
   }
 
-  return null;
+  // Instant fallback to local master article dataset so article always loads without 404
+  return findArticleBySlugOrId(slug) || null;
 }
 
 export default async function ArticleDetailPage({ params }: ArticlePageProps) {
@@ -93,9 +79,9 @@ export default async function ArticleDetailPage({ params }: ArticlePageProps) {
   const theme = article.subject && subjectThemes[article.subject]
     ? subjectThemes[article.subject]
     : {
-        bg: "bg-indigo-50",
-        text: "text-indigo-700",
-        border: "border-indigo-200",
+        bg: "bg-slate-100",
+        text: "text-slate-700",
+        border: "border-slate-200",
         slug: "mathematics",
       };
 
@@ -231,7 +217,6 @@ export default async function ArticleDetailPage({ params }: ArticlePageProps) {
                     href={`/flashcards/${theme.slug}`}
                     className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2.5 text-xs font-semibold text-white hover:bg-slate-800 transition-colors shadow-sm"
                   >
-                    <BookOpen className="h-4 w-4 text-amber-400" />
                     <span>{article.subject} Practice</span>
                   </Link>
                 )}

@@ -39,6 +39,16 @@ if ($username === '' || $pin === '') {
 
     exit();
 }
+if (!preg_match('/^\d{4,6}$/', $pin)) {
+    http_response_code(400);
+
+    echo json_encode([
+        'success' => false,
+        'message' => 'PIN must be between 4 and 6 digits.'
+    ]);
+
+    exit();
+}
 
 // Determine requested action
 $action = $_GET['action'] ?? '';
