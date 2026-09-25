@@ -4,15 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/use-auth";
 import { HamburgerDrawer } from "@/components/shared/hamburger-drawer";
-import { NotificationCenter } from "@/components/shared/notification-center";
 
 export function MobileTopBar() {
   const pathname = usePathname();
   const { loggedIn } = useAuth();
 
-  // Hide on auth pages and active exam runner session
+  // Hide on landing page, auth pages, and active exam runner session
   const isExamRunner = pathname.startsWith("/flashcards/") && pathname.split("/").filter(Boolean).length >= 3;
   if (
+    pathname === "/" ||
     pathname === "/login" ||
     pathname === "/signup" ||
     pathname === "/register" ||
@@ -31,10 +31,9 @@ export function MobileTopBar() {
         SmartStudy
       </Link>
 
-      {/* Action Controls: Notifications + Hamburger Menu */}
+      {/* Action Controls: Notifications + Hamburger Menu (hidden on landing page) */}
       <div className="flex items-center gap-2">
-        {pathname !== "/" && <NotificationCenter />}
-        <HamburgerDrawer />
+        {pathname !== "/" && <HamburgerDrawer />}
       </div>
     </header>
   );

@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
-import { BottomNav } from "@/components/shared/bottom-nav";
-import { ChatWidget } from "@/components/chat/chat-widget";
-import { Footer } from "@/components/shared/footer";
-import { MobileTopBar } from "@/components/shared/mobile-top-bar";
 import { MotionProvider } from "@/components/shared/motion-provider";
 import { NotificationProvider } from "@/lib/notification-context";
 import { AuthProvider } from "@/lib/use-auth";
-import { ToastContainer } from "@/components/shared/toast-container";
-import { TopNav } from "@/components/shared/top-nav";
+import { AppShell } from "@/components/shared/app-shell";
 import "./globals.css";
 
 const headingFont = Plus_Jakarta_Sans({
@@ -48,13 +43,7 @@ export default function RootLayout({
         <MotionProvider>
           <AuthProvider>
             <NotificationProvider>
-              <TopNav />
-              <MobileTopBar />
-              <div className="flex-1">{children}</div>
-              <Footer />
-              <ChatWidget />
-              <BottomNav />
-              <ToastContainer />
+              <AppShell>{children}</AppShell>
             </NotificationProvider>
           </AuthProvider>
         </MotionProvider>

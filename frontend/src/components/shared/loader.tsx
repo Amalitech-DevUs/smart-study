@@ -64,7 +64,7 @@ export function Loader({
 
   // size === "md"
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-xs">
+    <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-xs">
       <div className="h-5 w-5 rounded-full border-2 border-slate-200 border-t-indigo-600 animate-spin shrink-0" />
       <div>
         <p className="text-xs font-semibold text-slate-800">{text}</p>

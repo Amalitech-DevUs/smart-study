@@ -1,42 +1,41 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { RequireAuth } from "@/components/shared/require-auth";
+import { ArrowUp } from "lucide-react";
 import { useAuth } from "@/lib/use-auth";
-import { ScrollReveal } from "@/components/shared/scroll-reveal";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  MessageSquare,
-  BookOpen,
-  FileText,
-  ArrowRight,
-  Sparkles,
-  ChevronRight,
-  ArrowUp,
-  Flame,
-  Target,
-} from "lucide-react";
+import { RequireAuth } from "@/components/shared/require-auth";
+import { useDashboardData } from "@/hooks/use-dashboard-data";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { WelcomeBanner } from "@/components/dashboard/WelcomeBanner";
+import { MetricKpiCards } from "@/components/dashboard/MetricKpiCards";
+import { RecentResultsTable } from "@/components/dashboard/RecentResultsTable";
+import { NoticeBoardCard } from "@/components/dashboard/NoticeBoardCard";
+import { StudyCalendarCard } from "@/components/dashboard/StudyCalendarCard";
+import { QuickAccessGrid } from "@/components/dashboard/QuickAccessGrid";
+import { PerformanceOverviewCard } from "@/components/dashboard/PerformanceOverviewCard";
+import { ContinueLearning } from "@/components/dashboard/ContinueLearning";
+import { SubjectsSection } from "@/components/dashboard/SubjectsSection";
+import { FocusAreas } from "@/components/dashboard/FocusAreas";
 
 export default function DashboardPage() {
-  const { username } = useAuth();
+  const { username, isLoading: isAuthLoading } = useAuth();
   const [showBackToTop, setShowBackToTop] = useState(false);
 
-  const greeting = (() => {
-    const h = new Date().getHours();
-    if (h < 12) return "Good morning";
-    if (h < 17) return "Good afternoon";
-    return "Good evening";
-  })();
+  // Load real user data and handle target changes
+  const {
+    activeSession,
+    overview,
+    subjectProgress,
+    focusAreas,
+    recentActivity,
+    dailyGoal,
+    streak,
+  } = useDashboardData(username, isAuthLoading);
 
-  // Monitor scroll for back-to-top button
+  // Scroll to top button visibility listener
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 240) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
-      }
+      setShowBackToTop(window.scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -48,202 +47,81 @@ export default function DashboardPage() {
 
   return (
     <RequireAuth>
-      <div className="flex min-h-screen flex-col bg-[#f8f9fc]">
-        {/* ── Main Dashboard Content ── */}
-        <main className="flex-1 px-5 py-8 sm:px-8 sm:py-10">
-          <div className="mx-auto max-w-3xl">
+      <div className="min-h-screen bg-[#f4f6fa] text-slate-900 pb-16">
+        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          {/* Top Bar: Search + Notification Bell + User Avatar Greeting */}
+          <DashboardHeader
+            username={username}
+            streak={streak}
+            dailyGoal={dailyGoal}
+          />
 
-            {/* Welcome Section */}
-            <ScrollReveal delay={0.04} direction="down">
-              <div className="mb-8">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  {greeting}
-                </p>
-                <h1 className="mt-1.5 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                  {username || "Student"}
-                </h1>
-                <p className="mt-1.5 text-sm text-slate-500">
-                  Your BECE revision workspace. Pick up where you left off.
-                </p>
-              </div>
-            </ScrollReveal>
+          {/* Hero Welcome Banner */}
+          <WelcomeBanner username={username} />
 
-            {/* Stats Strip */}
-            <ScrollReveal delay={0.08} direction="scale">
-              <div className="mb-8 grid grid-cols-3 divide-x divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md">
-                {[
-                  { label: "Questions", value: "1,130+" },
-                  { label: "Subjects", value: "8" },
-                  { label: "Exam Years", value: "7" },
-                ].map((stat) => (
-                  <div key={stat.label} className="px-5 py-4 text-center">
-                    <p className="font-heading text-xl font-extrabold text-slate-900">{stat.value}</p>
-                    <p className="mt-0.5 text-[11px] font-medium text-slate-500">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
+          {/* 5 KPI Metric Cards */}
+          <MetricKpiCards
+            overview={overview}
+            dailyGoal={dailyGoal}
+            streak={streak}
+            subjectCount={subjectProgress.length || 4}
+          />
 
-            {/* Quick Action Cards */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              {/* AI Tutor Card */}
-              <ScrollReveal delay={0.12} direction="left">
-                <Link
-                  href="/chat"
-                  className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-[#0e1726] p-6 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99]"
-                >
-                  <div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-800">
-                      <MessageSquare className="h-5 w-5 text-slate-300" />
-                    </div>
-                    <h2 className="mt-4 font-heading text-base font-bold text-white">
-                      AI Study Companion
-                    </h2>
-                    <p className="mt-1.5 text-xs leading-relaxed text-slate-400">
-                      Ask any BECE question. Get step-by-step explanations in plain English.
-                    </p>
-                  </div>
-                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-slate-300 transition-colors group-hover:text-white">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    <span>Open Tutor</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </div>
-                </Link>
-              </ScrollReveal>
-
-              {/* Past Papers Card */}
-              <ScrollReveal delay={0.16} direction="right">
-                <Link
-                  href="/flashcards"
-                  className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99]"
-                >
-                  <div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 transition-colors group-hover:bg-slate-200">
-                      <BookOpen className="h-5 w-5 text-slate-700" />
-                    </div>
-                    <h2 className="mt-4 font-heading text-base font-bold text-slate-900">
-                      Past Question Papers
-                    </h2>
-                    <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
-                      Solve 1,130+ official WAEC questions across 8 subjects with instant grading and explanations.
-                    </p>
-                  </div>
-                  <div className="mt-5 flex items-center gap-1 text-xs font-bold text-slate-700 transition-colors group-hover:text-slate-900">
-                    <span>Practice now</span>
-                    <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </div>
-                </Link>
-              </ScrollReveal>
-
-              {/* Study Guides Card — Full width */}
-              <div className="sm:col-span-2">
-                <ScrollReveal delay={0.2} direction="up">
-                  <Link
-                    href="/articles"
-                    className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-300 hover:shadow-sm active:scale-[0.99]"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 transition-colors group-hover:bg-slate-200">
-                        <FileText className="h-5 w-5 text-slate-700" />
-                      </div>
-                      <div>
-                        <h2 className="font-heading text-base font-bold text-slate-900">
-                          Revision Guides &amp; Study Notes
-                        </h2>
-                        <p className="mt-1 text-xs leading-relaxed text-slate-600">
-                          Subject breakdowns, key formulas, and exam strategies for BECE candidates.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-4 flex items-center gap-1 text-xs font-bold text-slate-700 transition-colors group-hover:text-slate-900">
-                      <span>Read guides</span>
-                      <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                    </div>
-                  </Link>
-                </ScrollReveal>
-              </div>
+          {/* Continue Learning Banner if active exam is in progress */}
+          {activeSession && (
+            <div className="mb-6">
+              <ContinueLearning session={activeSession} />
             </div>
+          )}
 
-            {/* Subject Quick-Links Section */}
-            <div className="mt-8">
-              <ScrollReveal delay={0.24} direction="down">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  Jump to subject
-                </p>
-              </ScrollReveal>
-
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {[
-                  { name: "Mathematics", slug: "mathematics" },
-                  { name: "English", slug: "english" },
-                  { name: "Science", slug: "science" },
-                  { name: "Social Studies", slug: "social-studies" },
-                  { name: "French", slug: "french" },
-                  { name: "Computing", slug: "computing" },
-                  { name: "RME", slug: "rme" },
-                  { name: "Creative Arts", slug: "creative-arts" },
-                ].map((subj, idx) => (
-                  <ScrollReveal key={subj.slug} delay={0.26 + idx * 0.03} direction="up">
-                    <Link
-                      href={`/flashcards/${subj.slug}`}
-                      className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-xs font-semibold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm"
-                    >
-                      <span className="truncate">{subj.name}</span>
-                      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-slate-400" />
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </div>
+          {/* Middle Row: Recent Results Table (65%) + Notice Board (35%) */}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 items-stretch mb-6">
+            <div className="lg:col-span-8">
+              <RecentResultsTable recentActivity={recentActivity} />
             </div>
-
-            {/* Daily Target / Motivation Banner */}
-            <ScrollReveal delay={0.36} direction="scale">
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="flex items-center gap-3.5">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-700 border border-slate-200">
-                    <Flame className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-sm font-bold text-slate-900">
-                      Daily Revision Goal: 20 Questions
-                    </h3>
-                    <p className="text-xs text-slate-500">
-                      Consistent daily MCQ practice builds WAEC exam timing and speed.
-                    </p>
-                  </div>
-                </div>
-
-                <Link
-                  href="/flashcards/mathematics"
-                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#0e1726] px-4 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors"
-                >
-                  <Target className="h-3.5 w-3.5 text-slate-300" />
-                  <span>Start Practice</span>
-                </Link>
-              </div>
-            </ScrollReveal>
-
+            <div id="notices" className="lg:col-span-4 scroll-mt-24">
+              <NoticeBoardCard />
+            </div>
           </div>
-        </main>
-      </div>
 
-      {/* ── Floating Animated Back to Top Button ── */}
-      <AnimatePresence>
+          {/* Bottom Row: Academic Calendar (33%) + Quick Access (33%) + Performance Donut (33%) */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch mb-8">
+            <div id="calendar" className="flex flex-col scroll-mt-24">
+              <StudyCalendarCard streak={streak} />
+            </div>
+            <div className="flex flex-col">
+              <QuickAccessGrid />
+            </div>
+            <div id="performance" className="flex flex-col scroll-mt-24">
+              <PerformanceOverviewCard overview={overview} />
+            </div>
+          </div>
+
+          {/* Core Examination Subjects Practice Cards */}
+          <div className="mt-8 pt-6 border-t border-slate-200/80">
+            <SubjectsSection subjects={subjectProgress} />
+          </div>
+
+          {/* Focus Areas (Weak Topics) */}
+          {focusAreas && focusAreas.length > 0 && (
+            <div className="mt-8 pt-6 border-t border-slate-200/80">
+              <FocusAreas focusAreas={focusAreas} />
+            </div>
+          )}
+        </main>
+
+        {/* Back to top button */}
         {showBackToTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-            transition={{ duration: 0.2 }}
+          <button
             type="button"
             onClick={scrollToTop}
-            className="fixed bottom-6 left-6 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-colors hover:bg-slate-100 hover:text-slate-950"
+            className="fixed bottom-6 right-6 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95"
             aria-label="Scroll back to top"
           >
             <ArrowUp className="h-4 w-4" />
-          </motion.button>
+          </button>
         )}
-      </AnimatePresence>
+      </div>
     </RequireAuth>
   );
 }

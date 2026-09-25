@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <main className="flex min-h-[70vh] flex-1 flex-col items-center justify-center px-6 py-16 text-center">
       <div className="mx-auto max-w-md">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0e1726] shadow-md">
+        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0e1726]">
           <Compass className="h-8 w-8 text-amber-400 animate-spin-slow" />
         </div>
 

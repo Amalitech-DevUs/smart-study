@@ -1,96 +1,80 @@
 import Link from "next/link";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
-
-type Subject = {
-  slug: string;
-  name: string;
-  paperCount: number;
-  years: string;
-  description: string;
-};
-
-const subjects: Subject[] = [
-  {
-    slug: "mathematics",
-    name: "Mathematics",
-    paperCount: 7,
-    years: "2020 to 2026",
-    description: "Algebra, plane geometry, word problems, statistics, and number bases.",
-  },
-  {
-    slug: "english",
-    name: "English Language",
-    paperCount: 7,
-    years: "2020 to 2026",
-    description: "Comprehension passages, grammar rules, vocabulary, antonyms, and composition.",
-  },
-  {
-    slug: "science",
-    name: "Integrated Science",
-    paperCount: 1,
-    years: "2026 Mock Exam",
-    description: "Life processes, chemical compounds, electrical circuits, and soil science.",
-  },
-  {
-    slug: "social-studies",
-    name: "Social Studies",
-    paperCount: 7,
-    years: "2020 to 2026",
-    description: "Ghanaian governance, physical environment, colonization history, and citizenship.",
-  },
-];
+import { SUBJECTS } from "@/lib/constants/subjects";
 
 export default function FlashcardsPage() {
   return (
-    <main className="flex-1 bg-white px-6 py-12 pb-28 sm:py-16">
+    <main className="flex-1 min-h-screen bg-[#f8f9fa] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
+        {/* Back link */}
+        <div className="mb-6">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Back to Dashboard
+          </Link>
+        </div>
+
         <ScrollReveal>
-          <header className="border-b border-slate-200 pb-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              WAEC Exam Preparation
-            </p>
-            <h1 className="mt-2 font-heading text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Past Question Flashcards
+          <header className="mb-8 border-b border-slate-200 pb-6">
+            <h1 className="font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
+              Past Examination Papers
             </h1>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-600">
-              Choose a subject to practice official multiple-choice questions with step-by-step verification.
+            <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-slate-600">
+              Select a WAEC core subject below to browse past exam papers, practice untimed by topic, or simulate official 45-minute timed examinations.
             </p>
           </header>
         </ScrollReveal>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {subjects.map((subj, index) => (
+        {/* Subject cards */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {SUBJECTS.map((subj, index) => (
             <ScrollReveal key={subj.slug} delay={index * 0.05}>
               <Link
                 href={`/flashcards/${subj.slug}`}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-[transform,box-shadow] duration-150 ease-out hover:-translate-y-1 hover:border-slate-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-500 cursor-pointer"
+                className={`group flex flex-col justify-between rounded-xl border border-slate-200 border-l-4 ${subj.accentBorder} bg-white p-5 shadow-xs transition-all duration-150 hover:border-slate-300 hover:shadow-sm`}
               >
                 <div>
-                  <div className="flex items-baseline justify-between">
-                    <h2 className="font-heading text-xl font-bold text-slate-900">
+                  <div className="flex items-start justify-between gap-2">
+                    <h2 className="font-heading text-base font-bold text-slate-900">
                       {subj.name}
                     </h2>
-                    <span className="text-xs font-medium text-slate-500">
+                    <span
+                      className={`shrink-0 rounded px-2 py-0.5 text-xs font-semibold ${subj.badgeBg} ${subj.badgeText}`}
+                    >
                       {subj.years}
                     </span>
                   </div>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
                     {subj.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs text-slate-400">
-                    {subj.paperCount} exam papers
-                  </span>
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-900 transition-colors">
-                    Select year
-                  </span>
+                <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-3.5">
+                  <div className="flex items-center gap-2 text-xs text-slate-400">
+                    <span>
+                      {subj.paperCount} paper{subj.paperCount > 1 ? "s" : ""}
+                    </span>
+                  </div>
+                  <div
+                    className={`flex items-center gap-1 text-xs font-semibold ${subj.badgeText} transition-all group-hover:gap-1.5`}
+                  >
+                    Browse papers
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </div>
                 </div>
               </Link>
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Bottom hint */}
+        <p className="mt-8 text-center text-xs text-slate-400">
+          All past papers include official WAEC marking guidelines and instant AI curriculum explanations.
+        </p>
       </div>
     </main>
   );

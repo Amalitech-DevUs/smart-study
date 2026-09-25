@@ -71,7 +71,7 @@ export function NotificationCenter() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 bg-slate-800/80 text-slate-300 transition-all hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-400/30 active:scale-95"
+        className="relative flex h-9 w-9 items-center justify-center border border-slate-700 bg-slate-800/80 text-slate-300 transition-all hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-400/30 active:scale-95"
         aria-label="View notifications"
         aria-expanded={isOpen}
       >

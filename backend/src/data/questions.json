@@ -516,7 +516,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Given that N = {x : x is a factor of 18} and M = {x : x is a multiple of 12}, find N intersect M.",
     "options": [
       "{1, 2, 3, 6}",
@@ -533,7 +533,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Express 4382.93 in standard form.",
     "options": [
       "438293 x 10^4",
@@ -550,7 +550,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Which property of arithmetic is used in a(x + y) = ax + ay?",
     "options": [
       "Associative",
@@ -567,7 +567,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Subtract (7x - 3) from (5 - 3x).",
     "options": [
       "10x - 8",
@@ -584,7 +584,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "The cost of 12 note books is GHS 54.84. Find the cost of one note book.",
     "options": [
       "GHS 5.57",
@@ -601,7 +601,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Which of the following inequalities is represented on the number line? (Number line shows an open circle at -2 and a closed circle at 2, shaded between.)",
     "options": [
       "-2 > y > 2",
@@ -618,7 +618,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: (2ab^2)^2 x 3a^3b.",
     "options": [
       "6a^4b^5",
@@ -635,7 +635,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Which of the following polygons does not have a line of symmetry?",
     "options": [
       "Kite",
@@ -652,7 +652,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "A trader sold a radio set for GHS 72.00 making a profit of 8%. Find, correct to the nearest Ghana cedi, the cost of the radio set.",
     "options": [
       "GHS 66.00",
@@ -669,7 +669,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Vera is 11 years old and her brother is 9 years old. They shared 60 oranges in the ratio of their ages. How many more oranges does Vera get?",
     "options": [
       "6",
@@ -686,7 +686,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If (x - 3)^2 = 16, find the positive value of x.",
     "options": [
       "1",
@@ -703,7 +703,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "Find the image of the point (-2, 3) under a reflection in the y-axis.",
     "options": [
       "(2, -3)",
@@ -720,7 +720,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "What fraction of 3 weeks is 18 days?",
     "options": [
       "1/6",
@@ -737,7 +737,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "What is the median of the following numbers: 4, 16, 13, 18, 3, 20, 6, 7, 15, 2, 10, 12?",
     "options": [
       "7",
@@ -754,7 +754,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Use the diagram to answer Questions 17 and 18 (isosceles triangle with base angles x and 56 degrees, apex angle y). Find the value of x.",
     "options": [
       "68 degrees",
@@ -771,7 +771,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Use the diagram to answer Questions 17 and 18 (isosceles triangle with base angles x and 56 degrees, apex angle y). Find the value of y.",
     "options": [
       "68 degrees",
@@ -788,7 +788,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "A car used 8 hours to travel from town A to town B at a speed of 18 km/h. Find the distance between the two towns.",
     "options": [
       "22.5 km",
@@ -805,7 +805,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "The pie chart shows the household budget of a family: Food 22%, Rent 28%, Others 16%, Entertainment 5%, Savings 3%, Clothing 11%, Insurance and Taxes (remainder). Find the angle for Insurance and Taxes.",
     "options": [
       "45 degrees",
@@ -822,7 +822,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "The pie chart shows the household budget of a family (Clothing 11%). If the family's income was GHS 40,000.00, how much was spent on clothing?",
     "options": [
       "GHS 1,600.00",
@@ -839,7 +839,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "Two sides of a parallelogram are 5.8 m and 8.2 m long. Find its perimeter.",
     "options": [
       "11.0 m",
@@ -856,7 +856,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A man earned an interest of GHS 240.00 in 4 years at 20% per annum simple interest. Calculate the principal.",
     "options": [
       "GHS 300.00",
@@ -873,7 +873,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A labourer worked for 20.5 hours. If he was paid GHS 2.50 per hour, what was his total wage?",
     "options": [
       "GHS 51.00",
@@ -890,7 +890,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If 480 pupils in a school are boys representing 80% of the school's enrolment, find the total number of pupils in the school.",
     "options": [
       "384",
@@ -907,7 +907,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "What is the rule for the mapping? x: 1, 2, 3, 4 -> y: 2, 5, 10, 17.",
     "options": [
       "x -> 3x^2 - 1",
@@ -924,7 +924,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Find the value of t in the diagram (right triangle MNO, MN = 5 cm, MO = 13 cm hypotenuse, NO = t cm).",
     "options": [
       "12",
@@ -941,7 +941,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Add the following numbers: 2.4, 0.042, 1.12 and 0.342.",
     "options": [
       "2.184",
@@ -958,7 +958,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "There are 15 females in a debating club. If the ratio of females to males is 3:2, how many members are in the club?",
     "options": [
       "6",
@@ -975,7 +975,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If P(x, y) is the image of P1(4, -5) translated by (2, -3), find the values of x and y.",
     "options": [
       "(-6, 8)",
@@ -992,7 +992,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If 2y = 1 - 3x^2 + 4x, find the value of y when x = -1.",
     "options": [
       "-3",
@@ -1009,7 +1009,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Given that P = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, what is the probability of selecting a prime number from the set?",
     "options": [
       "2/3",
@@ -1026,7 +1026,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "Two sides of a rectangle are 10 cm and 6 cm. Calculate the area of a square with the same perimeter as that of the rectangle.",
     "options": [
       "16 cm^2",
@@ -1043,7 +1043,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Expand and simplify: (a - 2)(2a + 3).",
     "options": [
       "a^2 - a + 6",
@@ -1060,7 +1060,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: 2^2 x 2^7 / 2^4.",
     "options": [
       "2^-1",
@@ -1077,7 +1077,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "If P = {7, 11, 13} and Q = {9, 11, 13}, find P union Q.",
     "options": [
       "{7, 9, 11, 13}",
@@ -1094,7 +1094,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Hand trowel is used in farming to",
     "options": [
       "level soil surface.",
@@ -1111,7 +1111,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "An example of a simple lever which has its effort at the centre is",
     "options": [
       "a bottle opener.",
@@ -1128,7 +1128,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Soil Science and Agriculture",
     "prompt": "Which of the following practices is not a cultural practice in crop production?",
     "options": [
       "Nursing",
@@ -1145,7 +1145,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The most suitable tool for transplanting vegetable seedlings is the",
     "options": [
       "hoe.",
@@ -1162,7 +1162,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "An example of an inclined plane is a",
     "options": [
       "flat road surface.",
@@ -1179,7 +1179,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following statements about noble gases is correct? They are",
     "options": [
       "charged gases.",
@@ -1196,7 +1196,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Diversity of Matter",
     "prompt": "Oxygen gas is represented by the chemical symbol O2. This symbol represents two",
     "options": [
       "molecules of oxygen.",
@@ -1213,7 +1213,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Mosquitoes cannot breed in a",
     "options": [
       "pool.",
@@ -1230,7 +1230,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The transistor in an electronic device is used\nI. as a switch\nII. for amplifying alternating signals\nIII. in preventing overheating in electric irons",
     "options": [
       "I only",
@@ -1247,7 +1247,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The bottom of a pool of water appears closer to the surface than it is. Which of the following properties accounts for this observation?",
     "options": [
       "Reflection",
@@ -1264,7 +1264,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Energy and Energy Systems",
     "prompt": "The force that results when a comb is rubbed through dry hair is",
     "options": [
       "magnetic force.",
@@ -1281,7 +1281,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following types of human teeth is used for biting food?",
     "options": [
       "Incisors",
@@ -1298,7 +1298,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Diversity of Matter",
     "prompt": "The gas evolved when a small piece of sodium is dropped into a beaker containing water is",
     "options": [
       "carbon dioxide.",
@@ -1315,7 +1315,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "A student who was accidentally trapped in a cupboard died because",
     "options": [
       "only nitrogen was left in the cupboard.",
@@ -1332,7 +1332,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Energy and Energy Systems",
     "prompt": "The energy transformation that takes place in electric pressing iron is",
     "options": [
       "electrical energy -> potential energy.",
@@ -1349,7 +1349,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Diversity of Matter",
     "prompt": "The combining powers of sodium and oxygen atoms are 1 and 2 respectively. The chemical formula of a stable compound formed between them is",
     "options": [
       "NaO",
@@ -1366,7 +1366,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following methods are used in making magnets?\nI. Induction\nII. Stroking\nIII. Hitting",
     "options": [
       "I and II only",
@@ -1383,7 +1383,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The hardest part of the tooth is the",
     "options": [
       "enamel.",
@@ -1400,7 +1400,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Diversity of Matter",
     "prompt": "Which of the following substances contains natural acid?",
     "options": [
       "Vinegar",
@@ -1417,7 +1417,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The chemical component of milk of magnesia is",
     "options": [
       "calcium hydroxide.",
@@ -1434,7 +1434,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following foods contains the greatest amount of protein?",
     "options": [
       "Cheese",
@@ -1451,7 +1451,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Diversity of Matter",
     "prompt": "Two atoms of the same element are represented as X (mass number 12, atomic number 6) and X (mass number 14, atomic number 6). They differ by their",
     "options": [
       "electron numbers.",
@@ -1468,7 +1468,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Energy and Energy Systems",
     "prompt": "The force that opposes motion is",
     "options": [
       "magnetic force.",
@@ -1485,7 +1485,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Soil Science and Agriculture",
     "prompt": "In order to maintain soil fertility, a farmer should not practice",
     "options": [
       "crop rotation.",
@@ -1502,7 +1502,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Energy and Energy Systems",
     "prompt": "The ways of conserving electrical energy include\nI. putting off electrical appliances when not in use\nII. ironing clothes one at a time\nIII. ironing clothes in bulk",
     "options": [
       "I only",
@@ -1519,7 +1519,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Soil Science and Agriculture",
     "prompt": "In which of the following systems does the farmer rely on animals in case of crop failure?",
     "options": [
       "Crop rotation",
@@ -1536,7 +1536,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The recommended floor space per bird in a poultry house is 0.6 m^2. Determine the number of layers that would occupy a poultry house of an area of 72 m^2.",
     "options": [
       "40",
@@ -1553,7 +1553,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Energy and Energy Systems",
     "prompt": "What is formed when the path of light rays is blocked by an opaque object?",
     "options": [
       "Echo",
@@ -1570,7 +1570,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Green plants have the ability to make their own food hence they are known as",
     "options": [
       "producers.",
@@ -1587,7 +1587,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following human activities maintains the balance of nature?",
     "options": [
       "Pollution",
@@ -1604,7 +1604,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following methods could conserve soil water on a farm?\nI. Adequate spacing\nII. Disease control\nIII. Cover cropping",
     "options": [
       "I and II only",
@@ -1621,7 +1621,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following planets are closer to the sun than the earth?",
     "options": [
       "Venus and Mars",
@@ -1638,7 +1638,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The primary consumer is the",
     "options": [
       "cassava.",
@@ -1655,7 +1655,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Diversity of Matter",
     "prompt": "The appropriate apparatus for the separation of a mixture of water and kerosene is",
     "options": [
       "separating funnel.",
@@ -1672,7 +1672,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "A hazardous substance that may be emitted from car exhaust fumes is",
     "options": [
       "CO2",
@@ -1689,7 +1689,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The best method of preventing teenage pregnancy is to",
     "options": [
       "use a pill.",
@@ -1706,7 +1706,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The linear sequence of feeding relationship among living things is called",
     "options": [
       "food web.",
@@ -1723,7 +1723,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Cycles and Plant Science",
     "prompt": "Which of the following statements about photosynthesis is correct?",
     "options": [
       "It occurs in the presence of light energy.",
@@ -1740,7 +1740,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "The stage of development between childhood and adulthood in humans is known as",
     "options": [
       "adolescence.",
@@ -1757,7 +1757,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Systems and Human Body",
     "prompt": "Which of the following statements is true of anions? They contain",
     "options": [
       "more protons than neutrons.",
@@ -1774,7 +1774,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following physical changes is a characteristic of adolescent males?",
     "options": [
       "Breaking of voices",
@@ -1791,7 +1791,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana's high indebtedness to foreign countries can be reduced by",
     "options": [
       "Ensuring good neighborliness",
@@ -1808,7 +1808,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following officials is not elected?",
     "options": [
       "Assembly man",
@@ -1825,7 +1825,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "One way of improving the economy which Ghana inherited from colonization is",
     "options": [
       "Forming consumer cooperative societies",
@@ -1842,7 +1842,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One factor not likely to bring about cultural change in society is",
     "options": [
       "Formal education",
@@ -1859,7 +1859,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Akans are said to have migrated from",
     "options": [
       "South-Western Nigeria",
@@ -1876,7 +1876,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "If the time in town (A) on longitude 20 degreesE is 9:00 am; what will be the time in town B longitude 80 degreesE?",
     "options": [
       "1:00 pm",
@@ -1893,7 +1893,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "On which date is the Sun vertically overhead on the Tropic of Cancer?",
     "options": [
       "21st January",
@@ -1910,7 +1910,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following factors is a cause of unemployment in Ghana?",
     "options": [
       "Polygamy",
@@ -1927,7 +1927,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A layout in which the houses are not orderly arranged is likely to",
     "options": [
       "Produce rainfall disasters",
@@ -1944,7 +1944,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Conflicts in the community can best be prevented when there is",
     "options": [
       "Love for one another",
@@ -1961,7 +1961,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One major reason for Ghana's cooperation with international bodies is that, she",
     "options": [
       "She has the resources to help in times of need",
@@ -1978,7 +1978,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following mostly influences the type of facility provided by District Assemblies?",
     "options": [
       "The Central Government",
@@ -1995,7 +1995,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Life and property are protected in the community by the",
     "options": [
       "Chiefs and his elders",
@@ -2012,7 +2012,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Entrepreneurs in need of large capital can come together to form a",
     "options": [
       "Joint stock company",
@@ -2029,7 +2029,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Cultural practices that create health problems must be",
     "options": [
       "Reduced",
@@ -2046,7 +2046,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following development is not associated with Sir. Gordon Guggisberg?",
     "options": [
       "Construction of harbors",
@@ -2063,7 +2063,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana can improve on her political stability by",
     "options": [
       "Organizing public education on drug",
@@ -2080,7 +2080,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Adolescents who involves themselves in drug and alcohol abuse; risk becoming",
     "options": [
       "Mentally ill",
@@ -2097,7 +2097,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following factors is usually available in the rural areas in Ghana?",
     "options": [
       "Skilled labor",
@@ -2114,7 +2114,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following resources must be increasingly used for the rapid development of the nation?",
     "options": [
       "Natural resources",
@@ -2131,7 +2131,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Governance becomes more efficient when the Executive and the Legislature",
     "options": [
       "Perform each other's function",
@@ -2148,7 +2148,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following can promote nation building in Ghana?",
     "options": [
       "Democratic living at all places",
@@ -2165,7 +2165,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One of the reasons for the signing of the Bond of 1844 was to",
     "options": [
       "Introduce a better court system",
@@ -2182,7 +2182,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is a sketch? A town drawn",
     "options": [
       "with arrangement of houses",
@@ -2199,7 +2199,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following measures cannot provide integration among Ghanaians?",
     "options": [
       "Inter-ethnic marriages",
@@ -2216,7 +2216,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "When one behaves in an honest and just manner one performs his/her",
     "options": [
       "civic rights",
@@ -2233,7 +2233,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One factor Ghana needs to consider before accepting any co-operation agreement is",
     "options": [
       "fairness",
@@ -2250,7 +2250,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Life in the rural areas can be improved through the setting up of",
     "options": [
       "insurance companies",
@@ -2267,7 +2267,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In order to fully develop our natural resources, we must",
     "options": [
       "bring in experts from abroad",
@@ -2284,7 +2284,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is an effect of rapid population growth in Ghana?",
     "options": [
       "High dependency burden",
@@ -2301,7 +2301,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "Which of the following activities does not cause air pollution?",
     "options": [
       "Increase of industrial fumes",
@@ -2318,7 +2318,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following conditions is not an effect of irresponsible adolescent behaviour?",
     "options": [
       "Increase in productive workforce",
@@ -2335,7 +2335,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following oceans lies between Africa and America?",
     "options": [
       "Arctic",
@@ -2352,7 +2352,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The risk bearing of a business organization falls on the",
     "options": [
       "Customers",
@@ -2369,7 +2369,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A bilateral co-operation of countries can best be described as",
     "options": [
       "several countries coming together to pursue a common goal",
@@ -2386,7 +2386,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The following factors can increase productivity in Ghana except",
     "options": [
       "positive work ethics",
@@ -2403,7 +2403,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One disadvantage of Sole proprietorship form of business in Ghana is",
     "options": [
       "inadequate capital for expansion",
@@ -2420,7 +2420,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is not a characteristic of a disciplined youth?",
     "options": [
       "Does not accept to work in the country",
@@ -2437,7 +2437,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The major problem of District Assemblies in Ghana is their inability to",
     "options": [
       "generate more funds for development",
@@ -6024,7 +6024,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "If A = {1, 3, 5, 7, 9, 11, 13, 15} and B = {3, 6, 9, 12, 15}, find n(A intersect B).",
     "options": [
       "3",
@@ -6041,7 +6041,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If P = {4, 8, 12, 16, 20} and Q = {16, 4, 12, k, 20} and P = Q, find the value of k.",
     "options": [
       "20",
@@ -6058,7 +6058,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Express 7352.4658 correct to three significant figures.",
     "options": [
       "7352465.8",
@@ -6075,7 +6075,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the difference between the values of (2d)^2 and 2d^2, when d = 3.",
     "options": [
       "0",
@@ -6092,7 +6092,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the image of P(-3, 5) when rotated through 360 degrees about the origin.",
     "options": [
       "(5, -3)",
@@ -6109,7 +6109,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "The image of P(10, -3) when translated by the vector r is P'(4, 5). Find r.",
     "options": [
       "(14, 2)",
@@ -6126,7 +6126,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the next two terms of the sequence: 2, 5, 10, 17, ....., ......",
     "options": [
       "24, 35",
@@ -6143,7 +6143,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Express 134.78 correct to the nearest tenth.",
     "options": [
       "130.0",
@@ -6160,7 +6160,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Kofi and Ama shared an amount of GHS 3,000.00 in the ratio 2:3. Find the amount received by Kofi.",
     "options": [
       "GHS 1,000.00",
@@ -6177,7 +6177,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If 2x - 1 = 5, find the value of x.",
     "options": [
       "3",
@@ -6194,7 +6194,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Solve: (1 - x)/4 < 3.",
     "options": [
       "x < -11",
@@ -6211,7 +6211,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "The area of a rectangle is 18 cm^2. If one of its sides is 2 cm long, find its perimeter.",
     "options": [
       "18 cm",
@@ -6228,7 +6228,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "A bag contains 5 red and 7 black balls of the same size. What is the probability of picking a black ball?",
     "options": [
       "5/7",
@@ -6245,7 +6245,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "On a map, 1/3 cm represents 5 km. If two towns A and B are 18 cm apart on the map, what is the actual distance between them?",
     "options": [
       "27 km",
@@ -6262,7 +6262,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given the mapping: x: 1, 2, 3, 4, 5 maps to y: 5, 9, 13, 17, 21. What is the rule for the mapping?",
     "options": [
       "y = x + 4",
@@ -6279,7 +6279,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given the mapping: x: 1, 2, 3, 4, 5 maps to y: 5, 9, 13, 17, 21 (rule y = 4x + 1). Find x when y = 37 for this mapping.",
     "options": [
       "6",
@@ -6296,7 +6296,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Esi bought a television set for GHS 1,500.00. If she sold it at a profit of 20%, find the selling price.",
     "options": [
       "GHS 1,200.00",
@@ -6313,7 +6313,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Make h the subject of the relation V = pi*r^2*h.",
     "options": [
       "h = V/(pi*r^2)",
@@ -6330,7 +6330,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Find the simple interest on GHS 600.00 which was saved for 8 months at 5% per annum.",
     "options": [
       "GHS 20.00",
@@ -6347,7 +6347,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Priscila's age is k years while Mary's age is b years. If Mary is 15 years older than Priscila, which of the following statements is correct?",
     "options": [
       "2k + b = 15",
@@ -6364,7 +6364,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "What is the Highest Common Factor (HCF) of 24, 32 and 64?",
     "options": [
       "4",
@@ -6381,7 +6381,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Factorize: 3ax + 6a - x - 2.",
     "options": [
       "(3a + 1)(x + 2)",
@@ -6398,7 +6398,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "A car covered a distance of 150 km at a speed of 18 km/h. Find the time taken.",
     "options": [
       "7 hours 33 minutes",
@@ -6415,7 +6415,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Divide 0.5445 by 0.09.",
     "options": [
       "5.05",
@@ -6432,7 +6432,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "If the median of the numbers 9, 10, 12, x, 20 and 25 is 14, find the value of x.",
     "options": [
       "14",
@@ -6449,7 +6449,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Expand (7r - 5)(3r + 4).",
     "options": [
       "21r^2 + 13r - 20",
@@ -6466,7 +6466,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "The area of a trapezium is 36 cm^2. If the parallel sides are 10.5 cm and 9.5 cm, calculate the distance between the two parallel sides.",
     "options": [
       "1.0 cm",
@@ -6483,7 +6483,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If the average of 5, 6, 7, x and 8 is 8, find the value of x.",
     "options": [
       "12",
@@ -6500,7 +6500,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "An amount of GHS 375,000.00 was needed to build a clinic for a community of twelve towns. Each community contributed GHS 25,000.00. If the District Assembly also contributed GHS 30,500.00, how much more is needed to build the clinic?",
     "options": [
       "GHS 44,500.00",
@@ -6517,7 +6517,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Linear Equations and Inequalities",
     "prompt": "Which property of arithmetic is shown in the equation (6 + x) + 5 = 6 + (x + 5)?",
     "options": [
       "Commutative",
@@ -6534,7 +6534,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A trader bought 100 tubers of yam for GHS n each. All the yams were sold at GHS m each. Find the profit.",
     "options": [
       "GHS 100(m - n)",
@@ -6551,7 +6551,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A box can take 12 pencils. If 156 pencils are packed into such boxes, how many boxes will be fully packed?",
     "options": [
       "10",
@@ -6568,7 +6568,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given that x = 4 and y = 7, evaluate 2xy + 3(x + y).",
     "options": [
       "79",
@@ -6585,7 +6585,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Given that x = 8, what type of angle is (9x + 8) degrees?",
     "options": [
       "Straight angle",
@@ -6602,7 +6602,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Express 0.725 as a fraction in its lowest term.",
     "options": [
       "19/40",
@@ -6619,7 +6619,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify 3(5a^2 + 2c) - 2a(1 - 3a) - 6c.",
     "options": [
       "21a^2 - 2a - 6c",
@@ -6636,7 +6636,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Express 108 as a product of prime factors.",
     "options": [
       "2^2 x 3^3",
@@ -6653,7 +6653,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A football match starts at 2.20 p.m. and lasts for 1 hour 50 minutes. At what time will the game end?",
     "options": [
       "3.10 p.m.",
@@ -6670,7 +6670,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Which of the following is not a quadrilateral?",
     "options": [
       "Rhombus",
@@ -6687,7 +6687,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Solve: 5x - (7x - 3) <= 9.",
     "options": [
       "x >= -3",
@@ -6704,7 +6704,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given that PQ = (-3, 8), find QP.",
     "options": [
       "(-3, 8)",
@@ -6721,7 +6721,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The point S(4, 3) is reflected in the y-axis. Find the coordinates of the image of S.",
     "options": [
       "(-3,4)",
@@ -6738,7 +6738,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "The longest chord of a circle is the",
     "options": [
       "segment.",
@@ -6755,7 +6755,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Factorize completely: xy - xm - my + m^2.",
     "options": [
       "(m - y)(x - m)",
@@ -6772,7 +6772,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If n/100 = 10.5, find the value of n.",
     "options": [
       "0.0105",
@@ -6789,7 +6789,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The rule of a mapping is x -> 2x^2 - 1. What number does 2 map to?",
     "options": [
       "9",
@@ -6806,7 +6806,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If x = (2a + b - 4ac) / 2, find x when a = 2, b = -4 and c = -2.",
     "options": [
       "0",
@@ -6823,7 +6823,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Arrange the following fractions from the lowest to the highest: 3/5, 1/4, 2/3.",
     "options": [
       "1/4, 3/5, 2/3",
@@ -6840,7 +6840,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A shop is rented at GHS 9.00 per month. How much money is paid in 1 1/2 years?",
     "options": [
       "GHS 162.00",
@@ -6857,7 +6857,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A certain number is subtracted from 12 and the result is multiplied by 3. If the answer is 21, find the number.",
     "options": [
       "6",
@@ -6874,7 +6874,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "In the diagram, AB is parallel to DE, angle ABC = 81 degrees and angle DCE = 20 degrees. What is the value of x?",
     "options": [
       "20 degrees",
@@ -6891,7 +6891,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "In the diagram, AB is parallel to DE, angle ABC = 81 degrees and angle DCE = 20 degrees. Find the value of y.",
     "options": [
       "20 degrees",
@@ -6908,7 +6908,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Adjoa travelled 12 km due north and 5 km due east. How far was she from her starting point?",
     "options": [
       "60 km",
@@ -6925,7 +6925,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Which of the following is the largest set?",
     "options": [
       "{Whole numbers}",
@@ -6942,7 +6942,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Write 1930.54 in standard form.",
     "options": [
       "1.93054 x 10^3",
@@ -6959,7 +6959,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Expand: (2a - b)(a - b).",
     "options": [
       "2a^2 + 3ab - b^2",
@@ -6976,7 +6976,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The stem and leaf plot shows the weights (kg) of cocoa bags weighed in a week. Stem 4: 0, 5, 7, 9. Stem 5: 1, 3, 4, 5, 7, 8. Stem 6: 0, 2, 3, 4, 4, 4, 4, 5, 6, 8. Stem 7: 1, 2, 3, 4, 5, 8, 8, 9. Stem 8: 2, 3, 5, 6, 9. Stem 9: 4, 5. How many cocoa bags were weighed in the week?",
     "options": [
       "35",
@@ -6993,7 +6993,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "The stem and leaf plot shows the weights (kg) of cocoa bags weighed in a week. Stem 4: 0, 5, 7, 9. Stem 5: 1, 3, 4, 5, 7, 8. Stem 6: 0, 2, 3, 4, 4, 4, 4, 5, 6, 8. Stem 7: 1, 2, 3, 4, 5, 8, 8, 9. Stem 8: 2, 3, 5, 6, 9. Stem 9: 4, 5. What is the median weight of the cocoa bags?",
     "options": [
       "62 kg",
@@ -7010,7 +7010,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The stem and leaf plot shows the weights (kg) of cocoa bags weighed in a week. Stem 4: 0, 5, 7, 9. Stem 5: 1, 3, 4, 5, 7, 8. Stem 6: 0, 2, 3, 4, 4, 4, 4, 5, 6, 8. Stem 7: 1, 2, 3, 4, 5, 8, 8, 9. Stem 8: 2, 3, 5, 6, 9. Stem 9: 4, 5. What is the modal weight of the cocoa bags?",
     "options": [
       "68 kg",
@@ -7027,7 +7027,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If a = (2, -3) and b = (-2, 3), find a + b.",
     "options": [
       "(0, 0)",
@@ -7044,7 +7044,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "For what value of x is 3^x = 81?",
     "options": [
       "2",
@@ -7061,7 +7061,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: -15 - (-20) + (-10).",
     "options": [
       "-45",
@@ -7078,7 +7078,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Express 3/8 as a decimal fraction.",
     "options": [
       "0.429",
@@ -7095,7 +7095,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "What is the length of the side of a square of area 225 cm^2?",
     "options": [
       "15.00 cm",
@@ -7112,7 +7112,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "What is the probability that a number greater than 5 shows up when a die is thrown?",
     "options": [
       "5/6",
@@ -7129,7 +7129,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given that 117(12+18) = 117(15+k), find the value of k.",
     "options": [
       "15",
@@ -7146,7 +7146,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A mother has GHS 5.00 and gives each of her 3 children GHS 1.50 as pocket money. How much is left for her?",
     "options": [
       "GHS 3.50",
@@ -7163,7 +7163,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "A car travels 36 kilometres in an hour. Find its speed in metres per second.",
     "options": [
       "10 m/s",
@@ -7180,7 +7180,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Peter had GHS 200.00 and spent GHS 83.00. What percentage of the money is left?",
     "options": [
       "29.06%",
@@ -7197,7 +7197,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "If a trader made a profit of 10% in selling a shirt for GHS 44.00, find the cost price.",
     "options": [
       "GHS 39.60",
@@ -7214,7 +7214,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Express 15 : 12 in the form 1 : n.",
     "options": [
       "1 : 0.8",
@@ -7231,7 +7231,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "The ratio of farmers to children in a village is 13 : 11. If there were 312 farmers in the village, how many children were there?",
     "options": [
       "264",
@@ -7248,7 +7248,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "The volume of a cylinder is 40 x pi cm^3. If the height of the cylinder is 10 cm, find the base radius.",
     "options": [
       "1 cm",
@@ -7265,7 +7265,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Write 0.01723 in standard form.",
     "options": [
       "0.01723 x 10^-2",
@@ -7282,7 +7282,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "What is the value of 3x^2 + 2x - 7 when x = -3?",
     "options": [
       "-40",
@@ -7299,7 +7299,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the image of the point S(-2,2) when it is reflected in the y-axis.",
     "options": [
       "(2,-2)",
@@ -7316,7 +7316,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "What is the actual bearing of S25 degrees E?",
     "options": [
       "035 degrees",
@@ -7333,7 +7333,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Expand (x - 2)(x + 4).",
     "options": [
       "x^2 + 2x - 8",
@@ -7350,7 +7350,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "If n(E) = 15, n(F) = 20 and n(E intersect F) = 6, find n(E union F).",
     "options": [
       "21",
@@ -7367,7 +7367,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Tony shared 2/3 of his plot of land equally among his three sons. What fraction of the plot did each get?",
     "options": [
       "2/9",
@@ -7384,7 +7384,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Araba and Ama share 20 oranges in such a way that Ama receives 12 oranges. Find the ratio of Araba's share to that of Ama.",
     "options": [
       "2:5",
@@ -7401,7 +7401,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Solve: 3(x - 2) - x/3 + 6 > 0.",
     "options": [
       "x < 0",
@@ -7418,7 +7418,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The stem and leaf plot shows the marks scored by students in a French test. Stem 2: 0, 2, 5, 7, 8. Stem 3: 2, 7, 9. Stem 4: 3, 5, 5, 5. Stem 5: 4, 6, 6, 8. Stem 6: 3, 5, 7. Stem 7: 0, 6. What is the modal mark scored?",
     "options": [
       "35",
@@ -7435,7 +7435,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The stem and leaf plot shows the marks scored by students in a French test. Stem 2: 0, 2, 5, 7, 8. Stem 3: 2, 7, 9. Stem 4: 3, 5, 5, 5. Stem 5: 4, 6, 6, 8. Stem 6: 3, 5, 7. Stem 7: 0, 6. How many students took the test?",
     "options": [
       "20",
@@ -7452,7 +7452,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "The stem and leaf plot shows the marks scored by students in a French test. Stem 2: 0, 2, 5, 7, 8. Stem 3: 2, 7, 9. Stem 4: 3, 5, 5, 5. Stem 5: 4, 6, 6, 8. Stem 6: 3, 5, 7. Stem 7: 0, 6. What is the median mark scored?",
     "options": [
       "45",
@@ -7469,7 +7469,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Which of the following is an even prime number?",
     "options": [
       "2",
@@ -7486,7 +7486,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If 2n - 5 = n/2, find the value of n.",
     "options": [
       "1/3",
@@ -7503,7 +7503,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Find the simple interest on GHS 350.00 for 4 years at 5% per annum.",
     "options": [
       "GHS 20.00",
@@ -7520,7 +7520,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A straight line passes through the points P(-5,-3) and Q(-4,-7). Find the gradient of the line PQ.",
     "options": [
       "-4",
@@ -7537,7 +7537,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given that 1 kilometre = 5/8 mile, what is 240 miles in kilometres?",
     "options": [
       "150 km",
@@ -7554,7 +7554,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "John walks for 22 1/2 minutes and runs for 7 1/2 minutes to school. What percentage of the total time does he spend walking?",
     "options": [
       "25%",
@@ -7571,7 +7571,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Kobby is 5 years older than his brother. If Kobby is 13 years old, how old is his brother?",
     "options": [
       "7 years",
@@ -7588,7 +7588,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given the mapping: x: 1, 2, 3, 4, 5 maps to y: 4, 2, 0, -2, -4. Find the rule for the mapping.",
     "options": [
       "y = 2x + 2",
@@ -7605,7 +7605,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Arrange the following numbers in ascending order: 9/5, 1.88, 15/8.",
     "options": [
       "9/5, 15/8, 1.88",
@@ -7622,7 +7622,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: (x - 1)^2 - 1.",
     "options": [
       "x^2 - 2x",
@@ -7639,7 +7639,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "A bag contains 20 oranges of which 6 are bad. Find the probability of picking a good orange from the bag.",
     "options": [
       "1/20",
@@ -7656,7 +7656,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "In the diagram, AB is parallel to CD. Angle AGE = 80 degrees, angle CFG = 5k degrees and angle CFE = r degrees, where G lies on AB, F lies on CD, and E is the apex of triangle AGE below the parallel lines, with G, F and E in a straight line. What is the value of r?",
     "options": [
       "16 degrees",
@@ -7673,7 +7673,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "In the diagram, AB is parallel to CD. Angle AGE = 80 degrees, angle CFG = 5k degrees and angle CFE = r degrees, where G lies on AB, F lies on CD, and E is the apex of triangle AGE below the parallel lines, with G, F and E in a straight line. Find the value of k.",
     "options": [
       "16 degrees",
@@ -7690,7 +7690,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: (1 1/2 - 5/6) x 9/10.",
     "options": [
       "1/10",
@@ -7707,7 +7707,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Factorize 2pq + 6p - 6q - 18.",
     "options": [
       "2(p - 3)(q - 3)",
@@ -7724,7 +7724,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "The diagram is a square of side 2 cm in which is inscribed a circle with center O. Find the area of the shaded portion (the part of the square outside the circle). Take pi = 22/7.",
     "options": [
       "0.86 cm^2",
@@ -7741,7 +7741,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "The diagram is a square of side 2 cm in which is inscribed a circle with center O. Find the area of the circle. Take pi = 22/7.",
     "options": [
       "3.14 cm^2",
@@ -7758,7 +7758,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "A man can take 12 hours to do a piece of work. How long will it take 6 men working at the same rate to do the work?",
     "options": [
       "6 hours",
@@ -7775,7 +7775,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Convert 12.03 metres to centimetres.",
     "options": [
       "0.1203 cm",
@@ -7792,7 +7792,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "A quadrilateral with one pair of opposite sides parallel is called",
     "options": [
       "kite.",
@@ -7809,7 +7809,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A book was sold for GHS 48.00 at a profit of 20%. Find the cost price.",
     "options": [
       "GHS 38.40",
@@ -7826,7 +7826,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "Find the vector which translates the point (2, 6) to (5, 4).",
     "options": [
       "(-3, 2)",
@@ -7843,7 +7843,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Cement and sand were mixed in the ratio 2:5. How many kilograms of cement was contained in the 35 kg of the mixture?",
     "options": [
       "7 kg",
@@ -7860,7 +7860,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Which of the following is not an integer?",
     "options": [
       "0",
@@ -7877,7 +7877,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: 5^-3 x 5^7 x 5^-4.",
     "options": [
       "0",
@@ -7894,7 +7894,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "The height of a cylinder is 5 cm and the radius 7 cm. Find the volume of the cylinder. Take pi = 22/7.",
     "options": [
       "770 cm^3",
@@ -7911,7 +7911,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If q = (-2, 3) and r = (3, -2), find q - r.",
     "options": [
       "(-5, 5)",
@@ -7928,7 +7928,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Two brands of air conditioners S and T cost GHS 3,000.00 and GHS 4,000.00 respectively. A company budgeted GHS 20,000.00 to buy air conditioners. If the company bought 5 units of brand S instead of brand T, how much did it save?",
     "options": [
       "GHS 1,000.00",
@@ -7945,7 +7945,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Zalia and Amina shared an amount of money in the ratio 2 : 5. If Amina had GHS 150.00 more than Zalia, how much did they share?",
     "options": [
       "GHS 100.00",
@@ -7962,7 +7962,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Which of the following is an example of quantitative data?",
     "options": [
       "Colour",
@@ -7979,7 +7979,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "In the Venn diagram, U is the universal set. P is a circle containing elements a, b, c, d, e. Q is a smaller circle inside P containing elements c, d, e. Elements f, g, h lie in U but outside both P and Q. Find P intersect Q.",
     "options": [
       "{c, d, e}",
@@ -7996,7 +7996,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "In the Venn diagram, U is the universal set. P is a circle containing elements a, b, c, d, e. Q is a smaller circle inside P containing elements c, d, e. Elements f, g, h lie in U but outside both P and Q. How many members are in set Q?",
     "options": [
       "2",
@@ -8013,7 +8013,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Amadu walked to a point such that he is always the same distance from two villages P and Q.",
     "options": [
       "An arc passing through line PQ",
@@ -8030,7 +8030,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A bag of rice weighs 2 kg. If the empty bag weighs 150 g, find the weight of the rice.",
     "options": [
       "0.175 kg",
@@ -8047,7 +8047,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Andrews drew three lines such that the length of the first one is 10 cm, the second is 15 cm longer than the first one and the third is 9 cm less than the second. Find the length of the third line.",
     "options": [
       "4 cm",
@@ -8064,7 +8064,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Find the truth set of 2x - 4 <= 6 + 3x.",
     "options": [
       "{x : x < 2}",
@@ -8081,7 +8081,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The locus of points equidistant from a fixed point is called a",
     "options": [
       "chord",
@@ -8098,7 +8098,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Evaluate: sqrt(75) + sqrt(18) - sqrt(27).",
     "options": [
       "2sqrt(3) - 3sqrt(2)",
@@ -8115,7 +8115,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "In the diagram, line PQ is parallel to line ST. A transversal runs from P down to S, bending at a point between the two lines. The angle between PQ and the transversal at P is 35 degrees, and the angle between ST and the transversal at S is 140 degrees, both measured on the same side. The angle marked x is at the bend, between the two segments of the transversal. Find the value of the angle marked x.",
     "options": [
       "140 degrees",
@@ -8132,7 +8132,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The diagram shows the graph of a linear relation of the form y = mx + c. The line passes through approximately (-1, 5) and (4, -5). Use the graph to answer the question below. Find the slope of the relation.",
     "options": [
       "-2",
@@ -8149,7 +8149,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Linear Equations and Inequalities",
     "prompt": "The diagram shows the graph of a linear relation of the form y = mx + c. The line passes through approximately (-1, 5) and (4, -5). Use the graph to answer the question below. Find the equation of the relation.",
     "options": [
       "y = -2x + 3",
@@ -8166,7 +8166,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Araba is 3 years younger than her sister. If the sum of their ages is 17 years, find Araba's age.",
     "options": [
       "7 years",
@@ -8183,7 +8183,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A number of oranges are shared among 50 students and each got 15 oranges. If the same number of oranges are shared equally among 30 students, how many will each student get?",
     "options": [
       "13",
@@ -8200,7 +8200,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "If the bearing of Q from P is 120 degrees, find the bearing of P from Q.",
     "options": [
       "060 degrees",
@@ -8217,7 +8217,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given the vectors m = (5, -1) and n = (-4, 2), find 2m + n.",
     "options": [
       "(6, 0)",
@@ -8234,7 +8234,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: 27^(m+1) / 3^(m+2).",
     "options": [
       "3^(2m)",
@@ -8251,7 +8251,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "There are 15 white and 25 black identical balls in a box. If a ball is selected at random from the box, find the probability that it is white.",
     "options": [
       "1/25",
@@ -8268,7 +8268,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "The area of a rectangle is 18 cm^2. If the width is 2 cm, find its perimeter.",
     "options": [
       "18 cm",
@@ -8285,7 +8285,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Find the interest on GHS 400.00 for 2 years at 10% simple interest per annum.",
     "options": [
       "GHS 8.00",
@@ -8302,7 +8302,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "One of the factors of the expression 4m^2 + 12m - 8m - 24 is (4m - 8). Find the other factor.",
     "options": [
       "m - 3",
@@ -8319,7 +8319,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "An article which cost GHS 600.00 was sold at a discount of 10%. Find the selling price.",
     "options": [
       "GHS 60.00",
@@ -8336,7 +8336,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "The point P(-2, 3) is translated by the vector (-1, 3) to a point R. Find the coordinates of R.",
     "options": [
       "(6, -2)",
@@ -8353,7 +8353,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A frog leaps in such a way that its distance, in metres, from its starting position after each leap is given by 4, 7, 10, ... Find the distance from the starting position after the 10th leap.",
     "options": [
       "28",
@@ -8370,7 +8370,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A bus departed from Elmina at 9:15 pm and arrived in Accra at 2:45 am the next day. How long did the journey take?",
     "options": [
       "4 hours 20 minutes",
@@ -8387,7 +8387,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: 3x - 2(3 + 2x) + x(2x + 4).",
     "options": [
       "2x^2 + 11x - 6",
@@ -8404,7 +8404,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "In the diagram, triangle PQR has a right angle at R. Angle QPR = 30 degrees and QR = 5 cm. [Take sin 30 degrees = 1/2]. Find the length of PQ.",
     "options": [
       "2.5 cm",
@@ -8421,7 +8421,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "A fair coin and a fair die are rolled together once. Find the probability of obtaining a tail and an odd number.",
     "options": [
       "1/4",
@@ -8438,7 +8438,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If the gradient of a straight line is zero, then the line",
     "options": [
       "is vertical",
@@ -8455,7 +8455,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Madam Nancy wants to know which of the teachers in her school is liked best by most of the students. Which of the following methods is most suitable for collecting the data?",
     "options": [
       "Experiment",
@@ -8472,7 +8472,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Mensah packed 1,800 apples into a number of boxes. If each box contained 120 apples, how many boxes were fully packed?",
     "options": [
       "15",
@@ -8489,7 +8489,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "The cost of three items at a shop are GHS 72.00, GHS 1,105.00 and GHS 216.00. If a customer bought all the three items and received a change of GHS 107.00, how much did he initially give the shopkeeper?",
     "options": [
       "GHS 1,300.00",
@@ -8506,7 +8506,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the image of the point (-3, 5) when it is rotated through 360 degrees about the origin.",
     "options": [
       "(5, -3)",
@@ -8523,7 +8523,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A story book contains 50 pages. If a student reads 10 pages per hour, find the relationship between the number of unread pages (N) and time (t).",
     "options": [
       "N = 10t + 50",
@@ -8540,7 +8540,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "How long will the simple interest on GHS 550.00 at 12% per annum be GHS 132.00?",
     "options": [
       "1 year",
@@ -8557,7 +8557,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Expand and simplify: 2(3a + 1) - 3(4a - 3).",
     "options": [
       "11 - 5a",
@@ -8574,7 +8574,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "The area of a rectangular card is 15 cm^2. If each side of the card is enlarged by a scale factor of 3, find the area of the enlarged card.",
     "options": [
       "45 cm^2",
@@ -8591,7 +8591,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Factorize: 5ay - by + 15a - 3b.",
     "options": [
       "(y + 3)(5a - b)",
@@ -8608,7 +8608,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Mr Adu bought 400 bags of maize for his farm animals. If he used 120 bags to feed the animals, find the percentage of the maize left.",
     "options": [
       "70%",
@@ -8625,7 +8625,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A man spends GHS 560.00 out of his weekly wage of GHS 700.00 and saves the rest. What percentage did he save?",
     "options": [
       "10%",
@@ -8642,7 +8642,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Solve: 3(x - 5) > 15 - 4(8 - x).",
     "options": [
       "x < -32",
@@ -8659,7 +8659,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Esi made sales of 15 twenty cedi notes, 14 ten cedi notes and 15 two cedi notes. Find her total sales.",
     "options": [
       "GHS 305.00",
@@ -8676,7 +8676,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "When 0.24 is expressed in lowest terms as a fraction, the denominator is",
     "options": [
       "2",
@@ -8693,7 +8693,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "A rectangular container with dimensions 5 m x 3 m x 4 m is two-thirds full of water. Find the volume occupied by the water in the container.",
     "options": [
       "50 m^3",
@@ -8710,7 +8710,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Ama is three times as old as Kofi. The sum of their ages is 40. How old is Ama?",
     "options": [
       "10 years",
@@ -8727,7 +8727,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A point (-2, 3) is reflected in the x-axis. Find the image of the point.",
     "options": [
       "(-3, -2)",
@@ -8744,7 +8744,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A farmer feeds 20 goats with 500 kg of cassava. How many goats can be fed with 200 kg of cassava?",
     "options": [
       "2",
@@ -8761,7 +8761,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "In an examination, Abu answered nine questions in 2 hours. He spent 20 minutes on the first question and the same time on each of the remaining questions. How many minutes did he spend on each of the other questions?",
     "options": [
       "8.0 minutes",
@@ -8778,7 +8778,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "A trader sold half of a piece of cloth and used two-fifths of the remaining to sew a dress. What fraction of the cloth was left?",
     "options": [
       "1/10",
@@ -8795,7 +8795,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Solve: 2^x = 8 x 2^0.",
     "options": [
       "x = 3",
@@ -8812,7 +8812,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "A boy walked round a circular pond once. If the radius of the pond is 28 m, find the distance covered. [Take pi = 22/7]",
     "options": [
       "44 m",
@@ -8829,7 +8829,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Transformations and Vectors",
     "prompt": "The points M(1, 3) and N(4, 5) are in the number plane. Find the vector MN.",
     "options": [
       "(3, 2)",
@@ -8846,7 +8846,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the rule for the mapping: t = 1, 2, 3, 4, ...; corresponding values = 9, 20, 31, 42, ...",
     "options": [
       "t -> 10t - 1",
@@ -8863,7 +8863,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given that 0.03 x y = 2.4, find the value of y.",
     "options": [
       "0.08",
@@ -8880,7 +8880,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Two interior angles of a triangle are (3x - 10) degrees and (4x + 20) degrees. Find an expression for the third angle.",
     "options": [
       "(170 - 7x) degrees",
@@ -8897,7 +8897,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If a = (-2, 1) and b = (-5, -3), find 2a - b.",
     "options": [
       "(1, 5)",
@@ -8914,7 +8914,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "It costs a carpenter GHS 25.00 to make a chair. How much should it be sold to make a profit of 40%?",
     "options": [
       "GHS 15.00",
@@ -8931,7 +8931,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Ama has 4 one cedi notes and orders an ice cream for GHS 1.75 and two toffees at 50 GP each. How much does she have left?",
     "options": [
       "GHS 1.25",
@@ -8948,7 +8948,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A trader received a commission of 5% on goods sold at GHS 25,000.00. Find the commission.",
     "options": [
       "GHS 1,250.00",
@@ -8965,7 +8965,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Multiply (8s - 7) by (8s + 7).",
     "options": [
       "64s^2 + 49",
@@ -8982,7 +8982,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The population of a town is 56782. What is this number to three significant figures?",
     "options": [
       "567",
@@ -8999,7 +8999,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the largest value of these numbers: -1, 0, -6, -3.",
     "options": [
       "0",
@@ -9016,7 +9016,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "A box contains 10 green and 8 white balls of the same size. If a ball is selected at random from the box, what is the probability that it is green?",
     "options": [
       "1/10",
@@ -9033,7 +9033,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Describe the set M = {2, 3, 5, 7, 11, 13, 17, 19} in words.",
     "options": [
       "M = {odd numbers less than 20}",
@@ -9050,7 +9050,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "A survey shows that 28% of all the men in a village are vegetarian. What is the probability that a man selected at random from the village is a vegetarian?",
     "options": [
       "7/25",
@@ -9067,7 +9067,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Given that P = {4, 8, 12, 16, 20} and Q = {2, 4, 6, 8, 10}, find the product of the members of (P intersect Q).",
     "options": [
       "12",
@@ -9084,7 +9084,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "Anowa scored an average of 53 in Science and Mathematics. If she scored 50 and 60 in English Language and Social Studies respectively, find her mean score in all four subjects.",
     "options": [
       "57",
@@ -9101,7 +9101,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "What is the missing number in the sequence: -5, -2, 1, ..., 7?",
     "options": [
       "2",
@@ -9118,7 +9118,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Charles and Helen started a business with an amount of GHS 7,000.00. If their contributions were in the ratio 4:3 respectively, find Helen's contribution.",
     "options": [
       "GHS 2,500.00",
@@ -9135,7 +9135,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Arrange the following: 3/4, 0.8, 5/8, 0.65 in descending order.",
     "options": [
       "0.8, 3/4, 0.65, 5/8",
@@ -9152,7 +9152,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Mr Mensah left his house at 9:45 am and reached his village at 4:15 pm. Find the time spent.",
     "options": [
       "5 hours 30 minutes",
@@ -9169,7 +9169,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "In a test, 2/3 of the learners passed. If the number of learners who failed was 69, how many passed?",
     "options": [
       "23",
@@ -9186,7 +9186,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Factorize: 3a^2b - 9ab^2.",
     "options": [
       "3ab(a - 3b)",
@@ -9203,7 +9203,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Perimeter, Area and Volume",
     "prompt": "Find the volume of a cube with side 5 m.",
     "options": [
       "10 m^3",
@@ -9220,7 +9220,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "A trader sold an article for GHS 126.00 making a profit of 20%. Find the cost price of the item.",
     "options": [
       "GHS 100.50",
@@ -9237,7 +9237,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Write 0.000437 in standard form.",
     "options": [
       "4.37 x 10^-4",
@@ -9254,7 +9254,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Consumer Arithmetic",
     "prompt": "Mary receives a commission of 15% on articles sold in a week. If her commission was GHS 60.00, how much sales did she make?",
     "options": [
       "GHS 900.00",
@@ -9271,7 +9271,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: sqrt(75) - sqrt(18) - sqrt(3) + sqrt(2).",
     "options": [
       "4sqrt(3) - 2sqrt(2)",
@@ -9288,7 +9288,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "Theresa was asked to select at random a letter from the word HAPPY. What is the probability that she selects the letter P?",
     "options": [
       "1/5",
@@ -9305,7 +9305,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the image of the point (2, -3) under the transformation (x, y) -> (x, y - 2).",
     "options": [
       "(2, 1)",
@@ -9322,7 +9322,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "A square of area 144 cm^2 has the same perimeter as an equilateral triangle. Find the length of a side of the triangle.",
     "options": [
       "10 cm",
@@ -9339,7 +9339,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Solve: 7 - 2x > 15 - 4x.",
     "options": [
       "x < -4",
@@ -9356,7 +9356,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Antwi has 20 mangoes and 20% are rotten. How many of them are not rotten?",
     "options": [
       "4",
@@ -9373,7 +9373,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A class of 42 learners shared some oranges and each received 11. If 22 learners shared the same number of oranges equally, how many will each get?",
     "options": [
       "15",
@@ -9390,7 +9390,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "A number is chosen at random from the set P = {1, 2, 3, 4, 5, ... 10}. What is the probability that the number is greater than 3?",
     "options": [
       "4/5",
@@ -9407,7 +9407,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Kofi paid an interest of GHS 30.00 on a loan he took for 4 years. If the rate was 3% per annum simple interest, find the amount borrowed.",
     "options": [
       "GHS 360.00",
@@ -9424,7 +9424,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "A cyclist travelling at 20 km/h covered a distance in 35 minutes. What time will it take to cover the same distance travelling at 28 km/h?",
     "options": [
       "16 minutes",
@@ -9441,7 +9441,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Which of the following is not a composite number?",
     "options": [
       "24",
@@ -9458,7 +9458,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Kofi had 150 birds. He sold 26 of them and kept the rest equally in 4 cages. How many birds were kept in each cage?",
     "options": [
       "30",
@@ -9475,7 +9475,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If (x + 2) : (x - 2) = 1 : 2, find the value of x.",
     "options": [
       "-2",
@@ -9492,7 +9492,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Sets and Operations",
     "prompt": "Given that the universal set is {1, 2, 3, ... 10} and M = {2, 3, 5, 7}, where M is a subset of the universal set. List the members in the universal set that are not in M.",
     "options": [
       "{1, 4, 6}",
@@ -9509,7 +9509,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If 2^m = 8, find the value of m/2.",
     "options": [
       "2.0",
@@ -9526,7 +9526,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "A boy spends 1/4 of his pocket money on books and 1/3 on pens. What fraction remains?",
     "options": [
       "5/6",
@@ -9543,7 +9543,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Two sets which have the same number of members are ___ sets.",
     "options": [
       "equal",
@@ -9560,7 +9560,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Numbers and Numeration",
     "prompt": "Change 25% to a fraction in its lowest form.",
     "options": [
       "1/2",
@@ -9577,7 +9577,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Find the rule for the mapping shown below. x: 1, 2, 3, 4, 5; y: 3, 6, 9, 12, 15.",
     "options": [
       "x -> 3x",
@@ -9594,7 +9594,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Plane Geometry and Angles",
     "prompt": "Find the circumference of a circle whose area is 100pi cm^2.",
     "options": [
       "5pi cm",
@@ -9611,7 +9611,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Given the sequence -9, -5, m, 3, 7, 11, find the value of m.",
     "options": [
       "-3",
@@ -9628,7 +9628,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The marks obtained by 11 learners in a test are: 2, 5, 5, 6, 7, 7, 8, 8, 8, 9, 10. What is the modal mark?",
     "options": [
       "2",
@@ -9645,7 +9645,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If a = (3, 1) and b = (-2, 1), evaluate 6b + 2a.",
     "options": [
       "(-1, 3)",
@@ -9662,7 +9662,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Evaluate p^2(q - 1) when p = 2 and q = 3/4.",
     "options": [
       "-2",
@@ -9679,7 +9679,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ratio and Proportion",
     "prompt": "Ivy and Abbey share an amount of GHS 30.00 in the ratio 3 : 2 respectively. Find Abbey's share.",
     "options": [
       "GHS 10.00",
@@ -9696,7 +9696,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "The table below shows the marks scored by learners in a test: Mark 0-5 with Frequencies 1, 2, 7, 5, 4, 3 respectively. Find the median mark.",
     "options": [
       "1",
@@ -9713,7 +9713,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Statistics and Probability",
     "prompt": "The table below shows the marks scored by learners in a test: Mark 0-5 with Frequencies 1, 2, 7, 5, 4, 3 respectively. Find the probability that a learner selected at random scored 2.",
     "options": [
       "1/22",
@@ -9730,7 +9730,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "If 3/4 x = 2 + 1/4, find the value of x.",
     "options": [
       "1",
@@ -9747,7 +9747,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "The product of three numbers is 90. If two of the numbers are 6 and 3, find the third number.",
     "options": [
       "18",
@@ -9764,7 +9764,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Algebraic Expressions",
     "prompt": "Simplify: x - 5(3 - 2x) - 12x + 7.",
     "options": [
       "x + 8",
@@ -9781,7 +9781,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "District Assemblies of Ghana construct the following projects except",
     "options": [
       "school buildings.",
@@ -9798,7 +9798,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One factor which results in high birth rate in Ghana is",
     "options": [
       "effective use of contraceptives.",
@@ -9815,7 +9815,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following business enterprises raise capital through the sale of shares?",
     "options": [
       "Partnership",
@@ -9832,7 +9832,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is not a business enterprise?",
     "options": [
       "Rural banks.",
@@ -9849,7 +9849,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Movement and supply of utilities in settlements become easier and faster when the",
     "options": [
       "layout is good.",
@@ -9866,7 +9866,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The best way of disposing industrial and domestic waste is by",
     "options": [
       "dumping.",
@@ -9883,7 +9883,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Sustainable development in Ghana depends upon",
     "options": [
       "peace and stability.",
@@ -9900,7 +9900,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Conflicts in the community cannot be properly managed when there is",
     "options": [
       "forgiveness.",
@@ -9917,7 +9917,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The main reason for producing cocoa in Ghana is to",
     "options": [
       "promote the manufacture of more cocoa products.",
@@ -9934,7 +9934,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following business enterprises is the commonest and easiest to form in Ghana?",
     "options": [
       "Partnership",
@@ -9951,7 +9951,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana is bordered in the west by",
     "options": [
       "Cote d'Ivoire.",
@@ -9968,7 +9968,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which one of the following may cause unemployment in Ghana?",
     "options": [
       "Greater use of locally made goods",
@@ -9985,7 +9985,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The best way of increasing productivity in the agricultural sector is through",
     "options": [
       "effective supervision.",
@@ -10002,7 +10002,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One benefit Ghana derives from her co-operation with other countries is the",
     "options": [
       "prevention of dumping of expired goods.",
@@ -10019,7 +10019,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "In a working environment, productivity means",
     "options": [
       "output of the country.",
@@ -10036,7 +10036,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A general pardon for an offence against the state is known as",
     "options": [
       "amnesty.",
@@ -10053,7 +10053,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is not a feature of a sketched map?",
     "options": [
       "Title",
@@ -10070,7 +10070,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "If Ghana is to be self-reliant, it must adopt the following methods except",
     "options": [
       "less dependent on foreign goods.",
@@ -10087,7 +10087,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "When the sun is overhead on the Tropic of Capricorn, areas in the southern hemisphere experience",
     "options": [
       "Winter.",
@@ -10104,7 +10104,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "National unity in Ghana can be promoted through",
     "options": [
       "formal education.",
@@ -10121,7 +10121,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Latitudes and Longitudes can be used to",
     "options": [
       "show contour lines on maps.",
@@ -10138,7 +10138,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Rivers meander in their lower course because, the",
     "options": [
       "valley is almost flat.",
@@ -10155,7 +10155,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana's population can best be described as youthful because a large portion of its people are between ages",
     "options": [
       "45-59.",
@@ -10172,7 +10172,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The Head of the Traditional Government in Ghana is",
     "options": [
       "District Chief Executive.",
@@ -10189,7 +10189,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The outbreak of Cholera can be prevented by",
     "options": [
       "supplying drugs.",
@@ -10206,7 +10206,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Public corporations are set up mainly to provide",
     "options": [
       "money for development.",
@@ -10223,7 +10223,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "An example of positive effects of colonization in Ghana is",
     "options": [
       "barter trade.",
@@ -10240,7 +10240,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following factors cannot promote political stability in Ghana?",
     "options": [
       "Dictatorship in administration",
@@ -10257,7 +10257,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The Sagrenti War of 1874 was fought between the",
     "options": [
       "Fante and Asante.",
@@ -10274,7 +10274,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The Latitudinal position of Ghana on the map",
     "options": [
       "4 degrees North and 11 degrees North approximately.",
@@ -10291,7 +10291,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Indiscipline among the youth can be reduced through",
     "options": [
       "increasing health care.",
@@ -10308,7 +10308,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Industries which are controlled and managed by the state are called",
     "options": [
       "cottage industries.",
@@ -10325,7 +10325,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The main function of the executive organ of government is",
     "options": [
       "interpretation of the law.",
@@ -10342,7 +10342,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following tourist attractions is mostly associated with Kintampo in the Bono East region?",
     "options": [
       "Monkey sanctuary",
@@ -10359,7 +10359,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "An individual who behaves in an honest and just manner is said to be performing",
     "options": [
       "civic responsibility.",
@@ -10376,7 +10376,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following values promotes unity among Ghanaians?",
     "options": [
       "Logic",
@@ -10393,7 +10393,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is not a coastal feature?",
     "options": [
       "Cliff",
@@ -10410,7 +10410,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Political conflicts in Ghana can best be minimized through",
     "options": [
       "tolerating opposing views.",
@@ -10427,7 +10427,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "Which of the following can aid economic independence of a nation?",
     "options": [
       "Giving more aid to needy countries",
@@ -10444,7 +10444,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following does not constitute a right of a Ghanaian according to the 1992 constitution?",
     "options": [
       "Right to unlawful assembly",
@@ -10461,7 +10461,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The application of science to improve upon the quality of life or work is also known as",
     "options": [
       "education",
@@ -10478,7 +10478,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The following activities bring disgrace to the people and Ghana as a whole except",
     "options": [
       "the chieftaincy institution.",
@@ -10495,7 +10495,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following activities is a duty of a citizen of Ghana?",
     "options": [
       "Attending religious meetings",
@@ -10512,7 +10512,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following measures cannot improve the quality of life in the rural areas of Ghana?",
     "options": [
       "Unregulated family planning",
@@ -10529,7 +10529,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "The early introduction of formal education by the colonialists in the Gold Coast, led to",
     "options": [
       "improvement in foreign trade.",
@@ -10546,7 +10546,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "The following are aspects of culture except",
     "options": [
       "beliefs",
@@ -10563,7 +10563,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The growth rate of Ghana's population can be reduced mainly through",
     "options": [
       "family planning.",
@@ -10580,7 +10580,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The revolution of the earth around the sun causes",
     "options": [
       "day and night.",
@@ -10597,7 +10597,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The scale on the map is 1:200,000. If the distance on the map is 2 cm, find the actual distance on the ground?",
     "options": [
       "1.2 km",
@@ -10614,7 +10614,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Why are laws made?",
     "options": [
       "For family unity",
@@ -10631,7 +10631,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is not an element of the weather?",
     "options": [
       "Wind",
@@ -10648,7 +10648,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The safest place to save money is the",
     "options": [
       "susu",
@@ -10665,7 +10665,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Increasing opportunities for employment in the Ghanaian society can help to reduce",
     "options": [
       "acts of indiscipline",
@@ -10682,7 +10682,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following activities show interaction between the physical and social environments?",
     "options": [
       "A father advising the child",
@@ -10699,7 +10699,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The Ghana Coat of Arms was designed by",
     "options": [
       "Amon Kotei",
@@ -10716,7 +10716,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "An account which is operated with the use of cheque, is known as",
     "options": [
       "Current account",
@@ -10733,7 +10733,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "One of the ways of promoting unity among the ethnic groups in Ghana is through",
     "options": [
       "Christian and Islamic rights",
@@ -10750,7 +10750,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which principle is used to check abuse of power in governance?",
     "options": [
       "Rule of law",
@@ -10767,7 +10767,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "The savanna vegetation zones produce cattle because of the",
     "options": [
       "Fulani herdsmen",
@@ -10784,7 +10784,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "The process of identifying signals of conflict and encouraging people to work out their differences is known as",
     "options": [
       "resolution",
@@ -10801,7 +10801,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following factor can best make private sector businesses more profitable",
     "options": [
       "Availability of ready market",
@@ -10818,7 +10818,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The colour blue is used on topographical map to indicate",
     "options": [
       "buildings",
@@ -10835,7 +10835,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following does not reflect the importance of festivals in Ghana?",
     "options": [
       "Plans are made for developmental projects",
@@ -10852,7 +10852,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One factor that can affect the academic performance of students negatively is",
     "options": [
       "effective supervision",
@@ -10869,7 +10869,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Laws in the country are made by the",
     "options": [
       "parliament",
@@ -10886,7 +10886,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The statement scale 1cm to 5km can be converted to representative fraction to read",
     "options": [
       "1 : 50,000",
@@ -10903,7 +10903,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The health of the people of Ghana can be improved through the",
     "options": [
       "supply of electricity",
@@ -10920,7 +10920,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "For Ghanaians to come out of negative influence of colonial mentality, they should",
     "options": [
       "develop high sense of self-reliance.",
@@ -10937,7 +10937,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following levels is imposed by the District Assemblies in Ghana",
     "options": [
       "Income tax",
@@ -10954,7 +10954,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "The person who combines the factors of production such as land, labour and capital is called",
     "options": [
       "shop keeper",
@@ -10971,7 +10971,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In Ghana festivals usually serve all the following purposes except",
     "options": [
       "outdooring of new-born babies",
@@ -10988,7 +10988,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is associated with a scale of a map",
     "options": [
       "Linear",
@@ -11005,7 +11005,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The sole proprietor enjoys all the following advantages except",
     "options": [
       "high profits",
@@ -11022,7 +11022,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following factors is one of the major reasons for Ghana's cultural diversity",
     "options": [
       "Colonization",
@@ -11039,7 +11039,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "Which of the following accounts for the presence of the equatorial forest in south western Ghana?",
     "options": [
       "Lumbering",
@@ -11056,7 +11056,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "Food production in Ghana faces the problem of",
     "options": [
       "foreign exchange",
@@ -11073,7 +11073,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following measures can increase tomato yield in Ghana",
     "options": [
       "Improved marketing",
@@ -11090,7 +11090,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "Ghana's export are highly dominated by",
     "options": [
       "capital goods",
@@ -11107,7 +11107,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following best promotes the smooth operation of Separation of Powers in Ghana?",
     "options": [
       "Presidency",
@@ -11124,7 +11124,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "To prevent human rights abuse in Ghana, the court must",
     "options": [
       "Allow their settings to be telecast by TV stations",
@@ -11141,7 +11141,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following cultural practices should be maintained in Ghana?",
     "options": [
       "Incision of tribal marks",
@@ -11158,7 +11158,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana is bordered to the east by which of the following countries?",
     "options": [
       "Togo",
@@ -11175,7 +11175,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is a good measure for preventing human rights violation in Ghana?",
     "options": [
       "Extending formal education to all",
@@ -11192,7 +11192,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In which type of rock can coal be found?",
     "options": [
       "Igneous rock",
@@ -11209,7 +11209,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following cultural practices is considered acceptable in the Ghanaian society?",
     "options": [
       "Trokosi",
@@ -11226,7 +11226,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "One of the founding fathers of Ghana who left the United Gold Coast Convention (U.G.C.C) to form his own party was",
     "options": [
       "J.B Danquah.",
@@ -11243,7 +11243,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The main duty of the police in a community is to",
     "options": [
       "Arrest criminal",
@@ -11260,7 +11260,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A society is said to be disciplined when its members",
     "options": [
       "Work hard to promote the well-being of the society",
@@ -11277,7 +11277,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "Which one of the following factors was not a cause of the 1948 riots in the Gold Coast?",
     "options": [
       "Nkrumah's suspension from the U.G.C.C.",
@@ -11294,7 +11294,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following latitudes divides the world into two equal halves?",
     "options": [
       "0 degrees",
@@ -11311,7 +11311,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following investment cover one's properties against fire outbreaks?",
     "options": [
       "Treasury bill",
@@ -11328,7 +11328,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following is not an indigenous Ghanaian language?",
     "options": [
       "Dagare",
@@ -11345,7 +11345,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following rivers flow into Lake Volta?",
     "options": [
       "Afram",
@@ -11362,7 +11362,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The two main types of cooperation that exist among nations are",
     "options": [
       "Bilateral and Cultural",
@@ -11379,7 +11379,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which place did the Akans settle first during their migration to their present locations?",
     "options": [
       "Denkyira",
@@ -11396,7 +11396,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "Which of the following areas in Ghana is most likely to experience relief rainfall?",
     "options": [
       "Volta lowlands",
@@ -11413,7 +11413,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Lake Bosomtwe, which is one of the natural lakes in the world is located in the",
     "options": [
       "Ashanti Region.",
@@ -11430,7 +11430,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One of the many ways by which conflicts are reduced in the society is through",
     "options": [
       "Prayers",
@@ -11447,7 +11447,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana's dependence on foreign loans can be minimized by",
     "options": [
       "Diversifying and processing more for exports",
@@ -11464,7 +11464,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The imaginary lines shown on maps which help to determine time are called",
     "options": [
       "Longitudes",
@@ -11481,7 +11481,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "The largest ethnic group in Ghana is the",
     "options": [
       "Ga-Adangmes.",
@@ -11498,7 +11498,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "A bill becomes a law when it is signed by the",
     "options": [
       "Chief Justice",
@@ -11515,7 +11515,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The local government system is meant to",
     "options": [
       "Provide resources for all",
@@ -11532,7 +11532,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A disciplined child is the one who",
     "options": [
       "Is well educated in the family",
@@ -11549,7 +11549,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following towns is a manganese producing centre in Ghana?",
     "options": [
       "Nkwatia",
@@ -11566,7 +11566,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "Europeans presence and activities on the Gold Coast included the following except",
     "options": [
       "Trading with the people",
@@ -11583,7 +11583,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "Primary production is important in Ghana because it provides",
     "options": [
       "Credit",
@@ -11600,7 +11600,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following did not form part of the reasons for the formation of the Fante Confederation?",
     "options": [
       "Promote education of the people on their rights",
@@ -11617,7 +11617,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "International sporting activities do not only serve to promote friendship but also to",
     "options": [
       "Generate income for the countries",
@@ -11634,7 +11634,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A scale presented in a line form is known as",
     "options": [
       "Map scale",
@@ -11651,7 +11651,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Irresponsible behaviour of adolescents can result in",
     "options": [
       "Child abuse",
@@ -11668,7 +11668,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The southwest monsoon winds, more often than not bring rainfall to the southern parts of Ghana between",
     "options": [
       "December and March",
@@ -11685,7 +11685,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The Greenwich meridian passes through one of the following places.",
     "options": [
       "Accra",
@@ -11702,7 +11702,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "If the time at town (A) on longitude 20 degrees E is 9:00 a.m., what will be the time at town (B) on longitude 80 degrees E?",
     "options": [
       "1:00 p.m.",
@@ -11719,7 +11719,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The main source of light energy on the Earth is the",
     "options": [
       "Hydro",
@@ -11736,7 +11736,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One factor that can make the adolescent drop out of school is",
     "options": [
       "Chaste life",
@@ -11753,7 +11753,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In the solar system, the Earth is one of the",
     "options": [
       "Globes",
@@ -11770,7 +11770,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Universal Adult Suffrage guarantees the right to",
     "options": [
       "Respect the laws of the land",
@@ -11787,7 +11787,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "You need to make a detailed map of a mountainous area. This map will be used by the people who enjoy outdoor activities and by people who manage the land. Which of the following options is the best way to make an accurate map?",
     "options": [
       "Add 3D and colour gradient",
@@ -11804,7 +11804,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "Which of the following military rulers of Ghana implemented the Economic Recovery Program (ERP)?",
     "options": [
       "Frederick K. Akuffo",
@@ -11821,7 +11821,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Two political events occurred in Ghana in 1960. One of the events was the presidential election. Which of the following political developments happened after the presidential election in 1960?",
     "options": [
       "Ghana became a colony again",
@@ -11838,7 +11838,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A market square in your community is in need of a clean-up and restoration. Which of the following options will best help address the challenge?",
     "options": [
       "Donating money to the market square but not getting involved personally",
@@ -11855,7 +11855,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "Ghana's public sector faces various challenges with respect to human resource development. Which of the following challenges is the most suitable challenge in the above given scenario?",
     "options": [
       "Financial challenges",
@@ -11872,7 +11872,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Every Ghanaian citizen is expected to demonstrate commitment to democratic values. Which of the following actions best demonstrates the above expectation?",
     "options": [
       "Voting in national elections",
@@ -11889,7 +11889,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "What is the most likely effect of a large family size on the family's living conditions?",
     "options": [
       "Environmental conditions enhanced",
@@ -11906,7 +11906,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The best approach to help resolve the difference between political parties during general elections is",
     "options": [
       "allowing the formation of more political parties.",
@@ -11923,7 +11923,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "What is the most common form of marriage in Ghana?",
     "options": [
       "Arranged marriage",
@@ -11940,7 +11940,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana is made up of people with different cultures. What is the primary benefit if all the people unite? It will",
     "options": [
       "improve national security.",
@@ -11957,7 +11957,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A region experiences a significant decrease in temperature and rainfall over a few decades. What factor could be the most likely cause of this?",
     "options": [
       "Deforestation",
@@ -11974,7 +11974,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What is the best way to address deviant behaviour in an adolescent?",
     "options": [
       "Punishment",
@@ -11991,7 +11991,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One similarity between Ghana and its neighbouring country, Togo, is they both have",
     "options": [
       "a border with Nigeria.",
@@ -12008,7 +12008,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In 1966, a military Coup d'etat overthrew the government of Dr. Kwame Nkrumah. What was the main reason for the Coup?",
     "options": [
       "Economic mismanagement and corruption",
@@ -12025,7 +12025,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which type of map will be most suitable for determining the elevation of a mountain range?",
     "options": [
       "Political map",
@@ -12042,7 +12042,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "Which of the following challenges did Ghana face soon after independence in 1957?",
     "options": [
       "Building of new roads and drainage systems with limited funds",
@@ -12059,7 +12059,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "There is an ongoing illegal mining activity in a community. The miners are using earth moving machines, cyanide and mercury. Sixty acres of vegetation cover is pulled down every hour. Which of the following options best describes the long term effect of their activities on the land?",
     "options": [
       "Erosion",
@@ -12076,7 +12076,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "One way to maintain peace and security in your community is by",
     "options": [
       "ignoring your neighbours.",
@@ -12093,7 +12093,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following fundamental human rights is protected by the 1992 constitution of Ghana? The right to",
     "options": [
       "use arms.",
@@ -12110,7 +12110,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A company is expanding globally and needs to socialize employees to new cultural norms. Which of the following approaches would be most effective?",
     "options": [
       "Encourage employees to adapt to the new culture on their own",
@@ -12127,7 +12127,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which one of the following took place after the 27th April, 1960 referendum?",
     "options": [
       "Ghana became a democratic state.",
@@ -12144,7 +12144,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following scenarios explains the main purpose of the Internet?",
     "options": [
       "Connecting electronic devices and making lives more convenient",
@@ -12161,7 +12161,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "Two communities are claiming ownership of a river which serves as their livelihood. This has resulted in conflicts between the two communities for many years. Which of the following mediations will best help to resolve the conflict?",
     "options": [
       "Avoid future conflicts",
@@ -12178,7 +12178,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The following factors affect Ghana's ability to exploit its natural resources effectively except",
     "options": [
       "low level technology.",
@@ -12195,7 +12195,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A company is planning to build a soap factory in a rural area. The factory will provide jobs for the youth but may also pollute nearby rivers. Which of the following options best represents a sustainable development approach?",
     "options": [
       "Build the factory without environmental considerations",
@@ -12212,7 +12212,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Respecting the rights of others and performing our responsibilities to the state help to promote",
     "options": [
       "building political parties.",
@@ -12229,7 +12229,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "In 1957 the people of Ghana gained independence from the British colonial rule after a long political struggle. What was the main reason for Ghana's independence? To",
     "options": [
       "adopt a new political system and form a government",
@@ -12246,7 +12246,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "People join social security and pension schemes in order to",
     "options": [
       "ensure retirement income.",
@@ -12263,7 +12263,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The most significant attitude that helps to enhance self identity of the individual in the community is",
     "options": [
       "always wearing clean clothes.",
@@ -12280,7 +12280,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A farmer is preparing to plant crops next week. Why is it important for the farmer to check the weather forecast? To",
     "options": [
       "prepare for a storm.",
@@ -12297,7 +12297,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The destruction of farm lands by cattle and the confrontation between herdsmen and farming communities in Ghana can best be resolved by",
     "options": [
       "allowing the game and wildlife department to take charge of cattle rearing in the communities.",
@@ -12314,7 +12314,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What is the main function of socialization? To",
     "options": [
       "enforce laws and regulations.",
@@ -12331,7 +12331,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following entrepreneurial skills is most important for someone starting a business to acquire in order to help overcome unexpected challenges?",
     "options": [
       "Leadership",
@@ -12348,7 +12348,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "The first general election held in the Gold Coast in 1951 was won by the",
     "options": [
       "Convention People's Party.",
@@ -12365,7 +12365,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "It has been observed that the population of Ghana has been rising rapidly over the years. What is the primary reason for the rapidly growing population?",
     "options": [
       "High birth rate and low death rate",
@@ -12382,7 +12382,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "Which of the following scenarios best describes an application of social security benefits?",
     "options": [
       "A teacher receives a scholarship to study abroad",
@@ -12399,7 +12399,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "What type of climate, typically found near the equator, is characterized by very high temperatures and very low rainfall?",
     "options": [
       "Desert climate",
@@ -12416,7 +12416,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Controlling plastic waste has become a major environmental concern to the city authorities in Ghana. Which of the following options best helps minimize the negative impact of plastic waste disposal problem?",
     "options": [
       "Arresting all plastic waste producers",
@@ -12433,7 +12433,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following agricultural practices helps to prevent soil erosion?",
     "options": [
       "Cover cropping",
@@ -12450,7 +12450,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "A teacher, Mr. Jones, encourages his students to work together on a group project. What agency of socialization is influencing the students' behaviour?",
     "options": [
       "Education",
@@ -12467,7 +12467,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In which continent are the Appalachian mountains located?",
     "options": [
       "Africa",
@@ -12484,7 +12484,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The main purpose of sex education in Ghanaian schools is to",
     "options": [
       "increase the likelihood of early marriage.",
@@ -12501,7 +12501,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "One of the effective ways by which parents carry out socialization of the family members is by",
     "options": [
       "teaching them the importance of drum music and dance.",
@@ -12518,7 +12518,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In what way does the ageing population of Ghana affect the country's health system? It",
     "options": [
       "decreases the demand for healthcare services.",
@@ -12535,7 +12535,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "What role does Social Security and National Insurance Trust (SSNIT) play in the life of a pensioner?",
     "options": [
       "Payment of social benefits and all health needs",
@@ -12552,7 +12552,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "A lot of foreigners visit Ghana yearly to see beautiful sceneries. By this, they contribute to the economy through",
     "options": [
       "exploitation of natural resources.",
@@ -12569,7 +12569,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Economic Development",
     "prompt": "What role does cultural tourism play in preserving Ghana's traditional heritage? It",
     "options": [
       "promotes drumming and dancing.",
@@ -12586,7 +12586,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "In 1948, there was a riot following the killing of three ex-servicemen at the Osu Christianborg Castle Crossroads. What significant impact did it have on nationalists' activities in the Gold Coast? It",
     "options": [
       "resulted in the transfer of the governor.",
@@ -12603,7 +12603,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "Which of the following options is the most destructive effect of volcanic eruption on the environment?",
     "options": [
       "Gas emission",
@@ -12620,7 +12620,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The demarcation of administrative regions and districts of Ghana are best highlighted on",
     "options": [
       "an imaginary map.",
@@ -12637,7 +12637,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Sanitation has been a major challenge in some communities in Ghana. What is the most sustainable way to improve sanitation in your community?",
     "options": [
       "Building more landfills for waste disposal",
@@ -12654,7 +12654,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Why is it useful to provide a legend on a map? To",
     "options": [
       "display the title",
@@ -12671,7 +12671,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Contours on a map indicate what phenomenon?",
     "options": [
       "Elevation changes",
@@ -12688,7 +12688,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Topographical maps are important to study because they show",
     "options": [
       "mainly the drainage of the land.",
@@ -12705,7 +12705,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "How does your role as an active citizen contribute to the development of your community? By",
     "options": [
       "promoting self interest and peace of mind",
@@ -12722,7 +12722,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "In what way does early exposure to sexual content on the media affect the adolescents?",
     "options": [
       "Admiration for the opposite sex",
@@ -12739,7 +12739,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The primary aim of elections in Ghana is to",
     "options": [
       "allow the powerful to govern without restraint.",
@@ -12756,7 +12756,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What will be the best effect on the development of your community if you engage in voluntary activities? It will",
     "options": [
       "encourage people to pay their taxes.",
@@ -12773,7 +12773,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Your school is embarking on an excursion in Asia to see famous mountains. Which of the following mountains are they likely to see?",
     "options": [
       "Andes mountains",
@@ -12790,7 +12790,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Most Ghanaian communities experience flooding during the raining season due to",
     "options": [
       "nature having its way.",
@@ -12807,7 +12807,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following would you advise against by way of reducing dependence on foreign financial support?",
     "options": [
       "Developing the human resource",
@@ -12824,7 +12824,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Ghanaian Culture and Heritage",
     "prompt": "Which of the following cultural elements would you say identifies ethnic groups of Ghana the most?",
     "options": [
       "Dance",
@@ -12841,7 +12841,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The productivity of a worker in an organization can best be improved by",
     "options": [
       "regular supervision and punishment.",
@@ -12858,7 +12858,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What role does peer socialization play in shaping adolescent behavior and attitude? It",
     "options": [
       "reinforces parental authority.",
@@ -12875,7 +12875,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "What is the major effect of illegal mining on the water bodies of Ghana?",
     "options": [
       "Destroys aquatic and plant life",
@@ -12892,7 +12892,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana was ushered into the fourth republican government in",
     "options": [
       "1981.",
@@ -12909,7 +12909,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One negative effect of colonization on the Ghanaian society is the",
     "options": [
       "introduction of formal education.",
@@ -12926,7 +12926,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Criminal activities in the society can best be minimized if there is effective",
     "options": [
       "arbitration.",
@@ -12943,7 +12943,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The constitution of a country is important because it",
     "options": [
       "punishes criminals and politicians.",
@@ -12960,7 +12960,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Your younger brother's homework requires he identifies types of business enterprise. Which of the following should not be part of his list?",
     "options": [
       "Rural Banks",
@@ -12977,7 +12977,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Your father intends to begin a new business by raising capital through the sale of shares. This type of business enterprise is known as",
     "options": [
       "partnership.",
@@ -12994,7 +12994,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The main function of the executive organ of government is",
     "options": [
       "approval of budget.",
@@ -13011,7 +13011,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One major way you can defend the integrity of Ghana as a citizen is by",
     "options": [
       "promoting inter-ethnic marriages.",
@@ -13028,7 +13028,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Rapid population growth of any country will result in",
     "options": [
       "better medical facilities.",
@@ -13045,7 +13045,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "To ensure the survival of private enterprises, the government of Ghana must support",
     "options": [
       "advertising the products of private enterprises, oversees and provide tax exemption.",
@@ -13062,7 +13062,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "Apart from law making, Ghana's legislature also",
     "options": [
       "ensures accountability of the Executive to the people.",
@@ -13079,7 +13079,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "On 28th of February, 1948, three ex-servicemen were shot and killed while marching peacefully to present a petition to the governor of the Gold Coast. These ex-servicemen were",
     "options": [
       "Corporal Attipoe, Flt. Lt. J.J. Rawlings and Gen. I.K. Acheampong.",
@@ -13096,7 +13096,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What makes it impossible to determine the actual distance from a sketch map? It",
     "options": [
       "is roughly drawn.",
@@ -13113,7 +13113,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "One major benefit Ghana derives from legal mining activities is",
     "options": [
       "generation of revenue for development.",
@@ -13130,7 +13130,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The Prime Minister of the Second Republic of Ghana was",
     "options": [
       "Dr Hilla Limann.",
@@ -13147,7 +13147,7 @@
     "section": "Objective Test",
     "question_number": 1,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "How can you reduce air pollution in your environment? By using",
     "options": [
       "fertilizer on farms",
@@ -13164,7 +13164,7 @@
     "section": "Objective Test",
     "question_number": 2,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Human Rights abuse has become very common in the Ghanaian society lately. How best can this be prevented?",
     "options": [
       "Advising the offenders",
@@ -13181,7 +13181,7 @@
     "section": "Objective Test",
     "question_number": 3,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following human activities in the highland areas of Ghana, mostly pollute the atmosphere?",
     "options": [
       "Farming",
@@ -13198,7 +13198,7 @@
     "section": "Objective Test",
     "question_number": 4,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Colonization and Independence",
     "prompt": "Positive Action was declared in the Gold Coast in January 1950 by",
     "options": [
       "J.B Danquah.",
@@ -13215,7 +13215,7 @@
     "section": "Objective Test",
     "question_number": 5,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "As a civil servant working in Ghana, what is the importance of having a social security number? It",
     "options": [
       "allows you to vote in elections.",
@@ -13232,7 +13232,7 @@
     "section": "Objective Test",
     "question_number": 6,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One positive effect of colonization you have studied and observed is",
     "options": [
       "creation of artificial geographical boundaries.",
@@ -13249,7 +13249,7 @@
     "section": "Objective Test",
     "question_number": 7,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "An example of a plateau with steep slopes in Ghana is",
     "options": [
       "Afadzato mountains.",
@@ -13266,7 +13266,7 @@
     "section": "Objective Test",
     "question_number": 8,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana was ushered into the second republican government in",
     "options": [
       "1969.",
@@ -13283,7 +13283,7 @@
     "section": "Objective Test",
     "question_number": 9,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "After spending so much time revision on Adolescent Reproductive Health, you can best explain it to your peers as",
     "options": [
       "a state of being in good health.",
@@ -13300,7 +13300,7 @@
     "section": "Objective Test",
     "question_number": 10,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which natural disaster causes sudden vibration of the Earth's surface, and often resulting in damage to buildings and infrastructure?",
     "options": [
       "Hurricane",
@@ -13317,7 +13317,7 @@
     "section": "Objective Test",
     "question_number": 11,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which feature of the earth has a wide flat area of land, with minimal changes in elevation?",
     "options": [
       "Plain",
@@ -13334,7 +13334,7 @@
     "section": "Objective Test",
     "question_number": 12,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "After working in a modern automobile mechanic shop owned by your father during the vacation, you noticed and realized that difficult tasks are done more easily and faster",
     "options": [
       "when adequate capital is available.",
@@ -13351,7 +13351,7 @@
     "section": "Objective Test",
     "question_number": 13,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What role do parents play in supporting adolescent reproductive health? They",
     "options": [
       "encourage discussions on peer influence.",
@@ -13368,7 +13368,7 @@
     "section": "Objective Test",
     "question_number": 14,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Self-identity is important because it helps the individual to",
     "options": [
       "live harmoniously with everyone.",
@@ -13385,7 +13385,7 @@
     "section": "Objective Test",
     "question_number": 15,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "As a citizen of Ghana, which of the following actions best demonstrates your commitment to democratic values and nation building?",
     "options": [
       "Voting during election",
@@ -13402,7 +13402,7 @@
     "section": "Objective Test",
     "question_number": 16,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Creation of dams along major river bodies will mainly help reduce",
     "options": [
       "farm yield.",
@@ -13419,7 +13419,7 @@
     "section": "Objective Test",
     "question_number": 17,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "Which agent of socialization in your environment is responsible for teaching social norms and values?",
     "options": [
       "Education",
@@ -13436,7 +13436,7 @@
     "section": "Objective Test",
     "question_number": 18,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The primary function of the Judiciary is",
     "options": [
       "administration of justice.",
@@ -13453,7 +13453,7 @@
     "section": "Objective Test",
     "question_number": 19,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "How can Ghanaians correct negative values and attitudes gained from colonization?",
     "options": [
       "Learning English language in our schools",
@@ -13470,7 +13470,7 @@
     "section": "Objective Test",
     "question_number": 20,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "The Environment",
     "prompt": "How can vocational training programmes in your environment contribute to human resource development n Ghana? By",
     "options": [
       "encouraging reading and writing.",
@@ -13487,7 +13487,7 @@
     "section": "Objective Test",
     "question_number": 21,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The executive arm of government is responsible for",
     "options": [
       "enacting laws for the country.",
@@ -13504,7 +13504,7 @@
     "section": "Objective Test",
     "question_number": 22,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The interpretation of the constitution is the responsibility of the",
     "options": [
       "Legislature.",
@@ -13521,7 +13521,7 @@
     "section": "Objective Test",
     "question_number": 23,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Understanding the rights and obligations as a citizen of a state directly aligns to",
     "options": [
       "peace building.",
@@ -13538,7 +13538,7 @@
     "section": "Objective Test",
     "question_number": 24,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What is the most effective way energy can be conserved in our homes?",
     "options": [
       "Using light bulbs",
@@ -13555,7 +13555,7 @@
     "section": "Objective Test",
     "question_number": 25,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What is the most common environmental challenge that results from rapid population growth in your community?",
     "options": [
       "Overgrazing",
@@ -13572,7 +13572,7 @@
     "section": "Objective Test",
     "question_number": 26,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The President of the third republic of Ghana was",
     "options": [
       "Dr. K.A. Busia.",
@@ -13589,7 +13589,7 @@
     "section": "Objective Test",
     "question_number": 27,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Imagine you are a youth leader in your community assigned to convey a message to promote peaceful elections. Which of the following creative ways will be most effective to use?",
     "options": [
       "Organizing a political debate",
@@ -13606,7 +13606,7 @@
     "section": "Objective Test",
     "question_number": 28,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "You are having a discussion in class with your peers about Human Rights. Which of the following options is not a relevant body in preventing Human Rights abuse?",
     "options": [
       "Committee on Youth Organization (C.Y.O.)",
@@ -13623,7 +13623,7 @@
     "section": "Objective Test",
     "question_number": 29,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Law and Order",
     "prompt": "In order to live in peace and harmony in our communities, Ghanaians need to promote",
     "options": [
       "hardwork.",
@@ -13640,7 +13640,7 @@
     "section": "Objective Test",
     "question_number": 30,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Adolescents in your locality who engage in behaviours that are against the norms of the society are likely to",
     "options": [
       "be infected with malaria.",
@@ -13657,7 +13657,7 @@
     "section": "Objective Test",
     "question_number": 31,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Water bodies in their natural state are of great benefits to Ghanaians. Which of the following options is the main benefit derived from water bodies?",
     "options": [
       "Animal rearing",
@@ -13674,7 +13674,7 @@
     "section": "Objective Test",
     "question_number": 32,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which mapping skill can assist you to identify and interpret symbols used on a map?",
     "options": [
       "Map orientation",
@@ -13691,7 +13691,7 @@
     "section": "Objective Test",
     "question_number": 33,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "What role does entrepreneurship education play in fostering human development in Ghana? It",
     "options": [
       "destroys the monopoly of manufacturing industries.",
@@ -13708,7 +13708,7 @@
     "section": "Objective Test",
     "question_number": 34,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Which of the following people do not have the right to vote during elections at your constituency for a new Member of Parliament?",
     "options": [
       "Visually Impaired",
@@ -13725,7 +13725,7 @@
     "section": "Objective Test",
     "question_number": 35,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "How does access to contraceptives impact adolescent reproductive health in your community? It",
     "options": [
       "increases the risk of sexually transmitted infections.",
@@ -13742,7 +13742,7 @@
     "section": "Objective Test",
     "question_number": 36,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "One noticeable feature of technology in the world today is that it",
     "options": [
       "involves a lot of money.",
@@ -13759,7 +13759,7 @@
     "section": "Objective Test",
     "question_number": 37,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "Ghana's population is described as youthful because a large proportion of the total population falls within ages",
     "options": [
       "0 - 30 years.",
@@ -13776,7 +13776,7 @@
     "section": "Objective Test",
     "question_number": 38,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "The best way to make polluted water in rural communities safe for drinking at home is by",
     "options": [
       "distillation.",
@@ -13793,7 +13793,7 @@
     "section": "Objective Test",
     "question_number": 39,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "As a Ghanaian, you have realized many of your classmates and neighbours do not show interest in visiting tourist sites in Ghana. This is because",
     "options": [
       "people like to appreciate nature.",
@@ -13810,7 +13810,7 @@
     "section": "Objective Test",
     "question_number": 40,
     "question_type": "mcq",
-    "topic": "Objective Test",
+    "topic": "Governance and Citizenship",
     "prompt": "How will the patronage of sceneries in your community promote employment opportunities?",
     "options": [
       "Through construction of roads",

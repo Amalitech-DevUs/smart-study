@@ -82,13 +82,13 @@ export default async function ArticlesPage() {
   }
 
   return (
-    <main className="flex-1 bg-white pb-28 pt-8 sm:pt-12">
-      <div className="mx-auto max-w-4xl px-6">
+    <main className="flex-1 min-h-screen bg-[#f8f9fa] pb-24 pt-8 sm:pt-10">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {/* Back Link */}
         <div className="mb-6">
           <Link
             href="/dashboard"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Back to Dashboard</span>
