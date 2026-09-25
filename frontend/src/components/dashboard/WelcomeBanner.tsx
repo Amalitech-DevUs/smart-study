@@ -15,7 +15,7 @@ export function WelcomeBanner({ username }: Props) {
   })();
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0e1726] p-6 sm:p-8 shadow-sm mb-6 text-white">
+    <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-8 shadow-sm mb-6 text-white">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 relative z-10">
         {/* Left greeting text */}
         <div className="max-w-xl">

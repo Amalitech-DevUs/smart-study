@@ -81,9 +81,15 @@ export function ChatWidget() {
         onClick={() => setIsOpen((open) => !open)}
         aria-label={isOpen ? "Close study assistant" : "Open study assistant"}
         aria-expanded={isOpen}
-        className="fixed bottom-20 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#0e1726] text-white shadow-lg transition-transform hover:scale-105 hover:bg-slate-800 md:bottom-6 md:right-6 border border-slate-700"
+        className="fixed bottom-20 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl shadow-slate-950/20 transition-all hover:scale-105 hover:bg-slate-800 active:scale-95 md:bottom-6 md:right-6 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
       >
-        {isOpen ? <X className="h-5 w-5" /> : <AppLogoIcon className="h-5 w-5 text-amber-400" />}
+        <span className="flex items-center justify-center shrink-0">
+          {isOpen ? (
+            <X className="h-5 w-5 shrink-0" />
+          ) : (
+            <AppLogoIcon className="h-5 w-5 shrink-0 text-amber-400" />
+          )}
+        </span>
       </button>
     </>
   );

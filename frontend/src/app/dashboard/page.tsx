@@ -30,6 +30,7 @@ export default function DashboardPage() {
     recentActivity,
     dailyGoal,
     streak,
+    performanceDistribution,
   } = useDashboardData(username, isAuthLoading);
 
   // Scroll to top button visibility listener
@@ -47,7 +48,7 @@ export default function DashboardPage() {
 
   return (
     <RequireAuth>
-      <div className="min-h-screen bg-[#f4f6fa] text-slate-900 pb-16">
+      <div className="min-h-screen bg-slate-50 text-slate-900 pb-16">
         <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           {/* Top Bar: Search + Notification Bell + User Avatar Greeting */}
           <DashboardHeader
@@ -64,7 +65,7 @@ export default function DashboardPage() {
             overview={overview}
             dailyGoal={dailyGoal}
             streak={streak}
-            subjectCount={subjectProgress.length || 4}
+            subjectCount={subjectProgress.length || 5}
           />
 
           {/* Continue Learning Banner if active exam is in progress */}
@@ -90,10 +91,13 @@ export default function DashboardPage() {
               <StudyCalendarCard streak={streak} />
             </div>
             <div className="flex flex-col">
-              <QuickAccessGrid />
+              <QuickAccessGrid activeSession={activeSession} />
             </div>
             <div id="performance" className="flex flex-col scroll-mt-24">
-              <PerformanceOverviewCard overview={overview} />
+              <PerformanceOverviewCard
+                overview={overview}
+                distribution={performanceDistribution}
+              />
             </div>
           </div>
 
@@ -110,12 +114,12 @@ export default function DashboardPage() {
           )}
         </main>
 
-        {/* Back to top button */}
+        {/* Back to top button — positioned above floating chat widget to avoid collision */}
         {showBackToTop && (
           <button
             type="button"
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95"
+            className="fixed bottom-24 right-6 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95"
             aria-label="Scroll back to top"
           >
             <ArrowUp className="h-4 w-4" />

@@ -48,7 +48,7 @@ export function DashboardHeader({ username }: Props) {
           href="/profile"
           className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 p-1.5 pr-3 transition-colors hover:bg-slate-100"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0e1726] font-bold text-xs text-white shadow-xs">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 border border-slate-700 font-bold text-xs text-amber-400 shadow-xs">
             {username ? username.charAt(0).toUpperCase() : <UserIcon className="h-4 w-4" />}
           </div>
           <div className="text-left hidden sm:block">
