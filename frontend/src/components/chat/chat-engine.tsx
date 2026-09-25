@@ -14,7 +14,7 @@ export function ChatEngine() {
   };
 
   return (
-    <div className="flex h-full w-full min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-200">
+    <div className="flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden bg-white">
       <MessageList
         messages={messages}
         onSelectPrompt={handleSelectPrompt}

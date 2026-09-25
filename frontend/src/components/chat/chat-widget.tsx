@@ -2,16 +2,26 @@
 
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "@/lib/use-auth";
 import { ChatEngine } from "./chat-engine";
 import { Maximize2, Minimize2, X } from "lucide-react";
 import { AppLogoIcon, AppLogoBadge } from "@/components/shared/app-logo";
 
 export function ChatWidget() {
   const pathname = usePathname();
+  const { loggedIn, isLoading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  if (pathname === "/chat" || pathname === "/login" || pathname === "/signup") {
+  if (
+    isLoading ||
+    !loggedIn ||
+    pathname === "/chat" ||
+    pathname === "/login" ||
+    pathname === "/signup" ||
+    pathname === "/register" ||
+    pathname.startsWith("/flashcards")
+  ) {
     return null;
   }
 
@@ -21,8 +31,8 @@ export function ChatWidget() {
         <aside
           className={`fixed z-50 overflow-hidden border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-in-out ${
             isExpanded
-              ? "inset-4 md:inset-auto md:bottom-6 md:right-6 md:w-[720px] md:h-[780px] md:max-h-[85vh] rounded-2xl"
-              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] md:inset-x-auto md:bottom-6 md:right-6 md:w-[400px] md:h-[580px] rounded-2xl"
+              ? "inset-4 md:inset-auto md:bottom-6 md:right-6 md:w-[720px] md:h-[780px] md:max-h-[85vh] rounded-xl"
+              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] md:inset-x-auto md:bottom-6 md:right-6 md:w-[400px] md:h-[580px] rounded-xl"
           }`}
         >
           {/* Top Bar Header */}
