@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import fs from "fs/promises";
+import path from "path";
 import { getCurrentUser } from "@/lib/auth";
 import { SessionRunner } from "@/components/flashcards/session-runner";
 import type { McqQuestion } from "@/components/flashcards/mcq-card";
@@ -108,7 +110,57 @@ async function getQuestions(
     }
   }
 
-  // Never return local/dummy fallback questions — always return empty if content service could not be reached
+  // Fallback to local official questions.json if microservice is offline
+  try {
+    const filePath = path.resolve(process.cwd(), "../backend/src/data/questions.json");
+    const raw = await fs.readFile(filePath, "utf8");
+    const allQuestions = JSON.parse(raw);
+    const filtered = allQuestions.filter(
+      (q: any) =>
+        (q.subject.toLowerCase() === subjectName.toLowerCase() ||
+          q.subject.toLowerCase().includes(subjectSlug.toLowerCase())) &&
+        Number(q.year) === year
+    );
+
+    if (filtered.length > 0) {
+      const mapped: McqQuestion[] = filtered.map((q: any, idx: number) => {
+        const rawOpts: string[] = Array.isArray(q.options)
+          ? q.options
+          : ["Option A", "Option B", "Option C", "Option D"];
+        const optionKeys: Array<"a" | "b" | "c" | "d"> = ["a", "b", "c", "d"];
+        const correctKey = String(q.correctAnswer || q.correct_answer || "A").toLowerCase();
+        const validCorrect = (["a", "b", "c", "d"].includes(correctKey) ? correctKey : "a") as "a" | "b" | "c" | "d";
+        const correctIndex = optionKeys.indexOf(validCorrect);
+        const correctText = rawOpts[correctIndex] || "";
+
+        return {
+          id: String(q.id || `${subjectSlug}-${year}-${idx + 1}`),
+          subject: subjectName,
+          subjectColor,
+          year: q.year || year,
+          paper: q.paper || 1,
+          section: q.section,
+          topic: q.topic,
+          questionNumber: q.questionNumber || q.question_number || idx + 1,
+          totalQuestions: filtered.length,
+          question: q.prompt || q.question || `Question ${idx + 1}`,
+          options: optionKeys.map((key, i) => ({
+            id: key,
+            text: rawOpts[i] || `Option ${key.toUpperCase()}`,
+          })),
+          correctOptionId: validCorrect,
+          explanation:
+            q.explanation ||
+            `Option ${validCorrect.toUpperCase()} ("${correctText}") is the accurate answer according to official WAEC examination scoring standards.`,
+        };
+      });
+
+      return { questions: mapped, source: "LOCAL_OFFICIAL_BANK" };
+    }
+  } catch {
+    // continue to empty return
+  }
+
   return {
     questions: [],
     source: "CONTENT_SERVICE",

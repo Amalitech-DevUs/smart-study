@@ -114,15 +114,15 @@ export default async function ArticleDetailPage({ params }: ArticlePageProps) {
   const sections = article.body.split("\n\n").map((block) => block.trim()).filter(Boolean);
 
   return (
-    <main className="flex-1 bg-white px-6 py-10 pb-28 sm:py-14">
+    <main className="flex-1 min-h-screen bg-[#f8f9fa] px-4 py-8 pb-24 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal>
           <div className="flex items-center justify-between border-b border-slate-200 pb-5">
             <Link
               href="/articles"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 transition-colors hover:text-slate-900"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 transition-colors hover:text-slate-900"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-3.5 w-3.5" />
               <span>All Revision Guides</span>
             </Link>
 

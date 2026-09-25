@@ -56,14 +56,30 @@ else:
     MODEL = "liquid/lfm-2.5-2.6b:free"
     OPENROUTER_FREE_MODELS = []
 
-SYSTEM_PROMPT = """You are Smart Study AI, a friendly, warm, and expert BECE study tutor for Ghanaian JHS students.
-Answer questions accurately and helpfully on BECE subjects (Mathematics, Integrated Science, English Language, Social Studies).
-Formatting and Tone Rules:
-- Speak naturally and conversationally, like a supportive teacher in the classroom.
-- Avoid cluttered markdown syntax: do NOT use horizontal divider lines (---) or excessive hashtags (###).
-- Organize your answers with clean bold topic headings and easy-to-read paragraphs or bullet points.
-- Give simple, easy-to-understand explanations with relatable Ghanaian examples where helpful.
-- Never output internal thinking notes; speak directly and kindly to the student."""
+SYSTEM_PROMPT = """You are Smart Study AI, a friendly, warm, and expert BECE study tutor specifically built for Ghanaian Junior High School (JHS 1, JHS 2, JHS 3) students preparing for their Basic Education Certificate Examination (BECE).
+
+CRITICAL SYLLABUS BOUNDARY & SCOPE RULES:
+1. STRICT BECE CURRICULUM FOCUS:
+   - You ONLY assist with subjects and topics covered under the Ghanaian Ministry of Education / NaCCA / WAEC BECE syllabus:
+     • Mathematics (JHS level: Sets, Numbers & Operations, Fractions, Decimals, Percentages, Ratio & Proportion, Basic Algebra & Linear Equations, Plane Geometry, Angles, Perimeter & Area of 2D figures, Surface Area & Volume of Prisms/Cylinders, Statistics & Probability basics, Vectors & Transformations basics).
+     • Integrated Science (JHS level: Diversity of Matter, Living Cells, Life Processes, Photosynthesis, Energy, Electricity basics, Force & Pressure, Farming/Agriculture basics, Environmental Science).
+     • English Language (Grammar, Comprehension, Essay/Letter writing, Vocabulary, Idioms).
+     • Social Studies (Ghanaian history, Citizenship, Environment, Governance, Culture).
+     • French (JHS vocabulary, Basic grammar, Reading comprehension, Dialogue).
+     • Computing / ICT and Religious & Moral Education (RME).
+
+2. STRICT REFUSAL OF OUT-OF-SYLLABUS TOPICS (CALCULUS, SHS ELECTIVES, TERTIARY/UNIVERSITY MATH & SCIENCE):
+   - Calculus (differentiation, integration, limits, derivatives, differential equations) is NOT part of the Ghanaian BECE / JHS syllabus! It belongs to Senior High School (Elective Mathematics) and university.
+   - If a student asks about Calculus, Advanced Trigonometry, Complex Numbers, Matrices, or any college/university-level topic:
+     • You MUST politely decline to solve it.
+     • Warmly explain that this topic is not in the BECE / JHS syllabus and is studied later in SHS (Elective Mathematics) or university.
+     • Encourage the student and guide them back to relevant BECE topics like Algebra, Linear Equations, Percentages, Plane Geometry, or Statistics.
+
+3. FORMATTING AND PEDAGOGICAL TONE:
+   - Speak naturally and encouragingly, like a supportive Ghanaian classroom teacher.
+   - Break down solutions step-by-step with clear, relatable Ghanaian examples where helpful (e.g., Ghana Cedis, local names like Kwame, Ama, Kofi).
+   - Avoid cluttered markdown: do NOT use horizontal divider lines (---) or excessive hashtags (###).
+   - Never output internal thinking tags; speak directly and kindly to the student."""
 
 # ── FastAPI Web Server ───────────────────────────────────────────────────────
 app = FastAPI(title="Smart Study AI - BECE Tutor")
@@ -218,6 +234,40 @@ async def stream_response(messages: list, source_tag: str):
             yield json.dumps({"reply": "The study assistant is temporarily refreshing its AI model channels. Please try asking again in a moment.", "source": "fallback"})
 
 
+import re
+
+# ── BECE Syllabus Scope Guard ───────────────────────────────────────────────
+CALCULUS_REGEX = re.compile(
+    r"\b(calculus|derivatives?|differentiat(?:e|ion|ing)|integrat(?:e|ion|ing)|integrals?|antiderivatives?|differential\s+equations?|partial\s+derivatives?)\b|dy/dx|dx/dy|d/dx|\blim(?:it)?\s+as\s+\w+\s*(?:->|approaches)\b",
+    re.IGNORECASE
+)
+
+def check_bece_syllabus_out_of_scope(query: str) -> Optional[str]:
+    """Check if the user is asking about advanced topics (like Calculus) that are outside the Ghanaian BECE syllabus."""
+    if not query:
+        return None
+
+    if CALCULUS_REGEX.search(query):
+        return (
+            "📚 **Topic Outside BECE Syllabus**\n\n"
+            "Hello! I am your **BECE Study Tutor**, and **Calculus** (differentiation, integration, and limits) "
+            "is **not part of the Ghanaian JHS / BECE syllabus**! It is studied later in Senior High School (SHS Elective Mathematics) and university.\n\n"
+            "For **BECE Mathematics**, we cover:\n"
+            "• **Algebra & Linear Equations** (e.g. simplifying expressions, solving equations)\n"
+            "• **Numbers, Fractions, Percentages & Ratios**\n"
+            "• **Plane Geometry, Angles & Circles**\n"
+            "• **Perimeter, Area & Volume of solids**\n"
+            "• **Sets, Vectors & Basic Probability/Statistics**\n\n"
+            "Please ask any question from the JHS 1–3 curriculum or an official BECE past paper, and I'll be very happy to help you solve it step-by-step!"
+        )
+    return None
+
+
+async def stream_static_reply(text: str, source: str = "bece-scope-guard"):
+    """Yields a single structured SSE reply event for immediate scope refusal."""
+    yield json.dumps({"reply": text, "source": source})
+
+
 @app.post("/chat")
 async def chat(request: ChatRequest):
     """
@@ -242,6 +292,11 @@ async def chat(request: ChatRequest):
         user_query = next((m.content for m in reversed(request.messages) if m.role == "user"), "")
     else:
         raise HTTPException(status_code=400, detail={"error": "Either 'message' or 'messages' payload is required", "code": "INVALID_INPUT"})
+
+    # Guard: Strictly reject out-of-scope topics like Calculus immediately
+    out_of_scope_message = check_bece_syllabus_out_of_scope(user_query)
+    if out_of_scope_message:
+        return EventSourceResponse(stream_static_reply(out_of_scope_message))
 
     # Layer 2: Retrieve relevant BECE past questions from ChromaDB
     context_text, _ = retrieve_relevant_bece_context(user_query, n_results=3)

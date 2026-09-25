@@ -6,7 +6,7 @@ import { ArrowLeft, Bot } from "lucide-react";
 export default function ChatPage() {
   return (
     <RequireAuth>
-      <div className="flex h-[calc(100vh-61px)] flex-col bg-white">
+      <div className="flex h-[calc(100svh-56px)] flex-col bg-white md:h-screen">
         {/* Slim top bar */}
         <div className="flex shrink-0 items-center justify-between border-b border-slate-200/90 bg-white px-4 py-3 sm:px-6 md:px-8">
           <div className="mx-auto flex w-full max-w-3xl items-center justify-between">

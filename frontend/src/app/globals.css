@@ -63,15 +63,11 @@ html {
   --font-body: var(--font-body-family);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--paper-white);
   color: var(--text-primary);
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 }
@@ -134,20 +130,15 @@ body {
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
 
-/* Respect user's motion preference */
+/* Respect user's motion preference gracefully without breaking rendering */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  .reveal,
-  .reveal-left,
-  .reveal-right {
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-scale-in {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal, .reveal-left, .reveal-right {
-    opacity: 1;
-    transform: none;
   }
 }
 

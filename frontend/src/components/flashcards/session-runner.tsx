@@ -1,61 +1,82 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import Link from "next/link";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { McqCard, type McqQuestion } from "./mcq-card";
-import { SaveProgressBanner } from "@/components/shared/save-progress-banner";
 import { useAuth } from "@/lib/use-auth";
-import { RotateCcw, ArrowLeft, Bot, Award, Clock } from "lucide-react";
+import {
+  recordQuestionAttempt,
+  saveActiveSession,
+  completeStudySession,
+  clearActiveSession,
+  type LearningMode,
+} from "@/lib/learning-tracker";
+import { shuffleOptionsSafely } from "@/lib/session-utils";
+import { SessionHeader, type TimerOption } from "./SessionHeader";
+import { PracticeSummary } from "./PracticeSummary";
+import { TestReviewScreen } from "./TestReviewScreen";
+import { SubmitConfirmModal } from "./SubmitConfirmModal";
 
-const timerOptions = [
-  { value: "practice", label: "Practice", seconds: 0 },
+const timerOptions: readonly TimerOption[] = [
+  { value: "practice", label: "Untimed", seconds: 0 },
   { value: "30", label: "30 min", seconds: 30 * 60 },
   { value: "45", label: "45 min", seconds: 45 * 60 },
   { value: "60", label: "1 hr", seconds: 60 * 60 },
 ] as const;
-
-type TimerMode = (typeof timerOptions)[number]["value"];
 
 type SessionRunnerProps = {
   initialQuestions: McqQuestion[];
   sessionKey?: string;
 };
 
-function formatTime(seconds: number) {
-  const minutes = Math.floor(seconds / 60)
-    .toString()
-    .padStart(2, "0");
-  const remainingSeconds = (seconds % 60).toString().padStart(2, "0");
+export function SessionRunner({
+  initialQuestions,
+  sessionKey,
+}: SessionRunnerProps) {
+  const { loggedIn, isLoading, username } = useAuth();
+  const userPrefix = username ? `${username.toLowerCase()}_` : "guest_";
+  const storageKey =
+    sessionKey && !isLoading
+      ? `smartstudy_session_${userPrefix}${sessionKey}`
+      : null;
 
-  return `${minutes}:${remainingSeconds}`;
-}
+  // Mode: "practice" or "test"
+  const [sessionMode, setSessionMode] = useState<LearningMode>("practice");
 
-export function SessionRunner({ initialQuestions, sessionKey }: SessionRunnerProps) {
-  const storageKey = sessionKey ? `smartstudy_session_${sessionKey}` : null;
-
+  // Practice State
   const [queue, setQueue] = useState<McqQuestion[]>(initialQuestions);
+  const [completedUniqueIds, setCompletedUniqueIds] = useState<string[]>([]);
+  const [requeueCounts, setRequeueCounts] = useState<Record<string, number>>({});
   const [attempts, setAttempts] = useState(0);
-  const [completedQuestions, setCompletedQuestions] = useState(0);
-  const [timerMode, setTimerMode] = useState<TimerMode>("practice");
+  const [currentAnswer, setCurrentAnswer] = useState<string | null>(null);
+
+  // Test State
+  const [testCurrentIndex, setTestCurrentIndex] = useState(0);
+  const [testAnswers, setTestAnswers] = useState<Record<string, string>>({});
+  const [isTestSubmitted, setIsTestSubmitted] = useState(false);
+  const [showSubmitModal, setShowSubmitModal] = useState(false);
+
+  // Timer State
+  const [timerMode, setTimerMode] = useState<string>("practice");
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [timedOut, setTimedOut] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  // Persisted: tracks the option the user selected for the CURRENT question so that
-  // navigating away to the AI chat page and coming back restores the answer reveal.
-  const [currentAnswer, setCurrentAnswer] = useState<string | null>(null);
-  const { loggedIn, isLoading } = useAuth();
 
-  // Guard: only load from localStorage ONCE on mount.
-  // Using a ref prevents initialQuestions reference changes (server re-renders)
-  // from overwriting already-restored session state.
-  const hasLoadedRef = useRef(false);
+  // Unique session ID
+  const sessionIdRef = useRef<string>(`session-${Date.now()}`);
+  const loadedUserRef = useRef<string | null>(null);
 
+  const totalQuestions = initialQuestions.length;
+  const subjectName = initialQuestions[0]?.subject || "BECE Exam";
+  const subjectSlug = initialQuestions[0]?.subjectColor || "mathematics";
+  const yearNumber = initialQuestions[0]?.year || 2024;
+
+  // Restore session from localStorage
   useEffect(() => {
-    // Only run once
-    if (hasLoadedRef.current) return;
-    hasLoadedRef.current = true;
+    if (isLoading || typeof window === "undefined") return;
+    if (loadedUserRef.current === userPrefix) return;
+    loadedUserRef.current = userPrefix;
 
-    if (!storageKey || typeof window === "undefined") {
+    if (!storageKey) {
       setIsLoaded(true);
       return;
     }
@@ -64,23 +85,49 @@ export function SessionRunner({ initialQuestions, sessionKey }: SessionRunnerPro
       const saved = localStorage.getItem(storageKey);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed.queueIds) && typeof parsed.completed === "number") {
+        if (parsed.sessionMode) setSessionMode(parsed.sessionMode);
+        if (parsed.sessionId) sessionIdRef.current = parsed.sessionId;
+        if (Array.isArray(parsed.completedUniqueIds)) {
+          setCompletedUniqueIds(parsed.completedUniqueIds);
+        }
+        if (parsed.requeueCounts) setRequeueCounts(parsed.requeueCounts);
+        if (typeof parsed.attempts === "number") setAttempts(parsed.attempts);
+        if (parsed.timerMode) setTimerMode(parsed.timerMode);
+        if (typeof parsed.timeRemaining === "number") {
+          setTimeRemaining(parsed.timeRemaining);
+        }
+        if (parsed.timedOut) setTimedOut(true);
+        if (parsed.currentAnswer) setCurrentAnswer(parsed.currentAnswer);
+        if (parsed.testAnswers) setTestAnswers(parsed.testAnswers);
+        if (typeof parsed.testCurrentIndex === "number") {
+          setTestCurrentIndex(parsed.testCurrentIndex);
+        }
+        if (parsed.isTestSubmitted) setIsTestSubmitted(true);
+
+        // Restore practice queue
+        if (Array.isArray(parsed.queueIds)) {
           const idMap = new Map(initialQuestions.map((q) => [String(q.id), q]));
           const restoredQueue: McqQuestion[] = [];
           for (const id of parsed.queueIds) {
             const q = idMap.get(String(id));
             if (q) restoredQueue.push(q);
           }
-
-          if (restoredQueue.length > 0 || parsed.completed > 0) {
+          if (restoredQueue.length > 0 || parsed.completedUniqueIds?.length > 0) {
             setQueue(restoredQueue);
-            setCompletedQuestions(parsed.completed || 0);
-            setAttempts(parsed.attempts || 0);
-            if (parsed.timerMode) setTimerMode(parsed.timerMode);
-            if (typeof parsed.timeRemaining === "number") setTimeRemaining(parsed.timeRemaining);
-            if (parsed.timedOut) setTimedOut(true);
-            if (typeof parsed.currentAnswer === "string") setCurrentAnswer(parsed.currentAnswer);
           }
+        }
+      }
+
+      // Support direct launching in test mode (e.g. from Dashboard "Mock Exam" button)
+      if (typeof window !== "undefined") {
+        const params = new URLSearchParams(window.location.search);
+        const urlMode = params.get("mode");
+        if (urlMode === "test") {
+          setSessionMode("test");
+          setTimerMode("45");
+          setTimeRemaining(45 * 60);
+        } else if (urlMode === "practice") {
+          setSessionMode("practice");
         }
       }
     } catch {
@@ -88,249 +135,427 @@ export function SessionRunner({ initialQuestions, sessionKey }: SessionRunnerPro
     } finally {
       setIsLoaded(true);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isLoading, storageKey, userPrefix, initialQuestions]);
 
-  // Persist state to localStorage on changes
+  // Persist state to localStorage and update Active Session
   useEffect(() => {
     if (!isLoaded || !storageKey || typeof window === "undefined") return;
 
     try {
       const payload = {
+        sessionId: sessionIdRef.current,
+        sessionMode,
         queueIds: queue.map((q) => q.id),
-        completed: completedQuestions,
-        attempts: attempts,
-        timerMode: timerMode,
-        timeRemaining: timeRemaining,
-        timedOut: timedOut,
-        currentAnswer: currentAnswer,
+        completedUniqueIds,
+        requeueCounts,
+        attempts,
+        currentAnswer,
+        testCurrentIndex,
+        testAnswers,
+        isTestSubmitted,
+        timerMode,
+        timeRemaining,
+        timedOut,
         timestamp: Date.now(),
       };
       localStorage.setItem(storageKey, JSON.stringify(payload));
+
+      // Update active session metadata for dashboard resume card
+      const isFinished =
+        sessionMode === "practice"
+          ? queue.length === 0 || completedUniqueIds.length >= totalQuestions
+          : isTestSubmitted;
+
+      if (!isFinished && sessionKey) {
+        saveActiveSession(username, {
+          sessionId: sessionIdRef.current,
+          sessionKey,
+          subject: subjectName,
+          subjectSlug,
+          year: yearNumber,
+          mode: sessionMode,
+          uniqueQuestionsTotal: totalQuestions,
+          uniqueQuestionsCompleted:
+            sessionMode === "practice"
+              ? completedUniqueIds.length
+              : Object.keys(testAnswers).length,
+          lastUpdated: Date.now(),
+          isFinished: false,
+        });
+      }
     } catch {
       // Storage quota or disabled
     }
-  }, [queue, completedQuestions, attempts, timerMode, timeRemaining, timedOut, currentAnswer, isLoaded, storageKey]);
+  }, [
+    isLoaded,
+    storageKey,
+    sessionMode,
+    queue,
+    completedUniqueIds,
+    requeueCounts,
+    attempts,
+    currentAnswer,
+    testCurrentIndex,
+    testAnswers,
+    isTestSubmitted,
+    timerMode,
+    timeRemaining,
+    timedOut,
+    sessionKey,
+    username,
+    subjectName,
+    subjectSlug,
+    yearNumber,
+    totalQuestions,
+  ]);
 
   // Timer countdown
   useEffect(() => {
-    if (timerMode === "practice" || queue.length === 0 || timedOut || !isLoaded) {
-      return;
-    }
+    if (timerMode === "practice" || timedOut || !isLoaded) return;
+    if (sessionMode === "practice" && queue.length === 0) return;
+    if (sessionMode === "test" && isTestSubmitted) return;
 
     const timer = setInterval(() => {
-      setTimeRemaining((currentTime) => {
-        if (currentTime <= 1) {
+      setTimeRemaining((curr) => {
+        if (curr <= 1) {
           setTimedOut(true);
-          setQueue([]);
+          if (sessionMode === "test") {
+            setIsTestSubmitted(true);
+          } else {
+            setQueue([]);
+          }
           return 0;
         }
-
-        return currentTime - 1;
+        return curr - 1;
       });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [queue.length, timerMode, timedOut, isLoaded]);
+  }, [timerMode, timedOut, isLoaded, sessionMode, queue.length, isTestSubmitted]);
 
-  const handleAnswer = (optionId: string) => {
-    setAttempts((currentAttempts) => currentAttempts + 1);
+  /* ── Practice Handlers ── */
+  const handlePracticeAnswer = (optionId: string, isCorrect: boolean) => {
+    setAttempts((prev) => prev + 1);
     setCurrentAnswer(optionId);
+
+    const currentQ = queue[0];
+    if (!currentQ) return;
+
+    const currentRequeueCount = requeueCounts[currentQ.id] || 0;
+
+    recordQuestionAttempt(username, {
+      id: `attempt-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+      questionId: String(currentQ.id),
+      subject: currentQ.subject || subjectName,
+      subjectSlug,
+      topic: currentQ.topic || "Objective Test",
+      year: currentQ.year || yearNumber,
+      paper: currentQ.paper || 1,
+      mode: "practice",
+      isCorrect,
+      selectedOptionId: optionId,
+      correctOptionId: currentQ.correctOptionId,
+      isRequeued: currentRequeueCount > 0,
+      attemptNumber: currentRequeueCount + 1,
+      timestamp: Date.now(),
+      sessionId: sessionIdRef.current,
+    });
   };
 
-  const handleNext = (_optionId: string, isCorrect: boolean) => {
-    // Clear the saved answer before moving to the next question
+  const completeSessionRecord = (mode: LearningMode) => {
+    const accuracy =
+      attempts > 0 ? Math.round((completedUniqueIds.length / attempts) * 100) : 100;
+
+    completeStudySession(username, {
+      sessionId: sessionIdRef.current,
+      sessionKey: sessionKey || `${subjectSlug}-${yearNumber}`,
+      subject: subjectName,
+      subjectSlug,
+      year: yearNumber,
+      mode,
+      startedAt: Date.now() - 600000,
+      completedAt: Date.now(),
+      isCompleted: true,
+      uniqueQuestionsTotal: totalQuestions,
+      uniqueQuestionsCompleted: totalQuestions,
+      totalAttempts: attempts,
+      correctCount: completedUniqueIds.length,
+      incorrectCount: Math.max(0, attempts - completedUniqueIds.length),
+      unansweredCount: 0,
+      scorePercent: accuracy,
+    });
+  };
+
+  const handlePracticeNext = (_optionId: string, isCorrect: boolean) => {
     setCurrentAnswer(null);
+    const currentQ = queue[0];
+    if (!currentQ) return;
+
     if (isCorrect) {
-      setCompletedQuestions((currentCompleted) => currentCompleted + 1);
-      setQueue((currentQueue) => currentQueue.slice(1));
+      setCompletedUniqueIds((prev) =>
+        prev.includes(String(currentQ.id)) ? prev : [...prev, String(currentQ.id)],
+      );
+      setQueue((prev) => prev.slice(1));
+
+      if (queue.length <= 1) {
+        completeSessionRecord("practice");
+      }
       return;
     }
 
-    // Repetition: send missed question to end of queue so student masters it
-    setQueue((currentQueue) => [...currentQueue.slice(1), currentQueue[0]]);
+    // Question Missed: Requeue System
+    const misses = (requeueCounts[currentQ.id] || 0) + 1;
+    setRequeueCounts((prev) => ({ ...prev, [currentQ.id]: misses }));
+
+    if (misses > 2) {
+      setCompletedUniqueIds((prev) =>
+        prev.includes(String(currentQ.id)) ? prev : [...prev, String(currentQ.id)],
+      );
+      setQueue((prev) => prev.slice(1));
+      if (queue.length <= 1) {
+        completeSessionRecord("practice");
+      }
+      return;
+    }
+
+    const remaining = queue.slice(1);
+    const offset = Math.min(
+      remaining.length,
+      Math.max(1, Math.min(3 + Math.floor(Math.random() * 3), remaining.length)),
+    );
+
+    const resurfacedQuestion = shuffleOptionsSafely(currentQ);
+    const nextQueue = [...remaining];
+    nextQueue.splice(offset, 0, resurfacedQuestion);
+    setQueue(nextQueue);
+  };
+
+  /* ── Test Handlers ── */
+  const handleTestAnswer = (optionId: string) => {
+    const q = initialQuestions[testCurrentIndex];
+    if (!q) return;
+    setTestAnswers((prev) => ({
+      ...prev,
+      [q.id]: optionId,
+    }));
+  };
+
+  const handleTestSubmit = () => {
+    setShowSubmitModal(false);
+    setIsTestSubmitted(true);
+
+    const correctCount = initialQuestions.filter(
+      (q) => testAnswers[q.id]?.toLowerCase() === q.correctOptionId.toLowerCase(),
+    ).length;
+    const unansweredCount = initialQuestions.filter((q) => !testAnswers[q.id]).length;
+    const incorrectCount = totalQuestions - correctCount - unansweredCount;
+
+    initialQuestions.forEach((q) => {
+      const selected = testAnswers[q.id] || null;
+      const isCorrect = selected
+        ? selected.toLowerCase() === q.correctOptionId.toLowerCase()
+        : false;
+
+      recordQuestionAttempt(username, {
+        id: `test-att-${Date.now()}-${q.id}`,
+        questionId: String(q.id),
+        subject: q.subject || subjectName,
+        subjectSlug,
+        topic: q.topic || "Objective Test",
+        year: q.year || yearNumber,
+        paper: q.paper || 1,
+        mode: "test",
+        isCorrect,
+        selectedOptionId: selected,
+        correctOptionId: q.correctOptionId,
+        isRequeued: false,
+        attemptNumber: 1,
+        timestamp: Date.now(),
+        sessionId: sessionIdRef.current,
+      });
+    });
+
+    const scorePercent = Math.round((correctCount / totalQuestions) * 100);
+    completeStudySession(username, {
+      sessionId: sessionIdRef.current,
+      sessionKey: sessionKey || `${subjectSlug}-${yearNumber}`,
+      subject: subjectName,
+      subjectSlug,
+      year: yearNumber,
+      mode: "test",
+      startedAt:
+        Date.now() -
+        (timerMode === "practice"
+          ? 600000
+          : (timerOptions.find((t) => t.value === timerMode)?.seconds || 2700) * 1000 -
+            timeRemaining * 1000),
+      completedAt: Date.now(),
+      isCompleted: true,
+      uniqueQuestionsTotal: totalQuestions,
+      uniqueQuestionsCompleted: totalQuestions - unansweredCount,
+      totalAttempts: totalQuestions,
+      correctCount,
+      incorrectCount,
+      unansweredCount,
+      scorePercent,
+    });
   };
 
   const handleRestart = () => {
     if (storageKey && typeof window !== "undefined") {
       localStorage.removeItem(storageKey);
     }
+    clearActiveSession(username);
+    sessionIdRef.current = `session-${Date.now()}`;
     setQueue(initialQuestions);
-    setCompletedQuestions(0);
+    setCompletedUniqueIds([]);
+    setRequeueCounts({});
     setAttempts(0);
     setTimedOut(false);
     setTimeRemaining(0);
     setTimerMode("practice");
     setCurrentAnswer(null);
+    setTestCurrentIndex(0);
+    setTestAnswers({});
+    setIsTestSubmitted(false);
   };
 
-  const totalQuestions = initialQuestions.length;
-  const isFinished = timedOut || queue.length === 0;
-  const currentQuestion = queue[0];
-  const progressPercent = totalQuestions > 0
-    ? Math.min(100, Math.round((completedQuestions / totalQuestions) * 100))
-    : 0;
+  /* ── Calculations ── */
+  const isPracticeFinished =
+    timedOut || queue.length === 0 || completedUniqueIds.length >= totalQuestions;
 
-  const accuracy = attempts > 0 ? Math.round((completedQuestions / attempts) * 100) : 100;
+  const practiceProgressPercent =
+    totalQuestions > 0
+      ? Math.min(100, Math.round((completedUniqueIds.length / totalQuestions) * 100))
+      : 0;
+
+  const practiceAccuracy =
+    attempts > 0 ? Math.round((completedUniqueIds.length / attempts) * 100) : 100;
+
+  const testAnsweredCount = Object.keys(testAnswers).length;
+  const testUnansweredCount = totalQuestions - testAnsweredCount;
+  const testCorrectCount = useMemo(
+    () =>
+      initialQuestions.filter(
+        (q) => testAnswers[q.id]?.toLowerCase() === q.correctOptionId.toLowerCase(),
+      ).length,
+    [initialQuestions, testAnswers],
+  );
+  const testIncorrectCount = totalQuestions - testCorrectCount - testUnansweredCount;
+  const testScorePercent =
+    totalQuestions > 0 ? Math.round((testCorrectCount / totalQuestions) * 100) : 0;
 
   return (
     <section className="w-full max-w-3xl">
-      {/* Session Controls & Progress Bar */}
-      <div className="mb-8 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-heading text-lg font-bold text-slate-900">
-                {isFinished ? "Session Summary" : "Official Past Question Practice"}
-              </span>
-              {!isFinished && (
-                <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-                  {progressPercent}% Complete
-                </span>
-              )}
-            </div>
-            <p className="mt-0.5 text-xs text-slate-500">
-              {isFinished
-                ? "Review your performance below"
-                : `${queue.length} question${queue.length === 1 ? "" : "s"} remaining • ${completedQuestions} of ${totalQuestions} mastered`}
-            </p>
-          </div>
+      {/* Top Header Controls & Mode Switcher */}
+      <SessionHeader
+        sessionMode={sessionMode}
+        setSessionMode={setSessionMode}
+        isPracticeFinished={isPracticeFinished}
+        isTestSubmitted={isTestSubmitted}
+        attempts={attempts}
+        testAnsweredCount={testAnsweredCount}
+        completedUniqueCount={completedUniqueIds.length}
+        totalQuestions={totalQuestions}
+        testScorePercent={testScorePercent}
+        timerMode={timerMode}
+        setTimerMode={setTimerMode}
+        timeRemaining={timeRemaining}
+        setTimeRemaining={setTimeRemaining}
+        setTimedOut={setTimedOut}
+        timerOptions={timerOptions}
+        onOpenSubmitModal={() => setShowSubmitModal(true)}
+        onRestart={handleRestart}
+        practiceProgressPercent={practiceProgressPercent}
+        initialQuestions={initialQuestions}
+        testAnswers={testAnswers}
+        testCurrentIndex={testCurrentIndex}
+        setTestCurrentIndex={setTestCurrentIndex}
+      />
 
-          <div className="flex flex-wrap items-center justify-end gap-3">
-            {timerMode !== "practice" && !isFinished && (
-              <span className="flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-bold tabular-nums text-slate-700">
-                <Clock className="h-3.5 w-3.5 text-slate-500" />
-                {formatTime(timeRemaining)}
-              </span>
-            )}
-            <div className="flex rounded-full border border-slate-200 bg-slate-50 p-1 text-xs">
-              {timerOptions.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  disabled={isFinished}
-                  onClick={() => {
-                    setTimerMode(option.value);
-                    setTimeRemaining(option.seconds);
-                    setTimedOut(false);
-                  }}
-                  className={`rounded-full px-3 py-1.5 font-semibold transition-all duration-150 disabled:cursor-default ${
-                    timerMode === option.value
-                      ? "bg-slate-900 text-white shadow-sm"
-                      : "bg-transparent text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Reset / Start Over Button */}
-            {!isFinished && completedQuestions > 0 && (
-              <button
-                type="button"
-                onClick={handleRestart}
-                className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-400 hover:text-rose-600 transition-colors"
-                title="Restart question session"
-              >
-                <RotateCcw className="h-3 w-3" />
-                <span>Reset</span>
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-slate-100">
-          <div
-            className="h-full bg-[#f5a623] transition-all duration-300 ease-out"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
-      </div>
-
-      {/* Session Content */}
-      {isFinished ? (
-        <div className="w-full rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-md">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600 shadow-sm">
-            <Award className="h-8 w-8" />
-          </div>
-
-          <h2 className="mt-4 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl">
-            {timedOut ? "Time's Up!" : "Practice Session Completed!"}
-          </h2>
-          <p className="mt-1.5 text-xs text-slate-500 max-w-md mx-auto">
-            {timedOut
-              ? "Your timed examination interval ended. Review your score and retry to improve speed."
-              : "Excellent work! You have completed and reviewed every question in this paper."}
-          </p>
-
-          <div className="mt-6 grid grid-cols-3 gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
-            <div>
-              <p className="font-heading text-xl font-extrabold text-slate-900 sm:text-2xl">
-                {completedQuestions}
-              </p>
-              <p className="text-xs font-medium text-slate-500">Mastered</p>
-            </div>
-            <div>
-              <p className="font-heading text-xl font-extrabold text-slate-900 sm:text-2xl">
-                {accuracy}%
-              </p>
-              <p className="text-xs font-medium text-slate-500">Accuracy</p>
-            </div>
-            <div>
-              <p className="font-heading text-xl font-extrabold text-slate-900 sm:text-2xl">
-                {attempts}
-              </p>
-              <p className="text-xs font-medium text-slate-500">Total Attempts</p>
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={handleRestart}
-              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-xs font-bold text-white shadow-md hover:bg-slate-800 transition-all"
-            >
-              <RotateCcw className="h-4 w-4" />
-              <span>Practice Again</span>
-            </button>
-
-            <Link
-              href="/flashcards"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-all"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span>All Exam Papers</span>
-            </Link>
-
-            <Link
-              href="/chat"
-              className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50 px-5 py-3 text-xs font-bold text-indigo-700 hover:bg-indigo-100 transition-all"
-            >
-              <Bot className="h-4 w-4" />
-              <span>Ask AI Tutor</span>
-            </Link>
-          </div>
-
-          {!isLoading && !loggedIn && (
-            <div className="mt-8 pt-6 border-t border-slate-100">
-              <SaveProgressBanner />
-            </div>
+      {/* Practice Mode Content */}
+      {sessionMode === "practice" && (
+        <>
+          {isPracticeFinished ? (
+            <PracticeSummary
+              timedOut={timedOut}
+              completedUniqueCount={completedUniqueIds.length}
+              practiceAccuracy={practiceAccuracy}
+              attempts={attempts}
+              requeueCounts={requeueCounts}
+              onRestart={handleRestart}
+              isLoading={isLoading}
+              loggedIn={loggedIn}
+            />
+          ) : (
+            queue[0] && (
+              <McqCard
+                key={queue[0].id}
+                {...queue[0]}
+                currentIndex={completedUniqueIds.length + 1}
+                totalCount={totalQuestions}
+                isLastQuestion={queue.length === 1}
+                initialSelectedOptionId={currentAnswer}
+                mode="practice"
+                onAnswer={handlePracticeAnswer}
+                onNext={handlePracticeNext}
+              />
+            )
           )}
-        </div>
-      ) : (
-        <McqCard
-          key={currentQuestion.id}
-          {...currentQuestion}
-          currentIndex={completedQuestions + 1}
-          totalCount={totalQuestions}
-          isLastQuestion={queue.length === 1}
-          initialSelectedOptionId={currentAnswer}
-          onAnswer={handleAnswer}
-          onNext={handleNext}
-        />
+        </>
       )}
+
+      {/* Test Mode Content */}
+      {sessionMode === "test" && (
+        <>
+          {!isTestSubmitted ? (
+            initialQuestions[testCurrentIndex] && (
+              <McqCard
+                key={initialQuestions[testCurrentIndex].id}
+                {...initialQuestions[testCurrentIndex]}
+                currentIndex={testCurrentIndex + 1}
+                totalCount={totalQuestions}
+                isLastQuestion={testCurrentIndex === totalQuestions - 1}
+                hasPrevious={testCurrentIndex > 0}
+                initialSelectedOptionId={
+                  testAnswers[initialQuestions[testCurrentIndex].id] || null
+                }
+                mode="test"
+                onAnswer={(optId) => handleTestAnswer(optId)}
+                onPrevious={() => setTestCurrentIndex((prev) => Math.max(0, prev - 1))}
+                onNext={() => {
+                  if (testCurrentIndex < totalQuestions - 1) {
+                    setTestCurrentIndex((prev) => prev + 1);
+                  } else {
+                    setShowSubmitModal(true);
+                  }
+                }}
+              />
+            )
+          ) : (
+            <TestReviewScreen
+              totalQuestions={totalQuestions}
+              testScorePercent={testScorePercent}
+              testCorrectCount={testCorrectCount}
+              testIncorrectCount={testIncorrectCount}
+              testUnansweredCount={testUnansweredCount}
+              initialQuestions={initialQuestions}
+              testAnswers={testAnswers}
+              onRestart={handleRestart}
+            />
+          )}
+        </>
+      )}
+
+      {/* Submit Confirmation Modal */}
+      <SubmitConfirmModal
+        isOpen={showSubmitModal}
+        testAnsweredCount={testAnsweredCount}
+        totalQuestions={totalQuestions}
+        testUnansweredCount={testUnansweredCount}
+        onClose={() => setShowSubmitModal(false)}
+        onSubmit={handleTestSubmit}
+      />
     </section>
   );
 }

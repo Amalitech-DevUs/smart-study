@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useAuth } from "@/lib/use-auth";
 
 const phrases = [
@@ -53,7 +54,12 @@ export function HomeHero() {
 
   return (
     <section className="border-b border-slate-800 bg-[#0e1726] px-6 py-16 text-white sm:py-24">
-      <div className="mx-auto max-w-4xl">
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto max-w-4xl"
+      >
         <div className="inline-flex items-center rounded-full border border-slate-700 bg-slate-800/60 px-3.5 py-1 text-xs font-medium text-slate-300">
           BECE and WAEC Exam Prep
         </div>
@@ -73,14 +79,14 @@ export function HomeHero() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href="/signup"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0e1726] transition-colors hover:bg-slate-100"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-white px-7 py-3 text-sm font-bold text-[#0e1726] transition-all hover:bg-slate-100 shadow-sm active:scale-[0.99]"
           >
             Start Practice
           </Link>
 
           <Link
             href="/login"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-700 bg-transparent px-7 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-700 bg-slate-800/60 px-7 py-3 text-sm font-semibold text-slate-200 transition-all hover:bg-slate-800 active:scale-[0.99]"
           >
             Sign In
           </Link>
@@ -94,7 +100,7 @@ export function HomeHero() {
             </span>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -42,7 +42,7 @@ export function ChatInput({
       <div className="mx-auto w-full max-w-3xl">
         <form
           onSubmit={handleSubmit}
-          className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 pl-4 pr-2 py-2.5 transition-all focus-within:border-slate-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900/10 focus-within:shadow-sm"
+          className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 pl-4 pr-2 py-2.5 transition-all focus-within:border-slate-400 focus-within:bg-white focus-within:shadow-xs"
         >
           <input
             ref={inputRef}
