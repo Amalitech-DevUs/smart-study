@@ -6,11 +6,11 @@ import jwt from 'jsonwebtoken';
 import { validate } from '../middleware/validate';
 import { requireAuth, AuthenticatedRequest } from '../middleware/authMiddleware';
 import { signupSchema, loginSchema } from '../schemas';
+import { getJwtSecret } from '../services/jwtSecret';
 
 const router = Router();
 
 const getAuthServiceUrl = () => process.env.AUTH_SERVICE_URL || 'http://localhost:5001/routes/auth.php';
-const getJwtSecret = () => process.env.JWT_SECRET || 'super_secret_dev_key_bece_2026_production_key_32bytes';
 
 // ── Offline Fallback Storage (JSON seed bank) ───────────────────────────────
 const DATA_DIR = path.resolve(__dirname, '../data');
@@ -51,17 +51,17 @@ function saveFallbackUsers(users: FallbackUser[]): void {
   }
 }
 
-function hashPin(pin: string): string {
-  return crypto.createHash('sha256').update(pin + getJwtSecret()).digest('hex');
+function hashPin(pin: string, secret: string): string {
+  return crypto.createHash('sha256').update(pin + secret).digest('hex');
 }
 
-function generateFallbackJwt(userId: number, username: string): string {
+function generateFallbackJwt(userId: number, username: string, secret: string): string {
   return jwt.sign(
     {
       user_id: userId,
       username: username,
     },
-    getJwtSecret(),
+    secret,
     { expiresIn: '7d' }
   );
 }
@@ -69,6 +69,10 @@ function generateFallbackJwt(userId: number, username: string): string {
 // POST /auth/signup - Validate payload with Zod schema and proxy to PHP Auth service (with local fallback)
 router.post('/signup', validate({ body: signupSchema }), async (req: Request, res: Response) => {
   const { username, pin } = req.body;
+  const jwtSecret = getJwtSecret();
+  if (!jwtSecret) {
+    return res.status(500).json({ success: false, error: 'Authentication service is not configured' });
+  }
   const phpAuthUrl = `${getAuthServiceUrl()}?action=signup`;
 
   try {
@@ -116,14 +120,14 @@ router.post('/signup', validate({ body: signupSchema }), async (req: Request, re
     const newUser: FallbackUser = {
       id: users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1,
       username: username.trim(),
-      pinHash: hashPin(pin),
+      pinHash: hashPin(pin, jwtSecret),
       createdAt: new Date().toISOString()
     };
 
     users.push(newUser);
     saveFallbackUsers(users);
 
-    const token = generateFallbackJwt(newUser.id, newUser.username);
+    const token = generateFallbackJwt(newUser.id, newUser.username, jwtSecret);
 
     return res.status(201).json({
       success: true,
@@ -143,6 +147,10 @@ router.post('/signup', validate({ body: signupSchema }), async (req: Request, re
 // POST /auth/login - Validate payload with Zod schema and proxy to PHP Auth service (with local fallback)
 router.post('/login', validate({ body: loginSchema }), async (req: Request, res: Response) => {
   const { username, pin } = req.body;
+  const jwtSecret = getJwtSecret();
+  if (!jwtSecret) {
+    return res.status(500).json({ success: false, error: 'Authentication service is not configured' });
+  }
   const phpAuthUrl = `${getAuthServiceUrl()}?action=login`;
 
   try {
@@ -180,14 +188,14 @@ router.post('/login', validate({ body: loginSchema }), async (req: Request, res:
     const users = getFallbackUsers();
     const user = users.find(u => u.username.toLowerCase() === username.trim().toLowerCase());
 
-    if (!user || user.pinHash !== hashPin(pin)) {
+    if (!user || user.pinHash !== hashPin(pin, jwtSecret)) {
       return res.status(401).json({
         success: false,
         error: 'Invalid username or PIN'
       });
     }
 
-    const token = generateFallbackJwt(user.id, user.username);
+    const token = generateFallbackJwt(user.id, user.username, jwtSecret);
 
     return res.json({
       success: true,
