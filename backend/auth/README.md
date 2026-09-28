@@ -24,6 +24,8 @@ The service is available at `http://localhost:5001` by default. Set `AUTH_PORT` 
 
 For a host-based Express backend, use `AUTH_SERVICE_URL=http://localhost:5001/routes/auth.php` and `AUTH_REST_BASE_URL=http://localhost:5001`. For a gateway container attached to `smart-study-services`, use `AUTH_SERVICE_URL=http://auth/routes/auth.php` and `AUTH_REST_BASE_URL=http://auth`. Configure the exact same `JWT_SECRET` in the auth container, Express backend, and Next.js server.
 
+The root `render.yaml` also defines this Docker service for Render. It stores SQLite at `/var/lib/smart-study/smart_study.sqlite` on an attached persistent disk, leaving `database/schema.sql` in the image. Set a random `JWT_SECRET` of at least 32 characters in Render and use the same value in the Express and Next.js services. Render persistent disks require a paid web-service plan, limit the service to one instance, and cause brief downtime during deploys.
+
 Stop the service with `docker compose down`; this keeps the database volume. `docker compose down -v` also deletes the database and all stored auth data.
 
 ---

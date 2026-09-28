@@ -24,13 +24,16 @@ class JwtHandler
             $dotenv->safeLoad();
         }
 
-        $environmentSecret = getenv('JWT_SECRET');
-        if (($environmentSecret === false || $environmentSecret === '') && getenv('APP_ENV') === 'production') {
-            throw new RuntimeException('JWT_SECRET must be configured in production.');
+        $secretKey = getenv('JWT_SECRET');
+        if ($secretKey === false || $secretKey === '') {
+            $secretKey = $_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? null;
         }
-        $this->secretKey = ($environmentSecret !== false && $environmentSecret !== '')
-            ? $environmentSecret
-            : ($_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? 'super_secret_dev_key_bece_2026_production_key_32bytes');
+
+        if (!is_string($secretKey) || strlen($secretKey) < 32) {
+            throw new RuntimeException('JWT_SECRET must be configured with at least 32 characters.');
+        }
+
+        $this->secretKey = $secretKey;
     }
 
     public function generateToken(int $userId, string $username): string

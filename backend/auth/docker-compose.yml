@@ -7,8 +7,9 @@ services:
     environment:
       JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env before starting}
       APP_ENV: production
+      AUTH_DB_PATH: /var/lib/smart-study/smart_study.sqlite
     volumes:
-      - auth_database:/var/www/html/database
+      - auth_database:/var/lib/smart-study
     restart: unless-stopped
 
 volumes:

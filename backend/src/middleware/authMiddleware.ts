@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '../services/jwtSecret';
 
 export interface AuthenticatedRequest extends Request {
   user?: {
@@ -33,14 +34,15 @@ export function requireAuth(req: AuthenticatedRequest, res: Response, next: Next
     });
   }
 
+  const secret = getJwtSecret();
+  if (!secret) {
+    return res.status(500).json({
+      success: false,
+      error: 'Authentication service is not configured'
+    });
+  }
+
   try {
-    const secret = process.env.JWT_SECRET || (process.env.NODE_ENV === 'production' ? '' : 'super_secret_dev_key_bece_2026_production_key_32bytes');
-    if (!secret) {
-      return res.status(503).json({
-        success: false,
-        error: 'JWT_SECRET is not configured'
-      });
-    }
     const decoded = jwt.verify(token, secret) as { user_id: number; username: string };
 
     req.user = decoded;

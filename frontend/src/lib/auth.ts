@@ -1,7 +1,8 @@
 import { cookies } from "next/headers";
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { AUTH_COOKIE_NAME } from "@/lib/auth-cookie";
 
-export const AUTH_COOKIE_NAME = "smart-study-token";
+export { AUTH_COOKIE_NAME } from "@/lib/auth-cookie";
 
 type CurrentUser = {
   loggedIn: boolean;
