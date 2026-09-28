@@ -6,7 +6,11 @@ import os
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./content.db")
+DATABASE_URL = os.getenv("DATABASE_URL") or os.getenv("DATABASE_URL_SQLITE")
+if not DATABASE_URL:
+    raise RuntimeError(
+        "Set DATABASE_URL for PostgreSQL or DATABASE_URL_SQLITE for local development."
+    )
 
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
 

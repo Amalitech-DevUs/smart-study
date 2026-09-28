@@ -11,14 +11,19 @@ from app.db.base import Base
 from app.models.question import Question
 from app.models.article import Article
 
+load_dotenv()
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 
-config.set_main_option(
-    "sqlalchemy.url",
-    os.getenv("DATABASE_URL") or "sqlite:///content.db"
-)
+database_url = os.getenv("DATABASE_URL") or os.getenv("DATABASE_URL_SQLITE")
+if not database_url:
+    raise RuntimeError(
+        "Set DATABASE_URL for PostgreSQL or DATABASE_URL_SQLITE for local development."
+    )
+
+config.set_main_option("sqlalchemy.url", database_url)
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
