@@ -1,8 +1,8 @@
 # Content Database Service
 
 The Content Database service for the Smart-Study capstone project. Owns BECE past
-questions, database schema/migrations, and the REST/JSON API that the Node.js/Express
-backend reads content from.
+questions, educational articles, database schema/migrations, and the REST/JSON API
+that the Node.js/Express backend reads content from.
 
 **Stack:** Python + FastAPI + PostgreSQL + SQLAlchemy + Alembic
 
@@ -59,6 +59,15 @@ by subject + year + paper + question_number) rather than creating duplicates.
 To add more content later: append new question objects to `seed/questions.json`
 in the same shape, then re-run the import command above.
 
+Articles work the same way, using a separate file and script:
+
+```powershell
+python -m seed.import_articles
+```
+
+This reads `seed/articles.json` and inserts into the database, skipping any article
+whose `slug` already exists — also safe to re-run.
+
 ## Running the API
 
 ```powershell
@@ -87,6 +96,18 @@ correct_answer str single letter: "A", "B", "C", or "D"
 Unique constraint on (subject, year, paper, question_number) — prevents
 duplicate imports of the same question.
 
+```
+Article
+  id                int, primary key
+  slug              str   unique, used for frontend routing (e.g. "number-bases-bece")
+  title             str
+  body              str   the full article text
+  category          str   e.g. "Revision Guide", "Study Skills"
+  subject           str | None   e.g. "Mathematics" — null for general,
+                          non-subject-specific articles
+  published_at      datetime
+```
+
 ## Validation
 
 `app/schemas/question.py` enforces, both on API responses and at import time:
@@ -101,6 +122,10 @@ duplicate imports of the same question.
 `seed/import_questions.py` validates every record against this schema before
 inserting it. Invalid records are printed with a clear rejection reason and
 skipped, rather than silently entering the database.
+
+`app/schemas/article.py` enforces similarly for articles: `slug`, `title`, `body`,
+and `category` must all be non-empty; `subject` is optional. `seed/import_articles.py`
+validates the same way before inserting, skipping duplicates by `slug`.
 
 ## API endpoints (contract for the Node.js/Express backend)
 
@@ -150,6 +175,26 @@ Returns a single question by its database ID.
 Response: `200 OK` with the question object, or `404 Not Found` with
 `{"detail": "Question not found"}` if the ID doesn't exist.
 
+Note: `/questions` (no trailing slash) is also registered and returns identical
+results, to avoid redirect issues for clients that omit it. Subject filtering is
+case-insensitive and tolerant of hyphens (e.g. `subject=social-studies` matches
+the stored value `"Social Studies"`).
+
+### `GET /articles/`
+
+Returns a list of articles, ordered by `published_at` (newest first). Optional
+query parameters: `category`, `subject`.
+
+Example:
+```
+GET /articles/?subject=Mathematics
+```
+
+### `GET /articles/{article_id}`
+
+Returns a single article by its database ID. `200 OK`, or `404 Not Found` with
+`{"detail": "Article not found"}`.
+
 ## Current content (as of this MVP)
 
 | Subject | Year | Paper | Questions | Type |
@@ -159,7 +204,20 @@ Response: `200 OK` with the question object, or `404 Not Found` with
 | Integrated Science | 2026 | 1 | 40 | MCQ |
 | Social Studies | 2020 | 1 | 40 | MCQ |
 
-**Total: 144 questions.**
+**Total: 813 questions.**
+
+## Current articles
+
+13 original revision-guide articles (written for this platform, not sourced from
+elsewhere):
+
+| Subject | Articles |
+|---|---|
+| Mathematics | Number Bases, Algebra Word Problems, Geometry Shortcuts |
+| English Language | Comprehension Strategies, Essay Blueprint, Grammar Mistakes |
+| Integrated Science | Periodic Table Tips, Life Processes, Science Diagrams |
+| Social Studies | Ghana Government, BECE History Events, Human Rights |
+| General | Top Study Habits |
 
 ### Known gaps
 

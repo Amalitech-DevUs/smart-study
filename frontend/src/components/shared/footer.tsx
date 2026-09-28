@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/lib/use-auth";
 import { ArrowUpRight } from "lucide-react";
 
 const footerGroups = [
@@ -31,15 +32,26 @@ const footerGroups = [
 
 export function Footer() {
   const pathname = usePathname();
+  const { loggedIn } = useAuth();
 
-  // Hide footer on Login and Signup pages
-  if (pathname === "/login" || pathname === "/signup") {
+  // Logged-in users navigate with arrows — no footer for them
+  if (loggedIn) return null;
+
+  // Hide footer on auth, dashboard, profile, chat, and flashcard pages for guests too
+  if (
+    pathname === "/login" ||
+    pathname === "/signup" ||
+    pathname === "/register" ||
+    pathname === "/dashboard" ||
+    pathname === "/profile" ||
+    pathname === "/chat" ||
+    pathname.startsWith("/flashcards")
+  ) {
     return null;
   }
 
   return (
-    /* pb-24 on mobile ensures the fixed BottomNav bar does not cover any footer content */
-    <footer className="border-t border-slate-200/80 bg-white px-6 pt-12 pb-24 md:pb-12 text-slate-800">
+    <footer className="border-t border-slate-200/80 bg-white px-6 pt-12 pb-12 text-slate-800">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-5">
         
         {/* Brand Column */}

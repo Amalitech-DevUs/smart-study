@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { useAuth } from "@/lib/use-auth";
 
 export type ChatMessage = {
   id: string;
@@ -88,16 +89,63 @@ async function readResponse(
 }
 
 export function useChatEngine(): ChatEngineState {
+  const { username, isLoading: isAuthLoading } = useAuth();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [input, setInput] = useState(() => {
-    if (typeof window !== "undefined") {
-      const searchParams = new URLSearchParams(window.location.search);
-      return searchParams.get("prompt") || searchParams.get("q") || "";
-    }
-    return "";
-  });
+  const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // User-scoped storage key so past conversations belong only to the logged-in student
+  const storageKey = username
+    ? `smartstudy_chat_history_${username.toLowerCase()}`
+    : "smartstudy_chat_history_guest";
+
+  // Restore previous chat messages for this specific user
+  useEffect(() => {
+    if (isAuthLoading || typeof window === "undefined") return;
+
+    try {
+      // Clean up legacy unscoped global key to prevent leakage into new users
+      localStorage.removeItem("smartstudy_chat_history");
+
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring persisted chat messages from localStorage on mount, which is only available in the browser.
+          setMessages(parsed);
+        } else {
+          setMessages([]);
+        }
+      } else {
+        setMessages([]);
+      }
+    } catch {
+      setMessages([]);
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const promptParam = searchParams.get("prompt") || searchParams.get("q");
+    if (promptParam) {
+      setInput(promptParam);
+    }
+    setIsInitialized(true);
+  }, [storageKey, isAuthLoading]);
+
+  // Save chat messages to localStorage under the logged-in student's personal key
+  useEffect(() => {
+    if (!isInitialized || isAuthLoading || typeof window === "undefined") return;
+    try {
+      if (messages.length > 0) {
+        localStorage.setItem(storageKey, JSON.stringify(messages.slice(-50)));
+      } else {
+        localStorage.removeItem(storageKey);
+      }
+    } catch {
+      // Storage quota or privacy mode
+    }
+  }, [messages, isInitialized, isAuthLoading, storageKey]);
 
   const sendMessage = useCallback(
     async (text?: string) => {

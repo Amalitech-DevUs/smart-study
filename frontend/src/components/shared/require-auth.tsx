@@ -4,6 +4,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 import { useAuth } from "@/lib/use-auth";
 
+import { Loader } from "@/components/shared/loader";
+
 type RequireAuthProps = {
   children: ReactNode;
 };
@@ -21,8 +23,12 @@ export function RequireAuth({ children }: RequireAuthProps) {
 
   if (isLoading || !loggedIn) {
     return (
-      <main className="flex flex-1 items-center justify-center bg-background px-6 py-16 text-text-secondary">
-        Checking your session...
+      <main className="flex min-h-[60vh] flex-1 items-center justify-center">
+        <Loader
+          size="lg"
+          text="Verifying Student Session..."
+          subtext="Connecting to your revision profile"
+        />
       </main>
     );
   }

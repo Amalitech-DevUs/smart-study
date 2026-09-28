@@ -1,15 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { CheckCircle2, XCircle, Sparkles, BookOpen, ArrowRight, Lightbulb, Bot } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
+import {
+  parseQuestionPrompt,
+  formatDialogue,
+  type ParsedQuestion,
+} from "@/lib/session-utils";
+import { FormattedExamText } from "./FormattedExamText";
+import { FormattedAiContent } from "./FormattedAiContent";
+import { AnswerOption, type OptionItem } from "./AnswerOption";
+import { QuestionHeader } from "./QuestionHeader";
+import { PassageViewer } from "./PassageViewer";
+import { PracticeFeedback } from "./PracticeFeedback";
+import { ReviewFeedback } from "./ReviewFeedback";
 
-export type SubjectColor = "math" | "english" | "science" | "social-studies";
+export type SubjectColor =
+  | "math"
+  | "english"
+  | "science"
+  | "social-studies"
+  | "french"
+  | "computing"
+  | "rme"
+  | "creative-arts";
 
-export type McqOption = {
-  id: string;
-  text: string;
-};
+export type McqOption = OptionItem;
 
 export type McqQuestion = {
   id: string;
@@ -27,272 +43,228 @@ export type McqQuestion = {
   explanation?: string;
 };
 
-type McqCardProps = McqQuestion & {
+export type McqCardProps = McqQuestion & {
   currentIndex?: number;
   totalCount?: number;
   isLastQuestion?: boolean;
+  mode?: "practice" | "test" | "review";
+  hasPrevious?: boolean;
+  /** Restores previously selected answer (e.g. after navigating to AI chat and back) */
+  initialSelectedOptionId?: string | null;
   onAnswer?: (optionId: string, isCorrect: boolean) => void;
   onNext?: (optionId: string, isCorrect: boolean) => void;
+  onPrevious?: () => void;
 };
 
-const subjectBadges: Record<SubjectColor, { bg: string; text: string; border: string }> = {
-  math: {
-    bg: "bg-emerald-50",
-    text: "text-emerald-800",
-    border: "border-emerald-200",
-  },
-  english: {
-    bg: "bg-rose-50",
-    text: "text-rose-800",
-    border: "border-rose-200",
-  },
-  science: {
-    bg: "bg-amber-50",
-    text: "text-amber-800",
-    border: "border-amber-200",
-  },
-  "social-studies": {
-    bg: "bg-indigo-50",
-    text: "text-indigo-800",
-    border: "border-indigo-200",
-  },
-};
+// Re-export helpers for backward compatibility
+export { parseQuestionPrompt, FormattedExamText, FormattedAiContent };
+export type { ParsedQuestion };
 
 export function McqCard({
-  subject,
-  subjectColor,
-  question,
-  options,
-  correctOptionId,
+  subject = "BECE Exam",
+  subjectColor = "math",
+  question = "",
+  options = [],
+  correctOptionId = "",
   year,
   paper,
-  section,
   topic,
+  explanation,
   questionNumber,
   currentIndex,
   totalCount,
-  isLastQuestion,
+  isLastQuestion = false,
+  mode = "practice",
+  hasPrevious = false,
+  initialSelectedOptionId,
   onAnswer,
   onNext,
+  onPrevious,
 }: McqCardProps) {
-  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+  const [selection, setSelection] = useState<{
+    question: string;
+    optionId: string | null;
+  }>({
+    question,
+    optionId: initialSelectedOptionId ?? null,
+  });
+
+  const selectedOptionId =
+    selection.question === question
+      ? selection.optionId
+      : (initialSelectedOptionId ?? null);
+
+  // Safe normalized values
+  const safeOptions = Array.isArray(options) ? options : [];
+  const safeCorrectId = String(correctOptionId || "").trim();
+  const normalizedCorrectId = safeCorrectId.toLowerCase();
+
+  const parsed = parseQuestionPrompt(question || "");
+  const formattedPassage = parsed.passageBody ? formatDialogue(parsed.passageBody) : "";
 
   const handleSelectOption = (optionId: string) => {
-    if (selectedOptionId !== null) {
-      return;
-    }
+    if (mode === "review") return;
+    if (mode === "practice" && selectedOptionId !== null) return;
 
-    const isCorrect = optionId.toLowerCase() === correctOptionId.toLowerCase();
-    setSelectedOptionId(optionId);
+    const optKey = String(optionId || "").trim().toLowerCase();
+    const isCorrect = Boolean(normalizedCorrectId && optKey === normalizedCorrectId);
+    setSelection({ question, optionId });
     onAnswer?.(optionId, isCorrect);
   };
 
   const handleProceed = () => {
-    if (selectedOptionId === null) return;
-    const isCorrect = selectedOptionId.toLowerCase() === correctOptionId.toLowerCase();
+    if (mode === "practice" && selectedOptionId === null) return;
+    const currentSel = selectedOptionId || "";
+    const isCorrect = Boolean(
+      normalizedCorrectId &&
+        currentSel.trim().toLowerCase() === normalizedCorrectId,
+    );
     if (onNext) {
-      onNext(selectedOptionId, isCorrect);
+      onNext(currentSel, isCorrect);
     } else if (onAnswer) {
-      onAnswer(selectedOptionId, isCorrect);
+      onAnswer(currentSel, isCorrect);
     }
   };
 
-  const badgeStyle = subjectBadges[subjectColor] ?? subjectBadges.math;
   const isAnswered = selectedOptionId !== null;
-  const isUserCorrect = selectedOptionId?.toLowerCase() === correctOptionId.toLowerCase();
-
-  const correctOption = options.find(
-    (o) => o.id.toLowerCase() === correctOptionId.toLowerCase()
+  const isUserCorrect = Boolean(
+    isAnswered &&
+      normalizedCorrectId &&
+      String(selectedOptionId || "").trim().toLowerCase() === normalizedCorrectId,
   );
-  const correctText = correctOption ? correctOption.text : "";
 
-  // Prepare AI chat prompt URL
-  const aiChatPrompt = encodeURIComponent(
-    `Hello! Can you help explain why the answer to this ${subject} question (${year ? `${year} BECE` : ""}) is Option ${correctOptionId.toUpperCase()} (${correctText})?\n\nQuestion: "${question}"`
+  const correctOption = safeOptions.find(
+    (o) => String(o.id || "").trim().toLowerCase() === normalizedCorrectId,
   );
+  const correctText = correctOption ? correctOption.text : safeCorrectId.toUpperCase();
 
   const displayQuestionNum = questionNumber || currentIndex || 1;
-  const displayTotal = totalCount || 40;
+  const displayTotal = totalCount || (safeOptions.length > 0 ? safeOptions.length : 40);
 
   return (
-    <article className="w-full max-w-3xl overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-xl backdrop-blur-xl sm:p-8 transition-all duration-300">
-      {/* Top Metadata Row */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-slate-100 pb-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wider ${badgeStyle.bg} ${badgeStyle.text} ${badgeStyle.border}`}
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-            {subject}
+    <article className="w-full max-w-3xl overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8 transition-all duration-300">
+      {/* 1. Top Metadata Row */}
+      <QuestionHeader
+        subject={subject}
+        subjectColor={subjectColor}
+        year={year}
+        paper={paper}
+        topic={topic}
+        mode={mode}
+        displayQuestionNum={displayQuestionNum}
+        displayTotal={displayTotal}
+      />
+
+      {/* 2. Question Prompt & Optional Reading/Cloze Passage */}
+      <div className="mt-6 space-y-4">
+        <PassageViewer
+          parsed={parsed}
+          formattedPassage={formattedPassage}
+          subject={subject}
+          displayQuestionNum={displayQuestionNum}
+        />
+
+        {/* The Actual Question Headline */}
+        <div className="flex items-start gap-3 pt-1">
+          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-400 font-heading text-xs font-extrabold text-slate-950 shadow-xs">
+            {displayQuestionNum}
           </span>
-
-          {year && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-100/70 px-3 py-1 text-xs font-semibold text-slate-700">
-              <BookOpen className="h-3 w-3 text-slate-500" />
-              {year} BECE {paper ? `• Paper ${paper}` : ""}
-            </span>
-          )}
-
-          {topic && topic !== "Objective Test" && (
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-600">
-              {topic}
-            </span>
-          )}
-
-          {section && section !== "Objective Test" && (
-            <span className="hidden sm:inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-500">
-              {section}
-            </span>
-          )}
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span className="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700 tabular-nums">
-            Q{displayQuestionNum} of {displayTotal}
-          </span>
+          <h2 className="font-heading text-lg sm:text-xl font-bold leading-relaxed text-slate-900">
+            <FormattedExamText
+              text={parsed.questionText}
+              activeGap={displayQuestionNum}
+            />
+          </h2>
         </div>
       </div>
 
-      {/* Question Prompt */}
-      <div className="mt-6">
-        <h2 className="font-heading text-xl font-bold leading-relaxed text-slate-900 sm:text-2xl">
-          {question}
-        </h2>
-      </div>
-
-      {/* Options List */}
+      {/* 3. Answer Options List */}
       <div className="mt-8 space-y-3" role="group" aria-label="Answer options">
-        {options.map((option, index) => {
-          const optKey = option.id.toLowerCase();
-          const isSelected = selectedOptionId?.toLowerCase() === optKey;
-          const isCorrect = optKey === correctOptionId.toLowerCase();
-          const showCorrect = isAnswered && isCorrect;
-          const showIncorrect = isSelected && !isCorrect;
-
-          let optionStyle =
-            "border-slate-200 bg-slate-50/70 text-slate-800 hover:border-slate-400 hover:bg-slate-100/80 hover:shadow-sm";
-
-          if (showCorrect) {
-            optionStyle =
-              "border-emerald-500 bg-emerald-50/90 text-emerald-950 font-semibold shadow-md shadow-emerald-500/10 ring-1 ring-emerald-500";
-          } else if (showIncorrect) {
-            optionStyle =
-              "border-rose-400 bg-rose-50/90 text-rose-950 font-medium shadow-md shadow-rose-500/10";
-          } else if (isAnswered) {
-            optionStyle = "border-slate-200 bg-slate-50/40 text-slate-400 opacity-60";
-          }
-
-          const letter = String.fromCharCode(65 + index);
+        {safeOptions.map((option, index) => {
+          const optKey = String(option.id || "").trim().toLowerCase();
+          const selKey = String(selectedOptionId || "").trim().toLowerCase();
+          const isSelected = Boolean(selectedOptionId !== null && selKey === optKey);
+          const isCorrect = Boolean(normalizedCorrectId && optKey === normalizedCorrectId);
 
           return (
-            <button
-              key={option.id}
-              type="button"
-              disabled={isAnswered}
-              onClick={() => handleSelectOption(option.id)}
-              className={`group flex min-h-14 w-full items-center gap-3.5 rounded-2xl border px-4 py-3.5 text-left transition-all duration-200 disabled:cursor-default ${optionStyle}`}
-            >
-              <span
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-heading text-sm font-bold transition-all ${
-                  showCorrect
-                    ? "bg-emerald-600 text-white shadow-sm"
-                    : showIncorrect
-                      ? "bg-rose-600 text-white shadow-sm"
-                      : isAnswered
-                        ? "bg-slate-200 text-slate-500"
-                        : "bg-slate-200 text-slate-700 group-hover:bg-slate-900 group-hover:text-white"
-                }`}
-              >
-                {letter}
-              </span>
-
-              <span className="flex-1 text-sm sm:text-base font-normal">{option.text}</span>
-
-              {showCorrect && (
-                <div className="flex items-center gap-1.5 text-emerald-700">
-                  <span className="hidden sm:inline text-xs font-bold uppercase tracking-wider">
-                    Correct
-                  </span>
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
-                </div>
-              )}
-              {showIncorrect && (
-                <div className="flex items-center gap-1.5 text-rose-700">
-                  <span className="hidden sm:inline text-xs font-bold uppercase tracking-wider">
-                    Incorrect
-                  </span>
-                  <XCircle className="h-5 w-5 shrink-0 text-rose-600" />
-                </div>
-              )}
-            </button>
+            <AnswerOption
+              key={option.id || index}
+              option={option}
+              index={index}
+              isSelected={isSelected}
+              isCorrect={isCorrect}
+              isAnswered={isAnswered}
+              mode={mode}
+              onSelect={handleSelectOption}
+            />
           );
         })}
       </div>
 
-      {/* Post-Answer Feedback & Explanation */}
-      {isAnswered && (
-        <div className="mt-8 animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-4">
-          <div
-            className={`rounded-2xl border p-5 sm:p-6 transition-all ${
-              isUserCorrect
-                ? "border-emerald-200 bg-emerald-50/60"
-                : "border-amber-200 bg-amber-50/60"
-            }`}
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-center gap-2">
-                {isUserCorrect ? (
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-white">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </div>
-                ) : (
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-600 text-white">
-                    <Lightbulb className="h-4 w-4" />
-                  </div>
-                )}
-                <h3 className="font-heading text-base font-bold text-slate-900">
-                  {isUserCorrect
-                    ? "Great job! That's correct."
-                    : `Correct Answer: Option ${correctOptionId.toUpperCase()}`}
-                </h3>
-              </div>
+      {/* 4. Test Mode Navigation Bar */}
+      {mode === "test" && (
+        <div className="mt-8 flex items-center justify-between border-t border-slate-100 pt-5">
+          {hasPrevious ? (
+            <button
+              type="button"
+              onClick={onPrevious}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>Previous</span>
+            </button>
+          ) : (
+            <div />
+          )}
 
-              <Link
-                href={`/chat?prompt=${aiChatPrompt}`}
-                className="inline-flex items-center gap-1 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-colors shadow-sm"
-              >
-                <Bot className="h-3.5 w-3.5 text-indigo-600" />
-                <span>Ask AI Tutor</span>
-              </Link>
-            </div>
-
-            <div className="mt-3 text-sm leading-relaxed text-slate-700">
-              <p className="font-medium text-slate-900 mb-1">
-                Official Answer: Option {correctOptionId.toUpperCase()} &mdash;{" "}
-                <span className="font-semibold text-slate-800">
-                  {correctText || "Correct Option"}
-                </span>
-              </p>
-              <p className="text-slate-600">
-                {correctOption?.text
-                  ? `According to the WAEC marking scheme, Option ${correctOptionId.toUpperCase()} is the accurate answer for this problem.`
-                  : "Verified according to the WAEC examination key."}
-              </p>
-            </div>
-          </div>
-
-          {/* Proceed Button */}
-          <div className="flex items-center justify-end pt-2">
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-slate-400">
+              {selectedOptionId ? "Answer selected" : "Not answered"}
+            </span>
             <button
               type="button"
               onClick={handleProceed}
-              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3.5 font-heading text-sm font-bold text-white shadow-lg transition-all hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#0e1726] px-5 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-slate-800 transition-colors"
             >
-              <span>{isLastQuestion ? "Finish Session" : "Next Question"}</span>
-              <ArrowRight className="h-4 w-4" />
+              <span>{isLastQuestion ? "Review / Submit" : "Next"}</span>
+              <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>
         </div>
+      )}
+
+      {/* 5. Practice Mode Feedback & Explanation */}
+      {mode === "practice" && isAnswered && (
+        <PracticeFeedback
+          isUserCorrect={isUserCorrect}
+          correctOptionId={safeCorrectId}
+          correctText={correctText}
+          explanation={explanation}
+          isLastQuestion={isLastQuestion}
+          onProceed={handleProceed}
+          subject={subject}
+          topic={topic}
+          year={year}
+          question={question}
+          options={safeOptions}
+          selectedOptionId={selectedOptionId}
+        />
+      )}
+
+      {/* 6. Review Mode Feedback & Explanation */}
+      {mode === "review" && (
+        <ReviewFeedback
+          isUserCorrect={isUserCorrect}
+          selectedOptionId={selectedOptionId}
+          correctOptionId={safeCorrectId}
+          correctText={correctText}
+          explanation={explanation}
+          subject={subject}
+          topic={topic}
+          year={year}
+          question={question}
+          options={safeOptions}
+        />
       )}
     </article>
   );
