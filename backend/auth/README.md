@@ -9,6 +9,25 @@ The **Auth Microservice** handles user registration, PIN-based authentication, a
 
 ---
 
+## Docker Deployment
+
+The Docker image runs PHP 8.3 with Apache and SQLite support. SQLite data is kept in the `auth_database` named volume, so rebuilding or replacing the container does not remove user data.
+
+1. Copy `.env.example` to `.env` and replace `JWT_SECRET` with a unique random value. For example, generate one with `php -r "echo bin2hex(random_bytes(32)), PHP_EOL;"`.
+2. Build and start the service from this directory:
+
+```bash
+docker compose up -d --build
+```
+
+The service is available at `http://localhost:5001` by default. Set `AUTH_PORT` in `.env` to change the host port. Both `/routes/auth.php?action=signup` and the rewritten REST paths such as `/auth/signup` are supported. Compose creates the shared Docker network `smart-study-services`; connect the gateway container to that network to resolve the auth service as `http://auth`.
+
+For a host-based Express backend, use `AUTH_SERVICE_URL=http://localhost:5001/routes/auth.php` and `AUTH_REST_BASE_URL=http://localhost:5001`. For a gateway container attached to `smart-study-services`, use `AUTH_SERVICE_URL=http://auth/routes/auth.php` and `AUTH_REST_BASE_URL=http://auth`. Configure the exact same `JWT_SECRET` in the auth container, Express backend, and Next.js server.
+
+Stop the service with `docker compose down`; this keeps the database volume. `docker compose down -v` also deletes the database and all stored auth data.
+
+---
+
 ## Architecture & Design Decisions
 
 ### 1. Child-Friendly PIN Authentication

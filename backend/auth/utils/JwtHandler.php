@@ -24,7 +24,13 @@ class JwtHandler
             $dotenv->safeLoad();
         }
 
-        $this->secretKey = $_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? 'super_secret_dev_key_bece_2026_production_key_32bytes';
+        $environmentSecret = getenv('JWT_SECRET');
+        if (($environmentSecret === false || $environmentSecret === '') && getenv('APP_ENV') === 'production') {
+            throw new RuntimeException('JWT_SECRET must be configured in production.');
+        }
+        $this->secretKey = ($environmentSecret !== false && $environmentSecret !== '')
+            ? $environmentSecret
+            : ($_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? 'super_secret_dev_key_bece_2026_production_key_32bytes');
     }
 
     public function generateToken(int $userId, string $username): string

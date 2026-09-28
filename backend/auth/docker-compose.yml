@@ -1,0 +1,19 @@
+services:
+  auth:
+    build:
+      context: .
+    ports:
+      - "${AUTH_PORT:-5001}:80"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env before starting}
+      APP_ENV: production
+    volumes:
+      - auth_database:/var/www/html/database
+    restart: unless-stopped
+
+volumes:
+  auth_database:
+
+networks:
+  default:
+    name: smart-study-services

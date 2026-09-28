@@ -6,7 +6,7 @@ export async function POST(request: Request) {
 }
 
 async function proxyAuthRequest(request: Request, endpoint: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
+  const baseUrl = process.env.BACKEND_API_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
   try {
     const backendResponse = await fetch(
