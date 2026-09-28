@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { AUTH_COOKIE_NAME } from "@/lib/auth";
 
 export async function POST(request: Request) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
+  const baseUrl = process.env.BACKEND_API_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
   try {
     const backendResponse = await fetch(

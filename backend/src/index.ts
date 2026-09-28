@@ -9,8 +9,12 @@ import articlesRoutes from './routes/articles';
 import chatRoutes from './routes/chat';
 import { errorHandler } from './middleware/errorHandler';
 
-// Load .env from backend/src directory
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+// Resolve runtime configuration consistently from the backend root in dev and compiled builds.
+dotenv.config({ path: [path.resolve(process.cwd(), 'src/.env'), path.resolve(process.cwd(), '.env')] });
+
+if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
+  throw new Error('JWT_SECRET must be configured in production.');
+}
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;

@@ -1,0 +1,6 @@
+.git
+.env
+database/*.sqlite
+database/*.sqlite3
+test_*.php
+*.log
