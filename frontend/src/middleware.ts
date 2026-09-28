@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { AUTH_COOKIE_NAME } from "@/lib/auth";
+import { AUTH_COOKIE_NAME } from "@/lib/auth-cookie";
 
 // Protected route prefixes that require an active session
 const PROTECTED_PREFIXES = [
@@ -14,14 +14,15 @@ const PROTECTED_PREFIXES = [
 // Routes intended for unauthenticated users only
 const AUTH_PAGES = ["/login", "/signup", "/register"];
 
-function decodeBase64Url(value: string): Uint8Array {
+function decodeBase64Url(value: string): ArrayBuffer {
   const base64 = value.replace(/-/g, "+").replace(/_/g, "/");
   const binary = atob(base64.padEnd(Math.ceil(base64.length / 4) * 4, "="));
-  const bytes = new Uint8Array(binary.length);
+  const buffer = new ArrayBuffer(binary.length);
+  const bytes = new Uint8Array(buffer);
   for (let index = 0; index < binary.length; index += 1) {
     bytes[index] = binary.charCodeAt(index);
   }
-  return bytes;
+  return buffer;
 }
 
 async function isTokenValid(token: string | undefined): Promise<boolean> {
