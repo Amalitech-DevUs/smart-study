@@ -20,9 +20,10 @@ From `backend/content/content-database/`:
 Dependencies are already installed in that environment: fastapi, sqlalchemy,
 alembic, psycopg2-binary, pydantic, python-dotenv, uvicorn.
 
-A `.env` file must exist in this folder with:
-DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<database>
+A `.env` file must exist in this folder with the local SQLite setting:
+DATABASE_URL_SQLITE=sqlite:///./content.db
 
+For deployment, set `DATABASE_URL` in the hosting provider to the persistent PostgreSQL connection string.
 
 ## Running migrations
 
@@ -76,6 +77,12 @@ uvicorn app.main:app --reload --port 5002
 
 The API will be available at `http://127.0.0.1:5002` (port 5002 is the port assigned to this service per the team's architecture doc). Interactive docs (Swagger UI) are auto-generated at `http://127.0.0.1:5002/docs`.
 
+## Deploying to Render
+
+The repository's root `render.yaml` defines this service with `backend/content/content-database` as its root directory. The service installs `requirements.txt`, applies Alembic migrations, loads the idempotent question and article seed data, and starts Uvicorn on Render's assigned `PORT`.
+
+Set `DATABASE_URL` in Render to a persistent PostgreSQL connection string. Do not use the local SQLite URL for production; Render's default filesystem is ephemeral. The service checks `/health` during deploy.
+
 ## Schema
 
 Question
@@ -91,7 +98,6 @@ topic str
 prompt str the question text
 options list[str] the 4 answer choices, in order
 correct_answer str single letter: "A", "B", "C", or "D"
-
 
 Unique constraint on (subject, year, paper, question_number) — prevents
 duplicate imports of the same question.
@@ -134,17 +140,16 @@ validates the same way before inserting, skipping duplicates by `slug`.
 Returns a list of questions. All query parameters are optional and combine
 with AND logic.
 
-| Param | Type | Example |
-|---|---|---|
-| `subject` | string | `?subject=Mathematics` |
-| `year` | int | `?year=2020` |
-| `paper` | int | `?paper=1` |
-| `topic` | string | `?topic=Objective%20Test` |
+| Param     | Type   | Example                   |
+| --------- | ------ | ------------------------- |
+| `subject` | string | `?subject=Mathematics`    |
+| `year`    | int    | `?year=2020`              |
+| `paper`   | int    | `?paper=1`                |
+| `topic`   | string | `?topic=Objective%20Test` |
 
 Example:
 
 GET /questions/?subject=Integrated%20Science&year=2026
-
 
 Response: `200 OK`, JSON array of question objects, ordered by year, paper,
 then question number. Field names are camelCase to match the team's agreed
@@ -186,6 +191,7 @@ Returns a list of articles, ordered by `published_at` (newest first). Optional
 query parameters: `category`, `subject`.
 
 Example:
+
 ```
 GET /articles/?subject=Mathematics
 ```
@@ -197,12 +203,12 @@ Returns a single article by its database ID. `200 OK`, or `404 Not Found` with
 
 ## Current content (as of this MVP)
 
-| Subject | Year | Paper | Questions | Type |
-|---|---|---|---|---|
-| English Language | 2020 | 1 | 30 | MCQ |
-| Mathematics | 2020 | 1 | 34 | MCQ |
-| Integrated Science | 2026 | 1 | 40 | MCQ |
-| Social Studies | 2020 | 1 | 40 | MCQ |
+| Subject            | Year | Paper | Questions | Type |
+| ------------------ | ---- | ----- | --------- | ---- |
+| English Language   | 2020 | 1     | 30        | MCQ  |
+| Mathematics        | 2020 | 1     | 34        | MCQ  |
+| Integrated Science | 2026 | 1     | 40        | MCQ  |
+| Social Studies     | 2020 | 1     | 40        | MCQ  |
 
 **Total: 813 questions.**
 
@@ -211,13 +217,13 @@ Returns a single article by its database ID. `200 OK`, or `404 Not Found` with
 13 original revision-guide articles (written for this platform, not sourced from
 elsewhere):
 
-| Subject | Articles |
-|---|---|
-| Mathematics | Number Bases, Algebra Word Problems, Geometry Shortcuts |
-| English Language | Comprehension Strategies, Essay Blueprint, Grammar Mistakes |
-| Integrated Science | Periodic Table Tips, Life Processes, Science Diagrams |
-| Social Studies | Ghana Government, BECE History Events, Human Rights |
-| General | Top Study Habits |
+| Subject            | Articles                                                    |
+| ------------------ | ----------------------------------------------------------- |
+| Mathematics        | Number Bases, Algebra Word Problems, Geometry Shortcuts     |
+| English Language   | Comprehension Strategies, Essay Blueprint, Grammar Mistakes |
+| Integrated Science | Periodic Table Tips, Life Processes, Science Diagrams       |
+| Social Studies     | Ghana Government, BECE History Events, Human Rights         |
+| General            | Top Study Habits                                            |
 
 ### Known gaps
 

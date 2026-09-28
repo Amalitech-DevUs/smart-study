@@ -11,3 +11,15 @@ services:
         value: 3.11.11
       - key: GROQ_API_KEY
         sync: false
+  - type: web
+    name: smart-study-content
+    runtime: python
+    rootDir: backend/content/content-database
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && python -m seed.import_questions && python -m seed.import_articles && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: DATABASE_URL
+        sync: false
