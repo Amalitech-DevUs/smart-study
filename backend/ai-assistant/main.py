@@ -174,6 +174,9 @@ async def stream_response(messages: list, source_tag: str):
         headers["X-Title"] = "Smart Study AI"
         # Prioritize currently working MODEL, then fallback through all candidate free models
         candidate_models = [MODEL] + [m for m in OPENROUTER_FREE_MODELS if m != MODEL]
+    elif PROVIDER_NAME == "Groq":
+        groq_models = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "gemma2-9b-it"]
+        candidate_models = [MODEL] + [m for m in groq_models if m != MODEL]
     else:
         candidate_models = [MODEL]
 
