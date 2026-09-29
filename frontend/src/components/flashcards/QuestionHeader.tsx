@@ -43,6 +43,16 @@ const subjectBadges: Record<SubjectColor, { bg: string; text: string; border: st
     text: "text-purple-800",
     border: "border-purple-200",
   },
+  "career-tech": {
+    bg: "bg-amber-50",
+    text: "text-amber-800",
+    border: "border-amber-200",
+  },
+  ict: {
+    bg: "bg-cyan-50",
+    text: "text-cyan-800",
+    border: "border-cyan-200",
+  },
 };
 
 type Props = {

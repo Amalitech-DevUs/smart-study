@@ -19,8 +19,13 @@ async function getQuestions(
   year: number,
 ): Promise<{ questions: McqQuestion[]; source: string }> {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
-
-  const endpoint = `${API_BASE_URL}/questions?subject=${encodeURIComponent(subjectName)}&year=${year}`;
+  const apiSubject =
+    subjectSlug.toLowerCase() === "ict"
+      ? "Computing"
+      : subjectSlug.toLowerCase() === "rme"
+        ? "Religious and Moral Education"
+        : subjectName;
+  const endpoint = `${API_BASE_URL}/questions?subject=${encodeURIComponent(apiSubject)}&year=${year}`;
 
   try {
     const controller = new AbortController();
@@ -128,7 +133,9 @@ async function getQuestions(
       (q) =>
         q.subject &&
         (q.subject.toLowerCase() === subjectName.toLowerCase() ||
-          q.subject.toLowerCase().includes(subjectSlug.toLowerCase())) &&
+          q.subject.toLowerCase().includes(subjectSlug.toLowerCase()) ||
+          (subjectSlug.toLowerCase() === "ict" && q.subject.toLowerCase() === "computing") ||
+          (subjectSlug.toLowerCase() === "rme" && q.subject.toLowerCase().includes("religious"))) &&
         Number(q.year) === year,
     );
 
@@ -199,7 +206,7 @@ export default async function PaperPage({ params }: PaperPageProps) {
   );
 
   return (
-    <main className="flex-1 bg-white px-6 py-10 pb-28 sm:py-14">
+    <main className="flex-1 bg-white px-3.5 sm:px-6 py-6 sm:py-14 pb-28">
       <div className="mx-auto max-w-5xl">
         <Link
           href={`/flashcards/${subjectData.slug}`}
@@ -208,16 +215,16 @@ export default async function PaperPage({ params }: PaperPageProps) {
           <ArrowLeft className="h-3.5 w-3.5" />
           <span>Back to {subjectData.name}</span>
         </Link>
-        <header className="mt-6 border-b border-[#e2e8f0] pb-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#c0392b]">
+        <header className="mt-5 sm:mt-6 border-b border-[#e2e8f0] pb-5 sm:pb-6">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#c0392b]">
             Official Exam Practice
           </p>
-          <h1 className="mt-2 font-heading text-3xl font-extrabold text-[#0e1726] sm:text-4xl">
+          <h1 className="mt-1.5 sm:mt-2 font-heading text-2xl sm:text-4xl font-extrabold text-[#0e1726]">
             {subjectData.name} ({year} BECE)
           </h1>
         </header>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-6 sm:mt-10 flex justify-center">
           {questions.length > 0 ? (
             <SessionRunner
               initialQuestions={questions}

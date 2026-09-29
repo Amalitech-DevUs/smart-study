@@ -38,9 +38,9 @@ export function SubjectsSection({ subjects }: Props) {
 
   return (
     <section aria-labelledby="my-subjects-heading">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
-          <h2 id="my-subjects-heading" className="font-heading text-xl font-bold text-slate-900">
+          <h2 id="my-subjects-heading" className="font-heading text-lg sm:text-xl font-bold text-slate-900">
             My Subjects
           </h2>
           <p className="text-xs text-slate-500">
@@ -48,14 +48,14 @@ export function SubjectsSection({ subjects }: Props) {
           </p>
         </div>
 
-        {/* Filter tabs */}
-        <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1 text-xs self-start sm:self-auto flex-wrap">
+        {/* Filter tabs — horizontally scrollable on mobile */}
+        <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1 text-xs self-start sm:self-auto overflow-x-auto scrollbar-hide flex-nowrap">
           {FILTERS.map(({ value, label }) => (
             <button
               key={value}
               type="button"
               onClick={() => setFilter(value)}
-              className={`rounded px-2.5 py-1 font-medium transition-colors ${
+              className={`shrink-0 rounded px-2.5 py-1 font-medium transition-colors whitespace-nowrap ${
                 filter === value
                   ? "bg-slate-900 text-white"
                   : "text-slate-600 hover:text-slate-900"

@@ -137,7 +137,7 @@ export function StudyCalendarCard({ streak = 0, studiedDates = new Set() }: Prop
       </div>
 
       {/* Weekday header row */}
-      <div className="grid grid-cols-7 text-center text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-3 pb-1 border-b border-slate-50 shrink-0">
+      <div className="grid grid-cols-7 text-center text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-3 pb-1 border-b border-slate-50 shrink-0">
         {weekdays.map((w) => (
           <div key={w} className="py-1">{w}</div>
         ))}
@@ -148,7 +148,7 @@ export function StudyCalendarCard({ streak = 0, studiedDates = new Set() }: Prop
         {days.map((item, index) => (
           <div key={index} className="flex items-center justify-center p-0.5">
             <div
-              className={`flex h-7 w-7 items-center justify-center rounded-lg text-[11px] font-medium transition-all ${
+              className={`flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-lg text-[10px] sm:text-[11px] font-medium transition-all ${
                 item.isToday
                   ? "bg-slate-900 text-white font-bold ring-2 ring-amber-400 shadow-xs"
                   : item.isStudied && item.isCurrentMonth

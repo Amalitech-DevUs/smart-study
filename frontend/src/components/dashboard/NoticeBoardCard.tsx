@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { Megaphone, Bell, Calendar } from "lucide-react";
+import { Megaphone, Bell, Calendar, ChevronDown } from "lucide-react";
 
 type Notice = {
   id: string;
@@ -13,7 +13,7 @@ type Notice = {
   href: string;
 };
 
-const ALL_NOTICES: Notice[] = [
+export const ALL_NOTICES: Notice[] = [
   {
     id: "n2026-1",
     title: "BECE 2026 Examination Timetable Released",
@@ -57,14 +57,25 @@ const BADGE_STYLES: Record<Notice["badge"], string> = {
 
 export function NoticeBoardCard() {
   const currentYear = useMemo(() => new Date().getFullYear(), []);
+  const [olderExpanded, setOlderExpanded] = useState(false);
 
-  // Dynamically filter notices relative to current year (preventing stale 2024 notices in 2026)
+  // Dynamically filter notices relative to current year
   const activeNotices = useMemo(() => {
     return ALL_NOTICES.filter((n) => {
       const noticeYear = new Date(n.date).getFullYear();
       return noticeYear >= currentYear;
     }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [currentYear]);
+
+  // High-yield notices (URGENT / NEW) stay prominent above fold
+  const primaryNotices = useMemo(() => {
+    return activeNotices.filter((n) => n.badge === "URGENT" || n.badge === "NEW");
+  }, [activeNotices]);
+
+  // Secondary updates collapsed to keep high-yield study tools above the fold
+  const secondaryNotices = useMemo(() => {
+    return activeNotices.filter((n) => n.badge === "UPDATE");
+  }, [activeNotices]);
 
   const formatDate = (isoString: string) => {
     try {
@@ -79,6 +90,39 @@ export function NoticeBoardCard() {
     }
   };
 
+  const renderNoticeItem = (n: Notice) => (
+    <Link
+      key={n.id}
+      href={n.href}
+      className="flex items-start gap-3 py-2.5 px-1.5 group hover:bg-slate-50/80 rounded-xl transition-colors block"
+    >
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-slate-900 group-hover:text-white transition-colors mt-0.5">
+        <Megaphone className="h-3.5 w-3.5" />
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center justify-between gap-2 mb-1">
+          <span
+            className={`rounded-md border px-1.5 py-0.5 text-[9px] font-bold tracking-wider uppercase ${
+              BADGE_STYLES[n.badge]
+            }`}
+          >
+            {n.badge}
+          </span>
+          <span className="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+            <Calendar className="h-3 w-3" />
+            {formatDate(n.date)}
+          </span>
+        </div>
+        <h4 className="text-xs font-bold text-slate-900 group-hover:text-slate-700 transition-colors leading-snug">
+          {n.title}
+        </h4>
+        <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 line-clamp-2">
+          {n.description}
+        </p>
+      </div>
+    </Link>
+  );
+
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs h-full flex flex-col justify-between">
       <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
@@ -92,7 +136,7 @@ export function NoticeBoardCard() {
           </div>
         </div>
         <Link
-          href="/articles"
+          href="/notices"
           className="text-xs font-semibold text-slate-600 hover:text-slate-900 hover:underline"
         >
           View All
@@ -100,42 +144,35 @@ export function NoticeBoardCard() {
       </div>
 
       <div className="divide-y divide-slate-100 mt-2 flex-1">
-        {activeNotices.length > 0 ? (
-          activeNotices.map((n) => (
-            <Link
-              key={n.id}
-              href={n.href}
-              className="flex items-start gap-3 py-3 px-1.5 group hover:bg-slate-50/80 rounded-xl transition-colors block"
-            >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-slate-900 group-hover:text-white transition-colors mt-0.5">
-                <Megaphone className="h-3.5 w-3.5" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center justify-between gap-2 mb-1">
-                  <span
-                    className={`rounded-md border px-1.5 py-0.5 text-[9px] font-bold tracking-wider uppercase ${
-                      BADGE_STYLES[n.badge]
-                    }`}
-                  >
-                    {n.badge}
-                  </span>
-                  <span className="flex items-center gap-1 text-[10px] font-medium text-slate-400">
-                    <Calendar className="h-3 w-3" />
-                    {formatDate(n.date)}
-                  </span>
-                </div>
-                <h4 className="text-xs font-bold text-slate-900 group-hover:text-slate-700 transition-colors leading-snug">
-                  {n.title}
-                </h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5 line-clamp-2">
-                  {n.description}
-                </p>
-              </div>
-            </Link>
-          ))
+        {primaryNotices.length > 0 ? (
+          primaryNotices.map((n) => renderNoticeItem(n))
         ) : (
-          <div className="py-8 text-center text-xs text-slate-400">
-            No active alerts for the current academic session.
+          <div className="py-6 text-center text-xs text-slate-400">
+            No active urgent alerts.
+          </div>
+        )}
+
+        {/* Collapsible secondary/older notices accordion */}
+        {secondaryNotices.length > 0 && (
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => setOlderExpanded((prev) => !prev)}
+              className="flex w-full items-center justify-between py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+              aria-expanded={olderExpanded}
+            >
+              <span>Previous Notices &amp; Updates ({secondaryNotices.length})</span>
+              <ChevronDown
+                className={`h-3.5 w-3.5 text-slate-400 transition-transform duration-200 ${
+                  olderExpanded ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {olderExpanded && (
+              <div className="divide-y divide-slate-100/70 border-t border-slate-100 pt-1">
+                {secondaryNotices.map((n) => renderNoticeItem(n))}
+              </div>
+            )}
           </div>
         )}
       </div>

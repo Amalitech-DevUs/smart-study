@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/use-auth";
+import { useNotifications } from "@/lib/notification-context";
 import { LogOut, GraduationCap, User as UserIcon, PanelLeftClose } from "lucide-react";
 import {
   NAV_LINKS_LOGGED_IN,
@@ -17,6 +18,7 @@ type SideNavProps = {
 export function SideNav({ isOpen = true, onClose }: SideNavProps) {
   const pathname = usePathname();
   const { loggedIn, username, isLoading, logout } = useAuth();
+  const { unreadCount } = useNotifications();
 
   const isExamRunner =
     pathname.startsWith("/flashcards/") &&
@@ -106,18 +108,25 @@ export function SideNav({ isOpen = true, onClose }: SideNavProps) {
                 <Link
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-semibold transition-all ${
+                  className={`flex items-center justify-between rounded-xl px-3.5 py-2.5 text-xs font-semibold transition-all ${
                     isActive
                       ? "bg-slate-800 text-white shadow-xs border-l-2 border-emerald-400"
                       : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-100"
                   }`}
                 >
-                  <Icon
-                    className={`h-4 w-4 shrink-0 ${
-                      isActive ? "text-emerald-400" : "text-slate-400"
-                    }`}
-                  />
-                  <span>{item.label}</span>
+                  <div className="flex items-center gap-3 min-w-0">
+                    <Icon
+                      className={`h-4 w-4 shrink-0 ${
+                        isActive ? "text-emerald-400" : "text-slate-400"
+                      }`}
+                    />
+                    <span className="truncate">{item.label}</span>
+                  </div>
+                  {item.href === "/notifications" && unreadCount > 0 && (
+                    <span className="flex h-4 min-w-[16px] items-center justify-center rounded-full bg-amber-400 px-1 text-[9px] font-bold text-slate-950">
+                      {unreadCount > 9 ? "9+" : unreadCount}
+                    </span>
+                  )}
                 </Link>
               </li>
             );

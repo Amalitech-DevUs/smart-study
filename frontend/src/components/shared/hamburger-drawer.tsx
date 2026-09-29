@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/lib/use-auth";
+import { useNotifications } from "@/lib/notification-context";
 import { LogOut, GraduationCap, X } from "lucide-react";
 import {
   NAV_LINKS_DRAWER_LOGGED_IN,
@@ -15,6 +16,7 @@ export function HamburgerDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const { loggedIn, logout } = useAuth();
+  const { unreadCount } = useNotifications();
 
   // Close drawer on route change
   useEffect(() => {
@@ -126,14 +128,21 @@ export function HamburgerDrawer() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-medium transition-colors ${
+                        className={`flex items-center justify-between rounded-xl px-3.5 py-2.5 text-xs font-medium transition-colors ${
                           isActive
                             ? "bg-white/10 text-white font-semibold"
                             : "text-slate-300 hover:bg-white/5 hover:text-white"
                         }`}
                       >
-                        <Icon className={`h-4 w-4 ${isActive ? "text-white" : "text-slate-400"}`} />
-                        <span>{item.label}</span>
+                        <div className="flex items-center gap-3 min-w-0">
+                          <Icon className={`h-4 w-4 ${isActive ? "text-white" : "text-slate-400"}`} />
+                          <span className="truncate">{item.label}</span>
+                        </div>
+                        {item.href === "/notifications" && unreadCount > 0 && (
+                          <span className="flex h-4 min-w-[16px] items-center justify-center rounded-full bg-amber-400 px-1 text-[9px] font-bold text-slate-950">
+                            {unreadCount > 9 ? "9+" : unreadCount}
+                          </span>
+                        )}
                       </Link>
                     );
                   })}

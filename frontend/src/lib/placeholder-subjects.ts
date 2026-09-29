@@ -102,6 +102,26 @@ export const placeholderSubjects: PlaceholderSubject[] = [
       { year: 2026, questionCount: 40 },
     ],
   },
+  {
+    slug: "career-technology",
+    name: "Career Technology",
+    subjectColor: "career-tech",
+    papers: [
+      { year: 2024, questionCount: 40 },
+      { year: 2025, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
+    ],
+  },
+  {
+    slug: "ict",
+    name: "Computing (ICT)",
+    subjectColor: "computing",
+    papers: [
+      { year: 2024, questionCount: 40 },
+      { year: 2025, questionCount: 40 },
+      { year: 2026, questionCount: 40 },
+    ],
+  },
 ];
 
 export const sampleQuestions: McqQuestion[] = [

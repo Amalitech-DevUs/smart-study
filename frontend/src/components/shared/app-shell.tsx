@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { PanelLeftOpen } from "lucide-react";
 import { SideNav } from "@/components/shared/side-nav";
@@ -10,34 +10,49 @@ import { Footer } from "@/components/shared/footer";
 import { ChatWidget } from "@/components/chat/chat-widget";
 import { ToastContainer } from "@/components/shared/toast-container";
 
+const sidebarPreferenceEvent = "smartstudy-sidebar-preference";
+let sidebarPreferenceFallback: boolean | undefined;
+
+function subscribeToSidebarPreference(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  window.addEventListener(sidebarPreferenceEvent, onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(sidebarPreferenceEvent, onChange);
+  };
+}
+
+function getSidebarPreference() {
+  try {
+    const saved = localStorage.getItem("smartstudy_sidebar_open");
+    return saved !== null ? saved === "true" : true;
+  } catch {
+    return sidebarPreferenceFallback ?? true;
+  }
+}
+
+function saveSidebarPreference(isOpen: boolean) {
+  sidebarPreferenceFallback = isOpen;
+  try {
+    localStorage.setItem("smartstudy_sidebar_open", String(isOpen));
+  } catch {}
+  window.dispatchEvent(new Event(sidebarPreferenceEvent));
+}
+
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  // Restore user's sidebar preference
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("smartstudy_sidebar_open");
-      if (saved !== null) {
-        setIsSidebarOpen(saved === "true");
-      }
-    } catch {
-      // localStorage not accessible
-    }
-  }, []);
+  const isSidebarOpen = useSyncExternalStore(
+    subscribeToSidebarPreference,
+    getSidebarPreference,
+    () => true,
+  );
 
   const handleCloseSidebar = () => {
-    setIsSidebarOpen(false);
-    try {
-      localStorage.setItem("smartstudy_sidebar_open", "false");
-    } catch {}
+    saveSidebarPreference(false);
   };
 
   const handleOpenSidebar = () => {
-    setIsSidebarOpen(true);
-    try {
-      localStorage.setItem("smartstudy_sidebar_open", "true");
-    } catch {}
+    saveSidebarPreference(true);
   };
 
   const isLanding = pathname === "/";

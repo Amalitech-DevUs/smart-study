@@ -23,7 +23,9 @@ export type SubjectColor =
   | "french"
   | "computing"
   | "rme"
-  | "creative-arts";
+  | "creative-arts"
+  | "career-tech"
+  | "ict";
 
 export type McqOption = OptionItem;
 

@@ -312,6 +312,38 @@ export function getSubjectProgress(
       accentBadge: "bg-blue-50 text-blue-700 border-blue-200",
       accentText: "text-blue-700",
     },
+    {
+      name: "Computing",
+      slug: "computing",
+      totalAvailable: 120,
+      accentBorder: "border-l-cyan-600",
+      accentBadge: "bg-cyan-50 text-cyan-700 border-cyan-200",
+      accentText: "text-cyan-700",
+    },
+    {
+      name: "Religious and Moral Education",
+      slug: "rme",
+      totalAvailable: 40,
+      accentBorder: "border-l-purple-600",
+      accentBadge: "bg-purple-50 text-purple-700 border-purple-200",
+      accentText: "text-purple-700",
+    },
+    {
+      name: "Creative Arts and Design",
+      slug: "creative-arts",
+      totalAvailable: 120,
+      accentBorder: "border-l-pink-600",
+      accentBadge: "bg-pink-50 text-pink-700 border-pink-200",
+      accentText: "text-pink-700",
+    },
+    {
+      name: "Career Technology",
+      slug: "career-technology",
+      totalAvailable: 120,
+      accentBorder: "border-l-amber-600",
+      accentBadge: "bg-amber-50 text-amber-800 border-amber-200",
+      accentText: "text-amber-800",
+    },
   ];
 
   return subjectsConfig.map((subj) => {

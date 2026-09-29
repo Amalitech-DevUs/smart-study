@@ -32,10 +32,10 @@ export function QuickAccessGrid({ activeSession }: Props) {
     },
     {
       title: "Revision Cards",
-      desc: "Practice questions across all 8 BECE subjects",
+      desc: "Practice questions across all 9 BECE subjects",
       href: "/flashcards",
       icon: Layers,
-      badge: "8 Subjects",
+      badge: "9 Subjects",
       badgeClass: "bg-purple-50 text-purple-700 border-purple-200",
       cta: "Open Cards",
       accent: "border-slate-200 hover:border-purple-600 bg-white hover:bg-purple-50/30",
@@ -117,39 +117,39 @@ export function QuickAccessGrid({ activeSession }: Props) {
       )}
 
       {/* ── 2×2 tool cards grid ── */}
-      <div className="grid grid-cols-2 gap-2.5 mt-3 flex-1 content-start">
+      <div className="grid grid-cols-2 gap-2 sm:gap-2.5 mt-3 flex-1 content-start">
         {tools.map((c) => {
           const Icon = c.icon;
           return (
             <Link
               key={c.title}
               href={c.href}
-              className={`group flex flex-col justify-between p-3 rounded-xl border transition-all duration-150 ${c.accent} shadow-2xs hover:shadow-xs`}
+              className={`group flex flex-col justify-between p-2.5 sm:p-3 rounded-xl border transition-all duration-150 ${c.accent} shadow-2xs hover:shadow-xs`}
             >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
+                <div className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
                   <div
-                    className={`flex h-7 w-7 items-center justify-center rounded-lg shadow-2xs transition-transform group-hover:scale-105 ${c.iconBg}`}
+                    className={`flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-lg shadow-2xs transition-transform group-hover:scale-105 ${c.iconBg}`}
                   >
-                    <Icon className="h-3.5 w-3.5" />
+                    <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   </div>
                   <span
-                    className={`rounded-md border px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider ${c.badgeClass}`}
+                    className={`rounded-md border px-1 sm:px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider ${c.badgeClass}`}
                   >
                     {c.badge}
                   </span>
                 </div>
-                <h4 className="font-heading text-[11px] font-bold text-slate-900 group-hover:text-slate-800 transition-colors leading-snug">
+                <h4 className="font-heading text-[10px] sm:text-[11px] font-bold text-slate-900 group-hover:text-slate-800 transition-colors leading-snug">
                   {c.title}
                 </h4>
-                <p className="text-[10px] text-slate-500 line-clamp-2 mt-0.5 leading-snug">
+                <p className="text-[9px] sm:text-[10px] text-slate-500 line-clamp-2 mt-0.5 leading-snug">
                   {c.desc}
                 </p>
               </div>
 
-              <div className="mt-2.5 pt-2 border-t border-slate-100/80 flex items-center justify-between text-[10px] font-semibold text-slate-700 group-hover:text-slate-950">
+              <div className="mt-2 pt-1.5 sm:pt-2 border-t border-slate-100/80 flex items-center justify-between text-[9px] sm:text-[10px] font-semibold text-slate-700 group-hover:text-slate-950">
                 <span>{c.cta}</span>
-                <ArrowRight className="h-3 w-3 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
               </div>
             </Link>
           );
