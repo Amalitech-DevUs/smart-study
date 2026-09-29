@@ -493,3 +493,124 @@ export function getStudyStreak(username: string | undefined): number {
 
   return streak;
 }
+
+/**
+ * Returns the set of calendar dates (YYYY-MM-DD) on which the user had
+ * at least one recorded attempt. Used by the study calendar to accurately
+ * highlight real study days instead of approximating from streak count.
+ */
+export function getStudiedDates(username: string | undefined): Set<string> {
+  const attemptsKey = getAttemptsKey(username);
+  const attempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const dates = new Set<string>();
+  for (const a of attempts) {
+    const d = new Date(a.timestamp);
+    dates.add(
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`,
+    );
+  }
+  return dates;
+}
+
+export type PerformanceTier = {
+  label: string;
+  count: number;
+  percent: number;
+  color: string;
+  dotBg: string;
+};
+
+export type PerformanceDistributionData = {
+  overallPercent: number;
+  hasData: boolean;
+  totalEvaluated: number;
+  tiers: PerformanceTier[];
+};
+
+/**
+ * Calculates WAEC BECE performance diagnostic distribution from actual user attempts.
+ * Aligns perfectly with KPI overall accuracy score.
+ */
+export function getPerformanceTiers(
+  username: string | undefined,
+): PerformanceDistributionData {
+  const attemptsKey = getAttemptsKey(username);
+  const attempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const sessionsKey = getSessionsKey(username);
+  const sessions = getSafeStorage<StudySessionRecord[]>(sessionsKey, []);
+
+  const practiceAttempts = attempts.filter((a) => a.mode === "practice");
+  const practiceCorrect = practiceAttempts.filter((a) => a.isCorrect).length;
+  const practiceAccuracy =
+    practiceAttempts.length > 0
+      ? Math.round((practiceCorrect / practiceAttempts.length) * 100)
+      : 0;
+
+  const testSessions = sessions.filter((s) => s.mode === "test" && s.isCompleted);
+  let testAverage: number | null = null;
+  if (testSessions.length > 0) {
+    const totalScore = testSessions.reduce((acc, curr) => acc + curr.scorePercent, 0);
+    testAverage = Math.round(totalScore / testSessions.length);
+  }
+
+  const overallPercent =
+    practiceAccuracy > 0
+      ? practiceAccuracy
+      : testAverage ?? 0;
+
+  if (attempts.length === 0 && sessions.length === 0) {
+    return {
+      overallPercent: 0,
+      hasData: false,
+      totalEvaluated: 0,
+      tiers: [
+        { label: "Excellent (75%+)", count: 0, percent: 0, color: "#10b981", dotBg: "bg-emerald-500" },
+        { label: "Good (60-74%)", count: 0, percent: 0, color: "#3b82f6", dotBg: "bg-blue-500" },
+        { label: "Average (50-59%)", count: 0, percent: 0, color: "#f59e0b", dotBg: "bg-amber-500" },
+        { label: "Needs Improvement (<50%)", count: 0, percent: 0, color: "#f43f5e", dotBg: "bg-rose-500" },
+      ],
+    };
+  }
+
+  // Group by questionId to see mastery per unique question attempted
+  const questionMap = new Map<string, { total: number; correct: number }>();
+  for (const a of attempts) {
+    const existing = questionMap.get(a.questionId) || { total: 0, correct: 0 };
+    existing.total += 1;
+    if (a.isCorrect) existing.correct += 1;
+    questionMap.set(a.questionId, existing);
+  }
+
+  let excellent = 0;
+  let good = 0;
+  let average = 0;
+  let needsImprovement = 0;
+
+  questionMap.forEach((q) => {
+    const acc = Math.round((q.correct / Math.max(1, q.total)) * 100);
+    if (acc >= 75) excellent++;
+    else if (acc >= 60) good++;
+    else if (acc >= 50) average++;
+    else needsImprovement++;
+  });
+
+  const uniqueCount = Math.max(1, questionMap.size);
+
+  const pExcellent = Math.round((excellent / uniqueCount) * 100);
+  const pGood = Math.round((good / uniqueCount) * 100);
+  const pAverage = Math.round((average / uniqueCount) * 100);
+  const pNeeds = Math.max(0, 100 - (pExcellent + pGood + pAverage));
+
+  return {
+    overallPercent,
+    hasData: true,
+    totalEvaluated: questionMap.size,
+    tiers: [
+      { label: "Excellent (75%+)", count: excellent, percent: pExcellent, color: "#10b981", dotBg: "bg-emerald-500" },
+      { label: "Good (60-74%)", count: good, percent: pGood, color: "#3b82f6", dotBg: "bg-blue-500" },
+      { label: "Average (50-59%)", count: average, percent: pAverage, color: "#f59e0b", dotBg: "bg-amber-500" },
+      { label: "Needs Improvement (<50%)", count: needsImprovement, percent: pNeeds, color: "#f43f5e", dotBg: "bg-rose-500" },
+    ],
+  };
+}
+

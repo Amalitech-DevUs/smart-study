@@ -3,13 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/use-auth";
-import { LogOut, GraduationCap, User as UserIcon } from "lucide-react";
+import { LogOut, GraduationCap, User as UserIcon, PanelLeftClose } from "lucide-react";
 import {
   NAV_LINKS_LOGGED_IN,
   NAV_LINKS_PUBLIC,
 } from "@/lib/constants/navigation";
 
-export function SideNav() {
+type SideNavProps = {
+  isOpen?: boolean;
+  onClose?: () => void;
+};
+
+export function SideNav({ isOpen = true, onClose }: SideNavProps) {
   const pathname = usePathname();
   const { loggedIn, username, isLoading, logout } = useAuth();
 
@@ -47,16 +52,33 @@ export function SideNav() {
   const mainLinks = navLinks.filter((l) => l.href !== "/profile");
 
   return (
-    <aside className="hidden md:flex fixed left-0 top-0 z-40 h-screen w-[240px] flex-col border-r border-slate-200 bg-white text-slate-800 shadow-[1px_0_10px_rgba(0,0,0,0.04)]">
-      {/* Brand Header — clean black and white */}
-      <div className="bg-[#0e1726] p-5 text-white border-b border-slate-800/60">
+    <aside
+      className={`hidden md:flex fixed left-0 top-0 z-50 isolate h-screen w-[240px] flex-col border-r border-slate-800 bg-slate-900 text-slate-300 shadow-[1px_0_10px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-in-out ${
+        isOpen ? "translate-x-0" : "-translate-x-full pointer-events-none"
+      }`}
+    >
+      {/* Brand Header — sleek dark navy */}
+      <div className="relative bg-slate-950 p-5 text-white border-b border-slate-800/80 shrink-0">
+        {/* Close sidebar button */}
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            className="absolute top-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+            aria-label="Close sidebar"
+            title="Close sidebar"
+          >
+            <PanelLeftClose className="h-4 w-4" />
+          </button>
+        )}
+
         <div className="flex flex-col items-center text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f5a623] text-slate-950 shadow-sm">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400 text-slate-950 shadow-md">
             <GraduationCap className="h-6 w-6" />
           </div>
           <Link
             href={loggedIn ? "/dashboard" : "/"}
-            className="mt-3 font-heading text-lg font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
+            className="mt-3 font-heading text-lg font-bold tracking-tight text-white hover:text-amber-400 transition-colors"
           >
             SmartStudy
           </Link>
@@ -67,8 +89,8 @@ export function SideNav() {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 overflow-y-auto px-3.5 py-4">
-        <ul className="space-y-0.5">
+      <nav className="flex-1 min-h-0 overflow-y-auto px-3.5 py-4">
+        <ul className="space-y-1">
           {mainLinks.map((item) => {
             const Icon = item.icon;
             const isHash = item.href.includes("#");
@@ -86,13 +108,13 @@ export function SideNav() {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-semibold transition-all ${
                     isActive
-                      ? "bg-[#0e1726] text-white shadow-xs"
-                      : "text-slate-600 hover:bg-slate-100 hover:text-slate-950"
+                      ? "bg-slate-800 text-white shadow-xs border-l-2 border-emerald-400"
+                      : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-100"
                   }`}
                 >
                   <Icon
                     className={`h-4 w-4 shrink-0 ${
-                      isActive ? "text-white" : "text-slate-400"
+                      isActive ? "text-emerald-400" : "text-slate-400"
                     }`}
                   />
                   <span>{item.label}</span>
@@ -103,19 +125,19 @@ export function SideNav() {
         </ul>
       </nav>
 
-      {/* Bottom: User info + Logout only */}
-      <div className="mt-auto border-t border-slate-100 p-3.5 space-y-1 bg-slate-50/50">
+      {/* Bottom: Structured User Info & Logout Container */}
+      <div className="shrink-0 border-t border-slate-800 bg-slate-950/70 p-3.5 flex flex-col gap-3">
         {!isLoading && loggedIn ? (
           <>
-            <div className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#0e1726] text-white font-bold text-[11px]">
-                {username ? username.charAt(0).toUpperCase() : <UserIcon className="h-3.5 w-3.5" />}
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-800 border border-slate-700 text-amber-400 font-bold text-xs shadow-inner">
+                {username ? username.charAt(0).toUpperCase() : <UserIcon className="h-4 w-4" />}
               </div>
               <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold text-slate-900 leading-tight text-[11px]">
+                <p className="truncate font-semibold text-slate-100 leading-tight text-xs">
                   {username ?? "Student"}
                 </p>
-                <p className="text-[10px] text-slate-400 leading-tight">
+                <p className="text-[10px] text-slate-400 leading-tight truncate mt-0.5">
                   BECE Candidate
                 </p>
               </div>
@@ -124,9 +146,9 @@ export function SideNav() {
             <button
               type="button"
               onClick={logout}
-              className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-semibold text-rose-600 transition-colors hover:bg-rose-50"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900/90 py-2 px-3 text-xs font-semibold text-rose-400 transition-colors hover:border-rose-900/60 hover:bg-rose-950/40 hover:text-rose-300 active:scale-[0.99]"
             >
-              <LogOut className="h-4 w-4 shrink-0 text-rose-500" />
+              <LogOut className="h-3.5 w-3.5 shrink-0" />
               <span>Logout</span>
             </button>
           </>
@@ -135,13 +157,13 @@ export function SideNav() {
             <div className="flex flex-col gap-2">
               <Link
                 href="/login"
-                className="block w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-center text-xs font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+                className="block w-full rounded-xl border border-slate-700 bg-slate-800/80 px-3 py-2 text-center text-xs font-semibold text-slate-200 hover:bg-slate-800 hover:text-white transition-colors"
               >
                 Sign In
               </Link>
               <Link
                 href="/signup"
-                className="block w-full rounded-xl bg-[#0e1726] px-3 py-2 text-center text-xs font-bold text-white hover:bg-slate-900 transition-colors"
+                className="block w-full rounded-xl bg-amber-400 px-3 py-2 text-center text-xs font-bold text-slate-950 hover:bg-amber-300 transition-colors shadow-sm"
               >
                 Sign Up
               </Link>

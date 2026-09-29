@@ -1,33 +1,40 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { ChevronDown } from "lucide-react";
 import type { SubjectProgressData } from "@/lib/learning-tracker";
 import { SubjectCard } from "./SubjectCard";
 
-type FilterValue = "all" | "in_progress" | "mastered";
+type FilterValue = "all" | "in_progress" | "not_started" | "mastered";
 
 type Props = {
   subjects: SubjectProgressData[];
 };
 
-const FILTERS: { value: FilterValue; label: string }[] = [
-  { value: "all", label: "All (5)" },
-  { value: "in_progress", label: "In Progress" },
-  { value: "mastered", label: "Exam Ready" },
-];
-
 export function SubjectsSection({ subjects }: Props) {
   const [filter, setFilter] = useState<FilterValue>("all");
+  const [unstartedOpen, setUnstartedOpen] = useState(false);
 
-  const filtered = useMemo(() => {
-    if (filter === "in_progress") {
-      return subjects.filter((s) => s.hasData && s.accuracy < 80);
-    }
-    if (filter === "mastered") {
-      return subjects.filter((s) => s.hasData && s.accuracy >= 80);
-    }
-    return subjects;
-  }, [subjects, filter]);
+  const inProgress = useMemo(() => subjects.filter((s) => s.uniquePracticed > 0 && s.accuracy < 80), [subjects]);
+  const examReady = useMemo(() => subjects.filter((s) => s.hasData && s.accuracy >= 80), [subjects]);
+  const notStarted = useMemo(() => subjects.filter((s) => s.uniquePracticed === 0), [subjects]);
+  const started = useMemo(() => subjects.filter((s) => s.uniquePracticed > 0), [subjects]);
+
+  const FILTERS: { value: FilterValue; label: string }[] = [
+    { value: "all", label: `All (${subjects.length})` },
+    { value: "in_progress", label: `In Progress (${inProgress.length})` },
+    { value: "not_started", label: `Not Started (${notStarted.length})` },
+    { value: "mastered", label: `Exam Ready (${examReady.length})` },
+  ];
+
+  const filteredForTab = useMemo(() => {
+    if (filter === "in_progress") return inProgress;
+    if (filter === "mastered") return examReady;
+    if (filter === "not_started") return notStarted;
+    return started; // "all" — active subjects only (unstarted shown in collapsible)
+  }, [filter, inProgress, examReady, notStarted, started]);
+
+  const showCollapsible = filter === "all" && notStarted.length > 0;
 
   return (
     <section aria-labelledby="my-subjects-heading">
@@ -42,7 +49,7 @@ export function SubjectsSection({ subjects }: Props) {
         </div>
 
         {/* Filter tabs */}
-        <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1 text-xs self-start sm:self-auto">
+        <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1 text-xs self-start sm:self-auto flex-wrap">
           {FILTERS.map(({ value, label }) => (
             <button
               key={value}
@@ -62,10 +69,46 @@ export function SubjectsSection({ subjects }: Props) {
 
       {/* Subject Cards List */}
       <div className="space-y-3">
-        {filtered.map((subj) => (
-          <SubjectCard key={subj.slug} subject={subj} />
-        ))}
+        {filteredForTab.length > 0 ? (
+          filteredForTab.map((subj) => (
+            <SubjectCard key={subj.slug} subject={subj} />
+          ))
+        ) : (
+          <p className="py-6 text-center text-sm text-slate-400">
+            No subjects in this category yet.
+          </p>
+        )}
       </div>
+
+      {/* Collapsible "Unstarted Subjects" accordion — only visible in All view */}
+      {showCollapsible && (
+        <div className="mt-4 rounded-xl border border-slate-200 bg-white overflow-hidden">
+          <button
+            type="button"
+            onClick={() => setUnstartedOpen((prev) => !prev)}
+            className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+            aria-expanded={unstartedOpen}
+          >
+            <span>
+              Unstarted Subjects
+              <span className="ml-2 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-slate-500">
+                {notStarted.length}
+              </span>
+            </span>
+            <ChevronDown
+              className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${unstartedOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+          {unstartedOpen && (
+            <div className="border-t border-slate-100 px-4 pb-4 pt-3 space-y-3">
+              {notStarted.map((subj) => (
+                <SubjectCard key={subj.slug} subject={subj} />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 }
+
