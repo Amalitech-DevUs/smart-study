@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { FormattedMessageContent } from "./FormattedMessageContent";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Bot,
+  BrainCircuit,
   Sparkles,
   X,
   ExternalLink,
@@ -171,7 +172,7 @@ export function InlineAiTutor({
 
 Student's Question: ${userPrompt}
 
-Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple language suitable for a Junior High School student. Explain directly, point out the key concept, and give actionable advice for exam day.`;
+Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple language suitable for a Junior High School student. Explain directly, point out the key concept, and give actionable advice for exam day. Do NOT use Markdown headings (# or ## or ###). Do NOT use horizontal lines (---). Write in clear, plain paragraphs. You may use numbered points (1. 2. 3.) or short bullet lists (- item) for lists only.`;
 
     try {
       const baseUrl =
@@ -260,7 +261,7 @@ Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple lan
         <div className="flex items-center justify-between border-b border-indigo-100 bg-white/80 px-4 py-3 backdrop-blur-sm sm:px-5">
           <div className="flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#0e1726] shadow-sm shadow-slate-900/20">
-              <Bot className="h-4 w-4 text-amber-400" />
+              <BrainCircuit className="h-4 w-4 text-amber-400" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -352,10 +353,14 @@ Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple lan
                     className={`max-w-[90%] rounded-2xl px-3.5 py-2.5 leading-relaxed sm:max-w-[85%] ${
                       m.role === "student"
                         ? "rounded-tr-sm bg-[#0e1726] text-white"
-                        : "rounded-tl-sm border border-slate-200/90 bg-white text-slate-800 shadow-sm whitespace-pre-wrap"
+                        : "rounded-tl-sm border border-slate-200/90 bg-white text-slate-800 shadow-sm"
                     }`}
                   >
-                    {m.content}
+                    {m.role === "assistant" ? (
+                      <FormattedMessageContent content={m.content} />
+                    ) : (
+                      <span>{m.content}</span>
+                    )}
                   </div>
                 </div>
               ))}

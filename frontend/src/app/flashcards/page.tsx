@@ -5,10 +5,10 @@ import { SUBJECTS } from "@/lib/constants/subjects";
 
 export default function FlashcardsPage() {
   return (
-    <main className="flex-1 min-h-screen bg-[#f8f9fa] px-4 py-8 sm:px-6 lg:px-8">
+    <main className="flex-1 min-h-screen bg-[#f8f9fa] px-3 py-6 sm:px-4 sm:py-8 lg:px-8">
       <div className="mx-auto max-w-4xl">
         {/* Back link */}
-        <div className="mb-6">
+        <div className="mb-5 sm:mb-6">
           <Link
             href="/dashboard"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
@@ -19,18 +19,18 @@ export default function FlashcardsPage() {
         </div>
 
         <ScrollReveal>
-          <header className="mb-8 border-b border-slate-200 pb-6">
-            <h1 className="font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
+          <header className="mb-6 sm:mb-8 border-b border-slate-200 pb-5 sm:pb-6">
+            <h1 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Past Examination Papers
             </h1>
-            <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-slate-600">
+            <p className="mt-1.5 max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-600">
               Select a WAEC core subject below to browse past exam papers, practice untimed by topic, or simulate official 45-minute timed examinations.
             </p>
           </header>
         </ScrollReveal>
 
         {/* Subject cards */}
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SUBJECTS.map((subj, index) => (
             <ScrollReveal key={subj.slug} delay={index * 0.05}>
               <Link

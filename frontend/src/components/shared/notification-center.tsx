@@ -234,21 +234,26 @@ export function NotificationCenter() {
             </div>
 
             {/* Footer */}
-            {notifications.length > 0 && (
-              <div className="flex items-center justify-between border-t border-slate-800/80 bg-slate-900/30 px-4 py-2.5 text-[11px]">
-                <span className="text-slate-500">
-                  {notifications.length} total notifications
-                </span>
+            <div className="flex items-center justify-between border-t border-slate-800/80 bg-slate-900/30 px-4 py-2.5 text-[11px]">
+              <Link
+                href="/notifications"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center gap-1 font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                <span>View all notifications</span>
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+              {notifications.length > 0 && (
                 <button
                   type="button"
                   onClick={clearAllNotifications}
                   className="flex items-center gap-1 text-slate-400 hover:text-rose-400 transition-colors"
                 >
                   <Trash2 className="h-3 w-3" />
-                  Clear all
+                  <span>Clear all</span>
                 </button>
-              </div>
-            )}
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

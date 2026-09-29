@@ -56,38 +56,38 @@ export function RecentResultsTable({ recentActivity }: Props) {
         </Link>
       </div>
 
-      <div className="overflow-x-auto mt-3">
-        <table className="w-full text-left border-collapse">
+      <div className="overflow-x-auto -mx-5 px-5 mt-3">
+        <table className="w-full min-w-[480px] text-left border-collapse">
           <thead>
             <tr className="border-b border-slate-100 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              <th className="py-2.5 px-3">Subject</th>
-              <th className="py-2.5 px-3">Exam Type</th>
+              <th className="py-2.5 px-3 min-w-[110px]">Subject</th>
+              <th className="py-2.5 px-3 min-w-[130px]">Exam Type</th>
               <th className="py-2.5 px-3 text-center">Grade</th>
               <th className="py-2.5 px-3">Score</th>
-              <th className="py-2.5 px-3 text-right">Date</th>
+              <th className="py-2.5 px-3 text-right whitespace-nowrap">Date</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-xs">
             {items.map((row) => (
               <tr key={row.id} className="hover:bg-slate-50 transition-colors group">
                 <td className="py-3 px-3">
-                  <Link href={`/flashcards/${row.slug}`} className="flex items-center gap-2.5">
-                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#0e1726] text-white shadow-2xs">
-                      <BookOpen className="h-3.5 w-3.5" />
+                  <Link href={`/flashcards/${row.slug}`} className="flex items-center gap-2">
+                    <div className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-md sm:rounded-lg bg-[#0e1726] text-white shadow-2xs">
+                      <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                     </div>
-                    <span className="font-semibold text-slate-900 group-hover:text-slate-600 transition-colors">
+                    <span className="font-semibold text-slate-900 group-hover:text-slate-600 transition-colors max-w-[90px] sm:max-w-none truncate">
                       {row.subject}
                     </span>
                   </Link>
                 </td>
-                <td className="py-3 px-3 text-slate-600 font-medium">{row.examType}</td>
+                <td className="py-3 px-3 text-slate-600 font-medium whitespace-nowrap">{row.examType}</td>
                 <td className="py-3 px-3 text-center">
                   <span className={`inline-flex items-center justify-center min-w-[32px] h-6 px-2.5 rounded-full text-[11px] font-bold ${getGradeBadge(row.grade)}`}>
                     {row.grade}
                   </span>
                 </td>
-                <td className="py-3 px-3 font-bold text-slate-900">{row.score}</td>
-                <td className="py-3 px-3 text-right text-slate-500 font-medium">{row.date}</td>
+                <td className="py-3 px-3 font-bold text-slate-900 whitespace-nowrap">{row.score}</td>
+                <td className="py-3 px-3 text-right text-slate-500 font-medium whitespace-nowrap">{row.date}</td>
               </tr>
             ))}
           </tbody>

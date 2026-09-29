@@ -48,8 +48,8 @@ export default function DashboardPage() {
 
   return (
     <RequireAuth>
-      <div className="min-h-screen bg-slate-50 text-slate-900 pb-16">
-        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 md:pb-16">
+        <main className="mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-6 lg:px-8">
           {/* Top Bar: Search + Notification Bell + User Avatar Greeting */}
           <DashboardHeader
             username={username}
@@ -112,7 +112,7 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="fixed bottom-20 right-20 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95 md:bottom-24 md:right-6"
+            className="fixed bottom-28 right-4 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95 md:bottom-24 md:right-6"
             aria-label="Scroll back to top"
           >
             <ArrowUp className="h-4 w-4" />

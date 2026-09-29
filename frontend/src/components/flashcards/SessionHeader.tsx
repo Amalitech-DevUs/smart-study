@@ -60,7 +60,7 @@ export function SessionHeader({
   setTestCurrentIndex,
 }: Props) {
   return (
-    <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+    <div className="mb-6 rounded-xl border border-slate-200 bg-white p-3.5 sm:p-5 shadow-xs">
       <div className="flex flex-wrap items-center justify-between gap-4">
         {/* Title & Mode Switcher */}
         <div>
@@ -98,13 +98,14 @@ export function SessionHeader({
                       setTimeRemaining(45 * 60);
                     }
                   }}
-                  className={`rounded-full px-3 py-1 transition-all ${
+                  className={`inline-flex items-center gap-1 rounded-full px-3 py-1 transition-all ${
                     sessionMode === "test"
                       ? "bg-blue-700 text-white shadow-sm"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  ⏱️ Test
+                  <Clock className="h-3 w-3" />
+                  <span>Test</span>
                 </button>
               </div>
             ) : (

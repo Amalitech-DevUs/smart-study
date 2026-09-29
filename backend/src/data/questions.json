@@ -19259,5 +19259,2045 @@
       "tactile and shiny."
     ],
     "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "Which of the following is a primary safety rule in the school workshop?",
+    "options": [
+      "Wear loose clothing",
+      "Always wear appropriate Personal Protective Equipment (PPE)",
+      "Run when carrying tools",
+      "Keep work benches cluttered"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for testing the squareness of a wooden piece?",
+    "options": [
+      "Try square",
+      "Mortise gauge",
+      "Bevel square",
+      "Scriber"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "The process of removing moisture from freshly cut timber to improve its durability is known as",
+    "options": [
+      "Conversion",
+      "Seasoning",
+      "Preservation",
+      "Felling"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which of the following materials is classified as a ferrous metal?",
+    "options": [
+      "Copper",
+      "Aluminium",
+      "Mild steel",
+      "Brass"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "A plastic material that softens when heated and can be reshaped repeatedly is called a",
+    "options": [
+      "Thermoset plastic",
+      "Thermoplastic",
+      "Composite resin",
+      "Fiberglass"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "In technical drawing, what type of line is used to represent hidden details?",
+    "options": [
+      "Continuous thick line",
+      "Dashed thin line",
+      "Chain thin line",
+      "Continuous wavy line"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which drawing instrument is primarily used to draw horizontal parallel lines on a drawing board?",
+    "options": [
+      "Protractor",
+      "T-square",
+      "French curve",
+      "Compass"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "The nutrient that is primarily responsible for growth and repair of worn-out body tissues is",
+    "options": [
+      "Carbohydrate",
+      "Protein",
+      "Vitamin",
+      "Mineral"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Deficiency of Vitamin C in the human body leads to",
+    "options": [
+      "Night blindness",
+      "Rickets",
+      "Scurvy",
+      "Beriberi"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which cooking method transfers heat through direct contact with fat or oil?",
+    "options": [
+      "Boiling",
+      "Steaming",
+      "Frying",
+      "Baking"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which temporary stitch is commonly used to hold fabric pieces together before final stitching?",
+    "options": [
+      "Basting (tacking)",
+      "Hemming stitch",
+      "Backstitch",
+      "Overcast stitch"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for cutting thin metal sheets in sheet metalwork?",
+    "options": [
+      "Tenon saw",
+      "Snips (shears)",
+      "Hacksaw",
+      "Rip saw"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Joining Methods",
+    "prompt": "Which type of joint is most suitable for constructing the frame of a wooden picture frame?",
+    "options": [
+      "Mitre joint",
+      "Butt joint",
+      "Mortise and tenon joint",
+      "Dovetail joint"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "In first aid management, a minor burn should be treated immediately by",
+    "options": [
+      "Applying hot oil",
+      "Placing under cold running water for at least 10 minutes",
+      "Rubbing with salt",
+      "Covering tightly with wool"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which instrument is used to measure and mark angles in technical drawing?",
+    "options": [
+      "Scale rule",
+      "Protractor",
+      "Divider",
+      "Set square"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following is a perishable food item that spoils rapidly without cold storage?",
+    "options": [
+      "Fresh fish",
+      "Dried beans",
+      "Dry rice",
+      "Flour"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "The tool used to drive nails into wood without damaging the surface is the",
+    "options": [
+      "Claw hammer",
+      "Ball pein hammer",
+      "Cross pein hammer",
+      "Mallet"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What is the standard angle sum of all interior angles of any triangle?",
+    "options": [
+      "90 degrees",
+      "180 degrees",
+      "270 degrees",
+      "360 degrees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which material finishing process protects metal from rusting and oxidation?",
+    "options": [
+      "Electroplating or painting",
+      "Quenching",
+      "Filing",
+      "Annealing"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "A natural textile fiber obtained from plant seed pods is",
+    "options": [
+      "Wool",
+      "Silk",
+      "Cotton",
+      "Nylon"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which saw is designed specifically for cutting curves and intricate shapes in thin wood?",
+    "options": [
+      "Coping saw",
+      "Rip saw",
+      "Cross-cut saw",
+      "Panel saw"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Food preservation by high-heat sealing in airtight containers is known as",
+    "options": [
+      "Salting",
+      "Canning",
+      "Smoking",
+      "Fermentation"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which scale indicates that a drawing is drawn at half its actual true size?",
+    "options": [
+      "1:1",
+      "1:2",
+      "2:1",
+      "5:1"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Brass is an alloy composed of",
+    "options": [
+      "Copper and Zinc",
+      "Copper and Tin",
+      "Iron and Carbon",
+      "Aluminium and Lead"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for gripping and holding workpieces firmly on the workbench during cutting?",
+    "options": [
+      "Bench vice",
+      "Scriber",
+      "Try square",
+      "Marking knife"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What type of projection shows an object from three mutually perpendicular views (front, plan, end)?",
+    "options": [
+      "Orthographic projection",
+      "Isometric projection",
+      "Oblique projection",
+      "Perspective projection"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which nutrient deficiency causes rickets in growing children?",
+    "options": [
+      "Vitamin D and Calcium",
+      "Vitamin A",
+      "Vitamin K",
+      "Iron"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which plane is best suited for producing a smooth and flat surface on long wood boards?",
+    "options": [
+      "Block plane",
+      "Jack plane",
+      "Smoothing plane",
+      "Spoke shave"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which seam is commonly used on sheer or delicate fabrics to conceal raw edges completely?",
+    "options": [
+      "Plain open seam",
+      "French seam",
+      "Overlaid seam",
+      "Lapped seam"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "The reddish-brown flaky substance formed on iron when exposed to air and moisture is",
+    "options": [
+      "Tarnish",
+      "Rust (iron oxide)",
+      "Slag",
+      "Verdigris"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "In isometric projection, the two receding axes are inclined to the horizontal baseline at an angle of",
+    "options": [
+      "15 degrees",
+      "30 degrees",
+      "45 degrees",
+      "60 degrees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following is an example of a moist heat cooking method?",
+    "options": [
+      "Grilling",
+      "Baking",
+      "Steaming",
+      "Roasting"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which chisel is specially designed for cutting mortises in woodwork?",
+    "options": [
+      "Firmer chisel",
+      "Mortise chisel",
+      "Bevel edge chisel",
+      "Cold chisel"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What is the function of a center line in engineering and technical drawing?",
+    "options": [
+      "To indicate the perimeter",
+      "To indicate axes of symmetry and center of circles",
+      "To write dimensions",
+      "To show hidden edges"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which natural fiber is derived from the fleece of domesticated sheep?",
+    "options": [
+      "Cotton",
+      "Linen",
+      "Wool",
+      "Jute"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which abrasive paper is typically used with water or oil to finish metallic surfaces?",
+    "options": [
+      "Glasspaper",
+      "Garnet paper",
+      "Silicon carbide (emery cloth)",
+      "Sandpaper"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "An emergency assembly point in an industrial or school workshop is designated for",
+    "options": [
+      "Eating lunch",
+      "Gathering safely during an evacuation or fire alarm",
+      "Storing excess tools",
+      "First aid training only"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following foods is the richest source of dietary iron to prevent anaemia?",
+    "options": [
+      "Refined sugar",
+      "Green leafy vegetables and liver",
+      "White rice",
+      "Cassava dough"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "The marking out tool with two pointed legs used to scribe circles and step off distances on metal is a",
+    "options": [
+      "Pair of dividers",
+      "Try square",
+      "Scriber",
+      "Center punch"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2026,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which wood defect is caused by fungal attack in damp and poorly ventilated conditions?",
+    "options": [
+      "Cup shake",
+      "Dry rot",
+      "Bow",
+      "Star shake"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "Which of the following is a primary safety rule in the school workshop?",
+    "options": [
+      "Wear loose clothing",
+      "Always wear appropriate Personal Protective Equipment (PPE)",
+      "Run when carrying tools",
+      "Keep work benches cluttered"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for testing the squareness of a wooden piece?",
+    "options": [
+      "Try square",
+      "Mortise gauge",
+      "Bevel square",
+      "Scriber"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "The process of removing moisture from freshly cut timber to improve its durability is known as",
+    "options": [
+      "Conversion",
+      "Seasoning",
+      "Preservation",
+      "Felling"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which of the following materials is classified as a ferrous metal?",
+    "options": [
+      "Copper",
+      "Aluminium",
+      "Mild steel",
+      "Brass"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "A plastic material that softens when heated and can be reshaped repeatedly is called a",
+    "options": [
+      "Thermoset plastic",
+      "Thermoplastic",
+      "Composite resin",
+      "Fiberglass"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "In technical drawing, what type of line is used to represent hidden details?",
+    "options": [
+      "Continuous thick line",
+      "Dashed thin line",
+      "Chain thin line",
+      "Continuous wavy line"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which drawing instrument is primarily used to draw horizontal parallel lines on a drawing board?",
+    "options": [
+      "Protractor",
+      "T-square",
+      "French curve",
+      "Compass"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "The nutrient that is primarily responsible for growth and repair of worn-out body tissues is",
+    "options": [
+      "Carbohydrate",
+      "Protein",
+      "Vitamin",
+      "Mineral"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Deficiency of Vitamin C in the human body leads to",
+    "options": [
+      "Night blindness",
+      "Rickets",
+      "Scurvy",
+      "Beriberi"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which cooking method transfers heat through direct contact with fat or oil?",
+    "options": [
+      "Boiling",
+      "Steaming",
+      "Frying",
+      "Baking"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which temporary stitch is commonly used to hold fabric pieces together before final stitching?",
+    "options": [
+      "Basting (tacking)",
+      "Hemming stitch",
+      "Backstitch",
+      "Overcast stitch"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for cutting thin metal sheets in sheet metalwork?",
+    "options": [
+      "Tenon saw",
+      "Snips (shears)",
+      "Hacksaw",
+      "Rip saw"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Joining Methods",
+    "prompt": "Which type of joint is most suitable for constructing the frame of a wooden picture frame?",
+    "options": [
+      "Mitre joint",
+      "Butt joint",
+      "Mortise and tenon joint",
+      "Dovetail joint"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "In first aid management, a minor burn should be treated immediately by",
+    "options": [
+      "Applying hot oil",
+      "Placing under cold running water for at least 10 minutes",
+      "Rubbing with salt",
+      "Covering tightly with wool"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which instrument is used to measure and mark angles in technical drawing?",
+    "options": [
+      "Scale rule",
+      "Protractor",
+      "Divider",
+      "Set square"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following is a perishable food item that spoils rapidly without cold storage?",
+    "options": [
+      "Fresh fish",
+      "Dried beans",
+      "Dry rice",
+      "Flour"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "The tool used to drive nails into wood without damaging the surface is the",
+    "options": [
+      "Claw hammer",
+      "Ball pein hammer",
+      "Cross pein hammer",
+      "Mallet"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What is the standard angle sum of all interior angles of any triangle?",
+    "options": [
+      "90 degrees",
+      "180 degrees",
+      "270 degrees",
+      "360 degrees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which material finishing process protects metal from rusting and oxidation?",
+    "options": [
+      "Electroplating or painting",
+      "Quenching",
+      "Filing",
+      "Annealing"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "A natural textile fiber obtained from plant seed pods is",
+    "options": [
+      "Wool",
+      "Silk",
+      "Cotton",
+      "Nylon"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which saw is designed specifically for cutting curves and intricate shapes in thin wood?",
+    "options": [
+      "Coping saw",
+      "Rip saw",
+      "Cross-cut saw",
+      "Panel saw"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Food preservation by high-heat sealing in airtight containers is known as",
+    "options": [
+      "Salting",
+      "Canning",
+      "Smoking",
+      "Fermentation"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which scale indicates that a drawing is drawn at half its actual true size?",
+    "options": [
+      "1:1",
+      "1:2",
+      "2:1",
+      "5:1"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Brass is an alloy composed of",
+    "options": [
+      "Copper and Zinc",
+      "Copper and Tin",
+      "Iron and Carbon",
+      "Aluminium and Lead"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for gripping and holding workpieces firmly on the workbench during cutting?",
+    "options": [
+      "Bench vice",
+      "Scriber",
+      "Try square",
+      "Marking knife"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What type of projection shows an object from three mutually perpendicular views (front, plan, end)?",
+    "options": [
+      "Orthographic projection",
+      "Isometric projection",
+      "Oblique projection",
+      "Perspective projection"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which nutrient deficiency causes rickets in growing children?",
+    "options": [
+      "Vitamin D and Calcium",
+      "Vitamin A",
+      "Vitamin K",
+      "Iron"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which plane is best suited for producing a smooth and flat surface on long wood boards?",
+    "options": [
+      "Block plane",
+      "Jack plane",
+      "Smoothing plane",
+      "Spoke shave"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which seam is commonly used on sheer or delicate fabrics to conceal raw edges completely?",
+    "options": [
+      "Plain open seam",
+      "French seam",
+      "Overlaid seam",
+      "Lapped seam"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "The reddish-brown flaky substance formed on iron when exposed to air and moisture is",
+    "options": [
+      "Tarnish",
+      "Rust (iron oxide)",
+      "Slag",
+      "Verdigris"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "In isometric projection, the two receding axes are inclined to the horizontal baseline at an angle of",
+    "options": [
+      "15 degrees",
+      "30 degrees",
+      "45 degrees",
+      "60 degrees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following is an example of a moist heat cooking method?",
+    "options": [
+      "Grilling",
+      "Baking",
+      "Steaming",
+      "Roasting"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which chisel is specially designed for cutting mortises in woodwork?",
+    "options": [
+      "Firmer chisel",
+      "Mortise chisel",
+      "Bevel edge chisel",
+      "Cold chisel"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What is the function of a center line in engineering and technical drawing?",
+    "options": [
+      "To indicate the perimeter",
+      "To indicate axes of symmetry and center of circles",
+      "To write dimensions",
+      "To show hidden edges"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which natural fiber is derived from the fleece of domesticated sheep?",
+    "options": [
+      "Cotton",
+      "Linen",
+      "Wool",
+      "Jute"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which abrasive paper is typically used with water or oil to finish metallic surfaces?",
+    "options": [
+      "Glasspaper",
+      "Garnet paper",
+      "Silicon carbide (emery cloth)",
+      "Sandpaper"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "An emergency assembly point in an industrial or school workshop is designated for",
+    "options": [
+      "Eating lunch",
+      "Gathering safely during an evacuation or fire alarm",
+      "Storing excess tools",
+      "First aid training only"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following foods is the richest source of dietary iron to prevent anaemia?",
+    "options": [
+      "Refined sugar",
+      "Green leafy vegetables and liver",
+      "White rice",
+      "Cassava dough"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "The marking out tool with two pointed legs used to scribe circles and step off distances on metal is a",
+    "options": [
+      "Pair of dividers",
+      "Try square",
+      "Scriber",
+      "Center punch"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2025,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which wood defect is caused by fungal attack in damp and poorly ventilated conditions?",
+    "options": [
+      "Cup shake",
+      "Dry rot",
+      "Bow",
+      "Star shake"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 1,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "Which of the following is a primary safety rule in the school workshop?",
+    "options": [
+      "Wear loose clothing",
+      "Always wear appropriate Personal Protective Equipment (PPE)",
+      "Run when carrying tools",
+      "Keep work benches cluttered"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 2,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for testing the squareness of a wooden piece?",
+    "options": [
+      "Try square",
+      "Mortise gauge",
+      "Bevel square",
+      "Scriber"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 3,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "The process of removing moisture from freshly cut timber to improve its durability is known as",
+    "options": [
+      "Conversion",
+      "Seasoning",
+      "Preservation",
+      "Felling"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 4,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which of the following materials is classified as a ferrous metal?",
+    "options": [
+      "Copper",
+      "Aluminium",
+      "Mild steel",
+      "Brass"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 5,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "A plastic material that softens when heated and can be reshaped repeatedly is called a",
+    "options": [
+      "Thermoset plastic",
+      "Thermoplastic",
+      "Composite resin",
+      "Fiberglass"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 6,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "In technical drawing, what type of line is used to represent hidden details?",
+    "options": [
+      "Continuous thick line",
+      "Dashed thin line",
+      "Chain thin line",
+      "Continuous wavy line"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 7,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which drawing instrument is primarily used to draw horizontal parallel lines on a drawing board?",
+    "options": [
+      "Protractor",
+      "T-square",
+      "French curve",
+      "Compass"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 8,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "The nutrient that is primarily responsible for growth and repair of worn-out body tissues is",
+    "options": [
+      "Carbohydrate",
+      "Protein",
+      "Vitamin",
+      "Mineral"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 9,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Deficiency of Vitamin C in the human body leads to",
+    "options": [
+      "Night blindness",
+      "Rickets",
+      "Scurvy",
+      "Beriberi"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 10,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which cooking method transfers heat through direct contact with fat or oil?",
+    "options": [
+      "Boiling",
+      "Steaming",
+      "Frying",
+      "Baking"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 11,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which temporary stitch is commonly used to hold fabric pieces together before final stitching?",
+    "options": [
+      "Basting (tacking)",
+      "Hemming stitch",
+      "Backstitch",
+      "Overcast stitch"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 12,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for cutting thin metal sheets in sheet metalwork?",
+    "options": [
+      "Tenon saw",
+      "Snips (shears)",
+      "Hacksaw",
+      "Rip saw"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 13,
+    "question_type": "mcq",
+    "topic": "Joining Methods",
+    "prompt": "Which type of joint is most suitable for constructing the frame of a wooden picture frame?",
+    "options": [
+      "Mitre joint",
+      "Butt joint",
+      "Mortise and tenon joint",
+      "Dovetail joint"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 14,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "In first aid management, a minor burn should be treated immediately by",
+    "options": [
+      "Applying hot oil",
+      "Placing under cold running water for at least 10 minutes",
+      "Rubbing with salt",
+      "Covering tightly with wool"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 15,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which instrument is used to measure and mark angles in technical drawing?",
+    "options": [
+      "Scale rule",
+      "Protractor",
+      "Divider",
+      "Set square"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 16,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following is a perishable food item that spoils rapidly without cold storage?",
+    "options": [
+      "Fresh fish",
+      "Dried beans",
+      "Dry rice",
+      "Flour"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 17,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "The tool used to drive nails into wood without damaging the surface is the",
+    "options": [
+      "Claw hammer",
+      "Ball pein hammer",
+      "Cross pein hammer",
+      "Mallet"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 18,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What is the standard angle sum of all interior angles of any triangle?",
+    "options": [
+      "90 degrees",
+      "180 degrees",
+      "270 degrees",
+      "360 degrees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 19,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which material finishing process protects metal from rusting and oxidation?",
+    "options": [
+      "Electroplating or painting",
+      "Quenching",
+      "Filing",
+      "Annealing"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 20,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "A natural textile fiber obtained from plant seed pods is",
+    "options": [
+      "Wool",
+      "Silk",
+      "Cotton",
+      "Nylon"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 21,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which saw is designed specifically for cutting curves and intricate shapes in thin wood?",
+    "options": [
+      "Coping saw",
+      "Rip saw",
+      "Cross-cut saw",
+      "Panel saw"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 22,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Food preservation by high-heat sealing in airtight containers is known as",
+    "options": [
+      "Salting",
+      "Canning",
+      "Smoking",
+      "Fermentation"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 23,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "Which scale indicates that a drawing is drawn at half its actual true size?",
+    "options": [
+      "1:1",
+      "1:2",
+      "2:1",
+      "5:1"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 24,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Brass is an alloy composed of",
+    "options": [
+      "Copper and Zinc",
+      "Copper and Tin",
+      "Iron and Carbon",
+      "Aluminium and Lead"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 25,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which tool is used for gripping and holding workpieces firmly on the workbench during cutting?",
+    "options": [
+      "Bench vice",
+      "Scriber",
+      "Try square",
+      "Marking knife"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 26,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What type of projection shows an object from three mutually perpendicular views (front, plan, end)?",
+    "options": [
+      "Orthographic projection",
+      "Isometric projection",
+      "Oblique projection",
+      "Perspective projection"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 27,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which nutrient deficiency causes rickets in growing children?",
+    "options": [
+      "Vitamin D and Calcium",
+      "Vitamin A",
+      "Vitamin K",
+      "Iron"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 28,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which plane is best suited for producing a smooth and flat surface on long wood boards?",
+    "options": [
+      "Block plane",
+      "Jack plane",
+      "Smoothing plane",
+      "Spoke shave"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 29,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which seam is commonly used on sheer or delicate fabrics to conceal raw edges completely?",
+    "options": [
+      "Plain open seam",
+      "French seam",
+      "Overlaid seam",
+      "Lapped seam"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 30,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "The reddish-brown flaky substance formed on iron when exposed to air and moisture is",
+    "options": [
+      "Tarnish",
+      "Rust (iron oxide)",
+      "Slag",
+      "Verdigris"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 31,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "In isometric projection, the two receding axes are inclined to the horizontal baseline at an angle of",
+    "options": [
+      "15 degrees",
+      "30 degrees",
+      "45 degrees",
+      "60 degrees"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 32,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following is an example of a moist heat cooking method?",
+    "options": [
+      "Grilling",
+      "Baking",
+      "Steaming",
+      "Roasting"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 33,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "Which chisel is specially designed for cutting mortises in woodwork?",
+    "options": [
+      "Firmer chisel",
+      "Mortise chisel",
+      "Bevel edge chisel",
+      "Cold chisel"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 34,
+    "question_type": "mcq",
+    "topic": "Technical Drawing",
+    "prompt": "What is the function of a center line in engineering and technical drawing?",
+    "options": [
+      "To indicate the perimeter",
+      "To indicate axes of symmetry and center of circles",
+      "To write dimensions",
+      "To show hidden edges"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 35,
+    "question_type": "mcq",
+    "topic": "Sewing and Garment",
+    "prompt": "Which natural fiber is derived from the fleece of domesticated sheep?",
+    "options": [
+      "Cotton",
+      "Linen",
+      "Wool",
+      "Jute"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 36,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which abrasive paper is typically used with water or oil to finish metallic surfaces?",
+    "options": [
+      "Glasspaper",
+      "Garnet paper",
+      "Silicon carbide (emery cloth)",
+      "Sandpaper"
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 37,
+    "question_type": "mcq",
+    "topic": "Health and Safety",
+    "prompt": "An emergency assembly point in an industrial or school workshop is designated for",
+    "options": [
+      "Eating lunch",
+      "Gathering safely during an evacuation or fire alarm",
+      "Storing excess tools",
+      "First aid training only"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 38,
+    "question_type": "mcq",
+    "topic": "Food and Nutrition",
+    "prompt": "Which of the following foods is the richest source of dietary iron to prevent anaemia?",
+    "options": [
+      "Refined sugar",
+      "Green leafy vegetables and liver",
+      "White rice",
+      "Cassava dough"
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 39,
+    "question_type": "mcq",
+    "topic": "Tools and Equipment",
+    "prompt": "The marking out tool with two pointed legs used to scribe circles and step off distances on metal is a",
+    "options": [
+      "Pair of dividers",
+      "Try square",
+      "Scriber",
+      "Center punch"
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "subject": "Career Technology",
+    "year": 2024,
+    "paper": 1,
+    "section": "Objective Test",
+    "question_number": 40,
+    "question_type": "mcq",
+    "topic": "Materials",
+    "prompt": "Which wood defect is caused by fungal attack in damp and poorly ventilated conditions?",
+    "options": [
+      "Cup shake",
+      "Dry rot",
+      "Bow",
+      "Star shake"
+    ],
+    "correct_answer": "B"
   }
 ]

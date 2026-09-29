@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useCallback } from "react";
 import { useAuth } from "@/lib/use-auth";
 import { ChatEngine } from "./chat-engine";
-import { Maximize2, Minimize2, X, Bot } from "lucide-react";
+import { Maximize2, Minimize2, X, BrainCircuit } from "lucide-react";
 
 const FAB_SIZE = 48; // h-12 w-12 = 48px
 const EDGE_GAP = 8;  // minimum px from any viewport edge
@@ -75,7 +75,7 @@ export function ChatWidget() {
   );
 
   const handlePointerUp = useCallback(
-    (_e: React.PointerEvent<HTMLButtonElement>) => {
+    () => {
       if (!drag.current) return;
       const wasDrag = drag.current.moved;
       drag.current = null;
@@ -100,9 +100,13 @@ export function ChatWidget() {
     return null;
   }
 
-  // Derive chat-panel anchor from FAB position (or defaults)
+  // Derive chat-panel anchor from FAB position (or defaults).
+  // When fabPos is null the FAB sits at Tailwind classes: bottom-20/right-4 (mobile) or bottom-8/right-8 (desktop).
+  // We compute panel position based on whether the user has dragged the FAB.
   const panelRight = fabPos?.right ?? 32;
-  const panelBottom = fabPos ? fabPos.bottom + FAB_SIZE + 8 : 32;
+  const panelBottom = fabPos
+    ? fabPos.bottom + FAB_SIZE + 8   // directly above dragged FAB
+    : undefined;                      // let Tailwind classes handle default placement
   const panelStyle = fabPos
     ? { right: panelRight, bottom: panelBottom }
     : undefined;
@@ -114,21 +118,17 @@ export function ChatWidget() {
           className={`fixed z-50 overflow-hidden border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-in-out ${
             isExpanded
               ? "inset-4 rounded-xl md:inset-auto md:w-[720px] md:h-[780px] md:max-h-[85vh] md:rounded-xl"
-              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] rounded-xl md:inset-x-auto md:w-[400px] md:h-[580px] md:rounded-xl"
+              : fabPos
+              ? "h-[520px] max-h-[75vh] w-[calc(100vw-2rem)] max-w-[400px] rounded-xl md:w-[400px] md:h-[580px]"
+              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] rounded-xl md:inset-x-auto md:right-8 md:bottom-[92px] md:w-[400px] md:h-[580px]"
           }`}
-          style={
-            !isExpanded && panelStyle
-              ? { right: panelStyle.right, bottom: panelStyle.bottom }
-              : isExpanded && panelStyle
-              ? { right: panelStyle.right, bottom: panelStyle.bottom }
-              : undefined
-          }
+          style={!isExpanded && panelStyle ? panelStyle : undefined}
         >
           {/* Top Bar Header */}
           <div className="flex items-center justify-between border-b border-slate-200 bg-[#0e1726] px-4 py-3 text-white">
             <div className="flex items-center gap-2.5">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-slate-800 border border-slate-700 text-amber-400 shadow-sm">
-                <Bot className="h-4 w-4" />
+                <BrainCircuit className="h-4 w-4" />
               </div>
               <div>
                 <h2 className="font-heading text-sm font-bold leading-tight">SmartStudy Tutor</h2>
@@ -192,7 +192,7 @@ export function ChatWidget() {
           {isOpen ? (
             <X className="h-5 w-5 shrink-0" />
           ) : (
-            <Bot className="h-5 w-5 shrink-0 text-amber-400" />
+            <BrainCircuit className="h-5 w-5 shrink-0 text-amber-400" />
           )}
         </span>
       </button>

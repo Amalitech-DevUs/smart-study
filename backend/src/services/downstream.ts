@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import articlesData from '../data/articles.json';
 import questionsData from '../data/questions.json';
 
@@ -105,13 +107,28 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
     // Content DB service offline, proceeding to local seed bank fallback
   }
 
-  // Fallback to local verified questions seed bank (853 questions)
-  let localQuestions = questionsData as any[];
+  // Fallback to local verified questions seed bank
+  let localQuestions: any[];
+  try {
+    const raw = fs.readFileSync(path.resolve(__dirname, '../data/questions.json'), 'utf8');
+    localQuestions = JSON.parse(raw);
+  } catch {
+    localQuestions = questionsData as any[];
+  }
 
   if (filters?.subject) {
-    localQuestions = localQuestions.filter(
-      q => q.subject && q.subject.toLowerCase() === filters.subject!.toLowerCase()
-    );
+    const s = filters.subject.toLowerCase();
+    localQuestions = localQuestions.filter((q) => {
+      if (!q.subject) return false;
+      const qs = q.subject.toLowerCase();
+      return (
+        qs === s ||
+        (s === "ict" && qs === "computing") ||
+        (s.includes("computing") && qs === "computing") ||
+        (s.includes("religious") && qs.includes("religious")) ||
+        (s.includes("career") && qs.includes("career"))
+      );
+    });
   }
   if (filters?.year) {
     localQuestions = localQuestions.filter(

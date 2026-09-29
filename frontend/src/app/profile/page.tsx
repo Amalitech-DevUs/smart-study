@@ -44,10 +44,10 @@ export default function ProfilePage() {
 
   return (
     <RequireAuth>
-      <div className="min-h-screen bg-slate-50 text-slate-900 pb-16">
+      <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 md:pb-16">
         {/* Page header — matches dashboard strip style, no duplicate logout */}
         <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
-          <div className="mx-auto max-w-2xl px-4 py-3.5 sm:px-6 flex items-center gap-4">
+          <div className="mx-auto max-w-2xl px-3 py-3 sm:px-6 flex items-center gap-3 sm:gap-4">
             <Link
               href="/dashboard"
               className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors shrink-0"
@@ -61,8 +61,8 @@ export default function ProfilePage() {
           </div>
         </header>
 
-        {/* Main content — md:pb-20 prevents FAB from overlapping the last card */}
-        <main className="mx-auto max-w-2xl px-4 py-6 sm:px-6 space-y-5 md:pb-20">
+        {/* Main content — pb-20 prevents FAB from overlapping the last card */}
+        <main className="mx-auto max-w-2xl px-3 py-4 sm:px-6 space-y-4 sm:space-y-5">
           {/* 1. Student Identity Section */}
           <ProfileIdentitySection username={username} streak={streak} />
 

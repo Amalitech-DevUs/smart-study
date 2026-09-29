@@ -77,33 +77,33 @@ export function MetricKpiCards({ overview, dailyGoal, streak, subjectCount = 4 }
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-5 mb-6">
+    <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 sm:grid-cols-3 lg:grid-cols-5 mb-6">
       {cards.map((c) => {
         const Icon = c.icon;
         return (
           <div
             key={c.label}
-            className="flex items-center gap-3.5 rounded-2xl border border-slate-200 bg-white p-4 shadow-2xs transition-all hover:border-slate-300 hover:shadow-xs"
+            className="flex items-center gap-2.5 sm:gap-3.5 rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-2xs transition-all hover:border-slate-300 hover:shadow-xs"
           >
             <div
-              className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl shadow-2xs ${
+              className={`flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl shadow-2xs ${
                 c.dark
                   ? "bg-slate-900 text-white"
                   : "bg-slate-100 text-slate-700"
               }`}
             >
-              <Icon className="h-5 w-5" />
+              <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-[11px] font-semibold text-slate-500 truncate">{c.label}</p>
+              <p className="text-[10px] sm:text-[11px] font-semibold text-slate-500 truncate">{c.label}</p>
               <p
-                className={`font-heading text-xl font-extrabold tracking-tight leading-tight mt-0.5 ${
+                className={`font-heading text-base sm:text-xl font-extrabold tracking-tight leading-tight mt-0.5 ${
                   c.isZero ? "text-slate-500" : "text-slate-900"
                 }`}
               >
                 {c.value}
               </p>
-              <p className="text-[10px] font-medium text-slate-400 truncate mt-0.5">{c.subtext}</p>
+              <p className="text-[10px] font-medium text-slate-400 truncate mt-0.5 hidden sm:block">{c.subtext}</p>
             </div>
           </div>
         );
