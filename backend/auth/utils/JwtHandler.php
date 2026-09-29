@@ -24,7 +24,11 @@ class JwtHandler
             $dotenv->safeLoad();
         }
 
-        $secretKey = $_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? getenv('JWT_SECRET');
+        $secretKey = getenv('JWT_SECRET');
+        if ($secretKey === false || $secretKey === '') {
+            $secretKey = $_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? null;
+        }
+
         if (!is_string($secretKey) || strlen($secretKey) < 32) {
             throw new RuntimeException('JWT_SECRET must be configured with at least 32 characters.');
         }

@@ -18,29 +18,15 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 1500);
 
-    let targetUrl = serviceUrl;
-    let method = 'GET';
-    let body: string | undefined = undefined;
-
-    if (serviceName === 'auth') {
-      targetUrl = serviceUrl;
-      method = 'POST';
-      body = JSON.stringify({});
-    } else {
-      targetUrl = `${serviceUrl.replace(/\/$/, '')}/health`;
-    }
-
-    const response = await fetch(targetUrl, {
-      method,
-      headers: serviceName === 'auth' ? { 'Content-Type': 'application/json' } : undefined,
-      body,
-      signal: controller.signal
-    });
+    const targetUrl = serviceName === 'auth'
+      ? new URL('/health', serviceUrl).toString()
+      : `${serviceUrl.replace(/\/$/, '')}/health`;
+    const response = await fetch(targetUrl, { signal: controller.signal });
     clearTimeout(timeoutId);
 
     const responseTimeMs = Date.now() - start;
 
-    if (response.status < 500) {
+    if (response.ok) {
       return {
         service: serviceName,
         url: serviceUrl,
@@ -66,7 +52,7 @@ export async function checkServiceHealth(serviceName: string, serviceUrl: string
  * Question Data Provider: Queries downstream Content DB service first, falls back to local seed bank
  */
 export async function fetchQuestions(filters?: { subject?: string; year?: number; topic?: string }) {
-  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://127.0.0.1:5002';
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 1500);
@@ -146,7 +132,7 @@ export async function fetchQuestions(filters?: { subject?: string; year?: number
  * Single Question Data Provider: Queries Content DB first, falls back to local seed bank
  */
 export async function fetchQuestionById(id: string | number) {
-  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://127.0.0.1:5002';
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 4000);
@@ -207,7 +193,7 @@ export async function fetchQuestionById(id: string | number) {
  * Article Data Provider: Tries downstream Content DB service first, falls back to src/data/articles.json
  */
 export async function fetchArticles(filters?: { category?: string; subject?: string }) {
-  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://127.0.0.1:5002';
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 800);
@@ -253,7 +239,7 @@ export async function fetchArticleByIdOrSlug(identifier: string) {
     return { data: localFound, source: 'LOCAL_SEED_BANK' };
   }
 
-  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://127.0.0.1:5002';
 
   // If numeric, try direct endpoint first
   if (/^\d+$/.test(identifier)) {
@@ -309,7 +295,7 @@ export async function forwardChatToAiService(payload: {
   message?: string;
   messages?: Array<{ role: string; content: string }>;
 }) {
-  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://127.0.0.1:5003';
   const controller = new AbortController();
   // 90 seconds — enough for slow free-tier LLMs, prevents indefinite hangs
   const timeoutId = setTimeout(() => controller.abort(), 90_000);

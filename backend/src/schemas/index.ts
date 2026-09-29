@@ -57,8 +57,8 @@ export const chatMessageSchema = z.object({
 export const progressAttemptSchema = z.object({
   attempts: z.array(
     z.object({
-      questionId: z.string().min(1),
-      result: z.enum(['correct', 'incorrect', 'skipped']),
+      questionId: z.string().regex(/^\d+$/, 'Question ID must be numeric'),
+      result: z.enum(['correct', 'incorrect']),
       attemptsTaken: z.number().int().min(1),
       timestamp: z.string().optional()
     })

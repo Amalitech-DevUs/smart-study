@@ -26,6 +26,7 @@ class AuthController
         }
 
         $userId = $this->user->create($username, $pin);
+        $token = $this->jwt->generateToken($userId, $username);
 
         return [
             'success' => true,
@@ -33,7 +34,8 @@ class AuthController
             'user' => [
                 'id' => $userId,
                 'username' => $username
-            ]
+            ],
+            'accessToken' => $token
         ];
     }
 

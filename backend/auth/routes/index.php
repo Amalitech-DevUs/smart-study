@@ -28,6 +28,16 @@ if ($position !== false) {
 // Remove trailing slash
 $path = rtrim($path, '/');
 
+if ($method === 'GET' && $path === '/health') {
+    echo json_encode([
+        'success' => true,
+        'status' => 'healthy',
+        'service' => 'auth'
+    ]);
+
+    exit;
+}
+
 
 /*
 |--------------------------------------------------------------------------
