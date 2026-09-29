@@ -25,7 +25,7 @@ if GROQ_API_KEY:
     PROVIDER_NAME = "Groq"
     BASE_URL = "https://api.groq.com/openai/v1"
     API_KEY = GROQ_API_KEY
-    MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+    MODEL = os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b")
     OPENROUTER_FREE_MODELS = []
 elif OPENROUTER_API_KEY:
     PROVIDER_NAME = "OpenRouter"
@@ -167,6 +167,7 @@ async def stream_response(messages: list, source_tag: str):
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
     }
 
     if PROVIDER_NAME == "OpenRouter":
@@ -175,7 +176,7 @@ async def stream_response(messages: list, source_tag: str):
         # Prioritize currently working MODEL, then fallback through all candidate free models
         candidate_models = [MODEL] + [m for m in OPENROUTER_FREE_MODELS if m != MODEL]
     elif PROVIDER_NAME == "Groq":
-        groq_models = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "gemma2-9b-it"]
+        groq_models = ["qwen/qwen3.8-27b", "llama-3.3-70b-versatile", "llama-3.1-8b-instant", "gemma2-9b-it"]
         candidate_models = [MODEL] + [m for m in groq_models if m != MODEL]
     else:
         candidate_models = [MODEL]
