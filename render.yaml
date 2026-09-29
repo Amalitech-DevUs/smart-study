@@ -43,3 +43,25 @@ services:
         value: /var/lib/smart-study/smart_study.sqlite
       - key: JWT_SECRET
         sync: false
+  - type: web
+    name: smart-study-routing
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22.14.0"
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        sync: false
+      - key: AUTH_SERVICE_URL
+        sync: false
+      - key: AUTH_REST_BASE_URL
+        sync: false
+      - key: CONTENT_SERVICE_URL
+        sync: false
+      - key: AI_SERVICE_URL
+        sync: false
