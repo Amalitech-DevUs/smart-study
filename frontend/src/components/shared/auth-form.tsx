@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { useNotifications } from "@/lib/notification-context";
 import { useAuth } from "@/lib/use-auth";
 
@@ -94,9 +95,10 @@ export function AuthForm({ mode }: AuthFormProps) {
         <div className="mb-8">
           <Link
             href="/"
-            className="text-xs font-medium text-slate-400 hover:text-slate-900 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-slate-900 transition-colors"
           >
-            ← Back to home
+            <ArrowLeft className="h-3.5 w-3.5" />
+            <span>Back to home</span>
           </Link>
         </div>
 

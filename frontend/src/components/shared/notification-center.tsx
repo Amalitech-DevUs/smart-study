@@ -7,6 +7,7 @@ import {
   CheckCheck,
   Trash2,
   X,
+  ArrowRight,
 } from "lucide-react";
 import {
   useNotifications,
@@ -67,19 +68,23 @@ export function NotificationCenter() {
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>
-      {/* Bell Button */}
+      {/* Bell Button — styled to match light dashboard header */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex h-9 w-9 items-center justify-center border border-slate-700 bg-slate-800/80 text-slate-300 transition-all hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-400/30 active:scale-95"
+        className={`relative flex h-9 w-9 items-center justify-center rounded-xl border transition-all focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:ring-offset-1 active:scale-95 ${
+          isOpen
+            ? "border-slate-300 bg-slate-100 text-slate-900 shadow-xs"
+            : "border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900"
+        }`}
         aria-label="View notifications"
         aria-expanded={isOpen}
       >
-        <Bell className="h-4 w-4" />
+        <Bell className={`h-4 w-4 transition-transform ${isOpen ? "scale-110" : ""}`} />
 
-        {/* Unread badge indicator */}
+        {/* Unread badge — amber pill, white ring to lift off background */}
         {unreadCount > 0 && (
-          <span className="absolute -top-1 -right-1 flex h-4.5 min-w-[18px] items-center justify-center rounded-full bg-amber-400 px-1 text-[10px] font-bold text-slate-950 shadow-sm ring-2 ring-[#0e1726]">
+          <span className="absolute -top-1.5 -right-1.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-amber-400 px-1 text-[10px] font-bold leading-none text-slate-950 shadow-sm ring-2 ring-white">
             {unreadCount > 9 ? "9+" : unreadCount}
           </span>
         )}
@@ -89,10 +94,10 @@ export function NotificationCenter() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.96 }}
+            initial={{ opacity: 0, y: 8, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.96, transition: { duration: 0.15 } }}
-            className="absolute right-0 mt-2.5 w-80 sm:w-96 rounded-2xl border border-slate-800 bg-[#0e1726] shadow-2xl z-50 overflow-hidden text-white backdrop-blur-xl"
+            exit={{ opacity: 0, y: 8, scale: 0.97, transition: { duration: 0.12 } }}
+            className="absolute right-0 mt-2 w-80 sm:w-96 rounded-2xl border border-slate-800 bg-[#0e1726] shadow-[0_8px_40px_rgba(0,0,0,0.45)] z-50 overflow-hidden text-white"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-slate-800/80 px-4 py-3.5 bg-slate-900/40">
@@ -163,8 +168,10 @@ export function NotificationCenter() {
                     <div
                       key={notif.id}
                       onClick={() => markAsRead(notif.id)}
-                      className={`group relative flex items-start justify-between gap-3 p-3.5 transition-colors hover:bg-slate-850/60 cursor-pointer ${
-                        !notif.read ? "bg-slate-900/50" : "bg-transparent"
+                      className={`group relative flex items-start justify-between gap-3 p-3.5 transition-colors hover:bg-slate-800/40 cursor-pointer border-l-2 ${
+                        !notif.read
+                          ? "bg-slate-900/50 border-l-amber-400/70"
+                          : "bg-transparent border-l-transparent"
                       }`}
                     >
                       {/* Content */}
@@ -196,7 +203,8 @@ export function NotificationCenter() {
                               }}
                               className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-400 hover:text-amber-300 transition-colors"
                             >
-                              View details &rarr;
+                              <span>View details</span>
+                              <ArrowRight className="h-3 w-3" />
                             </Link>
                           </div>
                         )}

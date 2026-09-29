@@ -3,13 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/use-auth";
-import { LogOut, GraduationCap, User as UserIcon } from "lucide-react";
+import { LogOut, GraduationCap, User as UserIcon, PanelLeftClose } from "lucide-react";
 import {
   NAV_LINKS_LOGGED_IN,
   NAV_LINKS_PUBLIC,
 } from "@/lib/constants/navigation";
 
-export function SideNav() {
+type SideNavProps = {
+  isOpen?: boolean;
+  onClose?: () => void;
+};
+
+export function SideNav({ isOpen = true, onClose }: SideNavProps) {
   const pathname = usePathname();
   const { loggedIn, username, isLoading, logout } = useAuth();
 
@@ -47,9 +52,26 @@ export function SideNav() {
   const mainLinks = navLinks.filter((l) => l.href !== "/profile");
 
   return (
-    <aside className="hidden md:flex fixed left-0 top-0 z-40 h-screen w-[240px] flex-col border-r border-slate-800 bg-slate-900 text-slate-300 shadow-[1px_0_10px_rgba(0,0,0,0.25)]">
+    <aside
+      className={`hidden md:flex fixed left-0 top-0 z-50 isolate h-screen w-[240px] flex-col border-r border-slate-800 bg-slate-900 text-slate-300 shadow-[1px_0_10px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-in-out ${
+        isOpen ? "translate-x-0" : "-translate-x-full pointer-events-none"
+      }`}
+    >
       {/* Brand Header — sleek dark navy */}
-      <div className="bg-slate-950 p-5 text-white border-b border-slate-800/80 shrink-0">
+      <div className="relative bg-slate-950 p-5 text-white border-b border-slate-800/80 shrink-0">
+        {/* Close sidebar button */}
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            className="absolute top-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+            aria-label="Close sidebar"
+            title="Close sidebar"
+          >
+            <PanelLeftClose className="h-4 w-4" />
+          </button>
+        )}
+
         <div className="flex flex-col items-center text-center">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400 text-slate-950 shadow-md">
             <GraduationCap className="h-6 w-6" />
@@ -104,7 +126,7 @@ export function SideNav() {
       </nav>
 
       {/* Bottom: Structured User Info & Logout Container */}
-      <div className="shrink-0 relative z-20 border-t border-slate-800 bg-slate-950/70 p-3.5 flex flex-col gap-3">
+      <div className="shrink-0 border-t border-slate-800 bg-slate-950/70 p-3.5 flex flex-col gap-3">
         {!isLoading && loggedIn ? (
           <>
             <div className="flex items-center gap-3 min-w-0">

@@ -479,6 +479,24 @@ export function getStudyStreak(username: string | undefined): number {
   return streak;
 }
 
+/**
+ * Returns the set of calendar dates (YYYY-MM-DD) on which the user had
+ * at least one recorded attempt. Used by the study calendar to accurately
+ * highlight real study days instead of approximating from streak count.
+ */
+export function getStudiedDates(username: string | undefined): Set<string> {
+  const attemptsKey = getAttemptsKey(username);
+  const attempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const dates = new Set<string>();
+  for (const a of attempts) {
+    const d = new Date(a.timestamp);
+    dates.add(
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`,
+    );
+  }
+  return dates;
+}
+
 export type PerformanceTier = {
   label: string;
   count: number;

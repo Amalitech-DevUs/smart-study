@@ -91,7 +91,7 @@ export function SubjectCard({ subject }: Props) {
             <strong className="text-slate-900 font-bold">{subject.uniquePracticed}</strong>
             <span className="text-slate-400"> / {subject.totalAvailable} questions practiced</span>
           </span>
-          <span className="text-slate-700 font-semibold tabular-nums">
+          <span className="shrink-0 whitespace-nowrap text-slate-700 font-semibold tabular-nums">
             {percent}% completed
           </span>
         </div>

@@ -9,6 +9,7 @@ import {
   getRecentActivity,
   getDailyGoal,
   getStudyStreak,
+  getStudiedDates,
   setDailyGoalTarget,
   getPerformanceTiers,
   type ActiveSession,
@@ -28,6 +29,7 @@ export type DashboardData = {
   recentActivity: StudySessionRecord[];
   dailyGoal: DailyGoalData;
   streak: number;
+  studiedDates: Set<string>;
   performanceDistribution: PerformanceDistributionData;
 };
 
@@ -74,6 +76,7 @@ export function useDashboardData(
   const [recentActivity, setRecentActivity] = useState<StudySessionRecord[]>([]);
   const [dailyGoal, setDailyGoal] = useState<DailyGoalData>(INITIAL_DAILY_GOAL);
   const [streak, setStreak] = useState<number>(0);
+  const [studiedDates, setStudiedDates] = useState<Set<string>>(new Set());
   const [performanceDistribution, setPerformanceDistribution] =
     useState<PerformanceDistributionData>(INITIAL_PERFORMANCE);
 
@@ -88,6 +91,7 @@ export function useDashboardData(
       setRecentActivity(getRecentActivity(username));
       setDailyGoal(getDailyGoal(username));
       setStreak(getStudyStreak(username));
+      setStudiedDates(getStudiedDates(username));
       setPerformanceDistribution(getPerformanceTiers(username));
     };
 
@@ -109,6 +113,7 @@ export function useDashboardData(
     recentActivity,
     dailyGoal,
     streak,
+    studiedDates,
     performanceDistribution,
     handleTargetChange,
   };

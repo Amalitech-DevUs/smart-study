@@ -13,7 +13,6 @@ import { NoticeBoardCard } from "@/components/dashboard/NoticeBoardCard";
 import { StudyCalendarCard } from "@/components/dashboard/StudyCalendarCard";
 import { QuickAccessGrid } from "@/components/dashboard/QuickAccessGrid";
 import { PerformanceOverviewCard } from "@/components/dashboard/PerformanceOverviewCard";
-import { ContinueLearning } from "@/components/dashboard/ContinueLearning";
 import { SubjectsSection } from "@/components/dashboard/SubjectsSection";
 import { FocusAreas } from "@/components/dashboard/FocusAreas";
 
@@ -30,6 +29,7 @@ export default function DashboardPage() {
     recentActivity,
     dailyGoal,
     streak,
+    studiedDates,
     performanceDistribution,
   } = useDashboardData(username, isAuthLoading);
 
@@ -68,13 +68,6 @@ export default function DashboardPage() {
             subjectCount={subjectProgress.length || 5}
           />
 
-          {/* Continue Learning Banner if active exam is in progress */}
-          {activeSession && (
-            <div className="mb-6">
-              <ContinueLearning session={activeSession} />
-            </div>
-          )}
-
           {/* Middle Row: Recent Results Table (65%) + Notice Board (35%) */}
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 items-stretch mb-6">
             <div className="lg:col-span-8">
@@ -88,7 +81,7 @@ export default function DashboardPage() {
           {/* Bottom Row: Academic Calendar (33%) + Quick Access (33%) + Performance Donut (33%) */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch mb-8">
             <div id="calendar" className="flex flex-col scroll-mt-24">
-              <StudyCalendarCard streak={streak} />
+              <StudyCalendarCard streak={streak} studiedDates={studiedDates} />
             </div>
             <div className="flex flex-col">
               <QuickAccessGrid activeSession={activeSession} />
@@ -119,7 +112,7 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="fixed bottom-24 right-6 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95"
+            className="fixed bottom-20 right-20 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95 md:bottom-24 md:right-6"
             aria-label="Scroll back to top"
           >
             <ArrowUp className="h-4 w-4" />

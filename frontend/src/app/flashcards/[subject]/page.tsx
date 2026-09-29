@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth";
 import { placeholderSubjects } from "@/lib/placeholder-subjects";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -31,7 +32,8 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
               href="/flashcards"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
             >
-              &larr; All subjects
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>All subjects</span>
             </Link>
           </div>
 

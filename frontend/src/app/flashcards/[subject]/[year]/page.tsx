@@ -6,7 +6,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { SessionRunner } from "@/components/flashcards/session-runner";
 import type { McqQuestion } from "@/components/flashcards/mcq-card";
 import { placeholderSubjects } from "@/lib/placeholder-subjects";
-import { AlertCircle, RefreshCw } from "lucide-react";
+import { AlertCircle, RefreshCw, ArrowLeft } from "lucide-react";
 
 type PaperPageProps = {
   params: Promise<{ subject: string; year: string }>;
@@ -205,7 +205,7 @@ export default async function PaperPage({ params }: PaperPageProps) {
           href={`/flashcards/${subjectData.slug}`}
           className="inline-flex items-center gap-2 text-xs font-bold text-[#0e1726] transition-colors hover:text-[#c0392b]"
         >
-          <span aria-hidden="true">&larr;</span>
+          <ArrowLeft className="h-3.5 w-3.5" />
           <span>Back to {subjectData.name}</span>
         </Link>
         <header className="mt-6 border-b border-[#e2e8f0] pb-6">
