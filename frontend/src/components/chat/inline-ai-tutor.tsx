@@ -5,7 +5,7 @@ import { FormattedMessageContent } from "./FormattedMessageContent";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  BrainCircuit,
+  GraduationCap,
   Sparkles,
   X,
   ExternalLink,
@@ -261,7 +261,7 @@ Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple lan
         <div className="flex items-center justify-between border-b border-indigo-100 bg-white/80 px-4 py-3 backdrop-blur-sm sm:px-5">
           <div className="flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#0e1726] shadow-sm shadow-slate-900/20">
-              <BrainCircuit className="h-4 w-4 text-amber-400" />
+              <GraduationCap className="h-4 w-4 text-amber-400" />
             </div>
             <div>
               <div className="flex items-center gap-2">

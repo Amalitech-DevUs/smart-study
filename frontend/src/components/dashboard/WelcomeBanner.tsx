@@ -1,5 +1,4 @@
 import React from "react";
-import { Sparkles, BookOpenCheck, Target } from "lucide-react";
 
 type Props = {
   username: string | undefined;

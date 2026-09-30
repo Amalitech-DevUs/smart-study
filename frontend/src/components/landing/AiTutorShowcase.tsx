@@ -1,5 +1,5 @@
 import React from "react";
-import { Bot } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 export function AiTutorShowcase() {
@@ -28,7 +28,7 @@ export function AiTutorShowcase() {
               <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/80 px-4 py-3">
                 <div className="flex items-center gap-2">
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0e1726]">
-                    <Bot className="h-3.5 w-3.5 text-amber-400" />
+                    <GraduationCap className="h-3.5 w-3.5 text-amber-400" />
                   </div>
                   <span className="text-xs font-semibold text-slate-700">SmartStudy AI</span>
                 </div>

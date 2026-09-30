@@ -66,7 +66,7 @@ export function MessageList({
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 py-6 sm:px-6 md:px-8">
-      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col">
+      <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col">
         {messages.length === 0 ? (
           <EmptyChatState onSelectPrompt={onSelectPrompt} />
         ) : (

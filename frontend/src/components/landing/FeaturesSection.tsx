@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Bot, Zap, Award } from "lucide-react";
+import { BookOpen, GraduationCap, Zap, Award } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 const features = [
@@ -10,7 +10,7 @@ const features = [
       "853+ verified multiple-choice questions from real WAEC examinations, 2020 to 2026.",
   },
   {
-    icon: Bot,
+    icon: GraduationCap,
     title: "AI Study Tutor",
     description:
       "Ask any BECE question and get a clear, step-by-step explanation in plain language.",

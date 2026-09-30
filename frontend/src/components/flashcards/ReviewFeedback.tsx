@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckCircle2, HelpCircle, XCircle, Bot } from "lucide-react";
+import { CheckCircle2, HelpCircle, XCircle, GraduationCap } from "lucide-react";
 import { InlineAiTutor } from "@/components/chat/inline-ai-tutor";
 import type { OptionItem } from "./AnswerOption";
 
@@ -77,7 +77,7 @@ export function ReviewFeedback({
             onClick={() => setIsAiTutorOpen((prev) => !prev)}
             className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-300 shadow-xs"
           >
-            <Bot className="h-3.5 w-3.5 text-slate-600" />
+            <GraduationCap className="h-3.5 w-3.5 text-amber-500" />
             <span>
               {isAiTutorOpen
                 ? "Hide AI Tutor"

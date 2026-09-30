@@ -1,7 +1,7 @@
 import {
   LayoutDashboard,
   BookOpen,
-  Bot,
+  GraduationCap,
   FileText,
   User,
   Megaphone,
@@ -21,7 +21,7 @@ export const NAV_LINKS_LOGGED_IN: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Profile", href: "/profile", icon: User },
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
-  { label: "AI Tutor", href: "/chat", icon: Bot },
+  { label: "AI Tutor", href: "/chat", icon: GraduationCap },
   { label: "Revision Notes", href: "/articles", icon: FileText },
   { label: "Notice Board", href: "/notices", icon: Megaphone },
   { label: "Study Calendar", href: "/calendar", icon: Calendar },
@@ -33,7 +33,7 @@ export const NAV_LINKS_DRAWER_LOGGED_IN: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Profile", href: "/profile", icon: User },
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
-  { label: "AI Tutor", href: "/chat", icon: Bot },
+  { label: "AI Tutor", href: "/chat", icon: GraduationCap },
   { label: "Revision Notes", href: "/articles", icon: FileText },
   { label: "Notice Board", href: "/notices", icon: Megaphone },
   { label: "Study Calendar", href: "/calendar", icon: Calendar },
@@ -44,6 +44,6 @@ export const NAV_LINKS_DRAWER_LOGGED_IN: NavItem[] = [
 export const NAV_LINKS_PUBLIC: NavItem[] = [
   { label: "Home", href: "/", icon: LayoutDashboard },
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
-  { label: "AI Tutor", href: "/chat", icon: Bot },
+  { label: "AI Tutor", href: "/chat", icon: GraduationCap },
   { label: "Revision Notes", href: "/articles", icon: FileText },
 ];
