@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { LearningOverviewData } from "@/lib/learning-tracker";
 
 type Props = {
@@ -21,9 +22,10 @@ export function ProfileLearningSection({ overview }: Props) {
         </h3>
         <Link
           href="/dashboard"
-          className="text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
+          className="inline-flex items-center gap-1 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
         >
-          View full dashboard &rarr;
+          <span>View full dashboard</span>
+          <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
 

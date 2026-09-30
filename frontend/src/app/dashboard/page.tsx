@@ -13,7 +13,6 @@ import { NoticeBoardCard } from "@/components/dashboard/NoticeBoardCard";
 import { StudyCalendarCard } from "@/components/dashboard/StudyCalendarCard";
 import { QuickAccessGrid } from "@/components/dashboard/QuickAccessGrid";
 import { PerformanceOverviewCard } from "@/components/dashboard/PerformanceOverviewCard";
-import { ContinueLearning } from "@/components/dashboard/ContinueLearning";
 import { SubjectsSection } from "@/components/dashboard/SubjectsSection";
 import { FocusAreas } from "@/components/dashboard/FocusAreas";
 
@@ -30,6 +29,8 @@ export default function DashboardPage() {
     recentActivity,
     dailyGoal,
     streak,
+    studiedDates,
+    performanceDistribution,
   } = useDashboardData(username, isAuthLoading);
 
   // Scroll to top button visibility listener
@@ -47,8 +48,8 @@ export default function DashboardPage() {
 
   return (
     <RequireAuth>
-      <div className="min-h-screen bg-[#f4f6fa] text-slate-900 pb-16">
-        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 md:pb-16">
+        <main className="mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-6 lg:px-8">
           {/* Top Bar: Search + Notification Bell + User Avatar Greeting */}
           <DashboardHeader
             username={username}
@@ -64,15 +65,8 @@ export default function DashboardPage() {
             overview={overview}
             dailyGoal={dailyGoal}
             streak={streak}
-            subjectCount={subjectProgress.length || 4}
+            subjectCount={subjectProgress.length || 5}
           />
-
-          {/* Continue Learning Banner if active exam is in progress */}
-          {activeSession && (
-            <div className="mb-6">
-              <ContinueLearning session={activeSession} />
-            </div>
-          )}
 
           {/* Middle Row: Recent Results Table (65%) + Notice Board (35%) */}
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 items-stretch mb-6">
@@ -87,13 +81,16 @@ export default function DashboardPage() {
           {/* Bottom Row: Academic Calendar (33%) + Quick Access (33%) + Performance Donut (33%) */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch mb-8">
             <div id="calendar" className="flex flex-col scroll-mt-24">
-              <StudyCalendarCard streak={streak} />
+              <StudyCalendarCard streak={streak} studiedDates={studiedDates} />
             </div>
             <div className="flex flex-col">
-              <QuickAccessGrid />
+              <QuickAccessGrid activeSession={activeSession} />
             </div>
             <div id="performance" className="flex flex-col scroll-mt-24">
-              <PerformanceOverviewCard overview={overview} />
+              <PerformanceOverviewCard
+                overview={overview}
+                distribution={performanceDistribution}
+              />
             </div>
           </div>
 
@@ -110,12 +107,12 @@ export default function DashboardPage() {
           )}
         </main>
 
-        {/* Back to top button */}
+        {/* Back to top button — positioned above floating chat widget to avoid collision */}
         {showBackToTop && (
           <button
             type="button"
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95"
+            className="fixed bottom-28 right-4 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition-all hover:bg-slate-50 hover:scale-105 active:scale-95 md:bottom-24 md:right-6"
             aria-label="Scroll back to top"
           >
             <ArrowUp className="h-4 w-4" />

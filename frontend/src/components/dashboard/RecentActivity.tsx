@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { StudySessionRecord } from "@/lib/learning-tracker";
 
 type Props = {
@@ -14,9 +15,10 @@ export function RecentActivity({ recentActivity }: Props) {
         </h2>
         <Link
           href="/flashcards"
-          className="text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
+          className="inline-flex items-center gap-1 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
         >
-          View all papers &rarr;
+          <span>View all papers</span>
+          <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
 
@@ -62,9 +64,10 @@ export function RecentActivity({ recentActivity }: Props) {
 
                   <Link
                     href={`/flashcards/${session.subjectSlug}/${session.year}`}
-                    className="text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
                   >
-                    Review &rarr;
+                    <span>Review</span>
+                    <ArrowRight className="h-3 w-3" />
                   </Link>
                 </div>
               </div>

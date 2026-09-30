@@ -7,6 +7,7 @@ import {
   Megaphone,
   Calendar,
   TrendingUp,
+  Bell,
   type LucideIcon,
 } from "lucide-react";
 
@@ -22,9 +23,10 @@ export const NAV_LINKS_LOGGED_IN: NavItem[] = [
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
   { label: "AI Tutor", href: "/chat", icon: Bot },
   { label: "Revision Notes", href: "/articles", icon: FileText },
-  { label: "Notice Board", href: "/dashboard#notices", icon: Megaphone },
-  { label: "Study Calendar", href: "/dashboard#calendar", icon: Calendar },
-  { label: "Performance", href: "/dashboard#performance", icon: TrendingUp },
+  { label: "Notice Board", href: "/notices", icon: Megaphone },
+  { label: "Study Calendar", href: "/calendar", icon: Calendar },
+  { label: "Performance", href: "/progress", icon: TrendingUp },
+  { label: "Notifications", href: "/notifications", icon: Bell },
 ];
 
 export const NAV_LINKS_DRAWER_LOGGED_IN: NavItem[] = [
@@ -33,8 +35,10 @@ export const NAV_LINKS_DRAWER_LOGGED_IN: NavItem[] = [
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
   { label: "AI Tutor", href: "/chat", icon: Bot },
   { label: "Revision Notes", href: "/articles", icon: FileText },
-  { label: "Notice Board", href: "/dashboard#notices", icon: Megaphone },
-  { label: "Study Calendar", href: "/dashboard#calendar", icon: Calendar },
+  { label: "Notice Board", href: "/notices", icon: Megaphone },
+  { label: "Study Calendar", href: "/calendar", icon: Calendar },
+  { label: "Performance", href: "/progress", icon: TrendingUp },
+  { label: "Notifications", href: "/notifications", icon: Bell },
 ];
 
 export const NAV_LINKS_PUBLIC: NavItem[] = [

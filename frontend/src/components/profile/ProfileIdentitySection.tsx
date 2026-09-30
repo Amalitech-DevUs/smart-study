@@ -6,7 +6,7 @@ type Props = {
 };
 
 export function ProfileIdentitySection({ username, streak }: Props) {
-  const initials = username ? username.slice(0, 2).toUpperCase() : "ST";
+  const initial = username ? username.charAt(0).toUpperCase() : "S";
 
   return (
     <section
@@ -15,9 +15,9 @@ export function ProfileIdentitySection({ username, streak }: Props) {
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          {/* Clean avatar initials */}
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0e1726] font-heading text-base font-bold text-white shadow-xs">
-            {initials}
+          {/* Avatar — matches sidebar & header badge styling */}
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 border border-slate-200 font-heading text-base font-bold text-amber-400 shadow-xs">
+            {initial}
           </div>
 
           <div>

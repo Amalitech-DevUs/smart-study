@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { useNotifications } from "@/lib/notification-context";
 import { useAuth } from "@/lib/use-auth";
 
@@ -94,9 +95,10 @@ export function AuthForm({ mode }: AuthFormProps) {
         <div className="mb-8">
           <Link
             href="/"
-            className="text-xs font-medium text-slate-400 hover:text-slate-900 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-slate-900 transition-colors"
           >
-            ← Back to home
+            <ArrowLeft className="h-3.5 w-3.5" />
+            <span>Back to home</span>
           </Link>
         </div>
 
@@ -140,7 +142,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+        <form onSubmit={handleSubmit} className="space-y-4" noValidate suppressHydrationWarning>
           {/* Username */}
           <div>
             <label htmlFor="username" className="mb-1.5 block text-xs font-semibold text-slate-700">
@@ -151,10 +153,10 @@ export function AuthForm({ mode }: AuthFormProps) {
               name="username"
               type="text"
               autoComplete="username"
-              autoFocus
               placeholder="e.g. kwame_study"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              suppressHydrationWarning
               className={`h-11 w-full rounded-xl border bg-slate-50 px-3.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:bg-white focus:ring-2 ${
                 errors.username
                   ? "border-red-300 focus:border-red-400 focus:ring-red-100"
@@ -186,6 +188,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 placeholder="••••"
                 value={pin}
                 onChange={(e) => setPin(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                suppressHydrationWarning
                 className={`h-11 w-full rounded-xl border bg-slate-50 pl-3.5 pr-16 text-sm tracking-widest text-slate-900 placeholder:tracking-normal placeholder:text-slate-400 outline-none transition-all focus:bg-white focus:ring-2 ${
                   errors.pin
                     ? "border-red-300 focus:border-red-400 focus:ring-red-100"
@@ -196,6 +199,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               <button
                 type="button"
                 onClick={() => setShowPin(!showPin)}
+                suppressHydrationWarning
                 className="absolute inset-y-0 right-0 flex items-center px-4 text-[11px] font-semibold text-slate-400 hover:text-slate-900 transition-colors select-none"
                 aria-label={showPin ? "Hide PIN" : "Show PIN"}
               >
@@ -223,6 +227,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 placeholder="••••"
                 value={confirmPin}
                 onChange={(e) => setConfirmPin(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                suppressHydrationWarning
                 className={`h-11 w-full rounded-xl border bg-slate-50 px-3.5 text-sm tracking-widest text-slate-900 placeholder:tracking-normal placeholder:text-slate-400 outline-none transition-all focus:bg-white focus:ring-2 ${
                   errors.confirmPin
                     ? "border-red-300 focus:border-red-400 focus:ring-red-100"
@@ -240,6 +245,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
+            suppressHydrationWarning
             className="mt-2 flex h-11 w-full items-center justify-center rounded-xl bg-[#0e1726] text-sm font-semibold text-white transition-all hover:bg-slate-800 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isSubmitting ? (

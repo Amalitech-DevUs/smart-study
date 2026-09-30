@@ -63,7 +63,7 @@ export function Footer() {
             Empowering students with exam-aligned past questions, bite-sized practice, and 24/7 AI study assistance.
           </p>
           <p className="mt-4 text-xs font-semibold text-slate-400">
-            © {new Date().getFullYear()} Smart Study. All rights reserved.
+            &copy; {new Date().getFullYear()} SmartStudy. All rights reserved.
           </p>
         </div>
 

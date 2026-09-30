@@ -9,13 +9,16 @@ import {
   getRecentActivity,
   getDailyGoal,
   getStudyStreak,
+  getStudiedDates,
   setDailyGoalTarget,
+  getPerformanceTiers,
   type ActiveSession,
   type LearningOverviewData,
   type SubjectProgressData,
   type FocusAreaTopic,
   type StudySessionRecord,
   type DailyGoalData,
+  type PerformanceDistributionData,
 } from "@/lib/learning-tracker";
 
 export type DashboardData = {
@@ -26,6 +29,8 @@ export type DashboardData = {
   recentActivity: StudySessionRecord[];
   dailyGoal: DailyGoalData;
   streak: number;
+  studiedDates: Set<string>;
+  performanceDistribution: PerformanceDistributionData;
 };
 
 const INITIAL_OVERVIEW: LearningOverviewData = {
@@ -44,6 +49,18 @@ const INITIAL_DAILY_GOAL: DailyGoalData = {
   percent: 0,
 };
 
+const INITIAL_PERFORMANCE: PerformanceDistributionData = {
+  overallPercent: 0,
+  hasData: false,
+  totalEvaluated: 0,
+  tiers: [
+    { label: "Excellent (75%+)", count: 0, percent: 0, color: "#10b981", dotBg: "bg-emerald-500" },
+    { label: "Good (60-74%)", count: 0, percent: 0, color: "#3b82f6", dotBg: "bg-blue-500" },
+    { label: "Average (50-59%)", count: 0, percent: 0, color: "#f59e0b", dotBg: "bg-amber-500" },
+    { label: "Needs Improvement (<50%)", count: 0, percent: 0, color: "#f43f5e", dotBg: "bg-rose-500" },
+  ],
+};
+
 /**
  * Loads and refreshes all dashboard data from localStorage (learning-tracker).
  * Automatically re-fetches when another tab writes to storage.
@@ -59,6 +76,9 @@ export function useDashboardData(
   const [recentActivity, setRecentActivity] = useState<StudySessionRecord[]>([]);
   const [dailyGoal, setDailyGoal] = useState<DailyGoalData>(INITIAL_DAILY_GOAL);
   const [streak, setStreak] = useState<number>(0);
+  const [studiedDates, setStudiedDates] = useState<Set<string>>(new Set());
+  const [performanceDistribution, setPerformanceDistribution] =
+    useState<PerformanceDistributionData>(INITIAL_PERFORMANCE);
 
   useEffect(() => {
     if (isAuthLoading || typeof window === "undefined") return;
@@ -71,6 +91,8 @@ export function useDashboardData(
       setRecentActivity(getRecentActivity(username));
       setDailyGoal(getDailyGoal(username));
       setStreak(getStudyStreak(username));
+      setStudiedDates(getStudiedDates(username));
+      setPerformanceDistribution(getPerformanceTiers(username));
     };
 
     loadData();
@@ -91,6 +113,8 @@ export function useDashboardData(
     recentActivity,
     dailyGoal,
     streak,
+    studiedDates,
+    performanceDistribution,
     handleTargetChange,
   };
 }
