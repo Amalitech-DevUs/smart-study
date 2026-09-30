@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BookOpen, BrainCircuit, Clock, FileText, ChevronRight } from "lucide-react";
+import { BookOpen, GraduationCap, Clock, FileText, ChevronRight } from "lucide-react";
 
 export function ProfileResourcesSection() {
   return (
@@ -15,7 +15,7 @@ export function ProfileResourcesSection() {
         Study Resources
       </h3>
       <p className="text-xs text-slate-500 mb-4">
-        850+ official WAEC past questions available across all 8 BECE subjects and multiple examination years.
+        850+ official WAEC past questions available across all 9 BECE subjects and multiple examination years.
       </p>
 
       <div className="space-y-2">
@@ -35,7 +35,7 @@ export function ProfileResourcesSection() {
           className="flex items-center justify-between rounded-lg border border-slate-100 bg-slate-50/70 px-4 py-3 text-xs font-medium text-slate-800 hover:bg-slate-100 transition-colors"
         >
           <div className="flex items-center gap-2.5">
-            <BrainCircuit className="h-4 w-4 text-slate-600" />
+            <GraduationCap className="h-4 w-4 text-amber-500" />
             <span>Ask AI Tutor for Syllabus Help</span>
           </div>
           <ChevronRight className="h-4 w-4 text-slate-400" />

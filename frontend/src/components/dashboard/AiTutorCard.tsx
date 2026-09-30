@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bot, ArrowRight } from "lucide-react";
+import { GraduationCap, ArrowRight } from "lucide-react";
 import type { FocusAreaTopic } from "@/lib/learning-tracker";
 
 type Props = {
@@ -12,7 +12,7 @@ export function AiTutorCard({ focusAreas }: Props) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
       <div className="flex items-center gap-2 mb-2">
-        <Bot className="h-4 w-4 text-slate-700" />
+        <GraduationCap className="h-4 w-4 text-amber-500" />
         <h3 className="font-heading text-sm font-bold text-slate-900">
           SmartStudy AI Tutor
         </h3>

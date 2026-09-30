@@ -96,7 +96,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Page content — offset by sidebar width only when sidebar is active and open */}
       <div
         className={`flex flex-1 flex-col transition-[padding] duration-300 ease-in-out ${
-          showSidebar && isSidebarOpen ? "md:pl-[240px]" : "md:pl-0"
+          showSidebar && isSidebarOpen ? "md:pl-60" : "md:pl-0"
         }`}
       >
         <div className="flex-1">{children}</div>

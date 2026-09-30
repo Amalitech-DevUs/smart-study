@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useCallback } from "react";
 import { useAuth } from "@/lib/use-auth";
 import { ChatEngine } from "./chat-engine";
-import { Maximize2, Minimize2, X, BrainCircuit } from "lucide-react";
+import { Maximize2, Minimize2, X, GraduationCap, ExternalLink } from "lucide-react";
 
 const FAB_SIZE = 48; // h-12 w-12 = 48px
 const EDGE_GAP = 8;  // minimum px from any viewport edge
@@ -117,10 +118,10 @@ export function ChatWidget() {
         <aside
           className={`fixed z-50 overflow-hidden border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-in-out ${
             isExpanded
-              ? "inset-4 rounded-xl md:inset-auto md:w-[720px] md:h-[780px] md:max-h-[85vh] md:rounded-xl"
+              ? "inset-2 sm:inset-4 md:inset-6 lg:inset-8 rounded-2xl w-auto h-auto max-w-none max-h-none shadow-2xl"
               : fabPos
-              ? "h-[520px] max-h-[75vh] w-[calc(100vw-2rem)] max-w-[400px] rounded-xl md:w-[400px] md:h-[580px]"
-              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] rounded-xl md:inset-x-auto md:right-8 md:bottom-[92px] md:w-[400px] md:h-[580px]"
+              ? "h-[520px] max-h-[75vh] w-[calc(100vw-2rem)] max-w-[400px] rounded-xl md:w-[420px] md:h-[600px]"
+              : "inset-x-4 bottom-20 h-[520px] max-h-[75vh] rounded-xl md:inset-x-auto md:right-8 md:bottom-[92px] md:w-[420px] md:h-[600px]"
           }`}
           style={!isExpanded && panelStyle ? panelStyle : undefined}
         >
@@ -128,7 +129,7 @@ export function ChatWidget() {
           <div className="flex items-center justify-between border-b border-slate-200 bg-[#0e1726] px-4 py-3 text-white">
             <div className="flex items-center gap-2.5">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-slate-800 border border-slate-700 text-amber-400 shadow-sm">
-                <BrainCircuit className="h-4 w-4" />
+                <GraduationCap className="h-4 w-4" />
               </div>
               <div>
                 <h2 className="font-heading text-sm font-bold leading-tight">SmartStudy Tutor</h2>
@@ -137,11 +138,22 @@ export function ChatWidget() {
             </div>
 
             <div className="flex items-center gap-1 text-slate-300">
+              <Link
+                href="/chat"
+                onClick={() => setIsOpen(false)}
+                title="Open full page chat"
+                aria-label="Open full page chat"
+                className="flex h-7 w-7 items-center justify-center rounded-md hover:bg-slate-800 hover:text-white transition-colors"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+
               <button
                 type="button"
                 onClick={() => setIsExpanded(!isExpanded)}
                 aria-label={isExpanded ? "Collapse window" : "Expand window"}
-                className="hidden md:flex h-7 w-7 items-center justify-center rounded-md hover:bg-slate-800 hover:text-white transition-colors"
+                title={isExpanded ? "Collapse window" : "Expand window"}
+                className="flex h-7 w-7 items-center justify-center rounded-md hover:bg-slate-800 hover:text-white transition-colors"
               >
                 {isExpanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
               </button>
@@ -150,6 +162,7 @@ export function ChatWidget() {
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close assistant"
+                title="Close assistant"
                 className="flex h-7 w-7 items-center justify-center rounded-md hover:bg-slate-800 hover:text-white transition-colors"
               >
                 <X className="h-4 w-4" />
@@ -192,7 +205,7 @@ export function ChatWidget() {
           {isOpen ? (
             <X className="h-5 w-5 shrink-0" />
           ) : (
-            <BrainCircuit className="h-5 w-5 shrink-0 text-amber-400" />
+            <GraduationCap className="h-5 w-5 shrink-0 text-amber-400" />
           )}
         </span>
       </button>
