@@ -8,11 +8,6 @@ require_once __DIR__ . '/../utils/AuthMiddleware.php';
 require_once __DIR__ . '/../controllers/ProgressController.php';
 
 
-$database = new Database();
-$db = $database->connect();
-
-$authController = new AuthController($db);
-
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Get the requested path
@@ -28,15 +23,27 @@ if ($position !== false) {
 // Remove trailing slash
 $path = rtrim($path, '/');
 
-if ($method === 'GET' && $path === '/health') {
+/*
+|--------------------------------------------------------------------------
+| GET /auth/health
+|--------------------------------------------------------------------------
+*/
+
+if ($method === 'GET' && ($path === '/auth/health' || $path === '/health')) {
+    http_response_code(200);
+
     echo json_encode([
-        'success' => true,
-        'status' => 'healthy',
+        'status' => 'ok',
         'service' => 'auth'
     ]);
 
     exit;
 }
+
+$database = new Database();
+$db = $database->connect();
+
+$authController = new AuthController($db);
 
 
 /*

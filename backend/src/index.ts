@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
 }
 
 const app: Application = express();
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT || 5000);
 
 // Enable CORS for Frontend React app
 app.use(cors());
@@ -47,7 +47,7 @@ app.use('/chat', chatRoutes);
 app.use(errorHandler);
 
 // Start Express Server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`====================================================`);
   console.log(`Smart-Study Backend API Server running on port ${PORT}`);
   console.log(`Health checks: http://localhost:${PORT}/health/content`);

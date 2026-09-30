@@ -1,0 +1,34 @@
+name: Keep Services Warm
+
+on:
+  schedule:
+    # Runs every 10 minutes from 09:00 to 16:50 UTC, Monday through Friday
+    # Math: 8 hours/day * ~21 workdays * 4 services = ~672 instance hours/month
+    # Safely under Render's 750 free hours limit and GitHub's 2,000 free Actions minutes.
+    - cron: "*/10 9-16 * * 1-5"
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab before demos
+
+jobs:
+  ping:
+    name: Ping Services
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Routing Layer
+        run: |
+          echo "Pinging Routing Layer..."
+          curl -sf --max-time 20 "https://smart-study-uell.onrender.com/health" || true
+
+      - name: Ping Auth Service
+        run: |
+          echo "Pinging Auth Service..."
+          curl -sf --max-time 20 "https://smart-study-auth.onrender.com/health" || true
+
+      - name: Ping Content Service
+        run: |
+          echo "Pinging Content Service..."
+          curl -sf --max-time 20 "https://smart-study-content.onrender.com/health" || true
+
+      - name: Ping AI Assistant Service
+        run: |
+          echo "Pinging AI Service..."
+          curl -sf --max-time 20 "https://smart-study-ai-assistant-kuq3.onrender.com/health" || true
