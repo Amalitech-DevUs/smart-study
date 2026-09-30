@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Bot } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
 import type { FocusAreaTopic } from "@/lib/learning-tracker";
 
 type Props = {
@@ -58,7 +58,7 @@ export function FocusAreas({ focusAreas }: Props) {
                   )}`}
                   className="text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center gap-1"
                 >
-                  <Bot className="h-3 w-3 text-slate-500" />
+                  <GraduationCap className="h-3.5 w-3.5 text-slate-500" />
                   <span>Ask Tutor</span>
                 </Link>
               </div>

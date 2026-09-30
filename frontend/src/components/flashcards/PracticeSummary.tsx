@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Award, RotateCcw, ArrowLeft, Bot, Sparkles } from "lucide-react";
+import { Award, RotateCcw, ArrowLeft, GraduationCap, Sparkles } from "lucide-react";
 import { SaveProgressBanner } from "@/components/shared/save-progress-banner";
 
 type Props = {
@@ -94,7 +94,7 @@ export function PracticeSummary({
           href="/chat"
           className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50 px-5 py-2.5 text-xs font-bold text-indigo-700 hover:bg-indigo-100 transition-colors"
         >
-          <Bot className="h-4 w-4" />
+          <GraduationCap className="h-4 w-4 text-amber-500" />
           <span>Ask AI Tutor</span>
         </Link>
       </div>

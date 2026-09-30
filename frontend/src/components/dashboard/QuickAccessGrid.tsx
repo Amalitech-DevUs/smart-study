@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Zap, Bot, Layers, BookOpenCheck, ArrowRight, PlayCircle, BookOpen } from "lucide-react";
+import { Zap, GraduationCap, Layers, BookOpenCheck, ArrowRight, PlayCircle, BookOpen } from "lucide-react";
 import type { ActiveSession } from "@/lib/learning-tracker";
 
 type Props = {
@@ -23,7 +23,7 @@ export function QuickAccessGrid({ activeSession }: Props) {
       title: "Ask AI Tutor",
       desc: "Step-by-step explanations and formula help",
       href: "/chat",
-      icon: Bot,
+      icon: GraduationCap,
       badge: "24/7",
       badgeClass: "bg-blue-50 text-blue-700 border-blue-200",
       cta: "Chat Now",
@@ -83,7 +83,7 @@ export function QuickAccessGrid({ activeSession }: Props) {
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-2.5 min-w-0">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-white">
-                <PlayCircle className="h-[18px] w-[18px]" />
+                <PlayCircle className="h-4.5 w-4.5" />
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
