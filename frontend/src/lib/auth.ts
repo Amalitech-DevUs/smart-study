@@ -14,7 +14,7 @@ function decodeUsername(token: string): string | undefined {
     const parts = token.split(".");
     if (parts.length !== 3) return undefined;
     const [headerPart, payloadPart, signaturePart] = parts;
-    const secret = process.env.JWT_SECRET || "8e72e82ead3da918bdc0138b972acdd7d0d65b40351b93999d1c91a00c2f31d6";
+    const secret = process.env.JWT_SECRET || "super_secret_dev_key_bece_2026_production_key_32bytes";
     if (!headerPart || !payloadPart || !signaturePart || !secret) return undefined;
 
     const header = JSON.parse(Buffer.from(headerPart, "base64url").toString("utf8"));

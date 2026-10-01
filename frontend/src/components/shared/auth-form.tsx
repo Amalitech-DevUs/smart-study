@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { useNotifications } from "@/lib/notification-context";
 import { useAuth } from "@/lib/use-auth";
@@ -23,7 +22,7 @@ export function AuthForm({ mode }: AuthFormProps) {
     form?: string;
   }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const router = useRouter();
+  const [warmingUp, setWarmingUp] = useState(false);
   const { loggedIn, refreshAuth } = useAuth();
   const { showToast } = useNotifications();
   const isSignup = mode === "signup";
@@ -43,6 +42,7 @@ export function AuthForm({ mode }: AuthFormProps) {
     if (Object.keys(nextErrors).length > 0) return;
 
     setIsSubmitting(true);
+    setWarmingUp(false);
     try {
       const response = await fetch(`/api/auth/${mode}`, {
         method: "POST",
@@ -52,12 +52,21 @@ export function AuthForm({ mode }: AuthFormProps) {
       const result = await response.json().catch(() => null);
 
       if (!response.ok) {
+        // warming=true means Render backend was still booting — server already retried internally
+        if (result?.warming) {
+          setWarmingUp(false);
+          const msg = "The server took too long to respond. Please try signing in again.";
+          setErrors({ form: msg });
+          showToast("error", msg, "Server Starting Up");
+          return;
+        }
         const msg = result?.error ?? "Authentication failed. Please check your credentials.";
         setErrors({ form: msg });
         showToast("error", msg, isSignup ? "Registration Failed" : "Sign In Failed");
         return;
       }
 
+      setWarmingUp(false);
       showToast(
         "success",
         isSignup
@@ -76,9 +85,9 @@ export function AuthForm({ mode }: AuthFormProps) {
       const redirect = new URLSearchParams(window.location.search).get("redirect");
       const destination =
         redirect?.startsWith("/") && !redirect.startsWith("//") ? redirect : "/dashboard";
-      router.replace(destination);
-      router.refresh();
+      window.location.href = destination;
     } catch {
+      setWarmingUp(false);
       const errMsg = "Unable to connect right now. Please try again.";
       setErrors({ form: errMsg });
       showToast("error", errMsg, "Connection Error");
@@ -251,7 +260,11 @@ export function AuthForm({ mode }: AuthFormProps) {
             {isSubmitting ? (
               <span className="inline-flex items-center gap-2.5">
                 <span className="h-3.5 w-3.5 rounded-full border-2 border-white/25 border-t-white animate-spin" />
-                {isSignup ? "Creating account…" : "Signing in…"}
+                {warmingUp
+                  ? "Server starting up…"
+                  : isSignup
+                  ? "Creating account…"
+                  : "Signing in…"}
               </span>
             ) : isSignup ? (
               "Create Account"
