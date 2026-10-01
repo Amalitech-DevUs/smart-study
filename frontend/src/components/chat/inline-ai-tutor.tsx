@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
-  Sparkles,
   X,
   ExternalLink,
   Send,
@@ -316,7 +315,7 @@ Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple lan
           {messages.length === 0 ? (
             <div className="py-2 text-center">
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 mb-2.5">
-                <Sparkles className="h-5 w-5" />
+                <GraduationCap className="h-5 w-5" />
               </div>
               <p className="font-semibold text-slate-800">
                 Stuck on this question?
@@ -334,7 +333,6 @@ Please act as a friendly, encouraging Ghanaian BECE tutor. Use clear, simple lan
                     onClick={() => sendQuery(s.prompt)}
                     className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50/70 px-3 py-1.5 text-[11px] font-semibold text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-all active:scale-[0.98]"
                   >
-                    <Sparkles className="h-3 w-3" />
                     <span>{s.label}</span>
                   </button>
                 ))}

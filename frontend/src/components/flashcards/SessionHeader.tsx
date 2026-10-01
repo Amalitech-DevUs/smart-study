@@ -147,8 +147,8 @@ export function SessionHeader({
             </span>
           )}
 
-          {/* Timer Options (Available only before first answer) */}
-          {attempts === 0 && testAnsweredCount === 0 && !isTestSubmitted && (
+          {/* Timer Options — visible throughout practice; locks after first test answer */}
+          {(sessionMode === "practice" ? !isPracticeFinished : testAnsweredCount === 0 && !isTestSubmitted) && (
             <div className="flex rounded-full border border-slate-200 bg-slate-50 p-1 text-xs">
               {timerOptions.map((opt) => (
                 <button

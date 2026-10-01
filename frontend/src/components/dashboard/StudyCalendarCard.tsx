@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Flame, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type Props = {
-  streak?: number;
   studiedDates?: Set<string>;
 };
 
@@ -12,7 +11,7 @@ function toDateKey(year: number, month: number, day: number): string {
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
-export function StudyCalendarCard({ streak = 0, studiedDates = new Set() }: Props) {
+export function StudyCalendarCard({ studiedDates = new Set() }: Props) {
   const today = new Date();
   const [viewYear, setViewYear] = useState(today.getFullYear());
   const [viewMonth, setViewMonth] = useState(today.getMonth()); // 0-indexed
@@ -89,20 +88,6 @@ export function StudyCalendarCard({ streak = 0, studiedDates = new Set() }: Prop
         <div>
           <div className="flex items-center gap-2">
             <h3 className="font-heading text-base font-bold text-slate-900">Study Calendar</h3>
-            <span
-              className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                streak > 0
-                  ? "bg-amber-50 text-amber-700 border border-amber-200"
-                  : "bg-slate-100 text-slate-600 border border-slate-200"
-              }`}
-            >
-              <Flame
-                className={`h-3 w-3 ${
-                  streak > 0 ? "text-amber-500 fill-amber-500 animate-pulse" : "text-slate-400"
-                }`}
-              />
-              <span>{streak}d streak</span>
-            </span>
           </div>
           <p className="text-[11px] text-slate-500 mt-0.5">
             {studiedThisMonth > 0
@@ -150,7 +135,7 @@ export function StudyCalendarCard({ streak = 0, studiedDates = new Set() }: Prop
             <div
               className={`flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-lg text-[10px] sm:text-[11px] font-medium transition-all ${
                 item.isToday
-                  ? "bg-slate-900 text-white font-bold ring-2 ring-amber-400 shadow-xs"
+                  ? "bg-slate-900 text-white font-bold shadow-xs"
                   : item.isStudied && item.isCurrentMonth
                   ? "bg-emerald-500 text-white font-semibold shadow-xs"
                   : item.isStudied && !item.isCurrentMonth
@@ -176,7 +161,7 @@ export function StudyCalendarCard({ streak = 0, studiedDates = new Set() }: Prop
       {/* Legend */}
       <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500 shrink-0">
         <div className="flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-md bg-slate-900 ring-1 ring-amber-400" />
+          <span className="h-2.5 w-2.5 rounded-md bg-slate-900" />
           <span>Today</span>
         </div>
         <div className="flex items-center gap-1.5">
