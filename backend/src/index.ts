@@ -1,19 +1,24 @@
-import express, { Application, Request, Response } from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import path from 'path';
-import healthRoutes from './routes/health';
-import authRoutes from './routes/auth';
-import questionsRoutes from './routes/questions';
-import articlesRoutes from './routes/articles';
-import chatRoutes from './routes/chat';
-import { errorHandler } from './middleware/errorHandler';
+import express, { Application, Request, Response } from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
+import healthRoutes from "./routes/health";
+import authRoutes from "./routes/auth";
+import questionsRoutes from "./routes/questions";
+import articlesRoutes from "./routes/articles";
+import chatRoutes from "./routes/chat";
+import { errorHandler } from "./middleware/errorHandler";
 
 // Resolve runtime configuration consistently from the backend root in dev and compiled builds.
-dotenv.config({ path: [path.resolve(process.cwd(), 'src/.env'), path.resolve(process.cwd(), '.env')] });
+dotenv.config({
+  path: [
+    path.resolve(process.cwd(), "src/.env"),
+    path.resolve(process.cwd(), ".env"),
+  ],
+});
 
-if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
-  throw new Error('JWT_SECRET must be configured in production.');
+if (process.env.NODE_ENV === "production" && !process.env.JWT_SECRET) {
+  throw new Error("JWT_SECRET must be configured in production.");
 }
 
 const app: Application = express();
@@ -26,28 +31,28 @@ app.use(cors());
 app.use(express.json());
 
 // API Base Route
-app.get('/', (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.json({
-    app: 'Smart-Study BECE Learning Platform API',
-    role: 'Backend API & Orchestration Layer',
-    status: 'Running',
-    version: '1.0.0',
-    documentation: '/health/auth, /questions, /articles, /chat'
+    app: "Smart-Study BECE Learning Platform API",
+    role: "Backend API & Orchestration Layer",
+    status: "Running",
+    version: "1.0.0",
+    documentation: "/health/auth, /questions, /articles, /chat",
   });
 });
 
 // Route Handlers
-app.use('/health', healthRoutes);
-app.use('/auth', authRoutes);
-app.use('/questions', questionsRoutes);
-app.use('/articles', articlesRoutes);
-app.use('/chat', chatRoutes);
+app.use("/health", healthRoutes);
+app.use("/auth", authRoutes);
+app.use("/questions", questionsRoutes);
+app.use("/articles", articlesRoutes);
+app.use("/chat", chatRoutes);
 
 // Global Error Handler Middleware
 app.use(errorHandler);
 
 // Start Express Server
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`====================================================`);
   console.log(`Smart-Study Backend API Server running on port ${PORT}`);
   console.log(`Health checks: http://localhost:${PORT}/health/content`);
