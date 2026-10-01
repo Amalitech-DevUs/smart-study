@@ -63,11 +63,11 @@ export { parseQuestionPrompt, FormattedExamText, FormattedAiContent };
 export type { ParsedQuestion };
 
 export function McqCard({
-  subject = "BECE Exam",
-  subjectColor = "math",
-  question = "",
-  options = [],
-  correctOptionId = "",
+  subject,
+  subjectColor,
+  question,
+  options,
+  correctOptionId,
   year,
   paper,
   topic,
@@ -75,7 +75,7 @@ export function McqCard({
   questionNumber,
   currentIndex,
   totalCount,
-  isLastQuestion = false,
+  isLastQuestion,
   mode = "practice",
   hasPrevious = false,
   initialSelectedOptionId,
@@ -83,44 +83,34 @@ export function McqCard({
   onNext,
   onPrevious,
 }: McqCardProps) {
-  const [selection, setSelection] = useState<{
-    question: string;
-    optionId: string | null;
-  }>({
-    question,
-    optionId: initialSelectedOptionId ?? null,
-  });
+  const [prevQuestion, setPrevQuestion] = useState(question);
+  const [prevInitialId, setPrevInitialId] = useState(initialSelectedOptionId);
+  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(
+    initialSelectedOptionId ?? null,
+  );
 
-  const selectedOptionId =
-    selection.question === question
-      ? selection.optionId
-      : (initialSelectedOptionId ?? null);
+  if (question !== prevQuestion || initialSelectedOptionId !== prevInitialId) {
+    setPrevQuestion(question);
+    setPrevInitialId(initialSelectedOptionId);
+    setSelectedOptionId(initialSelectedOptionId ?? null);
+  }
 
-  // Safe normalized values
-  const safeOptions = Array.isArray(options) ? options : [];
-  const safeCorrectId = String(correctOptionId || "").trim();
-  const normalizedCorrectId = safeCorrectId.toLowerCase();
-
-  const parsed = parseQuestionPrompt(question || "");
+  const parsed = parseQuestionPrompt(question);
   const formattedPassage = parsed.passageBody ? formatDialogue(parsed.passageBody) : "";
 
   const handleSelectOption = (optionId: string) => {
     if (mode === "review") return;
     if (mode === "practice" && selectedOptionId !== null) return;
 
-    const optKey = String(optionId || "").trim().toLowerCase();
-    const isCorrect = Boolean(normalizedCorrectId && optKey === normalizedCorrectId);
-    setSelection({ question, optionId });
+    const isCorrect = optionId.toLowerCase() === correctOptionId.toLowerCase();
+    setSelectedOptionId(optionId);
     onAnswer?.(optionId, isCorrect);
   };
 
   const handleProceed = () => {
     if (mode === "practice" && selectedOptionId === null) return;
     const currentSel = selectedOptionId || "";
-    const isCorrect = Boolean(
-      normalizedCorrectId &&
-        currentSel.trim().toLowerCase() === normalizedCorrectId,
-    );
+    const isCorrect = currentSel.toLowerCase() === correctOptionId.toLowerCase();
     if (onNext) {
       onNext(currentSel, isCorrect);
     } else if (onAnswer) {
@@ -129,19 +119,17 @@ export function McqCard({
   };
 
   const isAnswered = selectedOptionId !== null;
-  const isUserCorrect = Boolean(
-    isAnswered &&
-      normalizedCorrectId &&
-      String(selectedOptionId || "").trim().toLowerCase() === normalizedCorrectId,
-  );
+  const isUserCorrect =
+    selectedOptionId !== null &&
+    selectedOptionId.toLowerCase() === correctOptionId.toLowerCase();
 
-  const correctOption = safeOptions.find(
-    (o) => String(o.id || "").trim().toLowerCase() === normalizedCorrectId,
+  const correctOption = options.find(
+    (o) => o.id.toLowerCase() === correctOptionId.toLowerCase(),
   );
-  const correctText = correctOption ? correctOption.text : safeCorrectId.toUpperCase();
+  const correctText = correctOption ? correctOption.text : "";
 
   const displayQuestionNum = questionNumber || currentIndex || 1;
-  const displayTotal = totalCount || (safeOptions.length > 0 ? safeOptions.length : 40);
+  const displayTotal = totalCount || 40;
 
   return (
     <article className="w-full max-w-3xl overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8 transition-all duration-300">
@@ -182,15 +170,14 @@ export function McqCard({
 
       {/* 3. Answer Options List */}
       <div className="mt-8 space-y-3" role="group" aria-label="Answer options">
-        {safeOptions.map((option, index) => {
-          const optKey = String(option.id || "").trim().toLowerCase();
-          const selKey = String(selectedOptionId || "").trim().toLowerCase();
-          const isSelected = Boolean(selectedOptionId !== null && selKey === optKey);
-          const isCorrect = Boolean(normalizedCorrectId && optKey === normalizedCorrectId);
+        {options.map((option, index) => {
+          const optKey = option.id.toLowerCase();
+          const isSelected = selectedOptionId?.toLowerCase() === optKey;
+          const isCorrect = optKey === correctOptionId.toLowerCase();
 
           return (
             <AnswerOption
-              key={option.id || index}
+              key={option.id}
               option={option}
               index={index}
               isSelected={isSelected}
@@ -239,7 +226,7 @@ export function McqCard({
       {mode === "practice" && isAnswered && (
         <PracticeFeedback
           isUserCorrect={isUserCorrect}
-          correctOptionId={safeCorrectId}
+          correctOptionId={correctOptionId}
           correctText={correctText}
           explanation={explanation}
           isLastQuestion={isLastQuestion}
@@ -248,24 +235,24 @@ export function McqCard({
           topic={topic}
           year={year}
           question={question}
-          options={safeOptions}
+          options={options}
           selectedOptionId={selectedOptionId}
         />
       )}
 
       {/* 6. Review Mode Feedback & Explanation */}
-      {mode === "review" && (
+        {mode === "review" && (
         <ReviewFeedback
           isUserCorrect={isUserCorrect}
           selectedOptionId={selectedOptionId}
-          correctOptionId={safeCorrectId}
+          correctOptionId={correctOptionId}
           correctText={correctText}
           explanation={explanation}
           subject={subject}
           topic={topic}
           year={year}
           question={question}
-          options={safeOptions}
+          options={options}
         />
       )}
     </article>
