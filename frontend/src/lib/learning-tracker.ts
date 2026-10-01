@@ -26,6 +26,7 @@ export type StudySessionRecord = {
   subject: string;
   subjectSlug: string;
   year: number;
+  paper?: number;
   mode: LearningMode;
   startedAt: number;
   completedAt: number;
@@ -253,12 +254,14 @@ export function recordQuestionAttempt(
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        attempts: [{
-          questionId: attempt.questionId,
-          result: attempt.isCorrect ? "correct" : "incorrect",
-          attemptsTaken: attempt.attemptNumber,
-          timestamp: new Date(attempt.timestamp).toISOString(),
-        }],
+        attempts: [
+          {
+            questionId: attempt.questionId,
+            result: attempt.isCorrect ? "correct" : "incorrect",
+            attemptsTaken: attempt.attemptNumber,
+            timestamp: new Date(attempt.timestamp).toISOString(),
+          },
+        ],
       }),
     }).catch(() => undefined);
   }
@@ -314,7 +317,9 @@ export function completeStudySession(
   const key = getSessionsKey(username);
   const sessions = getSafeStorage<StudySessionRecord[]>(key, []);
   // Avoid duplicate session save
-  const existingIdx = sessions.findIndex((s) => s.sessionId === record.sessionId);
+  const existingIdx = sessions.findIndex(
+    (s) => s.sessionId === record.sessionId,
+  );
   if (existingIdx >= 0) {
     sessions[existingIdx] = record;
   } else {
@@ -322,7 +327,18 @@ export function completeStudySession(
   }
   setSafeStorage(key, sessions.slice(0, 100)); // keep last 100 sessions
   clearActiveSession(username);
-  syncUserProgress(username).catch(() => {});
+
+  if (username) {
+    void fetch("/api/progress/sessions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...record,
+        startedAt: new Date(record.startedAt).toISOString(),
+        completedAt: new Date(record.completedAt).toISOString(),
+      }),
+    }).catch(() => undefined);
+  }
 }
 
 /**
@@ -343,7 +359,9 @@ export function getLearningOverview(
 
   // Filter practice attempts
   const practiceAttempts = attempts.filter((a) => a.mode === "practice");
-  const uniquePracticeQuestions = new Set(practiceAttempts.map((a) => a.questionId));
+  const uniquePracticeQuestions = new Set(
+    practiceAttempts.map((a) => a.questionId),
+  );
 
   // Practice accuracy: correct practice attempts / total practice attempts
   const practiceCorrect = practiceAttempts.filter((a) => a.isCorrect).length;
@@ -353,10 +371,15 @@ export function getLearningOverview(
       : 0;
 
   // Completed tests average
-  const testSessions = sessions.filter((s) => s.mode === "test" && s.isCompleted);
+  const testSessions = sessions.filter(
+    (s) => s.mode === "test" && s.isCompleted,
+  );
   let testAverage: number | null = null;
   if (testSessions.length > 0) {
-    const totalScore = testSessions.reduce((acc, curr) => acc + curr.scorePercent, 0);
+    const totalScore = testSessions.reduce(
+      (acc, curr) => acc + curr.scorePercent,
+      0,
+    );
     testAverage = Math.round(totalScore / testSessions.length);
   }
 
@@ -366,7 +389,9 @@ export function getLearningOverview(
     testAverage,
     studySessions: sessions.length,
     testsCompleted: testSessions.length,
-    practiceCompleted: sessions.filter((s) => s.mode === "practice" && s.isCompleted).length,
+    practiceCompleted: sessions.filter(
+      (s) => s.mode === "practice" && s.isCompleted,
+    ).length,
   };
 }
 
@@ -518,7 +543,8 @@ export function getFocusAreas(username: string | undefined): FocusAreaTopic[] {
   topicMap.forEach((data, key) => {
     const topic = key.split(":::")[1];
     const totalAttempts = data.attempts.length;
-    const uniqueQuestions = new Set(data.attempts.map((x) => x.questionId)).size;
+    const uniqueQuestions = new Set(data.attempts.map((x) => x.questionId))
+      .size;
 
     // Minimum evidence threshold: >= 10 attempts AND >= 3 unique questions
     if (totalAttempts >= 10 && uniqueQuestions >= 3) {
@@ -561,7 +587,10 @@ function getGoalTargetKey(username?: string): string {
   return `smartstudy_goal_target_${user}`;
 }
 
-export function setDailyGoalTarget(username: string | undefined, target: number): void {
+export function setDailyGoalTarget(
+  username: string | undefined,
+  target: number,
+): void {
   if (typeof window === "undefined") return;
   const key = getGoalTargetKey(username);
   localStorage.setItem(key, JSON.stringify(target));
@@ -589,7 +618,10 @@ export function getDailyGoal(username: string | undefined): DailyGoalData {
   const completed = todayUniqueQuestions.size;
   const target = getSafeStorage<number>(getGoalTargetKey(username), 20);
   const remaining = Math.max(0, target - completed);
-  const percent = Math.min(100, Math.round((completed / Math.max(1, target)) * 100));
+  const percent = Math.min(
+    100,
+    Math.round((completed / Math.max(1, target)) * 100),
+  );
 
   return { completed, target, remaining, percent };
 }

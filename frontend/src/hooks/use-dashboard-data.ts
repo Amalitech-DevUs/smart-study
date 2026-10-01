@@ -70,11 +70,18 @@ export function useDashboardData(
   username: string | undefined,
   isAuthLoading: boolean,
 ): DashboardData & { handleTargetChange: (target: number) => void } {
-  const [activeSession, setActiveSession] = useState<ActiveSession | null>(null);
-  const [overview, setOverview] = useState<LearningOverviewData>(INITIAL_OVERVIEW);
-  const [subjectProgress, setSubjectProgress] = useState<SubjectProgressData[]>([]);
+  const [activeSession, setActiveSession] = useState<ActiveSession | null>(
+    null,
+  );
+  const [overview, setOverview] =
+    useState<LearningOverviewData>(INITIAL_OVERVIEW);
+  const [subjectProgress, setSubjectProgress] = useState<SubjectProgressData[]>(
+    [],
+  );
   const [focusAreas, setFocusAreas] = useState<FocusAreaTopic[]>([]);
-  const [recentActivity, setRecentActivity] = useState<StudySessionRecord[]>([]);
+  const [recentActivity, setRecentActivity] = useState<StudySessionRecord[]>(
+    [],
+  );
   const [dailyGoal, setDailyGoal] = useState<DailyGoalData>(INITIAL_DAILY_GOAL);
   const [streak, setStreak] = useState<number>(0);
   const [studiedDates, setStudiedDates] = useState<Set<string>>(new Set());
@@ -89,7 +96,6 @@ export function useDashboardData(
       setOverview(getLearningOverview(username));
       setSubjectProgress(getSubjectProgress(username));
       setFocusAreas(getFocusAreas(username));
-      setRecentActivity(getRecentActivity(username));
       setDailyGoal(getDailyGoal(username));
       setStreak(getStudyStreak(username));
       setStudiedDates(getStudiedDates(username));
@@ -104,6 +110,37 @@ export function useDashboardData(
     }
 
     return () => window.removeEventListener("storage", loadData);
+  }, [username, isAuthLoading]);
+
+  useEffect(() => {
+    if (isAuthLoading || !username || typeof window === "undefined") return;
+
+    let active = true;
+
+    fetch("/api/progress/results", { cache: "no-store" })
+      .then(async (response) => {
+        if (!response.ok) {
+          if (active) setRecentActivity(getRecentActivity(username));
+          return;
+        }
+        const data = (await response.json()) as {
+          success?: boolean;
+          results?: StudySessionRecord[];
+        };
+        if (!active) return;
+        if (data.success === true && Array.isArray(data.results)) {
+          setRecentActivity(data.results);
+        } else {
+          setRecentActivity(getRecentActivity(username));
+        }
+      })
+      .catch(() => {
+        if (active) setRecentActivity(getRecentActivity(username));
+      });
+
+    return () => {
+      active = false;
+    };
   }, [username, isAuthLoading]);
 
   const handleTargetChange = (newTarget: number) => {

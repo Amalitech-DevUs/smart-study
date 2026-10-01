@@ -25,6 +25,30 @@ CREATE TABLE IF NOT EXISTS attempts (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS study_sessions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    session_id TEXT NOT NULL,
+    session_key TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    subject_slug TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    paper INTEGER NOT NULL,
+    mode TEXT NOT NULL CHECK (mode IN ('practice', 'test')),
+    started_at TEXT NOT NULL,
+    completed_at TEXT NOT NULL,
+    unique_questions_total INTEGER NOT NULL,
+    unique_questions_completed INTEGER NOT NULL,
+    total_attempts INTEGER NOT NULL,
+    correct_count INTEGER NOT NULL,
+    incorrect_count INTEGER NOT NULL,
+    unanswered_count INTEGER NOT NULL,
+    score_percent INTEGER NOT NULL,
+    time_spent_seconds INTEGER,
+    UNIQUE (user_id, session_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS chat_messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,

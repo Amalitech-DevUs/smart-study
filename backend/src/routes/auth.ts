@@ -135,4 +135,79 @@ router.post('/progress/attempts', requireAuth, validate({ body: progressAttemptS
   }
 });
 
+router.post(
+  "/progress/sessions",
+  requireAuth,
+  async (req: AuthenticatedRequest, res: Response) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const authorization = req.headers.authorization || "";
+
+    try {
+      const response = await fetch(
+        new URL("/auth/progress/sessions", getAuthRestBaseUrl()),
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authorization,
+          },
+          body: JSON.stringify(req.body),
+          signal: controller.signal,
+        },
+      );
+      clearTimeout(timeoutId);
+      const data = await response.json().catch(() => null);
+      return res
+        .status(response.status)
+        .json(
+          data || { success: false, error: "Invalid auth service response." },
+        );
+    } catch (error) {
+      clearTimeout(timeoutId);
+      return res
+        .status(503)
+        .json({
+          success: false,
+          error: "Authentication service is unavailable.",
+        });
+    }
+  },
+);
+
+router.get(
+  "/progress/results",
+  requireAuth,
+  async (req: AuthenticatedRequest, res: Response) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const authorization = req.headers.authorization || "";
+
+    try {
+      const response = await fetch(
+        new URL("/auth/progress/results", getAuthRestBaseUrl()),
+        {
+          headers: { Authorization: authorization },
+          signal: controller.signal,
+        },
+      );
+      clearTimeout(timeoutId);
+      const data = await response.json().catch(() => null);
+      return res
+        .status(response.status)
+        .json(
+          data || { success: false, error: "Invalid auth service response." },
+        );
+    } catch (error) {
+      clearTimeout(timeoutId);
+      return res
+        .status(503)
+        .json({
+          success: false,
+          error: "Authentication service is unavailable.",
+        });
+    }
+  },
+);
+
 export default router;
