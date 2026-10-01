@@ -1,20 +1,5 @@
-const CACHE_NAME = 'smartstudy-v2';
+const CACHE_NAME = 'smartstudy-v1';
 const OFFLINE_PAGE = '/offline';
-
-async function matchCache(request) {
-  try {
-    return await caches.match(request);
-  } catch {
-    return undefined;
-  }
-}
-
-function unavailableResponse(message = 'Offline') {
-  return new Response(message, {
-    status: 503,
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' }
-  });
-}
 
 const PRECACHE_RESOURCES = [
   '/',
@@ -68,10 +53,10 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(async () => {
-          const cached = await matchCache(request);
+          const cached = await caches.match(request);
           if (cached) return cached;
-          const offlinePage = await matchCache(OFFLINE_PAGE);
-          return offlinePage || unavailableResponse();
+          const offlinePage = await caches.match(OFFLINE_PAGE);
+          return offlinePage || new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
         })
     );
     return;
@@ -92,13 +77,9 @@ self.addEventListener('fetch', (event) => {
         return fetch(request).then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             const clone = networkResponse.clone();
-            caches.open(CACHE_NAME)
-              .then((cache) => cache.put(request, clone))
-              .catch(() => undefined);
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           }
           return networkResponse;
-        }).catch(async () => {
-          return (await matchCache(request)) || unavailableResponse('This resource is unavailable offline.');
         });
       })
     );
@@ -111,17 +92,10 @@ self.addEventListener('fetch', (event) => {
       .then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
           const clone = networkResponse.clone();
-          caches.open(CACHE_NAME)
-            .then((cache) => cache.put(request, clone))
-            .catch(() => undefined);
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
         }
         return networkResponse;
       })
-      .catch(async () => {
-        return (await matchCache(request)) || new Response(
-          JSON.stringify({ error: 'Service unavailable offline.' }),
-          { status: 503, headers: { 'Content-Type': 'application/json' } },
-        );
-      })
+      .catch(() => caches.match(request))
   );
 });
