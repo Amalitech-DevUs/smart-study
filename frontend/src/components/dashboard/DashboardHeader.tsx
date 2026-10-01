@@ -1,36 +1,16 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {
-  Search,
-  User as UserIcon,
-  X,
-  BookOpen,
-  FileText,
-  Tag,
-  ArrowUpRight,
-  CornerDownLeft,
-} from "lucide-react";
+import { Search, User as UserIcon } from "lucide-react";
 import { NotificationCenter } from "@/components/shared/notification-center";
 import type { DailyGoalData } from "@/lib/learning-tracker";
-import { SUBJECTS } from "@/lib/constants/subjects";
-import { placeholderSubjects } from "@/lib/placeholder-subjects";
 
 type Props = {
   username: string | undefined;
   streak: number;
   dailyGoal: DailyGoalData;
-};
-
-type ResultItem = {
-  id: string;
-  type: "subject" | "topic" | "paper";
-  title: string;
-  subtitle: string;
-  category: string;
-  url: string;
 };
 
 export function DashboardHeader({ username }: Props) {
@@ -45,28 +25,6 @@ export function DashboardHeader({ username }: Props) {
       if (searchYear) params.set("year", searchYear);
       router.push(`/flashcards/search?${params.toString()}`);
     }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Escape") {
-      setIsOpen(false);
-      return;
-    }
-
-    if (!isOpen || !hasResults) return;
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setSelectedIndex((prev) => (prev + 1) % flatList.length);
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setSelectedIndex((prev) => (prev - 1 + flatList.length) % flatList.length);
-    }
-  };
-
-  const handleClear = () => {
-    setSearchQuery("");
-    setIsOpen(false);
   };
 
   return (

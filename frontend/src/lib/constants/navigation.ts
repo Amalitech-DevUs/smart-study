@@ -1,13 +1,12 @@
 import {
   LayoutDashboard,
   BookOpen,
-  GraduationCap,
+  Bot,
   FileText,
   User,
   Megaphone,
   Calendar,
   TrendingUp,
-  Bell,
   type LucideIcon,
 } from "lucide-react";
 
