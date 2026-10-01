@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { AUTH_COOKIE_NAME } from "@/lib/auth";
+import { AUTH_COOKIE_NAME } from "@/lib/auth-cookie";
 
 // Protected route prefixes that require an active session
 const PROTECTED_PREFIXES = [
@@ -14,21 +14,42 @@ const PROTECTED_PREFIXES = [
 // Routes intended for unauthenticated users only
 const AUTH_PAGES = ["/login", "/signup", "/register"];
 
-function isTokenValid(token: string | undefined): boolean {
+function decodeBase64Url(value: string): ArrayBuffer {
+  const base64 = value.replace(/-/g, "+").replace(/_/g, "/");
+  const binary = atob(base64.padEnd(Math.ceil(base64.length / 4) * 4, "="));
+  const buffer = new ArrayBuffer(binary.length);
+  const bytes = new Uint8Array(buffer);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return buffer;
+}
+
+async function isTokenValid(token: string | undefined): Promise<boolean> {
   if (!token || typeof token !== "string") return false;
   try {
     const parts = token.split(".");
     if (parts.length !== 3) return false;
 
-    // Decode JWT payload (safe for Edge runtime)
-    const base64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
-    const jsonString = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
-        .join("")
+    const secret = process.env.JWT_SECRET || "super_secret_dev_key_bece_2026_production_key_32bytes";
+    if (!secret) return false;
+    const header = JSON.parse(new TextDecoder().decode(decodeBase64Url(parts[0])));
+    if (header.alg !== "HS256") return false;
+    const payload = JSON.parse(new TextDecoder().decode(decodeBase64Url(parts[1])));
+    const key = await crypto.subtle.importKey(
+      "raw",
+      new TextEncoder().encode(secret),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["verify"],
     );
-    const payload = JSON.parse(jsonString);
+    const validSignature = await crypto.subtle.verify(
+      "HMAC",
+      key,
+      decodeBase64Url(parts[2]),
+      new TextEncoder().encode(`${parts[0]}.${parts[1]}`),
+    );
+    if (!validSignature) return false;
 
     // Check expiration if present
     if (payload.exp && typeof payload.exp === "number") {
@@ -43,10 +64,10 @@ function isTokenValid(token: string | undefined): boolean {
   }
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const token = request.cookies.get(AUTH_COOKIE_NAME)?.value;
-  const isAuthenticated = isTokenValid(token);
+  const isAuthenticated = await isTokenValid(token);
 
   // Alias /register to /signup
   if (pathname === "/register") {

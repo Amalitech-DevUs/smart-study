@@ -9,12 +9,20 @@ class Database
 
     public function __construct()
     {
-        $this->database = __DIR__ . '/../database/smart_study.sqlite';
+        $databasePath = getenv('AUTH_DB_PATH');
+        $this->database = $databasePath !== false && $databasePath !== ''
+            ? $databasePath
+            : __DIR__ . '/../database/smart_study.sqlite';
         $this->schema = __DIR__ . '/../database/schema.sql';
     }
 
     public function connect(): PDO
     {
+        $databaseDirectory = dirname($this->database);
+        if (!is_dir($databaseDirectory) && !mkdir($databaseDirectory, 0775, true) && !is_dir($databaseDirectory)) {
+            throw new RuntimeException('Unable to create the auth database directory.');
+        }
+
         $this->connection = new PDO(
             'sqlite:' . $this->database
         );

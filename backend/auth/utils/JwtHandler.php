@@ -24,7 +24,16 @@ class JwtHandler
             $dotenv->safeLoad();
         }
 
-        $this->secretKey = $_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? 'super_secret_dev_key_bece_2026_production_key_32bytes';
+        $secretKey = getenv('JWT_SECRET');
+        if ($secretKey === false || $secretKey === '') {
+            $secretKey = $_ENV['JWT_SECRET'] ?? $_SERVER['JWT_SECRET'] ?? null;
+        }
+
+        if (!is_string($secretKey) || strlen($secretKey) < 32) {
+            throw new RuntimeException('JWT_SECRET must be configured with at least 32 characters.');
+        }
+
+        $this->secretKey = $secretKey;
     }
 
     public function generateToken(int $userId, string $username): string

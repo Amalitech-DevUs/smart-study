@@ -9,6 +9,7 @@ import { LandingHeader } from "@/components/landing/LandingHeader";
 import { Footer } from "@/components/shared/footer";
 import { ChatWidget } from "@/components/chat/chat-widget";
 import { ToastContainer } from "@/components/shared/toast-container";
+import { InstallPrompt } from "@/components/pwa/install-prompt";
 
 const sidebarPreferenceEvent = "smartstudy-sidebar-preference";
 let sidebarPreferenceFallback: boolean | undefined;
@@ -104,6 +105,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <ChatWidget />
       <ToastContainer />
+      <InstallPrompt />
     </>
   );
 }

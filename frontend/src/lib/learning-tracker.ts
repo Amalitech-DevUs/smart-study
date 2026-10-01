@@ -247,6 +247,21 @@ export function recordQuestionAttempt(
   const trimmed = attempts.length > 1000 ? attempts.slice(-1000) : attempts;
   setSafeStorage(key, trimmed);
   syncUserProgress(username).catch(() => {});
+
+  if (/^\d+$/.test(attempt.questionId)) {
+    void fetch("/api/progress/attempts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        attempts: [{
+          questionId: attempt.questionId,
+          result: attempt.isCorrect ? "correct" : "incorrect",
+          attemptsTaken: attempt.attemptNumber,
+          timestamp: new Date(attempt.timestamp).toISOString(),
+        }],
+      }),
+    }).catch(() => undefined);
+  }
 }
 
 /**

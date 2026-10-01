@@ -1,0 +1,67 @@
+services:
+  - type: web
+    name: smart-study-ai
+    runtime: python
+    rootDir: backend/ai-assistant
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run_server.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: GROQ_API_KEY
+        sync: false
+  - type: web
+    name: smart-study-content
+    runtime: python
+    rootDir: backend/content/content-database
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && python -m seed.import_questions && python -m seed.import_articles && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: DATABASE_URL
+        sync: false
+  - type: web
+    name: smart-study-auth
+    runtime: docker
+    dockerfilePath: ./backend/auth/Dockerfile
+    dockerContext: ./backend/auth
+    plan: 0.5c-512mb
+    healthCheckPath: /health
+    disk:
+      name: smart-study-auth-data
+      mountPath: /var/lib/smart-study
+      sizeGB: 1
+    envVars:
+      - key: PORT
+        value: 80
+      - key: APP_ENV
+        value: production
+      - key: AUTH_DB_PATH
+        value: /var/lib/smart-study/smart_study.sqlite
+      - key: JWT_SECRET
+        sync: false
+  - type: web
+    name: smart-study-routing
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22.14.0"
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        sync: false
+      - key: AUTH_SERVICE_URL
+        sync: false
+      - key: AUTH_REST_BASE_URL
+        sync: false
+      - key: CONTENT_SERVICE_URL
+        sync: false
+      - key: AI_SERVICE_URL
+        sync: false

@@ -5,9 +5,9 @@ const router = Router();
 
 // GET /health - Summary health status across all downstream microservices
 router.get('/', async (req: Request, res: Response) => {
-  const authUrl = process.env.AUTH_SERVICE_URL || 'http://localhost:5001/routes/auth.php';
-  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://localhost:5002';
-  const aiUrl = process.env.AI_SERVICE_URL || 'http://localhost:5003';
+  const authUrl = process.env.AUTH_SERVICE_URL || 'http://127.0.0.1:5001/routes/auth.php';
+  const contentUrl = process.env.CONTENT_SERVICE_URL || 'http://127.0.0.1:5002';
+  const aiUrl = process.env.AI_SERVICE_URL || 'http://127.0.0.1:5003';
 
   const [authHealth, contentHealth, aiHealth] = await Promise.all([
     checkServiceHealth('auth', authUrl),
