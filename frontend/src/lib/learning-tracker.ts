@@ -129,6 +129,112 @@ function setSafeStorage<T>(key: string, value: T): void {
 }
 
 /**
+ * Syncs attempts and sessions with the backend server.
+ * Merges server data into localStorage, and pushes local data to server.
+ */
+export async function syncUserProgress(username: string | undefined): Promise<void> {
+  if (typeof window === "undefined" || !username || username.toLowerCase() === "guest") return;
+
+  const attemptsKey = getAttemptsKey(username);
+  const sessionsKey = getSessionsKey(username);
+  const localAttempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const localSessions = getSafeStorage<StudySessionRecord[]>(sessionsKey, []);
+
+  try {
+    const res = await fetch("/api/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        attempts: localAttempts,
+        sessions: localSessions,
+      }),
+    });
+
+    if (!res.ok) return;
+    const json = await res.json();
+    if (json.success && json.data) {
+      const serverAttempts: QuestionAttempt[] = json.data.attempts || [];
+      const serverSessions: StudySessionRecord[] = json.data.sessions || [];
+
+      if (serverAttempts.length > localAttempts.length) {
+        setSafeStorage(attemptsKey, serverAttempts.slice(-1000));
+      }
+      if (serverSessions.length > localSessions.length) {
+        setSafeStorage(sessionsKey, serverSessions.slice(0, 100));
+      }
+
+      window.dispatchEvent(new Event("storage"));
+    }
+  } catch {
+    // Offline or network error - ignore gracefully
+  }
+}
+
+/**
+ * Fetches user progress from backend on login or page load,
+ * pulling down whatever was done on another device (e.g. PC -> Phone).
+ */
+export async function fetchUserProgress(username: string | undefined): Promise<void> {
+  if (typeof window === "undefined" || !username || username.toLowerCase() === "guest") return;
+
+  const attemptsKey = getAttemptsKey(username);
+  const sessionsKey = getSessionsKey(username);
+  const localAttempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const localSessions = getSafeStorage<StudySessionRecord[]>(sessionsKey, []);
+
+  try {
+    const res = await fetch("/api/progress", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    if (!res.ok) return;
+    const json = await res.json();
+    if (json.success && json.data) {
+      const serverAttempts: QuestionAttempt[] = json.data.attempts || [];
+      const serverSessions: StudySessionRecord[] = json.data.sessions || [];
+
+      let updated = false;
+
+      if (serverAttempts.length > 0) {
+        const map = new Map<string, QuestionAttempt>();
+        for (const a of serverAttempts) map.set(a.id || `${a.questionId}_${a.timestamp}`, a);
+        for (const a of localAttempts) map.set(a.id || `${a.questionId}_${a.timestamp}`, a);
+        const merged = Array.from(map.values()).slice(-1000);
+        if (merged.length !== localAttempts.length) {
+          setSafeStorage(attemptsKey, merged);
+          updated = true;
+        }
+      }
+
+      if (serverSessions.length > 0) {
+        const map = new Map<string, StudySessionRecord>();
+        for (const s of serverSessions) map.set(s.sessionId, s);
+        for (const s of localSessions) map.set(s.sessionId, s);
+        const merged = Array.from(map.values())
+          .sort((a, b) => (b.completedAt || 0) - (a.completedAt || 0))
+          .slice(0, 100);
+        if (merged.length !== localSessions.length) {
+          setSafeStorage(sessionsKey, merged);
+          updated = true;
+        }
+      }
+
+      // If local has new items server didn't have, push them up
+      if (localAttempts.length > serverAttempts.length || localSessions.length > serverSessions.length) {
+        syncUserProgress(username).catch(() => {});
+      }
+
+      if (updated) {
+        window.dispatchEvent(new Event("storage"));
+      }
+    }
+  } catch {
+    // Offline or network error - ignore gracefully
+  }
+}
+
+/**
  * Records an individual question attempt.
  */
 export function recordQuestionAttempt(
@@ -141,6 +247,7 @@ export function recordQuestionAttempt(
   // Keep last 1000 attempts to avoid quota overflow
   const trimmed = attempts.length > 1000 ? attempts.slice(-1000) : attempts;
   setSafeStorage(key, trimmed);
+  syncUserProgress(username).catch(() => {});
 
   if (/^\d+$/.test(attempt.questionId)) {
     void fetch("/api/progress/attempts", {
@@ -338,6 +445,38 @@ export function getSubjectProgress(
       accentBadge: "bg-blue-50 text-blue-700 border-blue-200",
       accentText: "text-blue-700",
     },
+    {
+      name: "Computing",
+      slug: "computing",
+      totalAvailable: 120,
+      accentBorder: "border-l-cyan-600",
+      accentBadge: "bg-cyan-50 text-cyan-700 border-cyan-200",
+      accentText: "text-cyan-700",
+    },
+    {
+      name: "Religious and Moral Education",
+      slug: "rme",
+      totalAvailable: 40,
+      accentBorder: "border-l-purple-600",
+      accentBadge: "bg-purple-50 text-purple-700 border-purple-200",
+      accentText: "text-purple-700",
+    },
+    {
+      name: "Creative Arts and Design",
+      slug: "creative-arts",
+      totalAvailable: 120,
+      accentBorder: "border-l-pink-600",
+      accentBadge: "bg-pink-50 text-pink-700 border-pink-200",
+      accentText: "text-pink-700",
+    },
+    {
+      name: "Career Technology",
+      slug: "career-technology",
+      totalAvailable: 120,
+      accentBorder: "border-l-amber-600",
+      accentBadge: "bg-amber-50 text-amber-800 border-amber-200",
+      accentText: "text-amber-800",
+    },
   ];
 
   return subjectsConfig.map((subj) => {
@@ -526,3 +665,124 @@ export function getStudyStreak(username: string | undefined): number {
 
   return streak;
 }
+
+/**
+ * Returns the set of calendar dates (YYYY-MM-DD) on which the user had
+ * at least one recorded attempt. Used by the study calendar to accurately
+ * highlight real study days instead of approximating from streak count.
+ */
+export function getStudiedDates(username: string | undefined): Set<string> {
+  const attemptsKey = getAttemptsKey(username);
+  const attempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const dates = new Set<string>();
+  for (const a of attempts) {
+    const d = new Date(a.timestamp);
+    dates.add(
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`,
+    );
+  }
+  return dates;
+}
+
+export type PerformanceTier = {
+  label: string;
+  count: number;
+  percent: number;
+  color: string;
+  dotBg: string;
+};
+
+export type PerformanceDistributionData = {
+  overallPercent: number;
+  hasData: boolean;
+  totalEvaluated: number;
+  tiers: PerformanceTier[];
+};
+
+/**
+ * Calculates WAEC BECE performance diagnostic distribution from actual user attempts.
+ * Aligns perfectly with KPI overall accuracy score.
+ */
+export function getPerformanceTiers(
+  username: string | undefined,
+): PerformanceDistributionData {
+  const attemptsKey = getAttemptsKey(username);
+  const attempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const sessionsKey = getSessionsKey(username);
+  const sessions = getSafeStorage<StudySessionRecord[]>(sessionsKey, []);
+
+  const practiceAttempts = attempts.filter((a) => a.mode === "practice");
+  const practiceCorrect = practiceAttempts.filter((a) => a.isCorrect).length;
+  const practiceAccuracy =
+    practiceAttempts.length > 0
+      ? Math.round((practiceCorrect / practiceAttempts.length) * 100)
+      : 0;
+
+  const testSessions = sessions.filter((s) => s.mode === "test" && s.isCompleted);
+  let testAverage: number | null = null;
+  if (testSessions.length > 0) {
+    const totalScore = testSessions.reduce((acc, curr) => acc + curr.scorePercent, 0);
+    testAverage = Math.round(totalScore / testSessions.length);
+  }
+
+  const overallPercent =
+    practiceAccuracy > 0
+      ? practiceAccuracy
+      : testAverage ?? 0;
+
+  if (attempts.length === 0 && sessions.length === 0) {
+    return {
+      overallPercent: 0,
+      hasData: false,
+      totalEvaluated: 0,
+      tiers: [
+        { label: "Excellent (75%+)", count: 0, percent: 0, color: "#10b981", dotBg: "bg-emerald-500" },
+        { label: "Good (60-74%)", count: 0, percent: 0, color: "#3b82f6", dotBg: "bg-blue-500" },
+        { label: "Average (50-59%)", count: 0, percent: 0, color: "#f59e0b", dotBg: "bg-amber-500" },
+        { label: "Needs Improvement (<50%)", count: 0, percent: 0, color: "#f43f5e", dotBg: "bg-rose-500" },
+      ],
+    };
+  }
+
+  // Group by questionId to see mastery per unique question attempted
+  const questionMap = new Map<string, { total: number; correct: number }>();
+  for (const a of attempts) {
+    const existing = questionMap.get(a.questionId) || { total: 0, correct: 0 };
+    existing.total += 1;
+    if (a.isCorrect) existing.correct += 1;
+    questionMap.set(a.questionId, existing);
+  }
+
+  let excellent = 0;
+  let good = 0;
+  let average = 0;
+  let needsImprovement = 0;
+
+  questionMap.forEach((q) => {
+    const acc = Math.round((q.correct / Math.max(1, q.total)) * 100);
+    if (acc >= 75) excellent++;
+    else if (acc >= 60) good++;
+    else if (acc >= 50) average++;
+    else needsImprovement++;
+  });
+
+  const uniqueCount = Math.max(1, questionMap.size);
+
+  const pExcellent = Math.round((excellent / uniqueCount) * 100);
+  const pGood = Math.round((good / uniqueCount) * 100);
+  const pAverage = Math.round((average / uniqueCount) * 100);
+  const pNeeds = Math.max(0, 100 - (pExcellent + pGood + pAverage));
+
+  return {
+    overallPercent,
+    hasData: true,
+    totalEvaluated: questionMap.size,
+    tiers: [
+      { label: "Excellent (75%+)", count: excellent, percent: pExcellent, color: "#10b981", dotBg: "bg-emerald-500" },
+      { label: "Good (60-74%)", count: good, percent: pGood, color: "#3b82f6", dotBg: "bg-blue-500" },
+      { label: "Average (50-59%)", count: average, percent: pAverage, color: "#f59e0b", dotBg: "bg-amber-500" },
+      { label: "Needs Improvement (<50%)", count: needsImprovement, percent: pNeeds, color: "#f43f5e", dotBg: "bg-rose-500" },
+    ],
+  };
+}
+

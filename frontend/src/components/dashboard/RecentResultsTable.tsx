@@ -60,15 +60,15 @@ export function RecentResultsTable({ recentActivity }: Props) {
         </Link>
       </div>
 
-      <div className="overflow-x-auto mt-3">
-        <table className="w-full text-left border-collapse">
+      <div className="overflow-x-auto -mx-5 px-5 mt-3">
+        <table className="w-full min-w-[480px] text-left border-collapse">
           <thead>
             <tr className="border-b border-slate-100 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              <th className="py-2.5 px-3">Subject</th>
-              <th className="py-2.5 px-3">Exam Type</th>
+              <th className="py-2.5 px-3 min-w-[110px]">Subject</th>
+              <th className="py-2.5 px-3 min-w-[130px]">Exam Type</th>
               <th className="py-2.5 px-3 text-center">Grade</th>
               <th className="py-2.5 px-3">Score</th>
-              <th className="py-2.5 px-3 text-right">Date</th>
+              <th className="py-2.5 px-3 text-right whitespace-nowrap">Date</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-xs">

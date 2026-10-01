@@ -1,16 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, User as UserIcon } from "lucide-react";
+import {
+  Search,
+  User as UserIcon,
+  X,
+  BookOpen,
+  FileText,
+  Tag,
+  ArrowUpRight,
+  CornerDownLeft,
+} from "lucide-react";
 import { NotificationCenter } from "@/components/shared/notification-center";
 import type { DailyGoalData } from "@/lib/learning-tracker";
+import { SUBJECTS } from "@/lib/constants/subjects";
+import { placeholderSubjects } from "@/lib/placeholder-subjects";
 
 type Props = {
   username: string | undefined;
   streak: number;
   dailyGoal: DailyGoalData;
+};
+
+type ResultItem = {
+  id: string;
+  type: "subject" | "topic" | "paper";
+  title: string;
+  subtitle: string;
+  category: string;
+  url: string;
 };
 
 export function DashboardHeader({ username }: Props) {
@@ -25,6 +45,28 @@ export function DashboardHeader({ username }: Props) {
       if (searchYear) params.set("year", searchYear);
       router.push(`/flashcards/search?${params.toString()}`);
     }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Escape") {
+      setIsOpen(false);
+      return;
+    }
+
+    if (!isOpen || !hasResults) return;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev + 1) % flatList.length);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev - 1 + flatList.length) % flatList.length);
+    }
+  };
+
+  const handleClear = () => {
+    setSearchQuery("");
+    setIsOpen(false);
   };
 
   return (
@@ -70,10 +112,10 @@ export function DashboardHeader({ username }: Props) {
           href="/profile"
           className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 p-1.5 pr-3 transition-colors hover:bg-slate-100"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0e1726] font-bold text-xs text-white shadow-xs">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 border border-slate-700 font-bold text-xs text-amber-400 shadow-xs">
             {username ? username.charAt(0).toUpperCase() : <UserIcon className="h-4 w-4" />}
           </div>
-          <div className="text-left hidden sm:block">
+          <div className="text-left">
             <p className="text-xs font-bold text-slate-900 leading-tight">
               Hello, {username || "Student"}
             </p>

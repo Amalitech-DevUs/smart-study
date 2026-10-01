@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import type { SubjectColor } from "./mcq-card";
 
 const subjectBadges: Record<SubjectColor, { bg: string; text: string; border: string }> = {
@@ -43,6 +43,16 @@ const subjectBadges: Record<SubjectColor, { bg: string; text: string; border: st
     text: "text-purple-800",
     border: "border-purple-200",
   },
+  "career-tech": {
+    bg: "bg-amber-50",
+    text: "text-amber-800",
+    border: "border-amber-200",
+  },
+  ict: {
+    bg: "bg-cyan-50",
+    text: "text-cyan-800",
+    border: "border-cyan-200",
+  },
 };
 
 type Props = {
@@ -74,7 +84,6 @@ export function QuestionHeader({
         <span
           className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wider ${badgeStyle.bg} ${badgeStyle.text} ${badgeStyle.border}`}
         >
-          <Sparkles className="h-3.5 w-3.5" />
           {subject}
         </span>
 

@@ -11,6 +11,7 @@ import {
   type LearningMode,
 } from "@/lib/learning-tracker";
 import { shuffleOptionsSafely } from "@/lib/session-utils";
+import { useNotifications } from "@/lib/notification-context";
 import { SessionHeader, type TimerOption } from "./SessionHeader";
 import { PracticeSummary } from "./PracticeSummary";
 import { TestReviewScreen } from "./TestReviewScreen";
@@ -18,6 +19,7 @@ import { SubmitConfirmModal } from "./SubmitConfirmModal";
 
 const timerOptions: readonly TimerOption[] = [
   { value: "practice", label: "Untimed", seconds: 0 },
+  { value: "1", label: "1 min", seconds: 1 * 60 },
   { value: "30", label: "30 min", seconds: 30 * 60 },
   { value: "45", label: "45 min", seconds: 45 * 60 },
   { value: "60", label: "1 hr", seconds: 60 * 60 },
@@ -33,6 +35,7 @@ export function SessionRunner({
   sessionKey,
 }: SessionRunnerProps) {
   const { loggedIn, isLoading, username } = useAuth();
+  const { showToast } = useNotifications();
   const userPrefix = username ? `${username.toLowerCase()}_` : "guest_";
   const storageKey =
     sessionKey && !isLoading
@@ -228,8 +231,10 @@ export function SessionRunner({
           setTimedOut(true);
           if (sessionMode === "test") {
             setIsTestSubmitted(true);
+            showToast("warning", "Time is up! Your test has been auto-submitted.", "Time's Up");
           } else {
             setQueue([]);
+            showToast("warning", "Time is up! Your practice session has ended.", "Time's Up");
           }
           return 0;
         }
@@ -435,6 +440,10 @@ export function SessionRunner({
       unansweredCount,
       scorePercent,
     });
+
+    const toastType = scorePercent >= 50 ? "success" : "warning";
+    const toastTitle = scorePercent >= 70 ? "Excellent Result!" : scorePercent >= 50 ? "Test Submitted" : "Test Submitted";
+    showToast(toastType, `You scored ${scorePercent}% — ${correctCount} of ${totalQuestions} correct.`, toastTitle);
   };
 
   const handleRestart = () => {
@@ -454,6 +463,7 @@ export function SessionRunner({
     setTestCurrentIndex(0);
     setTestAnswers({});
     setIsTestSubmitted(false);
+    showToast("info", "Session reset. All progress cleared — good luck!", "Session Restarted");
   };
 
   /* ── Calculations ── */

@@ -60,7 +60,7 @@ export function SessionHeader({
   setTestCurrentIndex,
 }: Props) {
   return (
-    <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+    <div className="mb-6 rounded-xl border border-slate-200 bg-white p-3.5 sm:p-5 shadow-xs">
       <div className="flex flex-wrap items-center justify-between gap-4">
         {/* Title & Mode Switcher */}
         <div>
@@ -98,13 +98,14 @@ export function SessionHeader({
                       setTimeRemaining(45 * 60);
                     }
                   }}
-                  className={`rounded-full px-3 py-1 transition-all ${
+                  className={`inline-flex items-center gap-1 rounded-full px-3 py-1 transition-all ${
                     sessionMode === "test"
                       ? "bg-blue-700 text-white shadow-sm"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  ⏱️ Test
+                  <Clock className="h-3 w-3" />
+                  <span>Test</span>
                 </button>
               </div>
             ) : (
@@ -146,8 +147,8 @@ export function SessionHeader({
             </span>
           )}
 
-          {/* Timer Options (Available only before first answer) */}
-          {attempts === 0 && testAnsweredCount === 0 && !isTestSubmitted && (
+          {/* Timer Options — visible throughout practice; locks after first test answer */}
+          {(sessionMode === "practice" ? !isPracticeFinished : testAnsweredCount === 0 && !isTestSubmitted) && (
             <div className="flex rounded-full border border-slate-200 bg-slate-50 p-1 text-xs">
               {timerOptions.map((opt) => (
                 <button

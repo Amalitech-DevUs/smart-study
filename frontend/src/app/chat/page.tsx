@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChatEngine } from "@/components/chat/chat-engine";
 import { RequireAuth } from "@/components/shared/require-auth";
-import { ArrowLeft, Bot } from "lucide-react";
+import { ArrowLeft, GraduationCap } from "lucide-react";
 
 export default function ChatPage() {
   return (
@@ -9,7 +9,7 @@ export default function ChatPage() {
       <div className="flex h-[calc(100svh-56px)] flex-col bg-white md:h-screen">
         {/* Slim top bar */}
         <div className="flex shrink-0 items-center justify-between border-b border-slate-200/90 bg-white px-4 py-3 sm:px-6 md:px-8">
-          <div className="mx-auto flex w-full max-w-3xl items-center justify-between">
+          <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
             <Link
               href="/dashboard"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors hover:text-slate-900"
@@ -20,7 +20,7 @@ export default function ChatPage() {
 
             <div className="flex items-center gap-2">
               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0e1726]">
-                <Bot className="h-3.5 w-3.5 text-amber-400" />
+                <GraduationCap className="h-4 w-4 text-amber-400" />
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-900 leading-none">BECE Study Tutor</p>

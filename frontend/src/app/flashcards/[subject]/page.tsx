@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth";
 import { placeholderSubjects } from "@/lib/placeholder-subjects";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -23,32 +24,33 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
   }
 
   return (
-    <main className="flex-1 min-h-screen bg-[#f8f9fa] px-4 py-8 sm:px-6 lg:px-8">
+    <main className="flex-1 min-h-screen bg-[#f8f9fa] px-3 py-6 sm:px-4 sm:py-8 lg:px-8 pb-24 md:pb-16">
       <div className="mx-auto max-w-4xl">
         <ScrollReveal>
-          <div className="mb-6">
+          <div className="mb-5 sm:mb-6">
             <Link
               href="/flashcards"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
             >
-              &larr; All subjects
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>All subjects</span>
             </Link>
           </div>
 
-          <header className="border-b border-slate-200 pb-6">
-            <h1 className="font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
+          <header className="border-b border-slate-200 pb-5 sm:pb-6">
+            <h1 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               {subjectData.name} Past Papers
             </h1>
-            <p className="mt-1.5 text-sm text-slate-600">
+            <p className="mt-1.5 text-xs sm:text-sm text-slate-600">
               Select an exam year below. Practice untimed with instant feedback or take a timed WAEC mock exam.
             </p>
           </header>
         </ScrollReveal>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {subjectData.papers.map((paper, index) => (
             <ScrollReveal key={paper.year} delay={index * 0.04}>
-              <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-xs transition-colors hover:border-slate-300">
+              <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 sm:p-5 shadow-xs transition-colors hover:border-slate-300">
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="font-heading text-2xl font-bold text-slate-900">
