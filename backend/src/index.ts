@@ -7,6 +7,7 @@ import authRoutes from './routes/auth';
 import questionsRoutes from './routes/questions';
 import articlesRoutes from './routes/articles';
 import chatRoutes from './routes/chat';
+import progressRoutes from './routes/progress';
 import { errorHandler } from './middleware/errorHandler';
 
 // Load .env from backend/src directory
@@ -28,7 +29,7 @@ app.get('/', (req: Request, res: Response) => {
     role: 'Backend API & Orchestration Layer',
     status: 'Running',
     version: '1.0.0',
-    documentation: '/health/auth, /questions, /articles, /chat'
+    documentation: '/health/auth, /questions, /articles, /chat, /progress'
   });
 });
 
@@ -38,6 +39,7 @@ app.use('/auth', authRoutes);
 app.use('/questions', questionsRoutes);
 app.use('/articles', articlesRoutes);
 app.use('/chat', chatRoutes);
+app.use('/progress', progressRoutes);
 
 // Global Error Handler Middleware
 app.use(errorHandler);

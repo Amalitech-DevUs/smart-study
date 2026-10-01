@@ -12,6 +12,7 @@ import {
   getStudiedDates,
   setDailyGoalTarget,
   getPerformanceTiers,
+  fetchUserProgress,
   type ActiveSession,
   type LearningOverviewData,
   type SubjectProgressData,
@@ -97,6 +98,11 @@ export function useDashboardData(
 
     loadData();
     window.addEventListener("storage", loadData);
+
+    if (username) {
+      fetchUserProgress(username).catch(() => {});
+    }
+
     return () => window.removeEventListener("storage", loadData);
   }, [username, isAuthLoading]);
 

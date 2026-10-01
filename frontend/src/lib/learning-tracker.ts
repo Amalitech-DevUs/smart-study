@@ -128,6 +128,112 @@ function setSafeStorage<T>(key: string, value: T): void {
 }
 
 /**
+ * Syncs attempts and sessions with the backend server.
+ * Merges server data into localStorage, and pushes local data to server.
+ */
+export async function syncUserProgress(username: string | undefined): Promise<void> {
+  if (typeof window === "undefined" || !username || username.toLowerCase() === "guest") return;
+
+  const attemptsKey = getAttemptsKey(username);
+  const sessionsKey = getSessionsKey(username);
+  const localAttempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const localSessions = getSafeStorage<StudySessionRecord[]>(sessionsKey, []);
+
+  try {
+    const res = await fetch("/api/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        attempts: localAttempts,
+        sessions: localSessions,
+      }),
+    });
+
+    if (!res.ok) return;
+    const json = await res.json();
+    if (json.success && json.data) {
+      const serverAttempts: QuestionAttempt[] = json.data.attempts || [];
+      const serverSessions: StudySessionRecord[] = json.data.sessions || [];
+
+      if (serverAttempts.length > localAttempts.length) {
+        setSafeStorage(attemptsKey, serverAttempts.slice(-1000));
+      }
+      if (serverSessions.length > localSessions.length) {
+        setSafeStorage(sessionsKey, serverSessions.slice(0, 100));
+      }
+
+      window.dispatchEvent(new Event("storage"));
+    }
+  } catch {
+    // Offline or network error - ignore gracefully
+  }
+}
+
+/**
+ * Fetches user progress from backend on login or page load,
+ * pulling down whatever was done on another device (e.g. PC -> Phone).
+ */
+export async function fetchUserProgress(username: string | undefined): Promise<void> {
+  if (typeof window === "undefined" || !username || username.toLowerCase() === "guest") return;
+
+  const attemptsKey = getAttemptsKey(username);
+  const sessionsKey = getSessionsKey(username);
+  const localAttempts = getSafeStorage<QuestionAttempt[]>(attemptsKey, []);
+  const localSessions = getSafeStorage<StudySessionRecord[]>(sessionsKey, []);
+
+  try {
+    const res = await fetch("/api/progress", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    if (!res.ok) return;
+    const json = await res.json();
+    if (json.success && json.data) {
+      const serverAttempts: QuestionAttempt[] = json.data.attempts || [];
+      const serverSessions: StudySessionRecord[] = json.data.sessions || [];
+
+      let updated = false;
+
+      if (serverAttempts.length > 0) {
+        const map = new Map<string, QuestionAttempt>();
+        for (const a of serverAttempts) map.set(a.id || `${a.questionId}_${a.timestamp}`, a);
+        for (const a of localAttempts) map.set(a.id || `${a.questionId}_${a.timestamp}`, a);
+        const merged = Array.from(map.values()).slice(-1000);
+        if (merged.length !== localAttempts.length) {
+          setSafeStorage(attemptsKey, merged);
+          updated = true;
+        }
+      }
+
+      if (serverSessions.length > 0) {
+        const map = new Map<string, StudySessionRecord>();
+        for (const s of serverSessions) map.set(s.sessionId, s);
+        for (const s of localSessions) map.set(s.sessionId, s);
+        const merged = Array.from(map.values())
+          .sort((a, b) => (b.completedAt || 0) - (a.completedAt || 0))
+          .slice(0, 100);
+        if (merged.length !== localSessions.length) {
+          setSafeStorage(sessionsKey, merged);
+          updated = true;
+        }
+      }
+
+      // If local has new items server didn't have, push them up
+      if (localAttempts.length > serverAttempts.length || localSessions.length > serverSessions.length) {
+        syncUserProgress(username).catch(() => {});
+      }
+
+      if (updated) {
+        window.dispatchEvent(new Event("storage"));
+      }
+    }
+  } catch {
+    // Offline or network error - ignore gracefully
+  }
+}
+
+/**
  * Records an individual question attempt.
  */
 export function recordQuestionAttempt(
@@ -140,6 +246,7 @@ export function recordQuestionAttempt(
   // Keep last 1000 attempts to avoid quota overflow
   const trimmed = attempts.length > 1000 ? attempts.slice(-1000) : attempts;
   setSafeStorage(key, trimmed);
+  syncUserProgress(username).catch(() => {});
 }
 
 /**
@@ -200,6 +307,7 @@ export function completeStudySession(
   }
   setSafeStorage(key, sessions.slice(0, 100)); // keep last 100 sessions
   clearActiveSession(username);
+  syncUserProgress(username).catch(() => {});
 }
 
 /**
