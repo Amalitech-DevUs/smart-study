@@ -1,13 +1,12 @@
 import {
   LayoutDashboard,
   BookOpen,
-  GraduationCap,
+  Bot,
   FileText,
   User,
   Megaphone,
   Calendar,
   TrendingUp,
-  Bell,
   type LucideIcon,
 } from "lucide-react";
 
@@ -21,29 +20,26 @@ export const NAV_LINKS_LOGGED_IN: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Profile", href: "/profile", icon: User },
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
-  { label: "AI Tutor", href: "/chat", icon: GraduationCap },
-  { label: "Revision Notes", href: "/articles", icon: FileText },
-  { label: "Notice Board", href: "/notices", icon: Megaphone },
-  { label: "Study Calendar", href: "/calendar", icon: Calendar },
-  { label: "Performance", href: "/progress", icon: TrendingUp },
-  { label: "Notifications", href: "/notifications", icon: Bell },
+  { label: "AI Tutor", href: "/chat", icon: Bot },
+  { label: "Articles", href: "/articles", icon: FileText },
+  { label: "Notice Board", href: "/dashboard#notices", icon: Megaphone },
+  { label: "Study Calendar", href: "/dashboard#calendar", icon: Calendar },
+  { label: "Performance", href: "/dashboard#performance", icon: TrendingUp },
 ];
 
 export const NAV_LINKS_DRAWER_LOGGED_IN: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Profile", href: "/profile", icon: User },
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
-  { label: "AI Tutor", href: "/chat", icon: GraduationCap },
-  { label: "Revision Notes", href: "/articles", icon: FileText },
-  { label: "Notice Board", href: "/notices", icon: Megaphone },
-  { label: "Study Calendar", href: "/calendar", icon: Calendar },
-  { label: "Performance", href: "/progress", icon: TrendingUp },
-  { label: "Notifications", href: "/notifications", icon: Bell },
+  { label: "AI Tutor", href: "/chat", icon: Bot },
+  { label: "Articles", href: "/articles", icon: FileText },
+  { label: "Notice Board", href: "/dashboard#notices", icon: Megaphone },
+  { label: "Study Calendar", href: "/dashboard#calendar", icon: Calendar },
 ];
 
 export const NAV_LINKS_PUBLIC: NavItem[] = [
   { label: "Home", href: "/", icon: LayoutDashboard },
   { label: "Past Papers", href: "/flashcards", icon: BookOpen },
-  { label: "AI Tutor", href: "/chat", icon: GraduationCap },
-  { label: "Revision Notes", href: "/articles", icon: FileText },
+  { label: "AI Tutor", href: "/chat", icon: Bot },
+  { label: "Articles", href: "/articles", icon: FileText },
 ];

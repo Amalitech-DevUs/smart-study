@@ -2,10 +2,10 @@
 
 The **Auth Microservice** handles user registration, PIN-based authentication, and JWT session token generation for the **Smart-Study** BECE learning platform.
 
-* **Default Port:** `5001`
-* **Runtime:** PHP 8.0+
-* **Database:** SQLite (`smart_study.sqlite`) via PDO
-* **Token Standard:** JSON Web Tokens (JWT) using `firebase/php-jwt`
+- **Default Port:** `5001`
+- **Runtime:** PHP 8.0+
+- **Database:** SQLite (`smart_study.sqlite`) via PDO
+- **Token Standard:** JSON Web Tokens (JWT) using `firebase/php-jwt`
 
 ---
 
@@ -33,14 +33,17 @@ Stop the service with `docker compose down`; this keeps the database volume. `do
 ## Architecture & Design Decisions
 
 ### 1. Child-Friendly PIN Authentication
+
 Instead of requiring complex passwords with symbols and mixed cases (which creates high friction for Junior High School students), the platform uses a **Username + 4 to 6-digit numeric PIN**.
 PINs are securely hashed and salted using PHP's native `password_hash()` with `PASSWORD_DEFAULT` (bcrypt).
 
 ### 2. Embedded SQLite Database (Zero-Config Setup)
-The service previously used MySQL but has been refactored to **SQLite**. 
-* **No external database server (MySQL/PostgreSQL) is required.**
-* The database file is located at `database/smart_study.sqlite`.
-* On the first connection, `Database::connect()` automatically executes `database/schema.sql` to initialize all tables if they do not already exist.
+
+The service previously used MySQL but has been refactored to **SQLite**.
+
+- **No external database server (MySQL/PostgreSQL) is required.**
+- The database file is located at `database/smart_study.sqlite`.
+- On the first connection, `Database::connect()` automatically executes `database/schema.sql` to initialize all tables if they do not already exist.
 
 ---
 
@@ -74,16 +77,19 @@ backend/auth/
 ## Getting Started
 
 ### Prerequisites
-* **PHP 8.0+** with `pdo_sqlite` extension enabled (standard in all modern PHP installations).
-* **Composer** (optional; dependencies are already included in `vendor/`).
+
+- **PHP 8.0+** with `pdo_sqlite` extension enabled (standard in all modern PHP installations).
+- **Composer** (optional; dependencies are already included in `vendor/`).
 
 Verify PHP and SQLite support:
+
 ```bash
 php -v
 php -m | grep -i pdo_sqlite
 ```
 
 ### Running the Service Locally
+
 From the `backend/auth` directory, start PHP's built-in development server on port **5001**:
 
 ```bash
@@ -101,11 +107,12 @@ The service supports both query-action routing (used by the Express Gateway) and
 
 ### 1. User Registration (Signup)
 
-* **Endpoints:** 
-  * `POST http://localhost:5001/routes/auth.php?action=signup` *(Gateway mode)*
-  * `POST http://localhost:5001/auth/signup` *(REST mode)*
-* **Headers:** `Content-Type: application/json`
-* **Request Body:**
+- **Endpoints:**
+  - `POST http://localhost:5001/routes/auth.php?action=signup` _(Gateway mode)_
+  - `POST http://localhost:5001/auth/signup` _(REST mode)_
+- **Headers:** `Content-Type: application/json`
+- **Request Body:**
+
 ```json
 {
   "username": "kofi_mensah",
@@ -113,7 +120,8 @@ The service supports both query-action routing (used by the Express Gateway) and
 }
 ```
 
-* **Success Response (`201 Created`):**
+- **Success Response (`201 Created`):**
+
 ```json
 {
   "success": true,
@@ -125,7 +133,8 @@ The service supports both query-action routing (used by the Express Gateway) and
 }
 ```
 
-* **Error Response (`409 Conflict`):**
+- **Error Response (`409 Conflict`):**
+
 ```json
 {
   "success": false,
@@ -137,11 +146,12 @@ The service supports both query-action routing (used by the Express Gateway) and
 
 ### 2. User Login
 
-* **Endpoints:** 
-  * `POST http://localhost:5001/routes/auth.php?action=login` *(Gateway mode)*
-  * `POST http://localhost:5001/auth/login` *(REST mode)*
-* **Headers:** `Content-Type: application/json`
-* **Request Body:**
+- **Endpoints:**
+  - `POST http://localhost:5001/routes/auth.php?action=login` _(Gateway mode)_
+  - `POST http://localhost:5001/auth/login` _(REST mode)_
+- **Headers:** `Content-Type: application/json`
+- **Request Body:**
+
 ```json
 {
   "username": "kofi_mensah",
@@ -149,7 +159,8 @@ The service supports both query-action routing (used by the Express Gateway) and
 }
 ```
 
-* **Success Response (`200 OK`):**
+- **Success Response (`200 OK`):**
+
 ```json
 {
   "success": true,
@@ -162,7 +173,8 @@ The service supports both query-action routing (used by the Express Gateway) and
 }
 ```
 
-* **Error Response (`401 Unauthorized`):**
+- **Error Response (`401 Unauthorized`):**
+
 ```json
 {
   "success": false,
@@ -174,9 +186,10 @@ The service supports both query-action routing (used by the Express Gateway) and
 
 ### 3. Verify Session / Current User
 
-* **Endpoint:** `GET http://localhost:5001/auth/me`
-* **Headers:** `Authorization: Bearer <accessToken>`
-* **Success Response (`200 OK`):**
+- **Endpoint:** `GET http://localhost:5001/auth/me`
+- **Headers:** `Authorization: Bearer <accessToken>`
+- **Success Response (`200 OK`):**
+
 ```json
 {
   "success": true,
@@ -186,6 +199,21 @@ The service supports both query-action routing (used by the Express Gateway) and
   }
 }
 ```
+
+### 4. Record a Completed Study Session
+
+- **Endpoint:** `POST http://localhost:5001/auth/progress/sessions`
+- **Headers:** `Authorization: Bearer <accessToken>`, `Content-Type: application/json`
+- **Body:** A completed `StudySessionRecord`, including `sessionId`, `subject`, `subjectSlug`, `year`, `paper`, `mode`, `startedAt`, `completedAt`, `uniqueQuestionsTotal`, `uniqueQuestionsCompleted`, `totalAttempts`, `correctCount`, `incorrectCount`, `unansweredCount`, and `scorePercent`.
+- **Success Response (`200 OK`):** `{ "success": true, "message": "Session result recorded successfully." }`
+
+Session IDs are unique per student, so retrying a completed-session write updates that session instead of duplicating it.
+
+### 5. Get Completed Study Results
+
+- **Endpoint:** `GET http://localhost:5001/auth/progress/results`
+- **Headers:** `Authorization: Bearer <accessToken>`
+- **Success Response (`200 OK`):** `{ "success": true, "results": [] }` when no sessions have been recorded. Otherwise, `results` contains the student's completed sessions in most-recent-first order, including subject, year, paper, correct/total counts, score, and completion date.
 
 ---
 
