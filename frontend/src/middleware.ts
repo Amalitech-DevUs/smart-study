@@ -14,15 +14,14 @@ const PROTECTED_PREFIXES = [
 // Routes intended for unauthenticated users only
 const AUTH_PAGES = ["/login", "/signup", "/register"];
 
-function decodeBase64Url(value: string): ArrayBuffer {
+function decodeBase64Url(value: string): Uint8Array<ArrayBuffer> {
   const base64 = value.replace(/-/g, "+").replace(/_/g, "/");
   const binary = atob(base64.padEnd(Math.ceil(base64.length / 4) * 4, "="));
-  const buffer = new ArrayBuffer(binary.length);
-  const bytes = new Uint8Array(buffer);
+  const bytes = new Uint8Array(binary.length) as Uint8Array<ArrayBuffer>;
   for (let index = 0; index < binary.length; index += 1) {
     bytes[index] = binary.charCodeAt(index);
   }
-  return buffer;
+  return bytes;
 }
 
 async function isTokenValid(token: string | undefined): Promise<boolean> {
@@ -58,7 +57,7 @@ async function isTokenValid(token: string | undefined): Promise<boolean> {
       }
     }
 
-    return Boolean(payload.username || payload.userId || payload.id || payload.sub);
+    return Boolean(payload.username || payload.user_id || payload.userId || payload.id || payload.sub);
   } catch {
     return false;
   }

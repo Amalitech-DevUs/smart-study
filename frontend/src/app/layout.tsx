@@ -5,6 +5,7 @@ import { NotificationProvider } from "@/lib/notification-context";
 import { AuthProvider } from "@/lib/use-auth";
 import { AppShell } from "@/components/shared/app-shell";
 import { PwaRegister } from "@/components/pwa/pwa-register";
+import { BackendKeepAlive } from "@/components/shared/backend-keep-alive";
 import "./globals.css";
 
 const headingFont = Plus_Jakarta_Sans({
@@ -60,6 +61,7 @@ export default function RootLayout({
         <MotionProvider>
           <AuthProvider>
             <NotificationProvider>
+              <BackendKeepAlive />
               <PwaRegister />
               <AppShell>{children}</AppShell>
             </NotificationProvider>
