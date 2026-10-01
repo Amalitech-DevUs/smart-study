@@ -1,22 +1,27 @@
 import { NextResponse } from "next/server";
 import { AUTH_COOKIE_NAME } from "@/lib/auth";
+import { fetchAuthEndpoint } from "@/lib/auth-service";
 
 export async function POST(request: Request) {
   return proxyAuthRequest(request, "/auth/login");
 }
 
 async function proxyAuthRequest(request: Request, endpoint: string) {
-  const baseUrl = process.env.BACKEND_API_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
-
   try {
-    const backendResponse = await fetch(
-      `${baseUrl.replace(/\/$/, "")}${endpoint}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(await request.json()),
-        cache: "no-store",
-      },
+    const body = await request.json().catch(() => null);
+    const submittedUsername = typeof body?.username === "string" ? body.username.trim() : "";
+    const pin = typeof body?.pin === "string" ? body.pin.trim() : "";
+
+    if (!submittedUsername || !pin) {
+      return NextResponse.json(
+        { error: "Username and PIN are required." },
+        { status: 400 },
+      );
+    }
+
+    const backendResponse = await fetchAuthEndpoint(
+      endpoint,
+      { username: submittedUsername, pin },
     );
     const data = await backendResponse.json().catch(() => ({}));
     if (!backendResponse.ok)
@@ -32,7 +37,7 @@ async function proxyAuthRequest(request: Request, endpoint: string) {
         { status: 502 },
       );
 
-    const username = data.username ?? data.data?.user?.username;
+    const username = data.username ?? data.user?.username ?? data.data?.user?.username;
     const response = NextResponse.json({ username });
     response.cookies.set(AUTH_COOKIE_NAME, token, {
       httpOnly: true,
