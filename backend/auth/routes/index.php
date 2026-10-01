@@ -169,6 +169,45 @@ if ($method === 'POST' && $path === '/auth/progress/attempts') {
 
     exit;
 }
+
+if ($method === 'POST' && $path === '/auth/progress/sessions') {
+
+    $tokenData = AuthMiddleware::authenticate();
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    if (!is_array($input)) {
+        http_response_code(400);
+
+        echo json_encode([
+            'success' => false,
+            'message' => 'Invalid JSON body.'
+        ]);
+
+        exit;
+    }
+
+    $progressController = new ProgressController($db);
+    $response = $progressController->recordSessionResult((int) $tokenData->user_id, $input);
+
+    if (!$response['success']) {
+        http_response_code(400);
+    }
+
+    echo json_encode($response);
+
+    exit;
+}
+
+if ($method === 'GET' && $path === '/auth/progress/results') {
+
+    $tokenData = AuthMiddleware::authenticate();
+    $progressController = new ProgressController($db);
+
+    echo json_encode($progressController->getSessionResults((int) $tokenData->user_id));
+
+    exit;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Route not found

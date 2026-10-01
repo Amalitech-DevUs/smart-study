@@ -16,11 +16,14 @@ type Props = {
 export function DashboardHeader({ username }: Props) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchYear, setSearchYear] = useState("");
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/flashcards?q=${encodeURIComponent(searchQuery.trim())}`);
+      const params = new URLSearchParams({ q: searchQuery.trim() });
+      if (searchYear) params.set("year", searchYear);
+      router.push(`/flashcards/search?${params.toString()}`);
     }
   };
 
@@ -30,15 +33,34 @@ export function DashboardHeader({ username }: Props) {
         Dashboard
       </h1>
 
-      <form onSubmit={handleSearchSubmit} className="relative flex-1 max-w-md mx-auto sm:mx-4">
-        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search past papers, topics, questions..."
-          className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-4 text-xs font-medium text-slate-800 placeholder-slate-400 transition-all focus:border-slate-400 focus:bg-white focus:outline-none"
-        />
+      <form
+        onSubmit={handleSearchSubmit}
+        className="relative flex flex-1 items-center gap-2 mx-auto max-w-xl sm:mx-4"
+      >
+        <div className="relative min-w-0 flex-1">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search past papers, topics, questions..."
+            aria-label="Search past papers, questions, and articles"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-4 text-xs font-medium text-slate-800 placeholder-slate-400 transition-all focus:border-slate-400 focus:bg-white focus:outline-none"
+          />
+        </div>
+        <select
+          value={searchYear}
+          onChange={(e) => setSearchYear(e.target.value)}
+          aria-label="Filter question results by year"
+          className="w-28 shrink-0 rounded-xl border border-slate-200 bg-slate-50 px-2.5 py-2 text-xs font-medium text-slate-700 focus:border-slate-400 focus:bg-white focus:outline-none"
+        >
+          <option value="">Any year</option>
+          {Array.from({ length: 7 }, (_, index) => 2026 - index).map((year) => (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          ))}
+        </select>
       </form>
 
       <div className="flex items-center justify-between sm:justify-end gap-3.5">

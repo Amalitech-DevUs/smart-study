@@ -13,10 +13,12 @@ export function CurriculumSection() {
                 Curriculum
               </p>
               <h2 className="mt-2 font-heading text-2xl font-bold text-slate-900 sm:text-3xl">
-                Core Subjects
+                Subjects
               </h2>
             </div>
-            <span className="text-xs font-medium text-slate-500">Official WAEC Syllabus</span>
+            <span className="text-xs font-medium text-slate-500">
+              Official WAEC Syllabus
+            </span>
           </div>
         </ScrollReveal>
 
@@ -53,7 +55,9 @@ export function CurriculumSection() {
                 </div>
                 <div className="mt-5 border-t border-slate-100 pt-3 text-[11px] font-medium text-slate-400 flex items-center justify-between">
                   <span>BECE Examination Prep</span>
-                  <span className="text-emerald-600 font-semibold">Included</span>
+                  <span className="text-emerald-600 font-semibold">
+                    Included
+                  </span>
                 </div>
               </div>
             </ScrollReveal>

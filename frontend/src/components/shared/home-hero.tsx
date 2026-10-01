@@ -73,7 +73,8 @@ export function HomeHero() {
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
-          Practice official multiple-choice questions by subject and year. Get clear step-by-step guidance whenever you need help.
+          Practice official multiple-choice questions by subject and year. Get
+          clear step-by-step guidance whenever you need help.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -83,19 +84,20 @@ export function HomeHero() {
           >
             Start Practice
           </Link>
-
-          <Link
-            href="/login"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-700 bg-slate-800/60 px-7 py-3 text-sm font-semibold text-slate-200 transition-all hover:bg-slate-800 active:scale-[0.99]"
-          >
-            Sign In
-          </Link>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-2 pt-6 border-t border-slate-800/80 text-xs text-slate-400">
           <span className="text-slate-500 mr-2">Core subjects:</span>
-          {["Mathematics", "Integrated Science", "English Language", "Social Studies"].map((item) => (
-            <span key={item} className="rounded-md border border-slate-800 bg-slate-900/50 px-2.5 py-1 text-slate-300">
+          {[
+            "Mathematics",
+            "Integrated Science",
+            "English Language",
+            "Social Studies",
+          ].map((item) => (
+            <span
+              key={item}
+              className="rounded-md border border-slate-800 bg-slate-900/50 px-2.5 py-1 text-slate-300"
+            >
               {item}
             </span>
           ))}

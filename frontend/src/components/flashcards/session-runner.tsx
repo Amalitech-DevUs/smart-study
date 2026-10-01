@@ -45,7 +45,9 @@ export function SessionRunner({
   // Practice State
   const [queue, setQueue] = useState<McqQuestion[]>(initialQuestions);
   const [completedUniqueIds, setCompletedUniqueIds] = useState<string[]>([]);
-  const [requeueCounts, setRequeueCounts] = useState<Record<string, number>>({});
+  const [requeueCounts, setRequeueCounts] = useState<Record<string, number>>(
+    {},
+  );
   const [attempts, setAttempts] = useState(0);
   const [currentAnswer, setCurrentAnswer] = useState<string | null>(null);
 
@@ -114,7 +116,10 @@ export function SessionRunner({
             const q = idMap.get(String(id));
             if (q) restoredQueue.push(q);
           }
-          if (restoredQueue.length > 0 || parsed.completedUniqueIds?.length > 0) {
+          if (
+            restoredQueue.length > 0 ||
+            parsed.completedUniqueIds?.length > 0
+          ) {
             setQueue(restoredQueue);
           }
         }
@@ -233,7 +238,14 @@ export function SessionRunner({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timerMode, timedOut, isLoaded, sessionMode, queue.length, isTestSubmitted]);
+  }, [
+    timerMode,
+    timedOut,
+    isLoaded,
+    sessionMode,
+    queue.length,
+    isTestSubmitted,
+  ]);
 
   /* ── Practice Handlers ── */
   const handlePracticeAnswer = (optionId: string, isCorrect: boolean) => {
@@ -264,9 +276,12 @@ export function SessionRunner({
     });
   };
 
-  const completeSessionRecord = (mode: LearningMode) => {
+  const completeSessionRecord = (
+    mode: LearningMode,
+    completedCount = completedUniqueIds.length,
+  ) => {
     const accuracy =
-      attempts > 0 ? Math.round((completedUniqueIds.length / attempts) * 100) : 100;
+      attempts > 0 ? Math.round((completedCount / attempts) * 100) : 100;
 
     completeStudySession(username, {
       sessionId: sessionIdRef.current,
@@ -274,6 +289,7 @@ export function SessionRunner({
       subject: subjectName,
       subjectSlug,
       year: yearNumber,
+      paper: initialQuestions[0]?.paper || 1,
       mode,
       startedAt: Date.now() - 600000,
       completedAt: Date.now(),
@@ -281,8 +297,8 @@ export function SessionRunner({
       uniqueQuestionsTotal: totalQuestions,
       uniqueQuestionsCompleted: totalQuestions,
       totalAttempts: attempts,
-      correctCount: completedUniqueIds.length,
-      incorrectCount: Math.max(0, attempts - completedUniqueIds.length),
+      correctCount: completedCount,
+      incorrectCount: Math.max(0, attempts - completedCount),
       unansweredCount: 0,
       scorePercent: accuracy,
     });
@@ -295,12 +311,17 @@ export function SessionRunner({
 
     if (isCorrect) {
       setCompletedUniqueIds((prev) =>
-        prev.includes(String(currentQ.id)) ? prev : [...prev, String(currentQ.id)],
+        prev.includes(String(currentQ.id))
+          ? prev
+          : [...prev, String(currentQ.id)],
       );
       setQueue((prev) => prev.slice(1));
 
       if (queue.length <= 1) {
-        completeSessionRecord("practice");
+        completeSessionRecord(
+          "practice",
+          new Set([...completedUniqueIds, String(currentQ.id)]).size,
+        );
       }
       return;
     }
@@ -311,11 +332,16 @@ export function SessionRunner({
 
     if (misses > 2) {
       setCompletedUniqueIds((prev) =>
-        prev.includes(String(currentQ.id)) ? prev : [...prev, String(currentQ.id)],
+        prev.includes(String(currentQ.id))
+          ? prev
+          : [...prev, String(currentQ.id)],
       );
       setQueue((prev) => prev.slice(1));
       if (queue.length <= 1) {
-        completeSessionRecord("practice");
+        completeSessionRecord(
+          "practice",
+          new Set([...completedUniqueIds, String(currentQ.id)]).size,
+        );
       }
       return;
     }
@@ -323,7 +349,10 @@ export function SessionRunner({
     const remaining = queue.slice(1);
     const offset = Math.min(
       remaining.length,
-      Math.max(1, Math.min(3 + Math.floor(Math.random() * 3), remaining.length)),
+      Math.max(
+        1,
+        Math.min(3 + Math.floor(Math.random() * 3), remaining.length),
+      ),
     );
 
     const resurfacedQuestion = shuffleOptionsSafely(currentQ);
@@ -347,9 +376,12 @@ export function SessionRunner({
     setIsTestSubmitted(true);
 
     const correctCount = initialQuestions.filter(
-      (q) => testAnswers[q.id]?.toLowerCase() === q.correctOptionId.toLowerCase(),
+      (q) =>
+        testAnswers[q.id]?.toLowerCase() === q.correctOptionId.toLowerCase(),
     ).length;
-    const unansweredCount = initialQuestions.filter((q) => !testAnswers[q.id]).length;
+    const unansweredCount = initialQuestions.filter(
+      (q) => !testAnswers[q.id],
+    ).length;
     const incorrectCount = totalQuestions - correctCount - unansweredCount;
 
     initialQuestions.forEach((q) => {
@@ -384,12 +416,14 @@ export function SessionRunner({
       subject: subjectName,
       subjectSlug,
       year: yearNumber,
+      paper: initialQuestions[0]?.paper || 1,
       mode: "test",
       startedAt:
         Date.now() -
         (timerMode === "practice"
           ? 600000
-          : (timerOptions.find((t) => t.value === timerMode)?.seconds || 2700) * 1000 -
+          : (timerOptions.find((t) => t.value === timerMode)?.seconds || 2700) *
+              1000 -
             timeRemaining * 1000),
       completedAt: Date.now(),
       isCompleted: true,
@@ -424,28 +458,39 @@ export function SessionRunner({
 
   /* ── Calculations ── */
   const isPracticeFinished =
-    timedOut || queue.length === 0 || completedUniqueIds.length >= totalQuestions;
+    timedOut ||
+    queue.length === 0 ||
+    completedUniqueIds.length >= totalQuestions;
 
   const practiceProgressPercent =
     totalQuestions > 0
-      ? Math.min(100, Math.round((completedUniqueIds.length / totalQuestions) * 100))
+      ? Math.min(
+          100,
+          Math.round((completedUniqueIds.length / totalQuestions) * 100),
+        )
       : 0;
 
   const practiceAccuracy =
-    attempts > 0 ? Math.round((completedUniqueIds.length / attempts) * 100) : 100;
+    attempts > 0
+      ? Math.round((completedUniqueIds.length / attempts) * 100)
+      : 100;
 
   const testAnsweredCount = Object.keys(testAnswers).length;
   const testUnansweredCount = totalQuestions - testAnsweredCount;
   const testCorrectCount = useMemo(
     () =>
       initialQuestions.filter(
-        (q) => testAnswers[q.id]?.toLowerCase() === q.correctOptionId.toLowerCase(),
+        (q) =>
+          testAnswers[q.id]?.toLowerCase() === q.correctOptionId.toLowerCase(),
       ).length,
     [initialQuestions, testAnswers],
   );
-  const testIncorrectCount = totalQuestions - testCorrectCount - testUnansweredCount;
+  const testIncorrectCount =
+    totalQuestions - testCorrectCount - testUnansweredCount;
   const testScorePercent =
-    totalQuestions > 0 ? Math.round((testCorrectCount / totalQuestions) * 100) : 0;
+    totalQuestions > 0
+      ? Math.round((testCorrectCount / totalQuestions) * 100)
+      : 0;
 
   return (
     <section className="w-full max-w-3xl">
@@ -524,7 +569,9 @@ export function SessionRunner({
                 }
                 mode="test"
                 onAnswer={(optId) => handleTestAnswer(optId)}
-                onPrevious={() => setTestCurrentIndex((prev) => Math.max(0, prev - 1))}
+                onPrevious={() =>
+                  setTestCurrentIndex((prev) => Math.max(0, prev - 1))
+                }
                 onNext={() => {
                   if (testCurrentIndex < totalQuestions - 1) {
                     setTestCurrentIndex((prev) => prev + 1);
